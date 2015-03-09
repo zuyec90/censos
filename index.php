@@ -1,6 +1,6 @@
 <?php 
 
-echo "esto es una prueba";
+echo "esto es una prueba";// quise comentar este archivo
 
 
 
