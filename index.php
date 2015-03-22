@@ -1,6 +1,6 @@
 <?php 
 
-"ejemplo de dasjdbas merge";// quise comentar este archivo
+"ejemplo de  merge";// quise comentar este archivo
 
 
 
