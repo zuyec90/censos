@@ -1,6 +1,6 @@
 <?php 
 
-"esto es una prueba";// quise comentar este archivo
+"ejemplo de merge";// quise comentar este archivo
 
 
 
