@@ -1,8 +1,6 @@
 <?php 
 
-"ya no es suna prueba";// quise comentar este archivo
-
-
+"ejemplo de merge";// quise comentar este archivo
 
 
 function sumar($value= null, $valor2 = null)
