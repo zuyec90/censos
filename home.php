@@ -3,7 +3,7 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
@@ -14,8 +14,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta content="" name="Control de censos" />
-		<meta content="" name="Equipo 2" />
+		<meta content="description" name="Control de censos" />
+		<meta content="author" name="Equipo 2" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
 		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
@@ -333,7 +333,7 @@
 		<!-- start: FOOTER -->
 		<div class="footer clearfix">
 			<div class="footer-inner">
-				2015 &copy; by Equipo feliz.
+				2015 &copy; by Equipo 2.
 			</div>
 			<div class="footer-items">
 				<span class="go-top"><i class="clip-chevron-up"></i></span>

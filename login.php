@@ -3,19 +3,19 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Clip-One - Responsive Admin Template</title>
+		<title>Sistema de Control de Censo</title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta content="" name="description" />
-		<meta content="" name="author" />
+		<meta content="description" name="Control de censos" />
+		<meta content="author" name="Equipo 2" />
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
 		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
@@ -32,8 +32,7 @@
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- end: MAIN CSS -->
-		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -43,43 +42,43 @@
 			</div>
 			<!-- start: LOGIN BOX -->
 			<div class="box-login">
-				<h3>Sign in to your account</h3>
+				<h3>Inicie sesión para acceder al sistema</h3>
 				<p>
-					Please enter your name and password to log in.
+					Por favor, introduzca su usuario y contraseña para iniciar sesión.
 				</p>
-				<form class="form-login" action="index.html">
+				<form class="form-login" action="home.html">
 					<div class="errorHandler alert alert-danger no-display">
-						<i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
+						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique. 
 					</div>
 					<fieldset>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="text" class="form-control" name="username" placeholder="Username">
+								<input type="text" class="form-control" name="username" placeholder="Usuario">
 								<i class="fa fa-user"></i> </span>
 							<!-- To mark the incorrectly filled input, you must add the class "error" to the input -->
 							<!-- example: <input type="text" class="login error" name="login" value="Username" /> -->
 						</div>
 						<div class="form-group form-actions">
 							<span class="input-icon">
-								<input type="password" class="form-control password" name="password" placeholder="Password">
+								<input type="password" class="form-control password" name="password" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
 								<a class="forgot" href="#">
-									I forgot my password
+									Olvide mi contraseña
 								</a> </span>
 						</div>
 						<div class="form-actions">
 							<label for="remember" class="checkbox-inline">
 								<input type="checkbox" class="grey remember" id="remember" name="remember">
-								Keep me signed in
+								No cerrar sesión
 							</label>
 							<button type="submit" class="btn btn-bricky pull-right">
-								Login <i class="fa fa-arrow-circle-right"></i>
+								Acceder <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
 						<div class="new-account">
-							Don't have an account yet?
+							No posee una cuenta?
 							<a href="#" class="register">
-								Create an account
+								Crear una cuenta
 							</a>
 						</div>
 					</fieldset>
@@ -88,26 +87,26 @@
 			<!-- end: LOGIN BOX -->
 			<!-- start: FORGOT BOX -->
 			<div class="box-forgot">
-				<h3>Forget Password?</h3>
+				<h3>Olvidaste la contraseña?</h3>
 				<p>
-					Enter your e-mail address below to reset your password.
+					Introduzca su correo electrónico para reestablecer su contraseña.
 				</p>
 				<form class="form-forgot">
 					<div class="errorHandler alert alert-danger no-display">
-						<i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
+						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
 					</div>
 					<fieldset>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="email" class="form-control" name="email" placeholder="Email">
+								<input type="email" class="form-control" name="email" placeholder="Correo Electrónico">
 								<i class="fa fa-envelope"></i> </span>
 						</div>
 						<div class="form-actions">
 							<a class="btn btn-light-grey go-back">
-								<i class="fa fa-circle-arrow-left"></i> Back
+								<i class="fa fa-circle-arrow-left"></i> Atras
 							</a>
 							<button type="submit" class="btn btn-bricky pull-right">
-								Submit <i class="fa fa-arrow-circle-right"></i>
+								Siguiente <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
 					</fieldset>
@@ -116,68 +115,77 @@
 			<!-- end: FORGOT BOX -->
 			<!-- start: REGISTER BOX -->
 			<div class="box-register">
-				<h3>Sign Up</h3>
+				<h3>Crea tu cuenta</h3>
 				<p>
-					Enter your personal details below:
+					Introduzca sus datos personales:
 				</p>
 				<form class="form-register">
 					<div class="errorHandler alert alert-danger no-display">
-						<i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
+						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Full Name">
+							<input type="text" class="form-control" name="full_name" placeholder="Nombre completo">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="address" placeholder="Address">
+							<input type="text" class="form-control" name="address" placeholder="Dirección">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="city" placeholder="City">
+							<input type="text" class="form-control" name="cell" placeholder="Celular">
+							<p class="ch-form-hint">Código + Nº. Ej.: 04XX 1234567</p>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="city" placeholder="Ciudad">
 						</div>
 						<div class="form-group">
 							<div>
 								<label class="radio-inline">
 									<input type="radio" class="grey" value="F" name="gender">
-									Female
+									Femanino
 								</label>
 								<label class="radio-inline">
 									<input type="radio" class="grey" value="M" name="gender">
-									Male
+									Masculino
 								</label>
 							</div>
 						</div>
 						<p>
-							Enter your account details below:
+							Introduzca los datos de su cuenta:
 						</p>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="email" class="form-control" name="email" placeholder="Email">
+								<input type="text" class="form-control" id="username" name="username" placeholder="Usuario">
+								<i class="fa fa-user"></i> </span>
+						</div>
+						<div class="form-group">
+							<span class="input-icon">
+								<input type="email" class="form-control" name="email" placeholder="Correo Electrónico">
 								<i class="fa fa-envelope"></i> </span>
 						</div>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
 								<i class="fa fa-lock"></i> </span>
 						</div>
 						<div class="form-group">
 							<span class="input-icon">
-								<input type="password" class="form-control" name="password_again" placeholder="Password Again">
+								<input type="password" class="form-control" name="password_again" placeholder="Confirmar su contraseña">
 								<i class="fa fa-lock"></i> </span>
 						</div>
 						<div class="form-group">
 							<div>
 								<label for="agree" class="checkbox-inline">
 									<input type="checkbox" class="grey agree" id="agree" name="agree">
-									I agree to the Terms of Service and Privacy Policy
+									Estoy de acuerdo con los términos del servicio y la política de privacidad
 								</label>
 							</div>
 						</div>
 						<div class="form-actions">
 							<a class="btn btn-light-grey go-back">
-								<i class="fa fa-circle-arrow-left"></i> Back
+								<i class="fa fa-circle-arrow-left"></i> Atras
 							</a>
 							<button type="submit" class="btn btn-bricky pull-right">
-								Submit <i class="fa fa-arrow-circle-right"></i>
+								Siguiente <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
 					</fieldset>
@@ -186,7 +194,7 @@
 			<!-- end: REGISTER BOX -->
 			<!-- start: COPYRIGHT -->
 			<div class="copyright">
-				2014 &copy; clip-one by cliptheme.
+				2015 &copy; by Equipo 2.
 			</div>
 			<!-- end: COPYRIGHT -->
 		</div>
