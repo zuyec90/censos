@@ -35,7 +35,7 @@
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar/fullcalendar.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
