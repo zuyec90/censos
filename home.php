@@ -51,8 +51,8 @@
 					</button>
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
-					<a class="navbar-brand" href="home.php">
-						CLIP<i class="clip-clip"></i>ONE
+					<a class="nvbar-brand" href="home.php">
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés"
 					</a>
 					<!-- fin: LOGO -->
 				</div>
@@ -76,7 +76,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="upload/default_avatar_small.png">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
@@ -90,7 +90,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="upload/default_avatar_small.png">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -104,7 +104,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="upload/default_avatar_small.png">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>

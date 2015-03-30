@@ -38,14 +38,12 @@
 	<!-- inicio: BODY -->
 	<body class="login example2">
 		<div class="main-login col-sm-4 col-sm-offset-4">
-			<div class="logo">CLIP<i class="clip-clip"></i>ONE
+			<div class="logo"><h4><b>Consejo Comunal</b></h4></h4><center><img src="upload/logo1.png" width="70" height="70" class="img-rounded"></center></i><h4><b>"Santa Inés"</b></h4>
 			</div>
 			<!-- inicio: LOGIN BOX -->
 			<div class="box-login">
-				<h4>Inicie sesión para acceder al sistema</h4>
-				<p>
-					Por favor, introduzca su usuario y contraseña para iniciar sesión.
-				</p>
+				<h4><center>Inicie sesión para acceder al sistema</center></h4>
+				<p><center>Por favor, introduzca su usuario y contraseña para iniciar sesión.</center></p>
 				<form class="form-login" action="index.html">
 					<div class="errorHandler alert alert-danger no-display">
 						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
@@ -69,7 +67,7 @@
 								<input type="checkbox" class="grey remember" id="remember" name="remember">
 								No cerrar sesión
 							</label>
-							<button type="submit" class="btn btn-bricky pull-right">
+							<button type="submit" class="btn btn-primary btn-sm pull-right">
 								Acceder <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
@@ -85,10 +83,8 @@
 			<!-- fin: LOGIN BOX -->
 			<!-- inicio: FORGOT BOX -->
 			<div class="box-forgot">
-				<h3>¿Olvidaste la contraseña?</h3>
-				<p>
-					Introduzca su correo electrónico para reestablecer su contraseña.
-				</p>
+				<h3><center>¿Olvidaste la contraseña?</center></h3>
+				<p><center>Introduzca su correo electrónico para reestablecer su contraseña.</center></p>
 				<form class="form-forgot">
 					<div class="errorHandler alert alert-danger no-display">
 						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
@@ -100,10 +96,10 @@
 								<i class="fa fa-envelope"></i> </span>
 						</div>
 						<div class="form-actions">
-							<a class="btn btn-light-grey go-back">
+							<a class="btn btn-light-grey btn-sm go-back">
 								<i class="fa fa-circle-arrow-left"></i> Atras
 							</a>
-							<button type="submit" class="btn btn-bricky pull-right">
+							<button type="submit" class="btn btn-primary btn-sm pull-right">
 								Siguiente <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
@@ -113,10 +109,10 @@
 			<!-- fin: FORGOT BOX -->
 			<!-- inicio: REGISTER BOX -->
 			<div class="box-register">
-				<h3>Crea tu cuenta</h3>
-				<p>
+				<h3><center>Crea tu cuenta</center></h3>
+				<center><p>
 					Introduzca sus datos personales:
-				</p>
+				</p></center>
 				<form class="form-register">
 					<div class="errorHandler alert alert-danger no-display">
 						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
@@ -129,6 +125,17 @@
 							<input type="text" class="form-control" name="address" placeholder="Dirección">
 						</div>
 						<div class="form-group">
+							<select id="signUp_IDType" class="float-leftmargin-select" name="signUp.IPType">
+								<option value="C.I.">C.I</option>
+								<option value="R.I.F.">R.I.F.</option>
+							</select>
+							<select id="IDLetter" class="float-left margin-select" name="IDLetter">
+								<option value="V">V</option>
+								<option value="E">E</option>
+							</select>
+							<input id="signUp_IDNumber" class="docInput text" maxlength="10" value="" name="SignUp.IDNumber" placeholder="Nº de Documento"></input>
+						</div>
+						<div class="form-group">
 							<input type="text" class="form-control" name="cell" placeholder="Celular">
 							<p class="ch-form-hint">Código + Nº. Ej.: 04XX 1234567</p>
 						</div>
@@ -136,7 +143,7 @@
 							<input type="text" class="form-control" name="city" placeholder="Ciudad">
 						</div>
 						<div class="form-group">
-							<div>
+							<center><div>
 								<label class="radio-inline">
 									<input type="radio" class="grey" value="F" name="gender">
 									Femenino
@@ -145,11 +152,11 @@
 									<input type="radio" class="grey" value="M" name="gender">
 									Masculino
 								</label>
-							</div>
+							</div></center>
 						</div>
-						<p>
+						<center><p>
 							Introduzca los datos de su cuenta:
-						</p>
+						</p></center>
 						<div class="form-group">
 							<span class="input-icon">
 								<input type="text" class="form-control" id="username" name="username" placeholder="Usuario">
@@ -179,10 +186,10 @@
 							</div>
 						</div>
 						<div class="form-actions">
-							<a class="btn btn-light-grey go-back">
+							<a class="btn btn-light-grey btn-sm go-back">
 								<i class="fa fa-circle-arrow-left"></i> Atras
 							</a>
-							<button type="submit" class="btn btn-bricky pull-right">
+							<button type="submit" class="btn btn-primary btn-sm pull-right">
 								Siguiente <i class="fa fa-arrow-circle-right"></i>
 							</button>
 						</div>
