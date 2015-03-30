@@ -28,16 +28,16 @@
 		<link rel="stylesheet" href="plugins/perfect-scrollbar/src/perfect-scrollbar.css">
 		<link rel="stylesheet" href="css/theme_light.css" type="text/css" id="skin_color">
 		<link rel="stylesheet" href="css/print.css" type="text/css" media="print"/>
+		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
 		<!-- fin: MAIN CSS -->
-		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
 	<body class="login example2">
-		<div class="main-login col-md-4 col-md-offset-4">
+		<div class="main-login col-sm-4 col-sm-offset-4">
 			<div class="logo">CLIP<i class="clip-clip"></i>ONE
 			</div>
 			<!-- inicio: LOGIN BOX -->
@@ -46,17 +46,15 @@
 				<p>
 					Por favor, introduzca su usuario y contraseña para iniciar sesión.
 				</p>
-				<form class="form-login" action="home.php">
+				<form class="form-login" action="index.html">
 					<div class="errorHandler alert alert-danger no-display">
-						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique. 
+						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique.
 					</div>
 					<fieldset>
 						<div class="form-group">
 							<span class="input-icon">
 								<input type="text" class="form-control" name="username" placeholder="Usuario">
 								<i class="fa fa-user"></i> </span>
-							<!-- To mark the incorrectly filled input, you must add the class "error" to the input -->
-							<!-- example: <input type="text" class="login error" name="login" value="Username" /> -->
 						</div>
 						<div class="form-group form-actions">
 							<span class="input-icon">
@@ -125,7 +123,7 @@
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Nombre completo">
+							<input type="text" class="form-control" name="full_name" placeholder="Nombre Completo">
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="address" placeholder="Dirección">
@@ -207,22 +205,22 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="assets/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="assets/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="assets/plugins/less/less-1.5.0.min.js"></script>
-		<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="assets/js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="assets/js/login.js"></script>
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="plugins/less/less-1.5.0.min.js"></script>
+		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="js/main.js"></script>
+		<!-- fin: MAIN JAVASCRIPTS -->
+		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="js/login.js"></script>
+		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
@@ -230,5 +228,5 @@
 			});
 		</script>
 	</body>
-	<!-- end: BODY -->
+	<!-- fin: BODY -->
 </html>
