@@ -5,10 +5,10 @@
 <!--[if !IE]><!-->
 <html lang="es" class="no-js">
 	<!--<![endif]-->
-	<!-- start: HEAD -->
+	<!-- inicio: HEAD -->
 	<head>
 		<title>Sistema de Control de Censo</title>
-		<!-- start: META -->
+		<!-- inicio: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -16,8 +16,8 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta content="description" name="Control de censos" />
 		<meta content="author" name="Equipo 2" />
-		<!-- end: META -->
-		<!-- start: MAIN CSS -->
+		<!-- fin: META -->
+		<!-- inicio: MAIN CSS -->
 		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="fonts/style.css">
@@ -31,22 +31,22 @@
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
-		<!-- end: MAIN CSS -->
+		<!-- fin: MAIN CSS -->
 		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
-	<!-- end: HEAD -->
-	<!-- start: BODY -->
+	<!-- fin: HEAD -->
+	<!-- inicio: BODY -->
 	<body class="login example1">
 		<div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 			<div class="logo">CLIP<i class="clip-clip"></i>ONE
 			</div>
-			<!-- start: LOGIN BOX -->
+			<!-- inicio: LOGIN BOX -->
 			<div class="box-login">
 				<h3>Inicie sesión para acceder al sistema</h3>
 				<p>
 					Por favor, introduzca su usuario y contraseña para iniciar sesión.
 				</p>
-				<form class="form-login" action="home.html">
+				<form class="form-login" action="home.php">
 					<div class="errorHandler alert alert-danger no-display">
 						<i class="fa fa-remove-sign"></i> Usted intrudujo algún dato erróneo. Por favor verifique. 
 					</div>
@@ -84,10 +84,10 @@
 					</fieldset>
 				</form>
 			</div>
-			<!-- end: LOGIN BOX -->
-			<!-- start: FORGOT BOX -->
+			<!-- fin: LOGIN BOX -->
+			<!-- inicio: FORGOT BOX -->
 			<div class="box-forgot">
-				<h3>Olvidaste la contraseña?</h3>
+				<h3>¿Olvidaste la contraseña?</h3>
 				<p>
 					Introduzca su correo electrónico para reestablecer su contraseña.
 				</p>
@@ -112,8 +112,8 @@
 					</fieldset>
 				</form>
 			</div>
-			<!-- end: FORGOT BOX -->
-			<!-- start: REGISTER BOX -->
+			<!-- fin: FORGOT BOX -->
+			<!-- inicio: REGISTER BOX -->
 			<div class="box-register">
 				<h3>Crea tu cuenta</h3>
 				<p>
@@ -141,7 +141,7 @@
 							<div>
 								<label class="radio-inline">
 									<input type="radio" class="grey" value="F" name="gender">
-									Femanino
+									Femenino
 								</label>
 								<label class="radio-inline">
 									<input type="radio" class="grey" value="M" name="gender">
@@ -191,14 +191,14 @@
 					</fieldset>
 				</form>
 			</div>
-			<!-- end: REGISTER BOX -->
-			<!-- start: COPYRIGHT -->
+			<!-- fin: REGISTER BOX -->
+			<!-- inicio: COPYRIGHT -->
 			<div class="copyright">
 				2015 &copy; by Equipo 2.
 			</div>
-			<!-- end: COPYRIGHT -->
+			<!-- fin: COPYRIGHT -->
 		</div>
-		<!-- start: MAIN JAVASCRIPTS -->
+		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
 		<script src="plugins/excanvas.min.js"></script>
@@ -218,8 +218,8 @@
 		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- fin: MAIN JAVASCRIPTS -->
+		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
 		<script src="js/login.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
