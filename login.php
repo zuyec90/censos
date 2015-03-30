@@ -36,13 +36,13 @@
 	</head>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body class="login example1">
-		<div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+	<body class="login example2">
+		<div class="main-login col-md-4 col-md-offset-4">
 			<div class="logo">CLIP<i class="clip-clip"></i>ONE
 			</div>
 			<!-- inicio: LOGIN BOX -->
 			<div class="box-login">
-				<h3>Inicie sesión para acceder al sistema</h3>
+				<h4>Inicie sesión para acceder al sistema</h4>
 				<p>
 					Por favor, introduzca su usuario y contraseña para iniciar sesión.
 				</p>
@@ -207,21 +207,21 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
-		<!-- fin: MAIN JAVASCRIPTS -->
-		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="js/login.js"></script>
+		<script src="assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="assets/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="assets/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="assets/plugins/less/less-1.5.0.min.js"></script>
+		<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="assets/js/main.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="assets/js/login.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

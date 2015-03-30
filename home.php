@@ -51,7 +51,7 @@
 					</button>
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
-					<a class="navbar-brand" href="base.php">
+					<a class="navbar-brand" href="home.php">
 						CLIP<i class="clip-clip"></i>ONE
 					</a>
 					<!-- fin: LOGO -->
@@ -213,12 +213,12 @@
 					<!-- inicio: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
 						<li class="active open">
-							<a href="base.php"><i class="clip-home-3"></i>
+							<a href="home.php"><i class="clip-home-3"></i>
 								<span class="title"> Inicio </span><span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+							<a href="usuario.html" target="_blank"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
