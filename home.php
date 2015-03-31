@@ -156,7 +156,7 @@
 						<!-- inicio: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-								<img src="upload/default_avatar_small.png" class="circle-img" alt="">
+								<img src="upload/765-default-avatar.png" width="30" height="30" class="circle-img" alt="">
 								<span class="username">Ulises Robles</span>
 								<i class="clip-chevron-down"></i>
 							</a>

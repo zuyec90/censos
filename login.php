@@ -119,7 +119,10 @@
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Nombre Completo">
+							<input type="text" class="form-control" name="full_name" placeholder="Nombre">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="full_name" placeholder="Apellido">
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="address" placeholder="Dirección">
