@@ -52,7 +52,7 @@
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
 					<a class="navbar-brand" href="home.php">
-						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50"> Consejo Comunal "Santa Inés"
 					</a>
 					<!-- fin: LOGO -->
 				</div>
@@ -214,11 +214,12 @@
 					<ul class="main-navigation-menu">
 						<li class="active open">
 							<a href="home.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span><span class="selected"></span>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+							<a href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>

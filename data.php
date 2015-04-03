@@ -36,7 +36,7 @@
 		<link rel="stylesheet" type="text/css" href="plugins/select2/select2.css" />
 		<link rel="stylesheet" href="plugins/DataTables/media/css/DT_bootstrap.css" />
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -53,7 +53,7 @@
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
 					<a class="nvbar-brand" href="home.php">
-						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés"
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50"> Consejo Comunal "Santa Inés"
 					</a>
 					<!-- fin: LOGO -->
 				</div>
