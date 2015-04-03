@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Control de Censos Consejo Comunal Santa Inés</title>
+		<title>Clip-One - Responsive Admin Template</title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -33,7 +33,8 @@
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		<link rel="stylesheet" type="text/css" href="plugins/select2/select2.css" />
+		<link rel="stylesheet" href="plugins/DataTables/media/css/DT_bootstrap.css" />
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -42,24 +43,24 @@
 	<body>
 		<!-- start: HEADER -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
-			<!-- start: TOP NAVIGATION CONTAINER -->
+			<!-- inicio: TOP NAVIGATION CONTAINER -->
 			<div class="container">
 				<div class="navbar-header">
-					<!-- start: RESPONSIVE MENU TOGGLER -->
+					<!-- inicio: RESPONSIVE MENU TOGGLER -->
 					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
 						<span class="clip-list-2"></span>
 					</button>
-					<!-- end: RESPONSIVE MENU TOGGLER -->
-					<!-- start: LOGO -->
-					<a class="navbar-brand" href="base.php">
-						CLIP<i class="clip-clip"></i>ONE
+					<!-- fin: RESPONSIVE MENU TOGGLER -->
+					<!-- inicio: LOGO -->
+					<a class="nvbar-brand" href="home.php">
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés"
 					</a>
-					<!-- end: LOGO -->
+					<!-- fin: LOGO -->
 				</div>
 				<div class="navbar-tools">
-					<!-- start: TOP NAVIGATION MENU -->
+					<!-- inicio: TOP NAVIGATION MENU -->
 					<ul class="nav navbar-right">
-						<!-- start: MESSAGE DROPDOWN -->
+						<!-- inicio: MESSAGE DROPDOWN -->
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
 								<i class="clip-bubble-3"></i>
@@ -76,7 +77,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./images/avatar-2.jpg">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
@@ -90,10 +91,10 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./images/avatar-1.jpg">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Ulises Robles</span>
+															<span class="author">Peter Clark</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">2 mins</span>
 														</div>
@@ -104,7 +105,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./images/avatar-3.jpg">
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>
@@ -118,10 +119,10 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./images/avatar-1.jpg">
+															<img alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Ulises Robles</span>
+															<span class="author">Peter Clark</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -132,7 +133,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./images/avatar-5.jpg">
+															<img alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
 															<span class="author">Kenneth Ross</span>
@@ -152,11 +153,11 @@
 								</li>
 							</ul>
 						</li>
-						<!-- end: MESSAGE DROPDOWN -->
-						<!-- start: USER DROPDOWN -->
+						<!-- fin: MESSAGE DROPDOWN -->
+						<!-- inicio: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-								<img src="images/avatar-1-small.jpg" class="circle-img" alt="">
+								<img src="upload/765-default-avatar.png" width="30" height="30" class="circle-img" alt="">
 								<span class="username">Ulises Robles</span>
 								<i class="clip-chevron-down"></i>
 							</a>
@@ -191,16 +192,18 @@
 								</li>
 							</ul>
 						</li>
-						<!-- end: USER DROPDOWN -->
+						<!-- fin: USER DROPDOWN -->
 					</ul>
-					<!-- end: TOP NAVIGATION MENU -->
+					<!-- fin: TOP NAVIGATION MENU -->
 				</div>
 			</div>
-			<!-- end: TOP NAVIGATION CONTAINER -->
+			<!-- fin: TOP NAVIGATION CONTAINER -->
 		</div>
 		<!-- end: HEADER -->
 		<!-- start: MAIN CONTAINER -->
-		<div class="main-container">				<!-- start: SIDEBAR -->
+		<div class="main-container">
+			<div class="navbar-content">
+				<!-- start: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
@@ -260,15 +263,133 @@
 					<!-- start: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
+							<!-- start: STYLE SELECTOR BOX -->
+							<div id="style_selector" class="hidden-xs">
+								<div id="style_selector_container">
+									<div class="style-main-title">
+										Style Selector
+									</div>
+									<div class="box-title">
+										Choose Your Layout Style
+									</div>
+									<div class="input-box">
+										<div class="input">
+											<select name="layout">
+												<option value="default">Wide</option><option value="boxed">Boxed</option>
+											</select>
+										</div>
+									</div>
+									<div class="box-title">
+										Choose Your Header Style
+									</div>
+									<div class="input-box">
+										<div class="input">
+											<select name="header">
+												<option value="fixed">Fixed</option><option value="default">Default</option>
+											</select>
+										</div>
+									</div>
+									<div class="box-title">
+										Choose Your Footer Style
+									</div>
+									<div class="input-box">
+										<div class="input">
+											<select name="footer">
+												<option value="default">Default</option><option value="fixed">Fixed</option>
+											</select>
+										</div>
+									</div>
+									<div class="box-title">
+										Backgrounds for Boxed Version
+									</div>
+									<div class="images boxed-patterns">
+										<a id="bg_style_1" href="#"><img alt="" src="images/bg.png"></a>
+										<a id="bg_style_2" href="#"><img alt="" src="images/bg_2.png"></a>
+										<a id="bg_style_3" href="#"><img alt="" src="images/bg_3.png"></a>
+										<a id="bg_style_4" href="#"><img alt="" src="images/bg_4.png"></a>
+										<a id="bg_style_5" href="#"><img alt="" src="images/bg_5.png"></a>
+									</div>
+									<div class="box-title">
+										5 Predefined Color Schemes
+									</div>
+									<div class="images icons-color">
+										<a id="light" href="#"><img class="active" alt="" src="images/lightgrey.png"></a>
+										<a id="dark" href="#"><img alt="" src="images/darkgrey.png"></a>
+										<a id="black_and_white" href="#"><img alt="" src="images/blackandwhite.png"></a>
+										<a id="navy" href="#"><img alt="" src="images/navy.png"></a>
+										<a id="green" href="#"><img alt="" src="images/green.png"></a>
+									</div>
+									<div class="box-title">
+										Style it with LESS
+									</div>
+									<div class="images">
+										<div class="form-group">
+											<label>
+												Basic
+											</label>
+											<input type="text" value="#ffffff" class="color-base">
+											<div class="dropdown">
+												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #ffffff"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li>
+														<div class="colorpalette"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>
+												Text
+											</label>
+											<input type="text" value="#555555" class="color-text">
+											<div class="dropdown">
+												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #555555"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li>
+														<div class="colorpalette"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>
+												Elements
+											</label>
+											<input type="text" value="#007AFF" class="color-badge">
+											<div class="dropdown">
+												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #007AFF"></i></a>
+												<ul class="dropdown-menu pull-right">
+													<li>
+														<div class="colorpalette"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div style="height:25px;line-height:25px; text-align: center">
+										<a class="clear_style" href="#">
+											Clear Styles
+										</a>
+										<a class="save_style" href="#">
+											Save Styles
+										</a>
+									</div>
+								</div>
+								<div class="style-toggle close"></div>
+							</div>
 							<!-- end: STYLE SELECTOR BOX -->
 							<!-- start: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
-									<i class="clip-home-3"></i>
+									<i class="clip-grid-6"></i>
 									<a href="#">
-										Home
+										Tables
 									</a>
 								</li>
+								<li class="active">
+									Data Table
+								</li>
+								
 							</ol>
 							<div class="page-header">
 								<h1> Sistema <small>Control de censo</small></h1>
@@ -279,7 +400,82 @@
 					<!-- end: PAGE HEADER -->
 					<!-- start: PAGE CONTENT -->
 					<div class="row">
-						
+						<div class="col-md-12">
+							<!-- start: DYNAMIC TABLE PANEL -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-external-link-square"></i>
+									Dynamic Table
+									<div class="panel-tools">
+										<a  class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal" >
+											<i class="fa fa-question"></i>
+										</a>
+										<a class="btn btn-xs btn-link panel-expand" href="#">
+											<i class="fa fa-resize-full"></i>
+										</a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+										<thead>
+											<tr>
+												<th>Nombre</th>
+												<th class="hidden-xs">Usuario</th>
+												<th>Cargo</th>
+												<th class="hidden-xs"> Software license</th>
+												<th>Current
+												layout engine</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Ulises</td>
+												<td class="hidden-xs">Google</td>
+												<td>Vocero en el area Financiera</td>
+												<td class="hidden-xs">Google Chrome Terms of Service</td>
+												<td>Blink</td>
+											</tr>
+											<tr>
+												<td>Yailet</td>
+												<td class="hidden-xs">Opera Software</td>
+												<td>Vocera en el area de Cultura</td>
+												<td class="hidden-xs">Proprietary</td>
+												<td>Presto</td>
+											</tr>
+											<tr>
+												<td>Mario</td>
+												<td class="hidden-xs">Apple Inc.</td>
+												<td>Vocero</td>
+												<td class="hidden-xs">Proprietary</td>
+												<td>WebKit</td>
+											</tr>
+											<tr>
+												<td>Elvira</td>
+												<td class="hidden-xs">Dieter Plaetinck</td>
+												<td>Free</td>
+												<td class="hidden-xs">GNU GPLv3</td>
+												<td>Webkit</td>
+											</tr>
+											<tr>
+												<td>Carmen</td>
+												<td class="hidden-xs">Tim Berners-Lee</td>
+												<td>Free</td>
+												<td class="hidden-xs">Public domain</td>
+												<td>NeXTSTEP built-in</td>
+											</tr>
+											<tr>
+												<td>w3m</td>
+												<td class="hidden-xs">Akinori Ito</td>
+												<td>Free</td>
+												<td class="hidden-xs">MIT</td>
+												<td>-</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- end: DYNAMIC TABLE PANEL -->
+						</div>
 					</div>
 					<!-- end: PAGE CONTENT-->
 				</div>
@@ -290,37 +486,13 @@
 		<!-- start: FOOTER -->
 		<div class="footer clearfix">
 			<div class="footer-inner">
-				2015 &copy; by Equipo feliz.
+				2014 &copy; clip-one by cliptheme.
 			</div>
 			<div class="footer-items">
 				<span class="go-top"><i class="clip-chevron-up"></i></span>
 			</div>
 		</div>
 		<!-- end: FOOTER -->
-		<div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal-title">Event Management</h4>
-					</div>
-					<div class="modal-body"></div>
-					<div class="modal-footer">
-						<button type="button" data-dismiss="modal" class="btn btn-light-grey">
-							Close
-						</button>
-						<button type="button" class="btn btn-danger remove-event no-display">
-							<i class='fa fa-trash-o'></i> Delete Event
-						</button>
-						<button type='submit' class='btn btn-success save-event'>
-							<i class='fa fa-check'></i> Save
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
@@ -343,19 +515,15 @@
 		<script src="js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/flot/jquery.flot.js"></script>
-		<script src="plugins/flot/jquery.flot.pie.js"></script>
-		<script src="plugins/flot/jquery.flot.resize.min.js"></script>
-		<script src="plugins/jquery.sparkline/jquery.sparkline.js"></script>
-		<script src="plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-		<script src="plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-		<script src="plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
-		<script src="js/index.js"></script>
+		<script type="text/javascript" src="plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="js/table-data.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				Index.init();
+				TableData.init();
 			});
 		</script>
 	</body>
