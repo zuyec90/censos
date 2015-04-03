@@ -507,7 +507,7 @@
 												<td>
 													<img src="images/avatar-5.jpg" alt="image"/>
 												</td>
-												<td>Falta</td>
+												<td>Yasmín</td>
 												<td class="hidden-xs">Akinori Ito</td>
 												<td>Vocera</td>
 												<td class="hidden-xs">---------@-----.com</td>
