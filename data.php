@@ -213,13 +213,14 @@
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
-						<li class="active open">
-							<a href="base.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span><span class="selected"></span>
+						<li>
+							<a href="home.php"><i class="clip-home-3"></i>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
 							</a>
 						</li>
-						<li>
-							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+						<li class="active open">
+							<a href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
@@ -383,11 +384,11 @@
 								<li>
 									<i class="clip-grid-6"></i>
 									<a href="#">
-										Tables
+										Usuario
 									</a>
 								</li>
 								<li class="active">
-									Data Table
+									Lista de Usuarios
 								</li>
 								
 							</ol>
@@ -404,10 +405,9 @@
 							<!-- start: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<i class="fa fa-external-link-square"></i>
-									Dynamic Table
+								<strong>Usuarios</strong>
 									<div class="panel-tools">
-										<a  class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal" >
+										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
 											<i class="fa fa-question"></i>
 										</a>
 										<a class="btn btn-xs btn-link panel-expand" href="#">
@@ -419,56 +419,104 @@
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 										<thead>
 											<tr>
-												<th>Nombre</th>
+												<th>Foto</th>
+												<th>Nombre Completo</th>
 												<th class="hidden-xs">Usuario</th>
 												<th>Cargo</th>
-												<th class="hidden-xs"> Software license</th>
-												<th>Current
-												layout engine</th>
+												<th class="hidden-xs"> E-mail </th>
+												<th>Opciones</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
+												<td>
+													<img src="images/avatar-1.jpg" alt="image"/>
+												</td>
 												<td>Ulises</td>
 												<td class="hidden-xs">Google</td>
 												<td>Vocero en el area Financiera</td>
-												<td class="hidden-xs">Google Chrome Terms of Service</td>
-												<td>Blink</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>													
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>													
+												</td>
 											</tr>
 											<tr>
+												<td>
+													<img src="images/avatar-2.jpg" alt="image"/>
+												</td>
 												<td>Yailet</td>
 												<td class="hidden-xs">Opera Software</td>
 												<td>Vocera en el area de Cultura</td>
-												<td class="hidden-xs">Proprietary</td>
-												<td>Presto</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>													
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>												
+												</td>
 											</tr>
 											<tr>
+												<td>
+													<img src="images/avatar-3.jpg" alt="image"/>
+												</td>
 												<td>Mario</td>
 												<td class="hidden-xs">Apple Inc.</td>
-												<td>Vocero</td>
-												<td class="hidden-xs">Proprietary</td>
-												<td>WebKit</td>
+												<td>Vocero en el area financiera</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>													
+												</td>
 											</tr>
 											<tr>
+												<td>
+													<img src="images/avatar-4.jpg" alt="image"/>
+												</td>
 												<td>Elvira</td>
 												<td class="hidden-xs">Dieter Plaetinck</td>
-												<td>Free</td>
-												<td class="hidden-xs">GNU GPLv3</td>
-												<td>Webkit</td>
+												<td>Vocera</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>													
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>												
+												</td>
 											</tr>
 											<tr>
+												<td>
+													<img src="images/avatar-3.jpg" alt="image"/>
+												</td>
 												<td>Carmen</td>
 												<td class="hidden-xs">Tim Berners-Lee</td>
-												<td>Free</td>
-												<td class="hidden-xs">Public domain</td>
-												<td>NeXTSTEP built-in</td>
+												<td>Vocera</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>													
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>
+												</td>
 											</tr>
 											<tr>
-												<td>w3m</td>
+												<td>
+													<img src="images/avatar-5.jpg" alt="image"/>
+												</td>
+												<td>Falta</td>
 												<td class="hidden-xs">Akinori Ito</td>
-												<td>Free</td>
-												<td class="hidden-xs">MIT</td>
-												<td>-</td>
+												<td>Vocera</td>
+												<td class="hidden-xs">---------@-----.com</td>
+												<td>													
+													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
+													<i class="fa fa-times fa fa-white"></i></a>													
+												</td>
 											</tr>
 										</tbody>
 									</table>

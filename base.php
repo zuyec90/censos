@@ -211,12 +211,13 @@
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
 						<li class="active open">
-							<a href="base.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span><span class="selected"></span>
+							<a href="home.php"><i class="clip-home-3"></i>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+							<a href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
@@ -266,7 +267,7 @@
 								<li>
 									<i class="clip-home-3"></i>
 									<a href="#">
-										Home
+										Inicio
 									</a>
 								</li>
 							</ol>
