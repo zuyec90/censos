@@ -653,10 +653,10 @@
 															</div>
 															
 															<div class="user-edit-image-buttons">
-																<span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
+																<span class="btn fileupload-exists btn-light-grey btn-sm"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
 																	<input type="file">
 																</span>
-																<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">
+																<a href="#" class="btn fileupload-exists btn-danger btn-lg" data-dismiss="fileupload">
 																	<i class="fa fa-times"></i> Eliminar
 																</a>
 															</div>
@@ -666,17 +666,15 @@
 											</div>
 											
 											<div class="row">
-												<div class="col-md-8">
-													<p>
-														By Equipo Feliz.
-													</p>
-												</div>
 												<div class="col-md-4">
 													<br>
-													<button class="btn btn-teal btn-block" type="submit">
-														Continuar <i class="fa fa-arrow-circle-right"></i>
+													<button class="btn btn-success btn-block" type="submit">
+														
+																				Continuar 
+
+														<i class="fa fa-arrow-circle-right"></i>
 													</button>
-												</div>
+												</div>			
 											</div>
 										</form>
 									</div>
