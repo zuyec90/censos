@@ -428,10 +428,11 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
+											<tr>												
 												<td>
-													<img src="images/avatar-1.jpg" alt="image"/>
-												</td>
+													<a href="perfil.php">
+													<img src="images/avatar-1.jpg" alt="image"/></a>
+													</td>
 												<td>Ulises</td>
 												<td class="hidden-xs">Google</td>
 												<td>Vocero en el area Financiera</td>
@@ -440,13 +441,14 @@
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Edit" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
 													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Remove">
-													<i class="fa fa-times fa fa-white"></i></a>													
+													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
-											<tr>
+											<tr>												
 												<td>
-													<img src="images/avatar-2.jpg" alt="image"/>
-												</td>
+													<a href="perfil.php">
+													<img src="images/avatar-2.jpg" alt="image"/></a>
+													</td>
 												<td>Yailet</td>
 												<td class="hidden-xs">Opera Software</td>
 												<td>Vocera en el area de Cultura</td>
@@ -458,9 +460,10 @@
 													<i class="fa fa-times fa fa-white"></i></a>												
 												</td>
 											</tr>
-											<tr>
+											<tr>												
 												<td>
-													<img src="images/avatar-3.jpg" alt="image"/>
+													<a href="perfil.php">
+													<img src="images/avatar-3.jpg" alt="image"/></a>
 												</td>
 												<td>Mario</td>
 												<td class="hidden-xs">Apple Inc.</td>
@@ -475,8 +478,9 @@
 											</tr>
 											<tr>
 												<td>
-													<img src="images/avatar-4.jpg" alt="image"/>
-												</td>
+													<a href="perfil.php">
+													<img src="images/avatar-4.jpg" alt="image"/></a>
+													</td>
 												<td>Elvira</td>
 												<td class="hidden-xs">Dieter Plaetinck</td>
 												<td>Vocera</td>
@@ -490,8 +494,9 @@
 											</tr>
 											<tr>
 												<td>
-													<img src="images/avatar-3.jpg" alt="image"/>
-												</td>
+													<a href="perfil.php">													
+													<img src="images/avatar-3.jpg" alt="image"/></a>
+													</td>
 												<td>Carmen</td>
 												<td class="hidden-xs">Tim Berners-Lee</td>
 												<td>Vocera</td>
@@ -505,8 +510,9 @@
 											</tr>
 											<tr>
 												<td>
-													<img src="images/avatar-5.jpg" alt="image"/>
-												</td>
+													<a href="perfil.php">													
+													<img src="images/avatar-5.jpg" alt="image"/></a>
+													</td>
 												<td>Yasmín</td>
 												<td class="hidden-xs">Akinori Ito</td>
 												<td>Vocera</td>
