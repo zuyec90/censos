@@ -52,7 +52,7 @@
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
 					<a class="nvbar-brand" href="home.php">
-						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés"
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés
 					</a>
 					<!-- fin: LOGO -->
 				</div>
@@ -67,7 +67,7 @@
 							</a>
 							<ul class="dropdown-menu posts">
 								<li>
-									<span class="dropdown-menu-title"> You have 9 messages</span>
+									<span class="dropdown-menu-title"> Tiene 9 mensajes </span>
 								</li>
 								<li>
 									<div class="drop-down-wrapper">
@@ -79,9 +79,9 @@
 															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Nicole Bell</span>
+															<span class="author">Yasmin Torres</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-															<span class="time"> Just Now</span>
+															<span class="time"> Ahora</span>
 														</div>
 													</div>
 												</a>
@@ -93,9 +93,9 @@
 															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Peter Clark</span>
+															<span class="author">Yailet Rojas</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-															<span class="time">2 mins</span>
+															<span class="time">2 min</span>
 														</div>
 													</div>
 												</a>
@@ -107,7 +107,7 @@
 															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Steven Thompson</span>
+															<span class="author">Elizabeth Gutierrez</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">8 hrs</span>
 														</div>
@@ -121,7 +121,7 @@
 															<img alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Peter Clark</span>
+															<span class="author">Carmen Aguilar</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -147,7 +147,7 @@
 								</li>
 								<li class="view-all">
 									<a href="pages_messages.html">
-										See all messages <i class="fa fa-arrow-circle-o-right"></i>
+										Ver mensajes <i class="fa fa-arrow-circle-o-right"></i>
 									</a>
 								</li>
 							</ul>
@@ -214,11 +214,12 @@
 					<ul class="main-navigation-menu">
 						<li class="active open">
 							<a href="home.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span><span class="selected"></span>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="usuario.html" target="_blank"><i class="clip-user-2"></i>
+							<a href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
@@ -268,7 +269,7 @@
 								<li>
 									<i class="clip-home-3"></i>
 									<a href="#">
-										Home
+										Inicio
 									</a>
 								</li>
 							</ol>
@@ -331,14 +332,7 @@
 		</div>
 		<!-- fin: MAIN CONTAINER -->
 		<!-- inicio: FOOTER -->
-		<div class="footer clearfix">
-			<div class="footer-inner">
-				2015 &copy; by Equipo 2.
-			</div>
-			<div class="footer-items">
-				<span class="go-top"><i class="clip-chevron-up"></i></span>
-			</div>
-		</div>
+		<?php require_once('footer.php'); ?>
 		<!-- fin: FOOTER -->
 		<div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 			<div class="modal-dialog">

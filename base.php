@@ -7,7 +7,7 @@
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
-		<title>Clip-One - Responsive Admin Template</title>
+		<title>Control de Censos Consejo Comunal Santa Inés</title>
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -93,7 +93,7 @@
 															<img alt="" src="./images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
-															<span class="author">Peter Clark</span>
+															<span class="author">Ulises Robles</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">2 mins</span>
 														</div>
@@ -121,7 +121,7 @@
 															<img alt="" src="./images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
-															<span class="author">Peter Clark</span>
+															<span class="author">Ulises Robles</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -200,9 +200,7 @@
 		</div>
 		<!-- end: HEADER -->
 		<!-- start: MAIN CONTAINER -->
-		<div class="main-container">
-			<div class="navbar-content">
-				<!-- start: SIDEBAR -->
+		<div class="main-container">				<!-- start: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
@@ -213,12 +211,13 @@
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
 						<li class="active open">
-							<a href="base.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span><span class="selected"></span>
+							<a href="home.php"><i class="clip-home-3"></i>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+							<a href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
@@ -268,7 +267,7 @@
 								<li>
 									<i class="clip-home-3"></i>
 									<a href="#">
-										Home
+										Inicio
 									</a>
 								</li>
 							</ol>

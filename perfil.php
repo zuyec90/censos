@@ -3,12 +3,21 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
+<<<<<<< HEAD
 <html lang="en" class="no-js">
 	<!--<![endif]-->
 	<!-- start: HEAD -->
 	<head>
 		<title>Clip-One - Responsive Admin Template</title>
 		<!-- start: META -->
+=======
+<html lang="es" class="no-js">
+	<!--<![endif]-->
+	<!-- inicio: HEAD -->
+	<head>
+		<title>Sistema de Control de Censo</title>
+		<!-- inicio: META -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -16,8 +25,13 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta content="" name="description" />
 		<meta content="" name="author" />
+<<<<<<< HEAD
 		<!-- end: META -->
 		<!-- start: MAIN CSS -->
+=======
+		<!-- fin: META -->
+		<!-- inicio: MAIN CSS -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="fonts/style.css">
@@ -31,6 +45,7 @@
 		<!--[if IE 7]>
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome-ie7.min.css">
 		<![endif]-->
+<<<<<<< HEAD
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar/fullcalendar.css">
@@ -60,6 +75,37 @@
 					<!-- start: TOP NAVIGATION MENU -->
 					<ul class="nav navbar-right">
 						<!-- start: MESSAGE DROPDOWN -->
+=======
+		<!-- fin: MAIN CSS -->
+		<!-- inicio: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		<!-- fin: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
+	</head>
+	<!-- fin: HEAD -->
+	<!-- inicio: BODY -->
+	<body>
+		<!-- inicio: HEADER -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<!-- inicio: TOP NAVIGATION CONTAINER -->
+			<div class="container">
+				<div class="navbar-header">
+					<!-- inicio: RESPONSIVE MENU TOGGLER -->
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="clip-list-2"></span>
+					</button>
+					<!-- fin: RESPONSIVE MENU TOGGLER -->
+					<!-- inicio: LOGO -->
+					<a class="navbar-brand" href="home.php">
+						<img src="upload/logo1.png" class="rounded-img" width="55" height="50"> Consejo Comunal "Santa Inés"
+					</a>
+					<!-- fin: LOGO -->
+				</div>
+				<div class="navbar-tools">
+					<!-- inicio: TOP NAVIGATION MENU -->
+					<ul class="nav navbar-right">
+						<!-- inicio: MESSAGE DROPDOWN -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#">
 								<i class="clip-bubble-3"></i>
@@ -67,7 +113,11 @@
 							</a>
 							<ul class="dropdown-menu posts">
 								<li>
+<<<<<<< HEAD
 									<span class="dropdown-menu-title"> You have 9 messages</span>
+=======
+									<span class="dropdown-menu-title"> Tiene 9 mensajes </span>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 								</li>
 								<li>
 									<div class="drop-down-wrapper">
@@ -76,12 +126,21 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
+<<<<<<< HEAD
 															<img alt="" src="./images/avatar-2.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time"> Just Now</span>
+=======
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+														</div>
+														<div class="thread-content">
+															<span class="author">Yamin Torres</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time"> Ahora</span>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 														</div>
 													</div>
 												</a>
@@ -90,12 +149,21 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
+<<<<<<< HEAD
 															<img alt="" src="./images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">2 mins</span>
+=======
+															<img class="img-rounded"alt="" src="upload/default_avatar_small.png">
+														</div>
+														<div class="thread-content">
+															<span class="author">Yailet Rojas</span>
+															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
+															<span class="time">2 min</span>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 														</div>
 													</div>
 												</a>
@@ -104,10 +172,17 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
+<<<<<<< HEAD
 															<img alt="" src="./images/avatar-3.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>
+=======
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+														</div>
+														<div class="thread-content">
+															<span class="author">Elizabeth Gutierrez</span>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">8 hrs</span>
 														</div>
@@ -118,10 +193,17 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
+<<<<<<< HEAD
 															<img alt="" src="./images/avatar-1.jpg">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
+=======
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+														</div>
+														<div class="thread-content">
+															<span class="author">Carmen Aguilar</span>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -132,7 +214,11 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
+<<<<<<< HEAD
 															<img alt="" src="./images/avatar-5.jpg">
+=======
+															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 														</div>
 														<div class="thread-content">
 															<span class="author">Kenneth Ross</span>
@@ -147,16 +233,28 @@
 								</li>
 								<li class="view-all">
 									<a href="pages_messages.html">
+<<<<<<< HEAD
 										See all messages <i class="fa fa-arrow-circle-o-right"></i>
+=======
+										Ver mensajes <i class="fa fa-arrow-circle-o-right"></i>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 									</a>
 								</li>
 							</ul>
 						</li>
+<<<<<<< HEAD
 						<!-- end: MESSAGE DROPDOWN -->
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
 								<img src="images/avatar-1-small.jpg" class="circle-img" alt="">
+=======
+						<!-- fin: MESSAGE DROPDOWN -->
+						<!-- inicio: USER DROPDOWN -->
+						<li class="dropdown current-user">
+							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+								<img src="upload/765-default-avatar.png" width="30" height="30" class="circle-img" alt="">
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 								<span class="username">Ulises Robles</span>
 								<i class="clip-chevron-down"></i>
 							</a>
@@ -191,6 +289,7 @@
 								</li>
 							</ul>
 						</li>
+<<<<<<< HEAD
 						<!-- end: USER DROPDOWN -->
 					</ul>
 					<!-- end: TOP NAVIGATION MENU -->
@@ -205,10 +304,27 @@
 				<!-- start: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
+=======
+						<!-- fin: USER DROPDOWN -->
+					</ul>
+					<!-- fin: TOP NAVIGATION MENU -->
+				</div>
+			</div>
+			<!-- fin: TOP NAVIGATION CONTAINER -->
+		</div>
+		<!-- fin: HEADER -->
+		<!-- inicio: MAIN CONTAINER -->
+		<div class="main-container">
+			<div class="navbar-content">
+				<!-- inicio: SIDEBAR -->
+				<div class="main-navigation navbar-collapse collapse">
+					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 					<div class="navigation-toggler">
 						<i class="clip-chevron-left"></i>
 						<i class="clip-chevron-right"></i>
 					</div>
+<<<<<<< HEAD
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
 					<ul class="main-navigation-menu">
@@ -219,11 +335,25 @@
 						</li>
 						<li>
 							<a href="../../frontend/clip-one/index.html" target="_blank"><i class="clip-user-2"></i>
+=======
+					<!-- fin: MAIN MENU TOGGLER BUTTON -->
+					<!-- inicio: MAIN NAVIGATION MENU -->
+					<ul class="main-navigation-menu">
+						<li class="active open">
+							<a href="home.php"><i class="clip-home-3"></i>
+								<span class="title"> Inicio </span>
+								<span class="selected"></span>
+							</a>
+						</li>
+						<li>
+							<a href="data.php"><i class="clip-user-2"></i>
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
 						</li>
 					</ul>
+<<<<<<< HEAD
 					<!-- end: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- end: SIDEBAR -->
@@ -231,6 +361,15 @@
 			<!-- start: PAGE -->
 			<div class="main-content">
 				<!-- start: PANEL CONFIGURATION MODAL FORM -->
+=======
+					<!-- fin: MAIN NAVIGATION MENU -->
+				</div>
+				<!-- fin: SIDEBAR -->
+			</div>
+			<!-- inicio: PAGE -->
+			<div class="main-content">
+				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -257,6 +396,7 @@
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
+<<<<<<< HEAD
 				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
 					<!-- start: PAGE HEADER -->
@@ -266,6 +406,17 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- start: PAGE TITLE & BREADCRUMB -->
+=======
+				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
+				<div class="container">
+					<!-- inicio: PAGE HEADER -->
+					<div class="row">
+						<div class="container">
+					<!-- inicio: PAGE HEADER -->
+					<div class="row">
+						<div class="col-sm-12">
+							<!-- inicio: PAGE TITLE & BREADCRUMB -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 							<ol class="breadcrumb">
 								<li>
 									<i class="clip-file"></i>
@@ -290,11 +441,19 @@
 							<div class="page-header">
 								<h1>Ulises Robles <small>Administrador</small></h1>
 							</div>
+<<<<<<< HEAD
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>
 					</div>
 					<!-- end: PAGE HEADER -->
 					<!-- start: PAGE CONTENT -->
+=======
+							<!-- fin: PAGE TITLE & BREADCRUMB -->
+						</div>
+					</div>
+					<!-- fin: PAGE HEADER -->
+					<!-- inicio: PAGE CONTENT -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="tabbable">
@@ -506,9 +665,21 @@
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="control-label">
+<<<<<<< HEAD
 															Nombre Completo
 														</label>
 														<input type="text" placeholder="Pedro Perez" class="form-control" id="firstname" name="firstname">
+=======
+															Nombre
+														</label>
+														<input type="text" placeholder="Pedro" class="form-control" id="firstname" name="firstname">
+													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Apellido
+														</label>
+														<input type="text" placeholder="Perez" class="form-control" id="lastname" name="lastname">
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 													</div>
 													<div class="form-group">
 														<label class="control-label">
@@ -647,10 +818,17 @@
 															</div>
 															
 															<div class="user-edit-image-buttons">
+<<<<<<< HEAD
 																<span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
 																	<input type="file">
 																</span>
 																<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">
+=======
+																<span class="btn fileupload-exists btn-light-grey btn-sm"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
+																	<input type="file">
+																</span>
+																<a href="#" class="btn fileupload-exists btn-danger btn-lg" data-dismiss="fileupload">
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 																	<i class="fa fa-times"></i> Eliminar
 																</a>
 															</div>
@@ -660,6 +838,7 @@
 											</div>
 											
 											<div class="row">
+<<<<<<< HEAD
 												<div class="col-md-8">
 													<p>
 														By Equipo Feliz.
@@ -671,6 +850,17 @@
 														Continuar <i class="fa fa-arrow-circle-right"></i>
 													</button>
 												</div>
+=======
+												<div class="col-md-4">
+													<br>
+													<button class="btn btn-success btn-block" type="submit">
+														
+																				Continuar 
+
+														<i class="fa fa-arrow-circle-right"></i>
+													</button>
+												</div>			
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 											</div>
 										</form>
 									</div>
@@ -679,6 +869,7 @@
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 					<!-- end: PAGE CONTENT-->
 				</div>
 						<div class="col-sm-12">
@@ -700,6 +891,29 @@
 		</div>
 		<!-- end: MAIN CONTAINER -->
 		<!-- start: FOOTER -->
+=======
+					<!-- fin: PAGE CONTENT-->
+				</div>
+						<div class="col-sm-12">
+							<!-- fin: STYLE SELECTOR BOX -->
+							<!-- inicio: PAGE TITLE & BREADCRUMB -->
+							
+							<!-- fin: PAGE TITLE & BREADCRUMB -->
+						</div>
+					</div>
+					<!-- fin: PAGE HEADER -->
+					<!-- inicio: PAGE CONTENT -->
+					<div class="row">
+						
+					</div>
+					<!-- fin: PAGE CONTENT-->
+				</div>
+			</div>
+			<!-- fin: PAGE -->
+		</div>
+		<!-- fin: MAIN CONTAINER -->
+		<!-- inicio: FOOTER -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<div class="footer clearfix">
 			<div class="footer-inner">
 				2015 &copy; @by Equipo feliz.
@@ -708,9 +922,15 @@
 				<span class="go-top"><i class="clip-chevron-up"></i></span>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<!-- end: FOOTER -->
 		
 		<!-- start: MAIN JAVASCRIPTS -->
+=======
+		<!-- fin: FOOTER -->
+		
+		<!-- inicio: MAIN JAVASCRIPTS -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
 		<script src="plugins/excanvas.min.js"></script>
@@ -730,8 +950,13 @@
 		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
+<<<<<<< HEAD
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+=======
+		<!-- fin: MAIN JAVASCRIPTS -->
+		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<script src="plugins/flot/jquery.flot.js"></script>
 		<script src="plugins/flot/jquery.flot.pie.js"></script>
 		<script src="plugins/flot/jquery.flot.resize.min.js"></script>
@@ -740,7 +965,11 @@
 		<script src="plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 		<script src="plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
 		<script src="js/index.js"></script>
+<<<<<<< HEAD
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+=======
+		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
@@ -748,5 +977,9 @@
 			});
 		</script>
 	</body>
+<<<<<<< HEAD
 	<!-- end: BODY -->
+=======
+	<!-- fin: BODY -->
+>>>>>>> cae4698d7bf328f5b7d449a1acd188870e59a4fe
 </html>
