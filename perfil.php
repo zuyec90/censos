@@ -196,7 +196,12 @@
 								<span class="selected"></span>
 							</a>
 						</li>
-						
+						<li>
+							<a href="dataCensos.php"><i class="clip-pencil"></i>
+								<span class="title"> Censos </span>
+								<span class="selected"></span>
+							</a>
+						</li>
 					</ul>
 				<!-- fin: SIDEBAR -->
 			</div>
