@@ -67,7 +67,7 @@
 							</a>
 							<ul class="dropdown-menu posts">
 								<li>
-									<span class="dropdown-menu-title"> </span>
+									<span class="dropdown-menu-title"> Tiene 9 mensajes</span>
 								</li>
 								<li>
 									<div class="drop-down-wrapper">
@@ -81,7 +81,7 @@
 														<div class="thread-content">
 															<span class="author">Elvia</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-															<span class="time"> </span>
+															<span class="time"> Ahora</span>
 														</div>
 													</div>
 												</a>
@@ -196,7 +196,12 @@
 								<span class="selected"></span>
 							</a>
 						</li>
-						
+						<li>
+							<a href="dataCensos.php"><i class="clip-pencil"></i>
+								<span class="title"> Censos </span>
+								<span class="selected"></span>
+							</a>
+						</li>
 					</ul>
 					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
