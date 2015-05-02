@@ -332,14 +332,7 @@
 		</div>
 		<!-- fin: MAIN CONTAINER -->
 		<!-- inicio: FOOTER -->
-		<div class="footer clearfix">
-			<div class="footer-inner">
-				2015 &copy; by Equipo 2.
-			</div>
-			<div class="footer-items">
-				<span class="go-top"><i class="clip-chevron-up"></i></span>
-			</div>
-		</div>
+		<?php require_once('footer.php'); ?>
 		<!-- fin: FOOTER -->
 		<div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 			<div class="modal-dialog">

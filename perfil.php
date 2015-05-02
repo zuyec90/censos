@@ -78,6 +78,7 @@
 														<div class="thread-image">
 															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
+												
 														<div class="thread-content">
 															<span class="author">Yamin Torres</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
@@ -225,8 +226,6 @@
 							</a>
 						</li>
 					</ul>
-					<!-- fin: MAIN NAVIGATION MENU -->
-				</div>
 				<!-- fin: SIDEBAR -->
 			</div>
 			<!-- inicio: PAGE -->
@@ -507,15 +506,9 @@
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="control-label">
-															Nombre
+															Nombre Completo
 														</label>
-														<input type="text" placeholder="Pedro" class="form-control" id="firstname" name="firstname">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Apellido
-														</label>
-														<input type="text" placeholder="Perez" class="form-control" id="lastname" name="lastname">
+														<input type="text" placeholder="Pedro Perez" class="form-control" id="firstname" name="firstname">
 													</div>
 													<div class="form-group">
 														<label class="control-label">
@@ -654,10 +647,10 @@
 															</div>
 															
 															<div class="user-edit-image-buttons">
-																<span class="btn fileupload-exists btn-light-grey btn-sm"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
+																<span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
 																	<input type="file">
 																</span>
-																<a href="#" class="btn fileupload-exists btn-danger btn-lg" data-dismiss="fileupload">
+																<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">
 																	<i class="fa fa-times"></i> Eliminar
 																</a>
 															</div>
@@ -667,16 +660,15 @@
 											</div>
 											
 											<div class="row">
+
 												<div class="col-md-4">
 													<br>
-													<button class="btn btn-success btn-block" type="submit">
-														
-																				Continuar 
-
-														<i class="fa fa-arrow-circle-right"></i>
+													<button class="btn btn-teal btn-block" type="submit">
+														Continuar <i class="fa fa-arrow-circle-right"></i>
 													</button>
-												</div>			
+												</div>
 											</div>
+
 										</form>
 									</div>
 									
