@@ -421,7 +421,7 @@
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
 													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
-													<i class=""></i></a>													
+													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
 											<tr>
@@ -438,7 +438,7 @@
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
 													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
-													<i class=""></i></a>												
+													<i class="fa fa-trash-o"></i></a>												
 												</td>
 											</tr>
 											<tr>
