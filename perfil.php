@@ -67,7 +67,7 @@
 							</a>
 							<ul class="dropdown-menu posts">
 								<li>
-									<span class="dropdown-menu-title"> Tiene 9 mensajes </span>
+									<span class="dropdown-menu-title"> Tiene 9 mensajes</span>
 								</li>
 								<li>
 									<div class="drop-down-wrapper">
@@ -78,51 +78,22 @@
 														<div class="thread-image">
 															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
 														</div>
-												
 														<div class="thread-content">
-															<span class="author">Yamin Torres</span>
+															<span class="author">Elvia</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time"> Ahora</span>
 														</div>
 													</div>
 												</a>
-											</li>
+											</li>											
 											<li>
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img class="img-rounded"alt="" src="upload/default_avatar_small.png">
+															<img alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Yailet Rojas</span>
-															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-															<span class="time">2 min</span>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<div class="clearfix">
-														<div class="thread-image">
-															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
-														</div>
-														<div class="thread-content">
-															<span class="author">Elizabeth Gutierrez</span>
-															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-															<span class="time">8 hrs</span>
-														</div>
-													</div>
-												</a>
-											</li>
-											<li>
-												<a href="javascript:;">
-													<div class="clearfix">
-														<div class="thread-image">
-															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
-														</div>
-														<div class="thread-content">
-															<span class="author">Carmen Aguilar</span>
+															<span class="author">Yasmin</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -133,10 +104,10 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+															<img alt="" src="upload/default_avatar_small.png">
 														</div>
 														<div class="thread-content">
-															<span class="author">Kenneth Ross</span>
+															<span class="author">Ulises Robles</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">14 hrs</span>
 														</div>
@@ -148,7 +119,7 @@
 								</li>
 								<li class="view-all">
 									<a href="pages_messages.html">
-										Ver mensajes <i class="fa fa-arrow-circle-o-right"></i>
+										Todos los Mensajes <i class="fa fa-arrow-circle-o-right"></i>
 									</a>
 								</li>
 							</ul>
@@ -163,7 +134,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="perfil.php">
+									<a href="pages_user_profile.html">
 										<i class="clip-user-2"></i>
 										&nbsp;Perfil
 									</a>
@@ -225,6 +196,7 @@
 								<span class="selected"></span>
 							</a>
 						</li>
+						
 					</ul>
 				<!-- fin: SIDEBAR -->
 			</div>
