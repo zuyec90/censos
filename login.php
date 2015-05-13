@@ -6,34 +6,7 @@
 <html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- inicio: HEAD -->
-	<head>
-		<title>Sistema de Control de Censo</title>
-		<!-- inicio: META -->
-		<meta charset="utf-8" />
-		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta content="description" name="Control de censos" />
-		<meta content="author" name="Equipo 2" />
-		<!-- fin: META -->
-		<!-- inicio: MAIN CSS -->
-		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="fonts/style.css">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/main-responsive.css">
-		<link rel="stylesheet" href="plugins/iCheck/skins/all.css">
-		<link rel="stylesheet" href="plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-		<link rel="stylesheet" href="plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-		<link rel="stylesheet" href="css/theme_light.css" type="text/css" id="skin_color">
-		<link rel="stylesheet" href="css/print.css" type="text/css" media="print"/>
-		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
-		<!--[if IE 7]>
-		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome-ie7.min.css">
-		<![endif]-->
-		<!-- fin: MAIN CSS -->
-	</head>
+	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
 	<body class="login example2">
@@ -119,31 +92,26 @@
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Nombre">
+							<input type="text" class="form-control" name="full_name" placeholder="Nombre Completo">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Apellido">
+							<select id="signUp_IDType" class="float-leftmargin-select" name="signUp.IPType">
+								<option value="C.I.">C.I</option>
+							</select>
+							<select id="IDLetter" class="float-left margin-select" name="IDLetter">
+								<option value="V">V</option>
+							</select>
+							<input id="signUp_IDNumber" class="docInput text" maxlength="8" value="" name="SignUp.IDNumber" placeholder="Nº de Documento"></input>
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="address" placeholder="Dirección">
 						</div>
 						<div class="form-group">
-							<select id="signUp_IDType" class="float-leftmargin-select" name="signUp.IPType">
-								<option value="C.I.">C.I</option>
-								<option value="R.I.F.">R.I.F.</option>
-							</select>
-							<select id="IDLetter" class="float-left margin-select" name="IDLetter">
-								<option value="V">V</option>
-								<option value="E">E</option>
-							</select>
-							<input id="signUp_IDNumber" class="docInput text" maxlength="10" value="" name="SignUp.IDNumber" placeholder="Nº de Documento"></input>
+							<input type="text" class="form-control" name="city" placeholder="Ciudad">
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="cell" placeholder="Celular">
 							<p class="ch-form-hint">Código + Nº. Ej.: 04XX 1234567</p>
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" name="city" placeholder="Ciudad">
 						</div>
 						<div class="form-group">
 							<center><div>
