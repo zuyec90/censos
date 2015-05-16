@@ -92,14 +92,17 @@
 					</div>
 					<fieldset>
 						<div class="form-group">
-							<input type="text" class="form-control" name="full_name" placeholder="Nombre Completo">
+							<input type="text" class="form-control" name="name" placeholder="Nombre">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="lastname" placeholder="Apellido">
 						</div>
 						<div class="form-group">
 							<select id="signUp_IDType" class="float-leftmargin-select" name="signUp.IPType">
-								<option value="C.I.">C.I</option>
+								<option value="C.I.">C.I
 							</select>
 							<select id="IDLetter" class="float-left margin-select" name="IDLetter">
-								<option value="V">V</option>
+								<option value="V E">V<>E</option>
 							</select>
 							<input id="signUp_IDNumber" class="docInput text" maxlength="8" value="" name="SignUp.IDNumber" placeholder="Nº de Documento"></input>
 						</div>

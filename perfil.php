@@ -25,26 +25,9 @@
 					</div>
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
-					<ul class="main-navigation-menu">
-						<li class="active open">
-							<a href="home.php"><i class="clip-home-3"></i>
-								<span class="title"> Inicio </span>
-								<span class="selected"></span>
-							</a>
-						</li>
-						<li>
-							<a href="data.php"><i class="clip-user-2"></i>
-								<span class="title"> Usuario </span>
-								<span class="selected"></span>
-							</a>
-						</li>
-						<li>
-							<a href="dataCensos.php"><i class="clip-pencil"></i>
-								<span class="title"> Censos </span>
-								<span class="selected"></span>
-							</a>
-						</li>
-					</ul>
+					<?php require_once('menu.php'); ?>
+					<!-- fin: MAIN NAVIGATION MENU -->
+				</div>
 				<!-- fin: SIDEBAR -->
 			</div>
 			<!-- inicio: PAGE -->
