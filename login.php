@@ -173,10 +173,11 @@
 			<!-- fin: REGISTER BOX -->
 			<!-- inicio: COPYRIGHT -->
 			<div class="copyright">
-				2015 &copy; by Equipo 2.
+				2015 &copy; Elaborado por el Colegio Universitario Francisco de Miranda para el Consejo Comunal "Santa Ines".(N.B., G.G., E.S., Z.V.)
 			</div>
 			<!-- fin: COPYRIGHT -->
 		</div>
+
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>

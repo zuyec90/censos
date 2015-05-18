@@ -178,6 +178,10 @@
 				</div>
 			</div>
 		</div>
+		<!-- end: MAIN CONTAINER -->
+		<!-- start: FOOTER -->
+		<?php require_once('footer.php'); ?>
+		<!-- end: FOOTER -->
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
