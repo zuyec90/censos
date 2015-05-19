@@ -117,131 +117,128 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
+
+													<div class="fileupload fileupload-new" data-provides="fileupload">
+
+														<div class="user-image">
+															<div class="fileupload-new thumbnail"><img src="upload/765-default-avatar.png" alt="" style="max-width: 100px; max-height: 150px; line-height: 20px;">
+															</div>
+													
+															<div class="user-image-buttons">
+																<span class="btn btn-teal btn-file btn-sm">
+																<span class="fileupload-new">
+																<i class="fa fa-pencil"></i>
+																</span>
+																<span class="fileupload-exists"><i class="fa fa-pencil"></i>
+																</span>
+																		<input type="file">
+																	</span>
+																	<a href="#" class="btn fileupload-exists btn-bricky btn-sm" data-dismiss="fileupload">
+																		<i class="fa fa-times"></i>
+																	</a>
+															</div>								
+													</div>
+												</div>
+											</div>
+												
+												<div class="form-group">
 													<label class="control-label">
-														First Name <span class="symbol required"></span>
+														Nombre <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Insert your First Name" class="form-control" id="firstname2" name="firstname2">
+													<input type="text" placeholder="Ingresa tu primer Nombre" class="form-control" id="firstname2" name="firstname2">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
-														Last Name <span class="symbol required"></span>
+														Apellido <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Insert your Last Name" class="form-control" id="lastname2" name="lastname2">
+													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname2" name="lastname2">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
-														Email Address <span class="symbol required"></span>
+														Correo Electrónico<span class="symbol required"></span>
 													</label>
-													<input type="email" placeholder="Text Field" class="form-control" id="email2" name="email2">
+													<input type="email" placeholder="Ingresa el Correo Electrónico" class="form-control" id="email2" name="email2">
 												</div>
+											<div class="form-group">
+												<label for="form-field-mask-2">
+													Teléfono 
+												</label>
+												<div class="input-group">
+													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone">
+												</div>
+											</div>
 												<div class="form-group">
 													<label class="control-label">
-														Occupation <span class="symbol required"></span>
-													</label>
-													<input type="text" class="form-control" name="occupation" id="occupation">
-												</div>
-												<div class="form-group">
-													<label class="control-label">
-														Dropdown <span class="symbol required"></span>
+														Unidad de Trabajo al que pertenece <span class="symbol required"></span>
 													</label>
 													<select class="form-control" id="dropdown" name="dropdown">
-														<option value="">Select...</option>
-														<option value="Category 1">Category 1</option>
-														<option value="Category 2">Category 2</option>
-														<option value="Category 3">Category 5</option>
-														<option value="Category 4">Category 4</option>
+														<option value="">Selecciona a la Unidad de Trabajo al que pertenece</option>
+														<option value="usuario1">Unidad Ejecutiva</option>
+														<option value="usuario2">Unidad de Contraloría Social</option>	
+														<option value="vocero2">Unidad Electoral Permanente</option>	
+														<option value="vocero2">Unidad Administrativa y Financiera Comunitaria</option>													
+													</select>
+												</div>
+												<div class="form-group">
+													<label class="control-label">
+														Tipo de Usuario <span class="symbol required"></span>
+													</label>
+													<select class="form-control" id="dropdown" name="dropdown">
+														<option value="">Selecciona el tipo de Usuario</option>
+														<option value="vocero1">Administrador</option>
+														<option value="vocero2">Operador</option>
+															
 													</select>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="control-label">
-														Services <em>(select at least two)</em> <span class="symbol required"></span>
+														Cédula<span class="symbol required"></span>
+													</label>
+													<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="ci">
+												</div>
+												<div class="form-group">
+													<label class="control-label">
+														Sexo <span class="symbol required"></span>
 													</label>
 													<div>
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="services" id="service1">
-																Service 1
-															</label>
-														</div>
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="services"  id="service2">
-																Service 2
-															</label>
-														</div>
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="services"  id="service3">
-																Service 3
-															</label>
-														</div>
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="services"  id="service4">
-																Service 4
-															</label>
-														</div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="" name="gender" id="gender_female">
+															Femenino
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="" name="gender"  id="gender_male">
+															Masculino
+														</label>
 													</div>
 												</div>
 												<div class="form-group connected-group">
 													<label class="control-label">
-														Credit Card <em>(e.g: 0000 0000 0000 0000)</em> <span class="symbol required"></span>
+														Contraseña<span class="symbol required"></span>
 													</label>
-													<input type="text" class="form-control" id="creditcard" name="creditcard">
+														<span class="input-icon">
+								<input type="password" class="form-control password" name="password" placeholder="Contraseña">
+								<i class="fa fa-lock"></i>
+							
 												</div>
-												<div class="form-group connected-group">
-													<label class="control-label">
-														URL <em>(e.g: http://www.yoursite.com)</em> <span class="symbol required"></span>
-													</label>
-													<input type="text" class="form-control" id="url" name="url">
-												</div>
-												<div class="row">
-													<div class="col-md-4">
-														<div class="form-group">
-															<label class="control-label">
-																Zip Code <span class="symbol required"></span>
-															</label>
-															<input class="form-control" type="text" name="zipcode2" id="zipcode2">
-														</div>
-													</div>
+												<div class="row">					
 													<div class="col-md-8">
 														<div class="form-group">
 															<label class="control-label">
-																City <span class="symbol required"></span>
+																Dirección <span class="symbol required"></span>
 															</label>
 															<input class="form-control tooltips" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="city2" id="city2">
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="control-label">
-														Summernote <span class="symbol required"></span>
-													</label>
-													<div class="summernote"></div>
-													<textarea class="form-control no-display" id="editor1" name="editor1" cols="10" rows="10"></textarea>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="control-label">
-														Ckeditor <span class="symbol required"></span>
-													</label>
-													<textarea class="ckeditor form-control" id="editor2" name="editor2" cols="10" rows="10"></textarea>
-												</div>
-											</div>
-										</div>
+										</div>									
 										<div class="row">
 											<div class="col-md-12">
 												<div>
-													<span class="symbol required"></span>Required Fields
+													<span class="symbol required"></span>Campos requeridos
 													<hr>
 												</div>
 											</div>
@@ -249,12 +246,12 @@
 										<div class="row">
 											<div class="col-md-8">
 												<p>
-													By clicking REGISTER, you are agreeing to the Policy and Terms &amp; Conditions.
+													Al registrarse , usted estará de acuerdo con la política y los Términos &amp; Condiciones.
 												</p>
 											</div>
 											<div class="col-md-4">
-												<button class="btn btn-yellow btn-block" type="submit">
-													Register <i class="fa fa-arrow-circle-right"></i>
+												<button class="btn btn-green btn-block" type="submit">
+													Registrar <i class="fa fa-arrow-circle-right"></i>
 												</button>
 											</div>
 										</div>
