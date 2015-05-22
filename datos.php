@@ -345,7 +345,7 @@
 														Nombres <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="username" name="username" placeholder="Text Field">
+														<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
 													</div>
 												</div>
 												<div class="form-group">
@@ -353,7 +353,7 @@
 														Apellidos <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="username" name="username" placeholder="Text Field">
+														<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
 													</div>
 												</div>
 												
@@ -363,17 +363,16 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="gender" id="gender_v" >
+															<input type="radio" class="grey" value="f" name="cedula" id="cedula_v" >
 															V
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="gender"  id="gender_e">
+															<input type="radio" class="grey" value="m" name="cedula"  id="cedula_e">
 															E
 														</label>
 														<div class="col-sm-4">
-																<input type="text" class="form-control" name="gender" id="gender" placeholder="">
+																<input type="text" class="form-control" name="numero" id="numero" placeholder="" maxlength="8">
 														</div>
-
 													</div>
 												</div>
 												
@@ -385,7 +384,7 @@
 													<div class="col-sm-4">
 														<div class="row">
 															<div class="col-sm-4">
-																<select class="form-control" id="card_expiry_mm" name="card_expiry_mm">
+																<select class="form-control" id="fecha" name="fecha_d">
 																	<option value="">DD</option>
 																	<option value="01">1</option>
 																	<option value="02">2</option>
@@ -424,7 +423,7 @@
 
 														<div class="row">
 															<div class="col-sm-4">
-																<select class="form-control" id="card_expiry_mm" name="card_expiry_mm">
+																<select class="form-control" id="fecha" name="fecha_m">
 																	<option value="">MM</option>
 																	<option value="01">1</option>
 																	<option value="02">2</option>
@@ -441,11 +440,36 @@
 																</select>
 															</div>
 															<div class="col-sm-4">
-																<input type="text" class="form-control" name="card_expiry_yyyy" id="card_expiry_yyyy" placeholder="AAAA">
+																<input type="text" class="form-control" name="fecha" id="fecha_a" placeholder="AAAA">
 															</div>
 														</div>
 													</div>
 												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Edad <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="edad" id="edad" placeholder="" maxlength="3">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Sexo <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="f" name="sexo" id="sexo_f" >
+															Femenino
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="m" name="sexo"  id="sexo_m">
+															Masculino
+														</label>
+													</div>
+												</div>
+
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-8">
 														<button class="btn btn-blue next-step btn-block">
@@ -455,179 +479,350 @@
 												</div>
 											</div>
 											<div id="step-2">
-												<h2 class="StepTitle">Step 2 Content</h2>
+												<h2 class="StepTitle">Paso 2</h2>
+												
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														full_name <span class="symbol required"></span>
-													</label>
-													<div class="col-sm-7">
-														<input type="text" class="form-control" id="full_name" name="full_name" placeholder="Text Field">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Phone Number <span class="symbol required"></span>
-													</label>
-													<div class="col-sm-7">
-														<input type="text" class="form-control" id="phone" name="phone" placeholder="Text Field">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Gender <span class="symbol required"></span>
+														CNE <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="gender" id="gender_female" >
-															Female
+															<input type="radio" class="grey" value="S" name="CNE" id="CNE_si" >
+															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="gender"  id="gender_male">
-															Male
+															<input type="radio" class="grey" value="N" name="CNE"  id="CNE_no">
+															No
+														</label>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tiempo en la Comunidad <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="text" class="float-left margin-select" name="tiempo" id="tiempo" placeholder="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Incapacitado <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="f" name="incapacitado" id="incapacitado_si" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="m" name="incapacitado"  id="incapacitado_no">
+															No
 														</label>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Address <span class="symbol required"></span>
+														Tipo<span class="symbol required"></span>
+													</label>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="tipo" id="tipo" placeholder="">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Pensionado <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="address" name="address" placeholder="Text Field">
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="f" name="pensionado" id="pensionado_si" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="m" name="pensionado"  id="pensionado_no">
+															No
+														</label>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Country <span class="symbol required"></span>
+														Institución<span class="symbol required"></span>
 													</label>
-													<div class="col-sm-7">
-														<select class="form-control" id="country" name="country">
-															<option value="">&nbsp;</option>
-															<option value="Country 1">Country 1</option>
-															<option value="Country 2">Country 2</option>
-															<option value="Country 3">Country 3</option>
-														</select>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="institucion" id="institucion" placeholder="">
 													</div>
 												</div>
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														City <span class="symbol required"></span>
+														Tel. Cel. <span class="symbol required"></span>
 													</label>
-													<div class="col-sm-7">
-														<input type="text" class="form-control" id="city" name="city" placeholder="Text Field">
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="celular" id="celular" placeholder="" maxlength="11">
 													</div>
 												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Hab. <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="habitacion" id="habitacion" placeholder="" maxlength="11">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Ofic. <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="oficina" id="oficina" placeholder="" maxlength="11">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Email <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="email" class="float-left margin-select" id="email" name="email" placeholder="nombre@ejemplo.com">
+													</div>
+												</div>								
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-light-grey back-step btn-block">
-															<i class="fa fa-circle-arrow-left"></i> Back
+															<i class="fa fa-circle-arrow-left"></i> Atrás
 														</button>
 													</div>
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-blue next-step btn-block">
-															Next <i class="fa fa-arrow-circle-right"></i>
+															Siguiente <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
 												</div>
 											</div>
 											<div id="step-3">
-												<h2 class="StepTitle">Step 3 Title</h2>
+												<h2 class="StepTitle">Paso 3</h2>
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Card Holder Name <span class="symbol required"></span>
+														Estado Civil <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="card_name" name="card_name" placeholder="Text Field">
+														<select class="form-control" id="estado" name="estado">
+															<option value="">&nbsp;</option>
+															<option value="Estado 1">soltero (a)</option>
+															<option value="Estado 2">Casado (a)</option>
+															<option value="Estado 3">Divorciado (a)</option>
+															<option value="Estado 4">Viudo (a)</option>
+															<option value="Estado 5">Concubinato (a)</option>
+														</select>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Card Number <span class="symbol required"></span>
+														Nivel de Instrucción <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="card_number" name="card_number" placeholder="Text Field">
+														<select class="form-control" id="instruccion" name="instruccion">
+															<option value="">&nbsp;</option>
+															<option value="Instrucción 1">Sin Instrucción</option>
+															<option value="Instrucción 2">Básica</option>
+															<option value="Instrucción 3">Bachiller</option>
+															<option value="Instrucción 4">Técnico Medio</option>
+															<option value="Instrucción 5">Técnico Superior</option>
+															<option value="Instrucción 6">Universitario</option>
+															<option value="Instrucción 7">Postgrado</option>
+														</select>
 													</div>
 												</div>
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														CVC <span class="symbol required"></span>
-													</label>
-													<div class="col-sm-4">
-														<input type="text" class="form-control" id="card_cvc" name="card_cvc" placeholder="Text Field">
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Expiration(MM/YYYY) <span class="symbol required"></span>
-													</label>
-													<div class="col-sm-4">
-														<div class="row">
-															<div class="col-sm-4">
-																<select class="form-control" id="card_expiry_mm" name="card_expiry_mm">
-																	<option value="">MM</option>
-																	<option value="01">1</option>
-																	<option value="02">2</option>
-																	<option value="03">3</option>
-																	<option value="04">4</option>
-																	<option value="05">5</option>
-																	<option value="06">6</option>
-																	<option value="07">7</option>
-																	<option value="08">8</option>
-																	<option value="09">9</option>
-																	<option value="10">10</option>
-																	<option value="11">11</option>
-																	<option value="12">12</option>
-																</select>
-															</div>
-															<div class="col-sm-4">
-																<input type="text" class="form-control" name="card_expiry_yyyy" id="card_expiry_yyyy" placeholder="YYYY">
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Payment Options <span class="symbol required"></span>
+														Profesión /Oficio <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="payment" id="payment1">
-																Auto-Pay with this Credit Card
-															</label>
-														</div>
-														<div class="checkbox">
-															<label>
-																<input type="checkbox" class="grey" value="" name="payment"  id="payment2">
-																Email me monthly billing
-															</label>
-														</div>
+														<input type="text" class="form-control" id="profesion" name="profesion" placeholder="Indique a que se dedica">
 													</div>
 												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Trabaja Actualmente <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="s" name="trabaja" id="trabaja_si" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="n" name="trabaja"  id="trabaja_no">
+															No
+														</label>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Clasificación Ingreso Familiar <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<select class="form-control" id="ingreso" name="ingreso">
+															<option value="">&nbsp;</option>
+															<option value="Ingreso 1">Diario</option>
+															<option value="Ingreso 2">Semanal</option>
+															<option value="Ingreso 3">Quincenal</option>
+															<option value="Ingreso 4">Mensual</option>
+															<option value="Ingreso 5">Por Trabajo Realizado</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Ingreso Mensual <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="text" class="float-left margin-select" id="mensual" name="mensual" placeholder="Bs">
+													</div>
+												</div>
+												
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-light-grey back-step btn-block">
-															<i class="fa fa-circle-arrow-left"></i> Back
+															<i class="fa fa-circle-arrow-left"></i> Atrás
 														</button>
 													</div>
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-blue next-step btn-block">
-															Next <i class="fa fa-arrow-circle-right"></i>
+															Siguiente <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
 												</div>
 											</div>
 											<div id="step-4">
-												<h2 class="StepTitle">Step 4 Title</h2>
-												<h3>Account</h3>
+												<h2 class="StepTitle">Paso 4</h2>
+												<h3>Datos</h3>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Username:
+														Nombre:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="username"></p>
+														<p class="form-control-static display-value" data-display="nombre"></p>
 													</div>
 												</div>
 												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Apellido
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="apellido"></p>
+													</div>
+												</div>
+												<h3>Perfil</h3>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Cedúla:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="cedula" data-display="numero"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Fecha de Nacimiento:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="fecha_d" data-display="fecha_m" data-display="fecha"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Edad:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="edad"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Sexo:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="sexo"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														CNE:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="CNE"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tiempo en la Comunidad:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="tiempo"></p>
+													</div>
+												</div>
+												<h3>Características</h3>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Incapacitado:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="incapacitado"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tipo de Discapacidad:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="tipo"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Pensionado:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="pensionado"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Institución:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="institucion"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Cel:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="celular"></p>
+													</div>
+												</div><div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Hab.:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="habitacion"></p>
+													</div>
+												</div><div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Ofic.:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="oficina"></p>
+													</div>
+												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
 														Email:
 													</label>
@@ -635,100 +830,58 @@
 														<p class="form-control-static display-value" data-display="email"></p>
 													</div>
 												</div>
-												<h3>Profile</h3>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Fullname:
+														Estado Civil:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="full_name"></p>
+														<p class="form-control-static display-value" data-display="estado"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Gender:
+														Nivel de Instrucción:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="gender"></p>
+														<p class="form-control-static display-value" data-display="instruccion"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Phone:
+														Profesión /Oficio:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="phone"></p>
+														<p class="form-control-static display-value" data-display="profesion"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Address:
+														Trabaja Actualmente:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="address"></p>
+														<p class="form-control-static display-value" data-display="trabaja"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														City:
+														Clasificación Ingreso Familiar:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="city"></p>
+														<p class="form-control-static display-value" data-display="ingreso"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Country:
+														Ingreso Mensual:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="country"></p>
-													</div>
-												</div>
-												<h3>Billing</h3>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Card Name:
-													</label>
-													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="card_name"></p>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Card Number:
-													</label>
-													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="card_number"></p>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														CVC:
-													</label>
-													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="card_cvc"></p>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Expiration:
-													</label>
-													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="card_expiry"></p>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Payment Options:
-													</label>
-													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="payment"></p>
+														<p class="form-control-static display-value" data-display="mensual"></p>
 													</div>
 												</div>
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-8">
 														<button class="btn btn-success finish-step btn-block">
-															Finish <i class="fa fa-arrow-circle-right"></i>
+															Finalizar <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
 												</div>
