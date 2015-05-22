@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2015 a las 01:44:46
+-- Tiempo de generación: 20-05-2015 a las 01:02:28
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `notificacion` (
 CREATE TABLE IF NOT EXISTS `perfil` (
 `id_perfil` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
-  `descripcion` varchar(150) NOT NULL
+  `descripcion` varchar(150) NOT NULL,
+  `tipo_perfil` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -58,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
   `id_user` int(255) NOT NULL,
   `respuesta_1` varchar(200) NOT NULL,
   `respuesta_2` varchar(200) NOT NULL,
-  `respuesta_3` varchar(200) NOT NULL
+  `respuesta_3` varchar(200) NOT NULL,
+  `cant_intentos` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,7 +71,8 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 
 CREATE TABLE IF NOT EXISTS `usuario` (
 `id_user` int(255) NOT NULL,
-  `nombre_comple` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
   `direccion` varchar(255) NOT NULL,
   `cedula` int(100) NOT NULL,
   `celular` int(50) NOT NULL,
@@ -78,10 +81,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(60) NOT NULL,
   `contrasenia` varchar(50) NOT NULL,
   `perfil` int(1) NOT NULL,
-  `cargo` varchar(100) NOT NULL,
+  `voceria` varchar(100) NOT NULL,
   `status` int(1) NOT NULL,
   `fecha_creado` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `direccion`, `cedula`, `celular`, `sexo`, `usuario`, `email`, `contrasenia`, `perfil`, `voceria`, `status`, `fecha_creado`) VALUES
+(1, 'd', '', 'd', 14, 12, 'f', 'fd', 'df', 'df', 1, 'gfds', 1, '2015-05-13');
 
 --
 -- Índices para tablas volcadas
@@ -134,7 +144,7 @@ MODIFY `id_respuesta` int(255) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT;
+MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
