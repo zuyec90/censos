@@ -69,14 +69,8 @@
 						<div class="col-sm-12">
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
-								<li>
-									<i class="clip-file"></i>
-									<a href="#">
-										Perfil
-									</a>
-								</li>
 								<li class="active">
-									Usuario
+									Perfil
 								</li>
 								<li class="search-box">
 									<form class="sidebar-search">

@@ -33,10 +33,10 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img class="img-rounded" alt="" src="upload/default_avatar_small.png">
+															<img src="upload/default_avatar_female.jpg" width="40" height="40" class="img-rounded">
 														</div>
 														<div class="thread-content">
-															<span class="author">Elvia</span>
+															<span class="author">Yaylet Rojas</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time"> Ahora</span>
 														</div>
@@ -47,10 +47,10 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="upload/default_avatar_small.png">
+															<img src="upload/default_avatar_female.jpg" width="40" height="40" class="img-rounded">
 														</div>
 														<div class="thread-content">
-															<span class="author">Yasmin</span>
+															<span class="author">Yasmin Torres</span>
 															<span class="preview">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
 															<span class="time">9 hrs</span>
 														</div>
@@ -61,7 +61,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="upload/default_avatar_small.png">
+															<img src="upload/765-default-avatar.png" width="40" height="40" class="img-rounded">
 														</div>
 														<div class="thread-content">
 															<span class="author">Ulises Robles</span>
@@ -75,7 +75,7 @@
 									</div>
 								</li>
 								<li class="view-all">
-									<a href="pages_messages.html">
+									<a href="pagina_mensaje.php">
 										Todos los Mensajes <i class="fa fa-arrow-circle-o-right"></i>
 									</a>
 								</li>
@@ -102,7 +102,7 @@
 										&nbsp;Calendario
 									</a>
 								<li>
-									<a href="pages_messages.html">
+									<a href="pagina_mensaje.php">
 										<i class="clip-bubble-4"></i>
 										&nbsp;Mensajes
 									</a>
