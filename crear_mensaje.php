@@ -1,71 +1,42 @@
 <!DOCTYPE html>
-<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
-<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
-<!--[if !IE]><!-->
-<html lang="es" class="no-js">
-	<!--<![endif]-->
-	<!-- inicio: HEAD -->
-	<?php require_once('head.php'); ?>
-	<!-- fin: HEAD -->
-	<!-- inicio: BODY -->
-	<body>
-		<!-- inicio: HEADER -->
-		<?php require_once('header.php'); ?>
-		<!-- fin: HEADER -->
-		<!-- inicio: MAIN CONTAINER -->
-		<div class="main-container">
-			<div class="navbar-content">
-				<!-- inicio: SIDEBAR -->
-				<div class="main-navigation navbar-collapse collapse">
-					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
-					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
-					</div>
-					<!-- fin: MAIN MENU TOGGLER BUTTON -->
-					<!-- inicio: MAIN NAVIGATION MENU -->
-					<?php require_once('menu.php'); ?>
-					<!-- fin: MAIN NAVIGATION MENU -->
-				</div>
-				<!-- fin: SIDEBAR -->
-			</div>
-			<!-- inicio: PAGE -->
-			
-			<!-- fin: PAGE -->
-		</div>
-		<!-- fin: MAIN CONTAINER -->
-		<!-- inicio: FOOTER -->
-		<?php require_once('footer.php'); ?>
-		<!-- fin: FOOTER -->
-		<!-- inicio: MAIN JAVASCRIPTS -->
-		<!--[if lt IE 9]>
-		<script src="plugins/respond.min.js"></script>
-		<script src="plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<![endif]-->
-		<!--[if gte IE 9]><!-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
-		<!-- fin: MAIN JAVASCRIPTS -->
-		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script>
-			jQuery(document).ready(function() {
-				Main.init();
-			});
-		</script>
-	</body>
-	<!-- fin: BODY -->
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <title>Sistema de Control de Censo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="description" name="Control de censos" />
+    <meta content="author" name="Equipo 2" />
+	<link rel="stylesheet" media="screen" href="css/crear_mensaje.css" >
+    <link rel="shortcut icon" href="upload/ccsantaines.ico" />
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk
+/html5.js"></script>
+        <![endif]-->
+</head>
+<body>
+<form class="contact_form" action="app/config/confi_mensaje.php" method="post">
+    <ul>
+        <li>
+             <center><h2>Crea tu mensaje</h2></center>
+        </li>
+        <li>
+            <label for="name">Nombre:</label>
+            <input name="nombre" type="text" required id="nombre"  placeholder="Nombre del emisor" />
+        </li>
+        <li>
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="xxxxx@ejemplo.com" required />
+        </li>
+        <li>
+            <label for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" cols="40" rows="6" required id="mensaje" ></textarea>
+        </li>
+        <li>
+        	<button class="submit" type="submit">Enviar</button>
+        </li>
+    </ul>
+</form>
+</body>
 </html>
