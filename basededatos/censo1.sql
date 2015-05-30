@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2015 a las 01:02:28
+-- Tiempo de generación: 31-05-2015 a las 01:39:38
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -73,25 +73,27 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 `id_user` int(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `direccion` varchar(255) NOT NULL,
-  `cedula` int(100) NOT NULL,
+  `cedula` int(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `celular` int(50) NOT NULL,
   `sexo` varchar(1) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `contrasenia` varchar(50) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
+  `voceria` varchar(60) NOT NULL,
   `perfil` int(1) NOT NULL,
-  `voceria` varchar(100) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `contrasenia` varchar(50) NOT NULL,
   `status` int(1) NOT NULL,
   `fecha_creado` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `direccion`, `cedula`, `celular`, `sexo`, `usuario`, `email`, `contrasenia`, `perfil`, `voceria`, `status`, `fecha_creado`) VALUES
-(1, 'd', '', 'd', 14, 12, 'f', 'fd', 'df', 'df', 1, 'gfds', 1, '2015-05-13');
+INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`, `fecha_creado`) VALUES
+(1, 'd', '', 0, '14', 12, 'f', 'fd', 'df', 0, '1', 'gfds', 1, '2015-05-13'),
+(2, 'zuye', 'zxczx', 0, '2147483647', 2147483647, '', '', '', 0, '0', 'vocero1', 0, '2015-05-29'),
+(3, 'dd', 'dded', 2147483647, 'zuyecci@gmail.com', 1234567, '', 'asdfghjkl', 'usuario1', 0, '', '', 0, '2015-05-29');
 
 --
 -- Índices para tablas volcadas
@@ -144,7 +146,7 @@ MODIFY `id_respuesta` int(255) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
