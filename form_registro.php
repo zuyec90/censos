@@ -40,17 +40,17 @@
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 									&times;
 								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
+								<h4 class="modal-title">Panel para Ayuda</h4>
 							</div>
 							<div class="modal-body">
 								Here will be a configuration form
 							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
+							<div class="modal-footer">								
 								<button type="button" class="btn btn-primary">
-									Save changes
+									Aceptar
+								</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">
+									Cancelar
 								</button>
 							</div>
 						</div>
@@ -105,7 +105,7 @@
 										Crea una cuenta para gestionar todo lo que haces.
 									</p>
 									<hr>
-									<form action="#" role="form" id="form2">
+									<form action="app/lib/UserCreate.php" method="POST" role="form" id="form2">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
@@ -145,19 +145,25 @@
 													<label class="control-label">
 														Nombre <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu primer Nombre" class="form-control" id="firstname2" name="firstname2">
+													<input type="text" placeholder="Ingresa tu primer Nombre" class="form-control" id="firstname2" name="nombre">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
 														Apellido <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname2" name="lastname2">
+													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname2" name="apellido">
+												</div>												
+												<div class="form-group">
+													<label class="control-label">
+														Cédula<span class="symbol required"></span>
+													</label>
+													<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="cedula">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
 														Correo Electrónico<span class="symbol required"></span>
 													</label>
-													<input type="email" placeholder="Ingresa el Correo Electrónico" class="form-control" id="email2" name="email2">
+													<input type="email" placeholder="Ingresa el Correo Electrónico" class="form-control" id="email2" name="email">
 												</div>
 											<div class="form-group">
 												<label for="form-field-mask-2">
@@ -165,14 +171,38 @@
 												</label>
 												<div class="input-group">
 													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone">
+													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular">
 												</div>
 											</div>
+											<div class="form-group">
+													<label class="control-label">
+														Sexo <span class="symbol required"></span>
+													</label>
+													<div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="" name="sexo" id="gender_female">
+															Femenino
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="" name="sexo"  id="gender_male">
+															Masculino
+														</label>
+													</div>
+												</div>
+											<div class="form-group">
+															<label class="control-label">
+																Dirección <span class="symbol required"></span>
+															</label>
+															<input class="form-control tooltips" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="direccion" id="city2">
+														</div>
+												
+											</div>
+											<div class="col-md-6">
 												<div class="form-group">
 													<label class="control-label">
 														Unidad de Trabajo al que pertenece <span class="symbol required"></span>
 													</label>
-													<select class="form-control" id="dropdown" name="dropdown">
+													<select class="form-control" id="dropdown" name="voceria">
 														<option value="">Selecciona a la Unidad de Trabajo al que pertenece</option>
 														<option value="usuario1">Unidad Ejecutiva</option>
 														<option value="usuario2">Unidad de Contraloría Social</option>	
@@ -184,53 +214,30 @@
 													<label class="control-label">
 														Tipo de Usuario <span class="symbol required"></span>
 													</label>
-													<select class="form-control" id="dropdown" name="dropdown">
+													<select class="form-control" id="dropdown" name="perfil">
 														<option value="">Selecciona el tipo de Usuario</option>
 														<option value="vocero1">Administrador</option>
 														<option value="vocero2">Operador</option>
 															
 													</select>
 												</div>
-											</div>
-											<div class="col-md-6">
 												<div class="form-group">
-													<label class="control-label">
-														Cédula<span class="symbol required"></span>
-													</label>
-													<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="ci">
-												</div>
-												<div class="form-group">
-													<label class="control-label">
-														Sexo <span class="symbol required"></span>
-													</label>
-													<div>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="" name="gender" id="gender_female">
-															Femenino
-														</label>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="" name="gender"  id="gender_male">
-															Masculino
-														</label>
-													</div>
+													<span class="input-icon">
+														<input type="text" class="form-control" name="username" placeholder="Usuario">
+														<i class="fa fa-user"></i> </span>
 												</div>
 												<div class="form-group connected-group">
 													<label class="control-label">
 														Contraseña<span class="symbol required"></span>
 													</label>
 														<span class="input-icon">
-								<input type="password" class="form-control password" name="password" placeholder="Contraseña">
+								<input type="password" class="form-control password" name="contrasenia" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
 							
 												</div>
 												<div class="row">					
 													<div class="col-md-8">
-														<div class="form-group">
-															<label class="control-label">
-																Dirección <span class="symbol required"></span>
-															</label>
-															<input class="form-control tooltips" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="city2" id="city2">
-														</div>
+														
 													</div>
 												</div>
 											</div>

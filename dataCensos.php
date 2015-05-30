@@ -11,7 +11,7 @@
 	<!-- start: BODY -->
 	<body>
 		<!-- start: HEADER -->
-		<?php require_once('head.php'); ?>
+		<?php require_once('header.php'); ?>
 		<!-- end: HEADER -->
 		<!-- start: MAIN CONTAINER -->
 		<div class="main-container">
@@ -91,7 +91,7 @@
 							<!-- start: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-								<strong>Personas Censadas</strong>
+									<strong>Usuario</strong>
 									<div class="panel-tools">
 										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
 											<i class="fa fa-question"></i>

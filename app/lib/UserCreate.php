@@ -11,16 +11,13 @@ $db = new DataModel; // Se crea el objeto en una variable para utlizarlo posteri
 aca se comienza a usar los multiples metodos que se creen como funciones en la clase DataModel en este
 caso solo esta la conexion
 */
-/*
-$db->Conect();
 
-*/
 
 include ('../Controller/UserController.php');
-$variable  = array('nombre' => 'asdas','juan' => 'dasd');
 
 $d = new User;
 
-$d->Crear($variable);
+$d->Crear($_POST);
+
 
 ?>
