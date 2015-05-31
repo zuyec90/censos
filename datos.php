@@ -432,11 +432,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="S" name="CNE" id="CNE_si" >
+															<input type="radio" class="grey" value="Si" name="CNE" id="CNE_si" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="N" name="CNE"  id="CNE_no">
+															<input type="radio" class="grey" value="No" name="CNE"  id="CNE_no">
 															No
 														</label>
 													</div>
@@ -556,11 +556,11 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="estado" name="estado">
 															<option value="">&nbsp;</option>
-															<option value="Estado 1">soltero (a)</option>
-															<option value="Estado 2">Casado (a)</option>
-															<option value="Estado 3">Divorciado (a)</option>
-															<option value="Estado 4">Viudo (a)</option>
-															<option value="Estado 5">Concubinato (a)</option>
+															<option value="soltero (a)">soltero (a)</option>
+															<option value="Casado (a)">Casado (a)</option>
+															<option value="Divorciado (a)">Divorciado (a)</option>
+															<option value="Viudo (a)">Viudo (a)</option>
+															<option value="Concubinato (a)">Concubinato (a)</option>
 														</select>
 													</div>
 												</div>
@@ -571,13 +571,13 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="instruccion" name="instruccion">
 															<option value="">&nbsp;</option>
-															<option value="Instrucción 1">Sin Instrucción</option>
-															<option value="Instrucción 2">Básica</option>
-															<option value="Instrucción 3">Bachiller</option>
-															<option value="Instrucción 4">Técnico Medio</option>
-															<option value="Instrucción 5">Técnico Superior</option>
-															<option value="Instrucción 6">Universitario</option>
-															<option value="Instrucción 7">Postgrado</option>
+															<option value="Sin Instrucción">Sin Instrucción</option>
+															<option value="Básica">Básica</option>
+															<option value="Bachiller">Bachiller</option>
+															<option value="Técnico Medio">Técnico Medio</option>
+															<option value="Técnico Superior">Técnico Superior</option>
+															<option value="Universitario">Universitario</option>
+															<option value="Postgrado">Postgrado</option>
 														</select>
 													</div>
 												</div>
@@ -597,11 +597,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="s" name="trabaja" id="trabaja_si" >
+															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja_si" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="n" name="trabaja"  id="trabaja_no">
+															<input type="radio" class="grey" value="no" name="trabaja"  id="trabaja_no">
 															No
 														</label>
 													</div>
@@ -614,11 +614,11 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="ingreso" name="ingreso">
 															<option value="">&nbsp;</option>
-															<option value="Ingreso 1">Diario</option>
-															<option value="Ingreso 2">Semanal</option>
-															<option value="Ingreso 3">Quincenal</option>
-															<option value="Ingreso 4">Mensual</option>
-															<option value="Ingreso 5">Por Trabajo Realizado</option>
+															<option value="Diario">Diario</option>
+															<option value="Semanal">Semanal</option>
+															<option value="Quincenal">Quincenal</option>
+															<option value="Mensual">Mensual</option>
+															<option value="Por Trabajo Realizado">Por Trabajo Realizado</option>
 														</select>
 													</div>
 												</div>
