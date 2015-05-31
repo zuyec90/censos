@@ -301,7 +301,7 @@
 														<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
 													</div>
 												</div>
-												
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														Cedúla <span class="symbol required"></span>
@@ -320,7 +320,7 @@
 														</div>
 													</div>
 												</div>
-												
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														Fecha de Nacimiento <span class="symbol required"></span>
@@ -331,42 +331,14 @@
 															<div class="col-sm-4">
 																<select class="form-control" id="fecha" name="fecha_d">
 																	<option value="">DD</option>
-																	<option value="01">1</option>
-																	<option value="02">2</option>
-																	<option value="03">3</option>
-																	<option value="04">4</option>
-																	<option value="05">5</option>
-																	<option value="06">6</option>
-																	<option value="07">7</option>
-																	<option value="08">8</option>
-																	<option value="09">9</option>
-																	<option value="10">10</option>
-																	<option value="11">11</option>
-																	<option value="12">12</option>
-																	<option value="13">13</option>
-																	<option value="14">14</option>
-																	<option value="15">15</option>
-																	<option value="16">16</option>
-																	<option value="17">17</option>
-																	<option value="18">18</option>
-																	<option value="19">19</option>
-																	<option value="20">20</option>
-																	<option value="21">21</option>
-																	<option value="22">22</option>
-																	<option value="23">23</option>
-																	<option value="24">24</option>
-																	<option value="25">25</option>
-																	<option value="26">26</option>
-																	<option value="27">27</option>
-																	<option value="28">28</option>
-																	<option value="29">29</option>
-																	<option value="30">30</option>
-																	<option value="31">31</option>
+																	<?php
+																		for ($i=1; $i < 32 ; $i++) {
+																			echo "<option value=".$i.">".$i."</option>";
+																		}
+
+																	?>
 																</select>
 															</div>
-														</div>
-
-														<div class="row">
 															<div class="col-sm-4">
 																<select class="form-control" id="fecha" name="fecha_m">
 																	<option value="">MM</option>
@@ -388,6 +360,8 @@
 																<input type="text" class="form-control" name="fecha" id="fecha_a" placeholder="AAAA">
 															</div>
 														</div>
+
+
 													</div>
 												</div>
 												<div class="form-group">
@@ -425,7 +399,7 @@
 											</div>
 											<div id="step-2">
 												<h2 class="StepTitle">Paso 2</h2>
-												
+
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														CNE <span class="symbol required"></span>
@@ -532,7 +506,7 @@
 													<div class="col-sm-7">
 														<input type="email" class="float-left margin-select" id="email" name="email" placeholder="nombre@ejemplo.com">
 													</div>
-												</div>								
+												</div>
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-light-grey back-step btn-block">
@@ -631,7 +605,7 @@
 														<input type="text" class="float-left margin-select" id="mensual" name="mensual" placeholder="Bs">
 													</div>
 												</div>
-												
+
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-light-grey back-step btn-block">
