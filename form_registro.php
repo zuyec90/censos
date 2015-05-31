@@ -45,7 +45,7 @@
 							<div class="modal-body">
 								Here will be a configuration form
 							</div>
-							<div class="modal-footer">								
+							<div class="modal-footer">
 								<button type="button" class="btn btn-primary">
 									Aceptar
 								</button>
@@ -74,7 +74,7 @@
 								</li>
 								<li class="active">
 									Registro de Usuarios
-								</li>								
+								</li>
 							</ol>
 							<div class="page-header">
 								<h1>Registro <small>de Usuarios</small></h1>
@@ -83,7 +83,7 @@
 						</div>
 					</div>
 					<!-- end: PAGE HEADER -->
-					<!-- start: PAGE CONTENT -->				
+					<!-- start: PAGE CONTENT -->
 					<div class="row">
 						<div class="col-md-12">
 							<!-- start: FORM VALIDATION 2 PANEL -->
@@ -123,7 +123,7 @@
 														<div class="user-image">
 															<div class="fileupload-new thumbnail"><img src="upload/765-default-avatar.png" alt="" style="max-width: 100px; max-height: 150px; line-height: 20px;">
 															</div>
-													
+
 															<div class="user-image-buttons">
 																<span class="btn btn-teal btn-file btn-sm">
 																<span class="fileupload-new">
@@ -136,11 +136,11 @@
 																	<a href="#" class="btn fileupload-exists btn-bricky btn-sm" data-dismiss="fileupload">
 																		<i class="fa fa-times"></i>
 																	</a>
-															</div>								
+															</div>
 													</div>
 												</div>
 											</div>
-												
+
 												<div class="form-group">
 													<label class="control-label">
 														Nombre <span class="symbol required"></span>
@@ -152,7 +152,7 @@
 														Apellido <span class="symbol required"></span>
 													</label>
 													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname2" name="apellido">
-												</div>												
+												</div>
 												<div class="form-group">
 													<label class="control-label">
 														Cédula<span class="symbol required"></span>
@@ -167,7 +167,7 @@
 												</div>
 											<div class="form-group">
 												<label for="form-field-mask-2">
-													Teléfono 
+													Teléfono
 												</label>
 												<div class="input-group">
 													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
@@ -180,11 +180,11 @@
 													</label>
 													<div>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="" name="sexo" id="gender_female">
+															<input type="radio" class="grey" value="f" name="sexo" id="gender_female">
 															Femenino
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="" name="sexo"  id="gender_male">
+															<input type="radio" class="grey" value="m" name="sexo"  id="gender_male">
 															Masculino
 														</label>
 													</div>
@@ -195,7 +195,7 @@
 															</label>
 															<input class="form-control tooltips" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="direccion" id="city2">
 														</div>
-												
+
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
@@ -205,9 +205,9 @@
 													<select class="form-control" id="dropdown" name="voceria">
 														<option value="">Selecciona a la Unidad de Trabajo al que pertenece</option>
 														<option value="usuario1">Unidad Ejecutiva</option>
-														<option value="usuario2">Unidad de Contraloría Social</option>	
-														<option value="vocero2">Unidad Electoral Permanente</option>	
-														<option value="vocero2">Unidad Administrativa y Financiera Comunitaria</option>													
+														<option value="usuario2">Unidad de Contraloría Social</option>
+														<option value="vocero2">Unidad Electoral Permanente</option>
+														<option value="vocero2">Unidad Administrativa y Financiera Comunitaria</option>
 													</select>
 												</div>
 												<div class="form-group">
@@ -216,14 +216,14 @@
 													</label>
 													<select class="form-control" id="dropdown" name="perfil">
 														<option value="">Selecciona el tipo de Usuario</option>
-														<option value="vocero1">Administrador</option>
-														<option value="vocero2">Operador</option>
-															
+														<option value="1">Administrador</option>
+														<option value="2">Operador</option>
+
 													</select>
 												</div>
 												<div class="form-group">
 													<span class="input-icon">
-														<input type="text" class="form-control" name="username" placeholder="Usuario">
+														<input type="text" class="form-control" name="usuario" placeholder="Usuario">
 														<i class="fa fa-user"></i> </span>
 												</div>
 												<div class="form-group connected-group">
@@ -233,15 +233,15 @@
 														<span class="input-icon">
 								<input type="password" class="form-control password" name="contrasenia" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
-							
+
 												</div>
-												<div class="row">					
+												<div class="row">
 													<div class="col-md-8">
-														
+
 													</div>
 												</div>
 											</div>
-										</div>									
+										</div>
 										<div class="row">
 											<div class="col-md-12">
 												<div>
@@ -310,7 +310,33 @@
 				Main.init();
 				FormValidator.init();
 			});
+
 		</script>
+		<?php
+
+		if(!empty($_POST)){
+			if ($_POST['valor'] == '1' ) { ?>
+				<script type="text/javascript">
+
+				alert("usuario registrado con exito ");
+				</script>
+
+				<?php
+			}else{
+
+				 ?>
+				<script type="text/javascript">
+
+				alert("usuario no se  registro  ");
+				</script>
+
+				<?php
+			}
+
+		}
+
+
+		?>
 	</body>
 	<!-- end: BODY -->
 </html>
