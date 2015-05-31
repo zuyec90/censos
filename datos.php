@@ -244,7 +244,7 @@
 														</div>
 														<span class="stepDesc"> Paso 1
 															<br />
-															<small>Step 1 description</small> </span>
+															<small>1</small> </span>
 													</a>
 												</li>
 												<li>
@@ -254,7 +254,7 @@
 														</div>
 														<span class="stepDesc"> Paso 2
 															<br />
-															<small>Step 2 description</small> </span>
+															<small>2</small> </span>
 													</a>
 												</li>
 												<li>
@@ -264,7 +264,7 @@
 														</div>
 														<span class="stepDesc"> Paso 3
 															<br />
-															<small>Step 3 description</small> </span>
+															<small>3</small> </span>
 													</a>
 												</li>
 												<li>
@@ -274,7 +274,7 @@
 														</div>
 														<span class="stepDesc"> Paso 4
 															<br />
-															<small>Step 4 description</small> </span>
+															<small>4</small> </span>
 													</a>
 												</li>
 											</ul>
@@ -330,7 +330,7 @@
 														<div class="row">
 															<div class="col-sm-4">
 																<select class="form-control" id="fecha" name="fecha_d">
-																	<option value="">DD</option>
+																	<option value="fecha_nacimiento">DD</option>
 																	<?php
 																		for ($i=1; $i < 32 ; $i++) {
 																			echo "<option value=".$i.">".$i."</option>";
@@ -341,27 +341,27 @@
 															</div>
 															<div class="col-sm-4">
 																<select class="form-control" id="fecha" name="fecha_m">
-																	<option value="">MM</option>
-																	<option value="01">1</option>
-																	<option value="02">2</option>
-																	<option value="03">3</option>
-																	<option value="04">4</option>
-																	<option value="05">5</option>
-																	<option value="06">6</option>
-																	<option value="07">7</option>
-																	<option value="08">8</option>
-																	<option value="09">9</option>
-																	<option value="10">10</option>
-																	<option value="11">11</option>
-																	<option value="12">12</option>
+																	<option value="fecha_nacimiento">MM</option>
+																	<?php
+																		for ($i=1; $i < 13 ; $i++) {
+																			echo "<option value=".$i.">".$i."</option>";
+																		}
+
+																	?>
 																</select>
 															</div>
 															<div class="col-sm-4">
-																<input type="text" class="form-control" name="fecha" id="fecha_a" placeholder="AAAA">
+																<select class="form-control" id="fecha" name="fecha_a">
+																	<option value="fecha_nacimiento">AAAA</option>
+																	<?php
+																		for ($i=1910; $i < 2016 ; $i++) {
+																			echo "<option value=".$i.">".$i."</option>";
+																		}
+
+																	?>
+																</select>
 															</div>
 														</div>
-
-
 													</div>
 												</div>
 												<div class="form-group">
@@ -406,11 +406,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="Si" name="CNE" id="CNE_si" >
+															<input type="radio" class="grey" value="si" name="CNE" id="CNE_si" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="No" name="CNE"  id="CNE_no">
+															<input type="radio" class="grey" value="no" name="CNE"  id="CNE_no">
 															No
 														</label>
 													</div>
@@ -421,7 +421,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo" id="tiempo" placeholder="">
+														<input type="text" class="float-left margin-select" name="tiempo" id="tiempo" placeholder="" maxlength="6">
 													</div>
 												</div>
 												<div class="form-group">
@@ -430,11 +430,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="incapacitado" id="incapacitado_si" >
+															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado_si" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="incapacitado"  id="incapacitado_no">
+															<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado_no">
 															No
 														</label>
 													</div>
@@ -454,11 +454,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="pensionado" id="pensionado_si" >
+															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado_si" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="pensionado"  id="pensionado_no">
+															<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado_no">
 															No
 														</label>
 													</div>
@@ -602,7 +602,7 @@
 														Ingreso Mensual <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" id="mensual" name="mensual" placeholder="Bs">
+														<input type="text" class="float-left margin-select" id="mensual" name="mensual" placeholder="" maxlength="6">
 													</div>
 												</div>
 
@@ -652,7 +652,7 @@
 														Fecha de Nacimiento:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="fecha_d" data-display="fecha_m" data-display="fecha"></p>
+														<p class="form-control-static display-value" data-display="fecha"></p>
 													</div>
 												</div>
 												<div class="form-group">
