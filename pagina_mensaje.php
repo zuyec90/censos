@@ -8,31 +8,31 @@
 	<!-- inicio: HEAD -->
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
-	<!-- inicio: BODY -->
+	<!-- start: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->
-		<!-- inicio: MAIN CONTAINER -->
+		<!-- start: MAIN CONTAINER -->
 		<div class="main-container">
 			<div class="navbar-content">
-				<!-- inicio: SIDEBAR -->
+				<!-- start: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
-					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
+					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
 						<i class="clip-chevron-left"></i>
 						<i class="clip-chevron-right"></i>
 					</div>
-					<!-- fin: MAIN MENU TOGGLER BUTTON -->
+					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
 					<?php require_once('menu.php'); ?>
 					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
-				<!-- fin: SIDEBAR -->
+				<!-- end: SIDEBAR -->
 			</div>
-			<!-- inicio: PAGE -->
+			<!-- start: PAGE -->
 			<div class="main-content">
-				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
+				<!-- start: PANEL CONFIGURATION MODAL FORM -->
 				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -59,9 +59,9 @@
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
-				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
+				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
-					<!-- inicio: PAGE HEADER -->
+<!-- inicio: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- inicio: STYLE SELECTOR BOX -->
@@ -208,23 +208,18 @@
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
-					<!-- inicio: PAGE CONTENT -->
-					<div class="row">
-						<div class="col-md-12">
-						<br>
-							<!-- inicio: INBOX PANEL -->
-							
-									<button type="button" class="btn btn-default">
-										<a href="crear_mensaje.php"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear mensaje</a>
-									</button>	
-							
-							<!-- fin: INBOX PANEL -->
-							<br><br><br>
-							<!-- inicio: INBOX PANEL -->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-envelope-o"></i>
-									Bandeja de entrada
+					<!-- start: PAGE CONTENT -->
+					<!-- start: BOOTSTRAP EXTENDED MODALS PANEL -->
+					<div class="panel-body">
+						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
+					</div>
+					<!-- end: BOOTSTRAP EXTENDED MODALS PANEL -->
+					<br>
+					<!-- inicio: INBOX PANEL -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-envelope-o"></i>
+								Bandeja de entrada
 									<div class="panel-tools">
 										<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
 										</a>
@@ -241,24 +236,24 @@
 											<i class="fa fa-times"></i>
 										</a>
 									</div>
-								</div>
-								<div class="panel-body messages">
-									<ul class="messages-list">
-										<li class="messages-search">
-											<form action="#" class="form-inline">
-												<div class="input-group">
-													<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
-													<div class="input-group-btn">
-														<button class="btn btn-primary" type="button">
+						</div>
+						<div class="panel-body messages">
+							<ul class="messages-list">
+								<li class="messages-search">
+									<form action="#" class="form-inline">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
+												<div class="input-group-btn">
+													<button class="btn btn-primary" type="button">
 															<i class="fa fa-search"></i>
-														</button>
-													</div>
+													</button>
 												</div>
-											</form>
-										</li>
-										<li class="messages-item">
-											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
-											<img src="upload/765-default-avatar.png" class="messages-item-avatar">
+										</div>
+									</form>
+								</li>
+								<li class="messages-item">
+									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+										<img src="upload/765-default-avatar.png" class="messages-item-avatar">
 											<span class="messages-item-from">Ulises Robles</span>
 											<div class="messages-item-time">
 												<span class="text">10:23 PM</span>
@@ -451,13 +446,51 @@
 					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>
-			<!-- fin: PAGE -->
+			<!-- end: PAGE -->
 		</div>
-		<!-- fin: MAIN CONTAINER -->
-		<!-- inicio: FOOTER -->
+		<!-- end: MAIN CONTAINER -->
+		<!-- start: FOOTER -->
 		<?php require_once('footer.php'); ?>
-		<!-- fin: FOOTER -->
-		<!-- inicio: MAIN JAVASCRIPTS -->
+		<!-- end: FOOTER -->
+		<!-- start: BOOTSTRAP EXTENDED MODALS -->
+		<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title">Escriba su mensaje</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4">
+						<p>
+							<label for="name">Nombre:</label>
+							<input name="nombre" type="text" required id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+						</p>
+						<p>
+							<label for="email">Email:</label>
+            				<input type="email" name="email" placeholder="xxxxx@ejemplo.com" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+						</p>
+						<p>
+							<label for="mensaje">Mensaje:</label>
+							<textarea placeholder="Escriba aquí su mensaje" required id="mensaje" id="form-field-22" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn btn-light-grey">
+					Cancelar
+				</button>
+				<button type="button" class="btn btn-primary">
+					Enviar
+				</button>
+			</div>
+		</div>
+
+		<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
+		<!-- end: BOOTSTRAP EXTENDED MODALS -->
+		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
 		<script src="plugins/excanvas.min.js"></script>
@@ -477,14 +510,18 @@
 		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
-		<!-- fin: MAIN JAVASCRIPTS -->
-		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script src="plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="js/ui-modals.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				UIModals.init();
 			});
 		</script>
 	</body>
-	<!-- fin: BODY -->
+	<!-- end: BODY -->
 </html>

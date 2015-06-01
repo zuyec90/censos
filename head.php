@@ -25,11 +25,11 @@
 		<![endif]-->
 		<!-- fin: MAIN CSS -->
 		<!-- inicio: CSS REQUIRED FOR THIS PAGE ONLY -->
+		<link href="plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+		<link href="plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="plugins/fullcalendar/fullcalendar/fullcalendar.css">
 		<link rel="stylesheet" type="text/css" href="plugins/select2/select2.css" />
 		<link rel="stylesheet" href="plugins/DataTables/media/css/DT_bootstrap.css" />
-		
 		<!-- fin: CSS REQUIRED FOR THIS PAGE ONLY -->
-		
 		<link rel="shortcut icon" href="upload/ccsantaines.ico" />
 	</head>
