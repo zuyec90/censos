@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
-<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![finalif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![finalif]-->
 <!--[if !IE]><!-->
 <html lang="es" class="no-js">
-	<!--<![endif]-->
+	<!--<![finalif]-->
 	<!-- inicio: HEAD -->
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
-	<!-- start: BODY -->
+	<!-- inicio: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->
-		<!-- start: MAIN CONTAINER -->
+		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
 			<div class="navbar-content">
-				<!-- start: SIDEBAR -->
+				<!-- inicio: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
-					<!-- start: MAIN MENU TOGGLER BUTTON -->
+					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
 						<i class="clip-chevron-left"></i>
 						<i class="clip-chevron-right"></i>
 					</div>
-					<!-- end: MAIN MENU TOGGLER BUTTON -->
+					<!-- final: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
 					<?php require_once('menu.php'); ?>
 					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
-				<!-- end: SIDEBAR -->
+				<!-- final: SIDEBAR -->
 			</div>
-			<!-- start: PAGE -->
+			<!-- inicio: PAGE -->
 			<div class="main-content">
-				<!-- start: PANEL CONFIGURATION MODAL FORM -->
+				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
 				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -59,7 +59,7 @@
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
-				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
+				<!-- final: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
 <!-- inicio: PAGE HEADER -->
 					<div class="row">
@@ -208,12 +208,12 @@
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
-					<!-- start: PAGE CONTENT -->
-					<!-- start: BOOTSTRAP EXTENDED MODALS PANEL -->
+					<!-- inicio: PAGE CONTENT -->
+					<!-- inicio: BOOTSTRAP EXTfinalED MODALS PANEL -->
 					<div class="panel-body">
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
-					<!-- end: BOOTSTRAP EXTENDED MODALS PANEL -->
+					<!-- final: BOOTSTRAP EXTfinalED MODALS PANEL -->
 					<br>
 					<!-- inicio: INBOX PANEL -->
 					<div class="panel panel-default">
@@ -415,7 +415,7 @@
 												To: Peter Clark
 											</div>
 											<div class="message-subject">
-												New frontend layout
+												New frontfinal layout
 											</div>
 											<div class="message-actions">
 												<a title="Move to trash" href="#"><i class="fa fa-trash-o"></i></a>
@@ -429,7 +429,7 @@
 												<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 											</p>
 											<p>
-												Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+												Duis autem vel eum iriure dolor in hfinalrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleiffinal option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
 												Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
 											</p>
 											<p>
@@ -446,13 +446,13 @@
 					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>
-			<!-- end: PAGE -->
+			<!-- final: PAGE -->
 		</div>
-		<!-- end: MAIN CONTAINER -->
-		<!-- start: FOOTER -->
+		<!-- final: MAIN CONTAINER -->
+		<!-- inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
-		<!-- end: FOOTER -->
-		<!-- start: BOOTSTRAP EXTENDED MODALS -->
+		<!-- final: FOOTER -->
+		<!-- inicio: BOOTSTRAP EXTfinalED MODALS -->
 		<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -468,8 +468,8 @@
 							<input name="nombre" type="text" required id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 						</p>
 						<p>
-							<label for="email">Email:</label>
-            				<input type="email" name="email" placeholder="xxxxx@ejemplo.com" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+							<label for="destinatario">Destinatario:</label>
+							<input class="form-control" id="disabledInput" type="text" placeholder="Ulises Robles" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;" disabled>
 						</p>
 						<p>
 							<label for="mensaje">Mensaje:</label>
@@ -489,16 +489,16 @@
 		</div>
 
 		<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
-		<!-- end: BOOTSTRAP EXTENDED MODALS -->
-		<!-- start: MAIN JAVASCRIPTS -->
+		<!-- final: BOOTSTRAP EXTfinalED MODALS -->
+		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
 		<script src="plugins/excanvas.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<![endif]-->
+		<![finalif]-->
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<!--<![endif]-->
+		<!--<![finalif]-->
 		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
@@ -510,12 +510,12 @@
 		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- final: MAIN JAVASCRIPTS -->
+		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script src="plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
 		<script src="plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
 		<script src="js/ui-modals.js"></script>
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- final: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
@@ -523,5 +523,5 @@
 			});
 		</script>
 	</body>
-	<!-- end: BODY -->
+	<!-- final: BODY -->
 </html>
