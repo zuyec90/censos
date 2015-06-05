@@ -505,7 +505,7 @@ test("elements() order", function() {
 
 test("defaultMessage(), empty title is ignored", function() {
 	var v = $("#userForm").validate();
-	equal( "This field is required.", v.defaultMessage($("#username")[0], "required") );
+	equal( "este campo es obligatorio.", v.defaultMessage($("#username")[0], "required") );
 });
 
 test("formatAndAdd", function() {
@@ -1492,7 +1492,7 @@ test("Min and Max type absent set by attributes valid", function() {
 
 test("Min and Max range set by attributes valid", function() {
 	//
-	// cannot test for overflow: 
+	// cannot test for overflow:
 	// When the element is suffering from an underflow,
 	// the user agent must set the element's value to a valid
 	// floating-point number that represents the minimum.

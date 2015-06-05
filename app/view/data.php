@@ -1,6 +1,6 @@
 <?php
 //error_reporting();
-require_once ('app/controller/UserController.php');
+require_once ('../controller/UserController.php');
 $user = new User;
 $resultado = $user->Select();
 ?>
@@ -122,19 +122,19 @@ $resultado = $user->Select();
 											</tr>
 										</thead>
 										<tbody>
-										<?php foreach ($resultado as $users) {
-											echo $users;
-										}?>
+										<?php 	while ($users = mysql_fetch_assoc($resultado)) {  ?>
+
+
 											<tr>
-												<td>1</td>
+												<td><?php echo $users['id_user'];?></td>
 												<td>
 													<a href="perfil.php">
-													<img src="images/avatar-1.jpg" alt="image"/></a>
+													<img src="../../images/avatar-1.jpg" alt="image"/></a>
 													</td>
-												<td>Ulises</td>
-												<td class="hidden-xs">Google</td>
-												<td>Vocero en el area Financiera</td>
-												<td class="hidden-xs">---------@-----.com</td>
+												<td><?php echo $users['nombre'];?></td>
+												<td class="hidden-xs"><?php echo $users['usuario'];?></td>
+												<td><?php echo $users['voceria'];?></td>
+												<td class="hidden-xs"><?php echo $users['email'];?></td>
 												<td>
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
@@ -142,7 +142,7 @@ $resultado = $user->Select();
 													<i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>
-
+											<?php }?>
 										</tbody>
 									</table>
 								</div>
@@ -168,23 +168,23 @@ $resultado = $user->Select();
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script type="text/javascript" src="plugins/select2/select2.min.js"></script>
-		<script type="text/javascript" src="plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="plugins/DataTables/media/js/DT_bootstrap.js"></script>
-		<script src="js/table-data.js"></script>
+		<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script src="../../js/table-data.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
