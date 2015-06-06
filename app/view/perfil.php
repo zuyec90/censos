@@ -1,3 +1,16 @@
+
+<?php
+require_once ('../controller/UserController.php');
+$user = new User;
+if (!empty($_GET['id_user'])) {
+	$id_user = $_GET['id_user'];
+}else{
+	$id_user = Null;
+}
+$resultado = $user->Select($id_user);
+
+?>
+
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
@@ -84,7 +97,7 @@
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Ulises Robles <small>Administrador</small></h1>
+								<h1><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h1>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -115,9 +128,9 @@
 														<h4>Ulises Robles</h4>
 														<div class="fileupload fileupload-new" data-provides="fileupload">
 															<div class="user-image">
-																<div class="fileupload-new thumbnail"><img src="upload/765-default-avatar.png" alt="" style="max-width: 200px; max-height: 150px; line-height: 20px;">
+																<div class="fileupload-new thumbnail"><img src="../../upload/765-default-avatar.png" alt="" style="max-width: 200px; max-height: 150px; line-height: 20px;">
 																</div>
-																
+
 																<div class="user-image-buttons">
 																	<span class="btn btn-teal btn-file btn-sm"><span class="fileupload-new"><i class="fa fa-pencil"></i></span><span class="fileupload-exists"><i class="fa fa-pencil"></i></span>
 																		<input type="file">
@@ -129,7 +142,7 @@
 															</div>
 														</div>
 														<hr>
-														
+
 														<hr>
 													</div>
 													<table class="table table-condensed table-hover">
@@ -200,7 +213,7 @@
 											</div>
 											<div class="col-sm-7 col-md-8">
 												<p>
-													
+
 												</p>
 												<div class="row">
 													<div class="col-sm-3">
@@ -248,11 +261,11 @@
 															</li>
 															<li>
 																<a class="activity" href="javascript:void(0)">
-																	<img alt="image" src="upload/default_avatar_small.png">
+																	<img alt="image" src="../../upload/default_avatar_small.png">
 																	<span class="desc">Yasmin Torres le envió un mensaje.</span>
 																	<div class="time">
 																		<i class="fa fa-time bigger-110"></i>
-																		3 horas. 
+																		3 horas.
 																	</div>
 																</a>
 															</li>
@@ -436,12 +449,12 @@
 													</div>
 													<div class="form-group">
 														<label>
-															Cargar imagen 
+															Cargar imagen
 														</label>
 														<div class="fileupload fileupload-new" data-provides="fileupload">
-															<div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"><img src="upload/765-default-avatar.png" alt="">
+															<div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"><img src="../../upload/765-default-avatar.png" alt="">
 															</div>
-															
+
 															<div class="user-edit-image-buttons">
 																<span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
 																	<input type="file">
@@ -454,7 +467,7 @@
 													</div>
 												</div>
 											</div>
-											
+
 											<div class="row">
 
 												<div class="col-md-4">
@@ -467,7 +480,7 @@
 
 										</form>
 									</div>
-									
+
 								</div>
 							</div>
 						</div>
@@ -477,14 +490,14 @@
 						<div class="col-sm-12">
 							<!-- fin: STYLE SELECTOR BOX -->
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
-							
+
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
 					<div class="row">
-						
+
 					</div>
 					<!-- fin: PAGE CONTENT-->
 				</div>
@@ -495,7 +508,7 @@
 		<!-- inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
 		<!-- fin: FOOTER -->
-		
+
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
@@ -505,32 +518,27 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/flot/jquery.flot.js"></script>
-		<script src="plugins/flot/jquery.flot.pie.js"></script>
-		<script src="plugins/flot/jquery.flot.resize.min.js"></script>
-		<script src="plugins/jquery.sparkline/jquery.sparkline.js"></script>
-		<script src="plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-		<script src="plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-		<script src="plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
-		<script src="js/index.js"></script>
+		<script src="../../plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="../../plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
+		<script src="../../js/pages-user-profile.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				Index.init();
+				PagesUserProfile.init();
 			});
 		</script>
 	</body>

@@ -136,7 +136,7 @@ $resultado = $user->Select();
 												<td><?php echo $users['voceria'];?></td>
 												<td class="hidden-xs"><?php echo $users['email'];?></td>
 												<td>
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
+													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
 													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
 													<i class="fa fa-trash-o"></i></a>
