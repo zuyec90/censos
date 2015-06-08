@@ -33,31 +33,74 @@
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
+		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title">Responsive</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Some Input</h4>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
 					</div>
-					<!-- /.modal-dialog -->
+					<div class="col-md-6">
+						<h4>Some More Input</h4>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+						<p>
+							<input class="form-control" type="text">
+						</p>
+					</div>
 				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn btn-light-grey">
+					Close
+				</button>
+				<button type="button" class="btn btn-blue">
+					Save changes
+				</button>
+			</div>
+		</div>
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -506,7 +549,7 @@
 										<form action="#" role="form" id="form">
 											<div class="row">
 												<div class="col-md-12">
-													<h3><a href="#static" data-toggle="modal" class="demo btn btn-yellow">Nuevo Familiar</a></h3>
+													<h3><a href="#panel-config" data-toggle="modal" class="demo btn btn-yellow">Nuevo Familiar</a></h3>
 													<hr>
 												</div>
 											</div>
@@ -551,11 +594,15 @@
 		<script src="../../plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
 		<script src="../../js/pages-user-profile.js"></script>
 		<script src="../../js/ui-modals.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
 				PagesUserProfile.init();
+				UIModals.init();
 			});
 		</script>
 	</body>
