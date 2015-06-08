@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
@@ -100,19 +99,45 @@
 									</div>
 								</div>
 								<div class="panel-body">
+									<?php
+
+							if(!empty($_POST)){
+								if ($_POST['valor'] == '1' ) { ?>
+
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Well done!</strong> You successfully read this important alert message.
+									</div>
+
+									<?php
+									}else{ ?>
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Well done!</strong> You successfully read this important alert message.
+									</div>
+							<?php	}
+							} ?>
+
 									<h2><i class="fa fa-pencil-square teal"></i> REGISTRO</h2>
 									<p>
 										Crea una cuenta para gestionar todo lo que haces.
 									</p>
+
 									<hr>
-									<form action="app/lib/UserCreate.php" method="POST" role="form" id="form2">
+									<form action="app/lib/UserCreate.php" method="POST" role="form" id="form">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
-													<i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+													<i class="fa fa-times-sign"></i> Extisten algunos errores por favor verificar.
 												</div>
 												<div class="successHandler alert alert-success no-display">
-													<i class="fa fa-ok"></i> Your form validation is successful!
+													<i class="fa fa-ok"></i> Campos correctamente ingresados
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -145,13 +170,13 @@
 													<label class="control-label">
 														Nombre <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu primer Nombre" class="form-control" id="firstname2" name="nombre">
+													<input type="text" placeholder="Ingresa tu primer Nombre" class="form-control" id="firstname" name="nombre">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
 														Apellido <span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname2" name="apellido">
+													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname" name="apellido">
 												</div>
 												<div class="form-group">
 													<label class="control-label">
@@ -193,7 +218,7 @@
 															<label class="control-label">
 																Dirección <span class="symbol required"></span>
 															</label>
-															<input class="form-control tooltips" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="direccion" id="city2">
+															<input class="form-control tooltips" type="text" data-original-title="puedes escribir aqui la dirreccion de referencia" data-rel="tooltip"  title="" data-placement="top" name="direccion" id="city">
 														</div>
 
 											</div>
@@ -231,7 +256,16 @@
 														Contraseña<span class="symbol required"></span>
 													</label>
 														<span class="input-icon">
-								<input type="password" class="form-control password" name="contrasenia" placeholder="Contraseña">
+								<input type="password" class="form-control password" id="contrasenia" name="contrasenia" placeholder="Contraseña">
+								<i class="fa fa-lock"></i>
+
+												</div>
+												<div class="form-group connected-group">
+													<label class="control-label">
+														Contraseña<span class="symbol required"></span>
+													</label>
+														<span class="input-icon">
+								<input type="password" class="form-control password" id="contrasenia_doble" name="contrasenia_doble" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
 
 												</div>
@@ -279,64 +313,46 @@
 		<!-- end: FOOTER -->
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="assets/plugins/respond.min.js"></script>
-		<script src="assets/plugins/excanvas.min.js"></script>
+		<script src="plugins/respond.min.js"></script>
+		<script src="plugins/excanvas.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="assets/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="assets/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="assets/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="assets/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="assets/plugins/less/less-1.5.0.min.js"></script>
-		<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="assets/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="plugins/less/less-1.5.0.min.js"></script>
+		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="js/main.js"></script>
 		<!-- end: MAIN JAVASCRIPTS -->
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="assets/plugins/summernote/build/summernote.min.js"></script>
-		<script src="assets/plugins/ckeditor/ckeditor.js"></script>
-		<script src="assets/plugins/ckeditor/adapters/jquery.js"></script>
-		<script src="assets/js/form-validation.js"></script>
+		<script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="plugins/summernote/build/summernote.min.js"></script>
+		<script src="plugins/ckeditor/ckeditor.js"></script>
+		<script src="plugins/ckeditor/adapters/jquery.js"></script>
+		<script src="js/form-validation.js"></script>
+		<script src="plugins/bootstrap-paginator/src/bootstrap-paginator.js"></script>
+		<script src="plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
+		<script src="plugins/gritter/js/jquery.gritter.min.js"></script>
+		<script src="js/ui-elements.js"></script>
+
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
 				FormValidator.init();
+				UIElements.init();
 			});
 
 		</script>
-		<?php
 
-		if(!empty($_POST)){
-			if ($_POST['valor'] == '1' ) { ?>
-				<script type="text/javascript">
-
-				alert("usuario registrado con exito ");
-				</script>
-
-				<?php
-			}else{
-
-				 ?>
-				<script type="text/javascript">
-
-				alert("usuario no se  registro  ");
-				</script>
-
-				<?php
-			}
-
-		}
-
-
-		?>
 	</body>
 	<!-- end: BODY -->
 </html>

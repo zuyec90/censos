@@ -67,19 +67,19 @@
 							<!-- start: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
-									<i class="clip-user-2"></i>
-									<a href="data.php">
-										Usuario
+									<i class="clip-pencil"></i>
+									<a href="dataCensos.php">
+										Censos
 									</a>
 								</li>
 								<li class="active">
-									Lista de Usuarios
+									Lista de Censados
 								</li>
 								
 							</ol>
 							<div class="page-header">
-								<h1> Lista <small>de Usuarios</small></h1>
-								<a href="form_registro.php"><button type="button" class="btn btn-info"><i class="clip-data">&nbsp;Crear Usuarios</i></button></a>
+								<h1> Sistema <small>Control de censo</small></h1>
+								
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -91,7 +91,7 @@
 							<!-- start: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-								<strong>Usuarios</strong>
+									<strong>Usuario</strong>
 									<div class="panel-tools">
 										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
 											<i class="fa fa-question"></i>
@@ -105,22 +105,18 @@
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 										<thead>
 											<tr>
-												<th>N°&nbsp; &nbsp; </th>
-												<th>Foto</th>
-												<th>Nombre Completo</th>
-												<th class="hidden-xs">Usuario</th>
-												<th>Cargo</th>
-												<th class="hidden-xs"> E-mail </th>
+												<th> N°&nbsp; &nbsp;</th>
+												<th>Nombre</th>
+												<th class="hidden-xs">Apellido</th>
+												<th>Cédula</th>
+												<th class="hidden-xs">Profesion </th>
+												
 												<th>Opciones</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>	
-												<td>1</td>											
-												<td>
-													<a href="perfil.php">
-													<img src="images/avatar-1.jpg" alt="image"/></a>
-													</td>
+											<tr>
+												<td>1</td>												
 												<td>Ulises</td>
 												<td class="hidden-xs">Google</td>
 												<td>Vocero en el area Financiera</td>
@@ -128,33 +124,13 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
 													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
+											
 											<tr>
-												<td>2</td>												
-												<td>
-													<a href="perfil.php">
-													<img src="images/avatar-2.jpg" alt="image"/></a>
-													</td>
-												<td>Yailet</td>
-												<td class="hidden-xs">Opera Software</td>
-												<td>Vocera en el area de Cultura</td>
-												<td class="hidden-xs">---------@-----.com</td>
-												<td>													
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
-													<i class="fa fa-trash-o"></i></a>												
-												</td>
-											</tr>
-											<tr>
-												<td>3</td>												
-												<td>
-													<a href="perfil.php">
-													<img src="images/avatar-3.jpg" alt="image"/></a>
-												</td>
+												<td>3</td>
 												<td>Mario</td>
 												<td class="hidden-xs">Apple Inc.</td>
 												<td>Vocero en el area financiera</td>
@@ -168,10 +144,6 @@
 											</tr>
 											<tr>
 												<td>4</td>
-												<td>
-													<a href="perfil.php">
-													<img src="images/avatar-4.jpg" alt="image"/></a>
-													</td>
 												<td>Elvira</td>
 												<td class="hidden-xs">Dieter Plaetinck</td>
 												<td>Vocera</td>
@@ -179,16 +151,15 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
-													<i class="fa fa-trash-o"></i></a>												
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="ELiminar">
+													<i class="fa fa-trash-o"></i></a>&nbsp;
+													<a href="#" class="btn btn-xs btn-green tooltips" data-placement="top" data-original-title="Mensajes">
+													<i class="fa fa-envelope-o"></i></a>
+																									
 												</td>
 											</tr>
 											<tr>
 												<td>5</td>
-												<td>
-													<a href="perfil.php">													
-													<img src="images/avatar-3.jpg" alt="image"/></a>
-													</td>
 												<td>Carmen</td>
 												<td class="hidden-xs">Tim Berners-Lee</td>
 												<td>Vocera</td>
@@ -202,10 +173,6 @@
 											</tr>
 											<tr>
 												<td>6</td>
-												<td>
-													<a href="perfil.php">													
-													<img src="images/avatar-5.jpg" alt="image"/></a>
-													</td>
 												<td>Yasmín</td>
 												<td class="hidden-xs">Akinori Ito</td>
 												<td>Vocera</td>
@@ -213,7 +180,7 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
+													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="ELiminar">
 													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
