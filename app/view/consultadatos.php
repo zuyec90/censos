@@ -104,21 +104,21 @@
 										Backgrounds for Boxed Version
 									</div>
 									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="images/bg_5.png"></a>
+										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
+										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
+										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
+										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
+										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
 									</div>
 									<div class="box-title">
 										5 Predefined Color Schemes
 									</div>
 									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="images/green.png"></a>
+										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
+										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
+										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
+										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
+										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
 									</div>
 									<div class="box-title">
 										Style it with LESS
@@ -237,7 +237,7 @@
 													<hr>
 												</div>
 											<div class="col-sm-5 col-md-4">
-												<div class="user-left">	
+												<div class="user-left">
 													<table class="table table-condensed table-hover">
 														<thead>
 															<tr>
@@ -271,7 +271,7 @@
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
-														
+
 															<tr>
 																<td>Edad:</td>
 																<td>UI Designer</td>
@@ -310,7 +310,7 @@
 											</div>
 											<div class="col-sm-7 col-md-8">
 												<div class="user-left">
-												
+
 													<table class="table table-condensed table-hover">
 														<thead>
 															<tr>
@@ -414,7 +414,7 @@
 													<hr>
 												</div>
 													<div class="col-sm-5 col-md-4">
-														<div class="user-left">	
+														<div class="user-left">
 																<table class="table table-condensed table-hover">
 																	<thead>
 																		<tr>
@@ -534,23 +534,23 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		<script src="plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
-		<script src="plugins/js/pages-user-profile.js"></script>
-		<script src="plugins/js/ui-modals.js"></script>
+		<script src="../../plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="../../plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
+		<script src="../../js/pages-user-profile.js"></script>
+		<script src="../../js/ui-modals.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
