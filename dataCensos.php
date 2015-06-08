@@ -5,34 +5,34 @@
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
 	<!--<![endif]-->
-	<!-- start: HEAD -->
+	<!--inicio: HEAD -->
 	<?php require_once('head.php'); ?>
-	<!-- end: HEAD -->
-	<!-- start: BODY -->
+	<!-- fin: HEAD -->
+	<!--inicio: BODY -->
 	<body>
-		<!-- start: HEADER -->
+		<!--inicio: HEADER -->
 		<?php require_once('header.php'); ?>
-		<!-- end: HEADER -->
-		<!-- start: MAIN CONTAINER -->
+		<!-- fin: HEADER -->
+		<!--inicio: MAIN CONTAINER -->
 		<div class="main-container">
 			<div class="navbar-content">
-				<!-- start: SIDEBAR -->
+				<!--inicio: SIDEBAR -->
 				<div class="main-navigation navbar-collapse collapse">
-					<!-- start: MAIN MENU TOGGLER BUTTON -->
+					<!--inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
 						<i class="clip-chevron-left"></i>
 						<i class="clip-chevron-right"></i>
 					</div>
-					<!-- end: MAIN MENU TOGGLER BUTTON -->
-					<!-- start: MAIN NAVIGATION MENU -->
+					<!-- fin: MAIN MENU TOGGLER BUTTON -->
+					<!--inicio: MAIN NAVIGATION MENU -->
 					<?php require_once('menu.php'); ?>
-					<!-- end: MAIN NAVIGATION MENU -->
+					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
-				<!-- end: SIDEBAR -->
+				<!-- fin: SIDEBAR -->
 			</div>
-			<!-- start: PAGE -->
+			<!--inicio: PAGE -->
 			<div class="main-content">
-				<!-- start: PANEL CONFIGURATION MODAL FORM -->
+				<!--inicio: PANEL CONFIGURATION MODAL FORM -->
 				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -59,12 +59,12 @@
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
-				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
+				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
-					<!-- start: PAGE HEADER -->
+					<!--inicio: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
-							<!-- start: PAGE TITLE & BREADCRUMB -->
+							<!--inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
 									<i class="clip-pencil"></i>
@@ -81,14 +81,14 @@
 								<h1> Sistema <small>Control de censo</small></h1>
 								
 							</div>
-							<!-- end: PAGE TITLE & BREADCRUMB -->
+							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
 					</div>
-					<!-- end: PAGE HEADER -->
-					<!-- start: PAGE CONTENT -->
+					<!-- fin: PAGE HEADER -->
+					<!--inicio: PAGE CONTENT -->
 					<div class="row">
 						<div class="col-md-12">
-							<!-- start: DYNAMIC TABLE PANEL -->
+							<!--inicio: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<strong>Usuario</strong>
@@ -188,19 +188,19 @@
 									</table>
 								</div>
 							</div>
-							<!-- end: DYNAMIC TABLE PANEL -->
+							<!-- fin: DYNAMIC TABLE PANEL -->
 						</div>
 					</div>
-					<!-- end: PAGE CONTENT-->
+					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>
-			<!-- end: PAGE -->
+			<!-- fin: PAGE -->
 		</div>
-		<!-- end: MAIN CONTAINER -->
-		<!-- start: FOOTER -->
+		<!-- fin: MAIN CONTAINER -->
+		<!--inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
-		<!-- end: FOOTER -->
-		<!-- start: MAIN JAVASCRIPTS -->
+		<!-- fin: FOOTER -->
+		<!--inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
 		<script src="plugins/excanvas.min.js"></script>
@@ -220,13 +220,13 @@
 		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- fin: MAIN JAVASCRIPTS -->
+		<!--inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script type="text/javascript" src="plugins/select2/select2.min.js"></script>
 		<script type="text/javascript" src="plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="plugins/DataTables/media/js/DT_bootstrap.js"></script>
 		<script src="js/table-data.js"></script>
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
@@ -234,5 +234,5 @@
 			});
 		</script>
 	</body>
-	<!-- end: BODY -->
+	<!-- fin: BODY -->
 </html>

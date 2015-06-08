@@ -36,13 +36,13 @@
 									</a>
 								</li>
 								<li>
-									<a href="layouts_boxed_layout.html">
-										<span class="title"> Boxed Layout (Por si necesitan agregar algo) </span>
+									<a href="consultaperfil.php">
+										<span class="title"> Lista de Censados </span>
 									</a>
 								</li>
 								<li>
-									<a href="layouts_footer_fixed.html">
-										<span class="title"> Footer Fixed (Por si necesitan agregar algo)</span>
+									<a href="consulta.php">
+										<span class="title">Consulta</span>
 									</a>
 								</li>
 								<li>
