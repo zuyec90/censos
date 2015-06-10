@@ -1,17 +1,9 @@
 var FormValidator = function () {
-    // function to initiate Validation Sample 1
+    // function para el regsitro de usuairios
     var runValidator1 = function () {
         var form1 = $('#form');
         var errorHandler1 = $('.errorHandler', form1);
         var successHandler1 = $('.successHandler', form1);
-        $.validator.addMethod("FullDate", function () {
-            //if all values are selected
-            if ($("#dd").val() != "" && $("#mm").val() != "" && $("#yyyy").val() != "") {
-                return true;
-            } else {
-                return false;
-            }
-        }, 'Please select a day, month, and year');
         $('#form').validate({
             errorElement: "span", // contain the error msg in a span tag
             errorClass: 'help-block',
@@ -27,55 +19,59 @@ var FormValidator = function () {
             },
             ignore: "",
             rules: {
-                firstname: {
+                nombre: {
                     minlength: 2,
                     required: true
                 },
-                lastname: {
+                apellido: {
                     minlength: 2,
+                    required: true
+                },
+                cedula: {
+                    minlength: 7,
+                    number: true,
                     required: true
                 },
                 email: {
                     required: true,
                     email: true
                 },
-                password: {
+                 celular: {
+                    minlength: 7,
+                    number: true,
+                    required: true
+                },
+                direccion: {
+                    required: true
+                },
+                voceria: {
+                    required: true
+                },
+                usuario:{
+                     minlength: 2,
+                    required: true
+                },
+                perfil:{
+                    required: true
+                },
+                contrasenia: {
                     minlength: 6,
                     required: true
                 },
-                password_again: {
+                contrasenia_doble: {
                     required: true,
-                    minlength: 5,
-                    equalTo: "#password"
+                    minlength: 6,
+                    equalTo: "#contrasenia"
                 },
-                yyyy: "FullDate",
-                gender: {
-                    required: true
-                },
-                zipcode: {
-                    required: true,
-                    number: true,
-                    minlength: 5,
-                    minlength: 5
-                },
-                city: {
-                    required: true
-                },
-                newsletter: {
-                    required: true
-                }
             },
             messages: {
-                firstname: "Please specify your first name",
-                lastname: "Please specify your last name",
+                nombre: "por favor ingrese el nombre ",
+                apellido: "por favor ingrese el nombre ",
                 email: {
-                    required: "We need your email address to contact you",
+                    required: "necesitamos un mail de contacto ",
                     email: "Your email address must be in the format of name@domain.com"
                 },
-                gender: "Please check a gender!"
-            },
-            groups: {
-                DateofBirth: "dd mm yyyy",
+                sexo: "por favor select su sexo!"
             },
             invalidHandler: function (event, validator) { //display error alert on form submit
                 successHandler1.hide();
@@ -100,7 +96,7 @@ var FormValidator = function () {
                 successHandler1.show();
                 errorHandler1.hide();
                 // submit form
-                //$('#form').submit();
+                $('#form').submit();
             }
         });
     };

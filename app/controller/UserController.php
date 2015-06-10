@@ -47,6 +47,26 @@ class User extends DataModel
 		$resultado = mysql_query($sql) or die ("error 103 no logra consultar");
 		$valida = mysql_fetch_assoc($resultado);
 	}
+
+	public function Select($id = Null)
+	{
+		$this->Conect();
+		if (!empty($id)) {
+			$sql = "SELECT * FROM `usuario` WHERE `id_user`= '".$id."' ";
+			$Selection = mysql_query($sql) or die ("Error 201 no se logró consultar");
+			$respuesta = mysql_fetch_assoc($Selection);
+
+		}else{
+			$sql = "SELECT * FROM `usuario` ";
+			$respuesta = mysql_query($sql) or die ("Error 201 no se logró consultar");
+
+		}
+
+
+		return $respuesta; //imprimirlo en la vista
+
+
+	}
 }
 
 
