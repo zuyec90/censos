@@ -32,34 +32,30 @@
 			</div>
 			<!-- inicio: PAGE -->
 			<div class="main-content">
-				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
+				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
+				<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+					
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 									&times;
 								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
+								<h4 class="modal-title">Eliminar Mensaje</h4>
 							</div>
 							<div class="modal-body">
-								Here will be a configuration form
+								Desea eliminar este mensaje?
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+								<button type="button"class="btn btn-danger">Eliminar</button>
 							</div>
 						</div>
 						<!-- /.modal-content -->
-					</div>
+					
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
-				<!-- final: SPANEL CONFIGURATION MODAL FORM -->
+				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
 <!-- inicio: PAGE HEADER -->
 					<div class="row">
@@ -221,20 +217,10 @@
 							<i class="fa fa-envelope-o"></i>
 								Bandeja de entrada
 									<div class="panel-tools">
-										<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-										</a>
-										<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-											<i class="fa fa-wrench"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-refresh" href="#">
-											<i class="fa fa-refresh"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-close" href="#">
-											<i class="fa fa-times"></i>
-										</a>
+										<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
+										<a class="btn btn-xs btn-link panel-refresh" href="#"><i class="fa fa-refresh"></i></a>
+										<a class="btn btn-xs btn-link panel-expand" href="#"><i class="fa fa-resize-full"></i></a>
+										<a class="btn btn-xs btn-link panel-close" href="#"><i class="fa fa-times"></i></a>
 									</div>
 						</div>
 						<div class="panel-body messages">
@@ -418,7 +404,7 @@
 												New frontfinal layout
 											</div>
 											<div class="message-actions">
-												<a title="Move to trash" href="#"><i class="fa fa-trash-o"></i></a>
+												<a title="Move to trash" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
 												<a title="Reply" href="#"><i class="fa fa-reply"></i></a>
 												<a title="Reply to all" href="#"><i class="fa fa-reply-all"></i></a>
 												<a title="Forward" href="#"><i class="fa fa-long-arrow-right"></i></a>
@@ -460,24 +446,31 @@
 				</button>
 				<h4 class="modal-title">Escriba su mensaje</h4>
 			</div>
+			<form action="controlado_mensaje.php" method="post">
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-md-4">
 						<p>
 							<label for="name">Nombre:</label>
-							<input name="nombre" type="text" required id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+							<input name="nombre" type="text" id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 						</p>
 						<p>
-							<label for="destinatario">Destinatario:</label>
-							<input class="form-control" id="disabledInput" type="text" placeholder="Ulises Robles" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;" disabled>
+						<label for="destinatario">Destinatario:</label>
+							<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+								<option value="">&nbsp;</option>
+								<option value="">Ulises Robles</option>
+								<option value="">Yaylet Rojas</option>
+								<option value="">Yasmin Torres</option>
+							</select>
 						</p>
 						<p>
 							<label for="mensaje">Mensaje:</label>
-							<textarea placeholder="Escriba aquí su mensaje" required id="mensaje" id="form-field-22" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+							<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
 						</p>
 					</div>
 				</div>
 			</div>
+			</form>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn btn-light-grey">
 					Cancelar
