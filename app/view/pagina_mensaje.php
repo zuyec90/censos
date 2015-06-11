@@ -213,15 +213,12 @@
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title">Escriba su mensaje</h4>
 						</div>
-						<form action="ali_mensaje.php" method="post" id="enviar">
+						<form action="ali_mensaje.php" method="post" role="form" id="form">
 							<div class="modal-body">
 								<div class="row">
 									<div class="col-md-4">
-										<p>
 										<label for="name">Nombre:</label>
 										<input name="nombre" type="text" id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
-										</p>
-										<p>
 										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
 												<option value="">&nbsp;</option>
@@ -229,38 +226,35 @@
 												<option value="">Yaylet Rojas</option>
 												<option value="">Yasmin Torres</option>
 											</select>
-										</p>
-										<p>
-											<label for="mensaje">Mensaje:</label>
-											<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
-										</p>
+										<label for="mensaje">Mensaje:</label>
+										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
 									</div>
 								</div>
 							</div>
-						</form>
-						<div class="modal-footer">
-							<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"</input>
-							<input type="button" value="Enviar" class="btn btn-primary">
-								<?php
-								if(!empty($_POST)){
-								if ($_POST['valor'] == '1' ) { ?>
+							<div class="modal-footer">
+								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="validarMensaje()">
+									<?php
+									if(!empty($_POST)){
+									if ($_POST['valor'] == '1' ) { ?>
 
-									<div class="alert alert-block alert-success fade in">
-										<button data-dismiss="alert" class="close" type="button">&times;</button>
-										<h4 class="alert-heading"><i class="fa fa-check-circle"></i> Enviado!</h4>
-										<p>Tu mensaje ha sido enviado satisfatoriamente.</p>
-									</div>
-								<?php}
-								else{ ?>
-									<div class="alert alert-block alert-danger fade in">
-										<button data-dismiss="alert" class="close" type="button">&times;</button>
-										<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
-										<p>Se ha producido un error al enviar el mensaje,intentelo nuevamne.</p>
-									</div>
-								<?php	}
-								} ?>
-							</input>
-						</div>
+										<div class="alert alert-block alert-success fade in">
+											<button data-dismiss="alert" class="close" type="button">&times;</button>
+											<h4 class="alert-heading"><i class="fa fa-check-circle"></i> Enviado!</h4>
+											<p>Tu mensaje ha sido enviado satisfatoriamente.</p>
+										</div>
+									<?php}
+									else{ ?>
+										<div class="alert alert-block alert-danger fade in">
+											<button data-dismiss="alert" class="close" type="button">&times;</button>
+											<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
+											<p>Se ha producido un error al enviar el mensaje,intentelo nuevamne.</p>
+										</div>
+									<?php	}
+									} ?>
+								</input>
+							</div>
+						</form>
 					</div>
 					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 					<!-- final: BOOTSTRAP EXTED MODALS -->
@@ -516,11 +510,11 @@
 		<script src="../../js/ui-modals.js"></script>
 		<!-- final: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
-			jQuery(document).ready(function() {
-				Main.init();
-				validarMensaje.inin();
-				UIModals.init();
-			});
+		jQuery(document).ready(function() {
+			Main.init();
+			validarMensaje.init();
+			UIModals.init();
+		});
 		</script>
 	</body>
 	<!-- final: BODY -->
