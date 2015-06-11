@@ -104,21 +104,21 @@
 										Backgrounds for Boxed Version
 									</div>
 									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="images/bg_5.png"></a>
+										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
+										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
+										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
+										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
+										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
 									</div>
 									<div class="box-title">
 										5 Predefined Color Schemes
 									</div>
 									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="images/green.png"></a>
+										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
+										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
+										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
+										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
+										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
 									</div>
 									<div class="box-title">
 										Style it with LESS
@@ -265,34 +265,34 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/jquery-mockjax/jquery.mockjax.js"></script>
-		<script src="plugins/moment/moment.js"></script>
-		<script src="plugins/select2/select2.min.js"></script>
-		<script src="plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-		<script src="plugins/x-editable/js/bootstrap-editable.min.js"></script>
-		<script src="plugins/typeaheadjs/typeaheadjs.js"></script>
-		<script src="plugins/typeaheadjs/lib/typeahead.js"></script>
-		<script src="plugins/jquery-address/address.js"></script>
-		<script src="plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.min.js"></script>
-		<script src="plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5.js"></script>
-		<script src="plugins/wysihtml5/wysihtml5.js"></script>
-		<script src="plugins/x-editable/demo-mock.js"></script>
-		<script src="plugins/x-editable/demo.js"></script>
-		<script src="plugins/js/jquery.min.js"></script>
-   		<script src="plugins/js/bootstrap.min.js"></script>
+		<script src="../../plugins/jquery-mockjax/jquery.mockjax.js"></script>
+		<script src="../../plugins/moment/moment.js"></script>
+		<script src="../../plugins/select2/select2.min.js"></script>
+		<script src="../../plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="../../plugins/x-editable/js/bootstrap-editable.min.js"></script>
+		<script src="../../plugins/typeaheadjs/typeaheadjs.js"></script>
+		<script src="../../plugins/typeaheadjs/lib/typeahead.js"></script>
+		<script src="../../plugins/jquery-address/address.js"></script>
+		<script src="../../plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.min.js"></script>
+		<script src="../../plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5.js"></script>
+		<script src="../../plugins/wysihtml5/wysihtml5.js"></script>
+		<script src="../../plugins/x-editable/demo-mock.js"></script>
+		<script src="../../plugins/x-editable/demo.js"></script>
+		<script src="../../plugins/js/jquery.min.js"></script>
+   		<script src="../../plugins/js/bootstrap.min.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

@@ -505,10 +505,7 @@
 									<div id="panel_projects" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">
-												<div class="col-md-12">
-													<h3><a href="#static" data-toggle="modal" class="demo btn btn-yellow">Nuevo Familiar</a></h3>
-													<hr>
-												</div>
+												
 											</div>
 										</form>
 									</div>

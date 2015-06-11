@@ -4,7 +4,7 @@ errores
 Esperanza*/
 include ('../config/config.php');
 
-class jefe extends DataModel
+class censo extends DataModel
 {
 	public function Consulta($id = Null)
 	{
@@ -20,7 +20,7 @@ class jefe extends DataModel
 	}
 
 
-	public function Verificarjefe($cedula = Null)
+	public function Verificarcenso($cedula = Null)
 	{
 
 		$sql = "SELECT * FROM `jefeflia` WHERE `cedula`= ".$cedula."";

@@ -38,66 +38,82 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 					&times;
 				</button>
-				<h4 class="modal-title">Responsive</h4>
+				<h3 class="modal-title">Nuevo Familiar</h3>
 			</div>
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-md-6">
-						<h4>Some Input</h4>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
+						<h4>Ingrese los Datos</h4>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">
+									<h5>Nombres</h5>
+							</label>
+									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+							<label class="col-sm-3 control-label">	
+									<h5>Apellidos</h5>
+							</label>
+									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
+							<label class="col-sm-3 control-label">	
+									<h5>Sexo</h5>
+							</label>
+									<input type="text" class="form-control" id="sexo" name="sexo" placeholder="">
+							<label class="col-sm-3 control-label">	
+									<h5>Cedúla</h5>
+							</label>
+									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="">
+							<label class="col-sm-3 control-label">	
+									<h5>Fecha Nacimiento</h5>
+							</label>
+									<input type="text" class="form-control" id="fecha_nacimiento" name="cedúla" placeholder="">
+							<label class="col-sm-3 control-label">	
+									<h5> Discapacidad/ Tipo</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+								
+						</div>
+
+						
 					</div>
 					<div class="col-md-6">
-						<h4>Some More Input</h4>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
-						<p>
-							<input class="form-control" type="text">
-						</p>
+						
+						<label class="col-sm-3 control-label">	
+									<h5>Embarazo Temprano</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>Parentesco</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>Grado Instrucción</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>CNE</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>Profesión</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>Pensionado</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+						<label class="col-sm-3 control-label">	
+									<h5>Ing. Mensual</h5>
+							</label>
+									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-light-grey">
-					Close
+				<button type="button" data-dismiss="modal" class="btn btn-danger">
+					Cancelar
 				</button>
-				<button type="button" class="btn btn-blue">
-					Save changes
+				<button type="button" class="btn btn-success">
+					Registrar
 				</button>
 			</div>
 		</div>
@@ -267,7 +283,7 @@
 										</a>
 									</li>
 									<li>
-										<a data-toggle="tab" href="#panel_projects">
+										<a data-toggle="modal" href="#panel-config">
 											+
 										</a>
 									</li>
@@ -548,10 +564,7 @@
 									<div id="panel_projects" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">
-												<div class="col-md-12">
-													<h3><a href="#panel-config" data-toggle="modal" class="demo btn btn-yellow">Nuevo Familiar</a></h3>
-													<hr>
-												</div>
+												
 											</div>
 										</form>
 									</div>

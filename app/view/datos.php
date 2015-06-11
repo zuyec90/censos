@@ -104,21 +104,21 @@
 										Backgrounds for Boxed Version
 									</div>
 									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="images/bg_5.png"></a>
+										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
+										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
+										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
+										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
+										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
 									</div>
 									<div class="box-title">
 										5 Predefined Color Schemes
 									</div>
 									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="images/green.png"></a>
+										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
+										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
+										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
+										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
+										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
 									</div>
 									<div class="box-title">
 										Style it with LESS
@@ -477,7 +477,7 @@
 														Tel. Cel. <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="celular" id="celular" placeholder="" maxlength="11">
+																<input type="text" class="float-left margin-select" name="telfcel" id="telfcel" placeholder="" maxlength="11">
 													</div>
 												</div>
 
@@ -486,7 +486,7 @@
 														Tel. Hab. <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="habitacion" id="habitacion" placeholder="" maxlength="11">
+																<input type="text" class="float-left margin-select" name="telfhab" id="telfhab" placeholder="" maxlength="11">
 													</div>
 												</div>
 
@@ -495,7 +495,7 @@
 														Tel. Ofic. <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="oficina" id="oficina" placeholder="" maxlength="11">
+																<input type="text" class="float-left margin-select" name="telfofic" id="telfofic" placeholder="" maxlength="11">
 													</div>
 												</div>
 
@@ -528,7 +528,7 @@
 														Estado Civil <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<select class="form-control" id="estado" name="estado">
+														<select class="form-control" id="estado_civil" name="estado_civil">
 															<option value="">&nbsp;</option>
 															<option value="soltero (a)">soltero (a)</option>
 															<option value="Casado (a)">Casado (a)</option>
@@ -543,7 +543,7 @@
 														Nivel de Instrucción <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<select class="form-control" id="instruccion" name="instruccion">
+														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
 															<option value="">&nbsp;</option>
 															<option value="Sin Instrucción">Sin Instrucción</option>
 															<option value="Básica">Básica</option>
@@ -725,21 +725,21 @@
 														Tel. Cel:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="celular"></p>
+														<p class="form-control-static display-value" data-display="telfcel"></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
 														Tel. Hab.:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="habitacion"></p>
+														<p class="form-control-static display-value" data-display="telfhab"></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
 														Tel. Ofic.:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="oficina"></p>
+														<p class="form-control-static display-value" data-display="telfofic"></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
@@ -754,7 +754,7 @@
 														Estado Civil:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="estado"></p>
+														<p class="form-control-static display-value" data-display="estado_civil"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -762,7 +762,7 @@
 														Nivel de Instrucción:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="instruccion"></p>
+														<p class="form-control-static display-value" data-display="nievl_instruccion"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -828,24 +828,24 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="../../https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
-		<script src="js/form-wizard.js"></script>
+		<script src="../../plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="../../plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+		<script src="../../js/form-wizard.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

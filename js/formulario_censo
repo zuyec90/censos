@@ -1,0 +1,162 @@
+var FormValidator = function () {
+    // función de validación 2 
+    var runValidator2 = function () {
+        var form2 = $('#form2');
+        var errorHandler2 = $('.errorHandler', form2);
+        var successHandler2 = $('.successHandler', form2);
+        $.validator.addMethod("getEditorValue", function () {
+            $("#editor1").val($('.summernote').code());
+            if ($("#editor1").val() != "" && $("#editor1").val() != "<br>") {
+                $('#editor1').val('');
+                return true;
+            } else {
+                return false;
+            }
+        }, 'This field is required.');
+        form2.validate({
+            errorElement: "span", // contain the error msg in a small tag
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) { // render error placement for each input type
+                if (element.attr("type") == "radio" || element.attr("type") == "checkbox") { // for chosen elements, need to insert the error after the chosen container
+                    error.insertAfter($(element).closest('.form-group').children('div').children().last());
+                } else if (element.hasClass("ckeditor")) {
+                    error.appendTo($(element).closest('.form-group'));
+                } else {
+                    error.insertAfter(element);
+                    // for other inputs, just perform default behavior
+                }
+            },
+            ignore: "",
+            rules: {
+                nombre: {
+                    minlength: 3,
+                    required: true
+                },
+                apellido: {
+                    minlength: 3,
+                    required: true
+                },
+                cedula: {
+                    minlength: 8,
+                    required: true
+                },
+                fecha_nacimiento: {
+                    minlength: 8,
+                    required: true
+                },
+                edad: {
+                    minlength: 3
+                    required: true
+                },
+                sexo: {
+                    required: true
+                },
+                CNE: {
+                    required: true
+                },
+                tiempo: {
+                    required: true
+                },
+                incapacitado: {
+                    required: true
+                },
+                tipo: {
+                    required: true
+                    minlength: 20,
+                },
+                pensionado: {
+                    required: true
+                }
+                institucion: {
+                    required: true
+                    minlength: 20,
+                }
+                telfcel: {
+                    required: true
+                    minlength: 10,
+                     number: true,
+                }
+                telfhab: {
+                    required: true
+                    inlength: 10,
+                     number: true,
+                }
+                telfofic: {
+                    required: true
+                    inlength: 10,
+                     number: true,
+                }
+                email: {
+                    required: true,
+                    email: true
+                }
+                 estado civil: {
+                    required: true
+                }
+                nivel de instruccion: {
+                    required: true,
+                }
+                 profesion: {
+                    required: true,
+                }
+                trabaja: {
+                    required: true,
+                }
+                ingreso: {
+                    required: true,
+                }
+                ingreso_mensual: {
+                    required: true,
+                    number: true,
+                }
+            },
+            messages: {
+                firstname: "Por favor ingrese los nombres",
+                lastname: "Por favor ingrese los apellidos",
+                email: {
+                    required: "Se necesita un email de contacto",
+                    email: "Debe tener un formato name@domain.com"
+                },
+                sexo: "Por favor seleccione su sexo"
+                }
+            },
+            invalidHandler: function (event, validator) { //display error alert on form submit
+                successHandler2.hide();
+                errorHandler2.show();
+            },
+            highlight: function (element) {
+                $(element).closest('.help-block').removeClass('valid');
+                // display OK icon
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error').find('.symbol').removeClass('ok').addClass('required');
+                // add the Bootstrap error class to the control group
+            },
+            unhighlight: function (element) { // revert the change done by hightlight
+                $(element).closest('.form-group').removeClass('has-error');
+                // set error class to the control group
+            },
+            success: function (label, element) {
+                label.addClass('help-block valid');
+                // mark the current input as valid and display OK icon
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success').find('.symbol').removeClass('required').addClass('ok');
+            },
+            submitHandler: function (form) {
+                successHandler2.show();
+                errorHandler2.hide();
+                // submit form
+                //$('#form2').submit();
+            }
+        });
+        $('.summernote').summernote({
+            height: 300,
+            tabsize: 2
+        });
+        CKEDITOR.disableAutoInline = true;
+        $('textarea.ckeditor').ckeditor();
+    };
+    return {
+        //main function to initiate template pages
+        init: function () {
+            runValidator2();
+        }
+    };
+}();

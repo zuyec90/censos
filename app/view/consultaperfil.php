@@ -3,7 +3,7 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en" class="no-js"> //luego de colocarlo en carpeta no funciona el buscador...
 	<!--<![endif]-->
 	<!--inicio: HEAD -->
 	<?php require_once('head.php'); ?>
@@ -33,31 +33,21 @@
 			<!--inicio: PAGE -->
 			<div class="main-content">
 				<!--inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel para Ayuda</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">								
-								<button type="button" class="btn btn-primary">
-									Aceptar
-								</button>
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Cancelar
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
+				<div id="panel-config" class="modal fade" tabindex="-1" data-width="160" style="display: none;" data-backdrop="static" data-keyboard="false" style="display: none;">
+			<div class="modal-header">
+				
+				<h4 class="modal-title">¿Eliminar?</h4>
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn btn-primary">
+					Cancelar
+				</button>
+				<button type="button" data-dismiss="modal" class="btn btn-danger" href="panel_projects">
+					Eliminar
+				</button>
+			</div>
+		</div>
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -124,7 +114,7 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
+													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
 													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
@@ -138,7 +128,7 @@
 												<td>
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
+													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
 													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
@@ -151,8 +141,8 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="ELiminar">
-													<i class="fa fa-trash-o"></i></a>&nbsp;
+													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
+													<i class="fa fa-trash-o"></i></a>
 																								
 												</td>
 											</tr>
@@ -165,7 +155,7 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
+													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
 													<i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>
@@ -178,7 +168,7 @@
 												<td>													
 													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="ELiminar">
+													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
 													<i class="fa fa-trash-o"></i></a>													
 												</td>
 											</tr>
@@ -207,22 +197,22 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 		<script src="js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!--inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script type="text/javascript" src="plugins/select2/select2.min.js"></script>
-		<script type="text/javascript" src="plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="plugins/DataTables/media/js/DT_bootstrap.js"></script>
+		<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
+		<script type="text/javascript" src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
 		<script src="js/table-data.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
