@@ -206,7 +206,7 @@ var Main = function () {
                 overlayCSS: {
                     backgroundColor: '#fff'
                 },
-                message: '<img src="images/loading.gif" /> Espere un momento...',
+                message: '<img src="../../images/loading.gif" /> Espere un momento...',
                 css: {
                     border: 'none',
                     color: '#333',
@@ -609,7 +609,7 @@ var Main = function () {
                 overlayCSS: {
                     backgroundColor: '#fff'
                 },
-                message: '<img src="images/loading.gif" /> Espere un momento...',
+                message: '<img src="../../images/loading.gif" /> Espere un momento...',
                 css: {
                     border: 'none',
                     color: '#333',

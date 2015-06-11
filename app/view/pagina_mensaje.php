@@ -34,30 +34,27 @@
 			<div class="main-content">
 				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-					
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Eliminar Mensaje</h4>
-							</div>
-							<div class="modal-body">
-								Desea eliminar este mensaje?
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-								<button type="button"class="btn btn-danger">Eliminar</button>
-							</div>
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Eliminar Mensaje</h4>
 						</div>
-						<!-- /.modal-content -->
-					
+						<div class="modal-body">
+							Desea eliminar este mensaje?
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+							<button type="button"class="btn btn-danger">Eliminar</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+
 					<!-- /.modal-dialog -->
 				</div>
 				<!-- /.modal -->
 				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
-<!-- inicio: PAGE HEADER -->
+				<!-- inicio: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- inicio: STYLE SELECTOR BOX -->
@@ -100,21 +97,21 @@
 										Fondos
 									</div>
 									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="images/bg_5.png"></a>
+										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
+										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
+										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
+										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
+										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
 									</div>
 									<div class="box-title">
 										5 Esquemas predefinidos de colores
 									</div>
 									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="images/green.png"></a>
+										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
+										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
+										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
+										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
+										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
 									</div>
 									<div class="box-title">
 										Diseñar estilo de esquema
@@ -205,23 +202,79 @@
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
-					<!-- inicio: BOOTSTRAP EXTfinalED MODALS PANEL -->
+					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
 					<div class="panel-body">
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
-					<!-- final: BOOTSTRAP EXTfinalED MODALS PANEL -->
-					<br>
+					<!-- final: BOOTSTRAP EXTED MODALS PANEL -->
+					<!-- inicio: BOOTSTRAP EXTED MODALS -->
+					<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Escriba su mensaje</h4>
+						</div>
+						<form action="ali_mensaje.php" method="post" id="enviar">
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-4">
+										<p>
+										<label for="name">Nombre:</label>
+										<input name="nombre" type="text" id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										</p>
+										<p>
+										<label for="destinatario">Destinatario:</label>
+											<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+												<option value="">&nbsp;</option>
+												<option value="">Ulises Robles</option>
+												<option value="">Yaylet Rojas</option>
+												<option value="">Yasmin Torres</option>
+											</select>
+										</p>
+										<p>
+											<label for="mensaje">Mensaje:</label>
+											<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+										</p>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="modal-footer">
+							<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"</input>
+							<input type="button" value="Enviar" class="btn btn-primary">
+								<?php
+								if(!empty($_POST)){
+								if ($_POST['valor'] == '1' ) { ?>
+
+									<div class="alert alert-block alert-success fade in">
+										<button data-dismiss="alert" class="close" type="button">&times;</button>
+										<h4 class="alert-heading"><i class="fa fa-check-circle"></i> Enviado!</h4>
+										<p>Tu mensaje ha sido enviado satisfatoriamente.</p>
+									</div>
+								<?php}
+								else{ ?>
+									<div class="alert alert-block alert-danger fade in">
+										<button data-dismiss="alert" class="close" type="button">&times;</button>
+										<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
+										<p>Se ha producido un error al enviar el mensaje,intentelo nuevamne.</p>
+									</div>
+								<?php	}
+								} ?>
+							</input>
+						</div>
+					</div>
+					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
+					<!-- final: BOOTSTRAP EXTED MODALS -->
+					
 					<!-- inicio: INBOX PANEL -->
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-envelope-o"></i>
-								Bandeja de entrada
-									<div class="panel-tools">
-										<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
-										<a class="btn btn-xs btn-link panel-refresh" href="#"><i class="fa fa-refresh"></i></a>
-										<a class="btn btn-xs btn-link panel-expand" href="#"><i class="fa fa-resize-full"></i></a>
-										<a class="btn btn-xs btn-link panel-close" href="#"><i class="fa fa-times"></i></a>
-									</div>
+							<i class="fa fa-envelope-o"></i>Bandeja de entrada
+							<div class="panel-tools">
+								<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
+								<a class="btn btn-xs btn-link panel-refresh" href="#"><i class="fa fa-refresh"></i></a>
+								<a class="btn btn-xs btn-link panel-expand" href="#"><i class="fa fa-resize-full"></i></a>
+								<a class="btn btn-xs btn-link panel-close" href="#"><i class="fa fa-times"></i></a>
+							</div>
 						</div>
 						<div class="panel-body messages">
 							<ul class="messages-list">
@@ -229,17 +282,15 @@
 									<form action="#" class="form-inline">
 										<div class="input-group">
 											<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
-												<div class="input-group-btn">
-													<button class="btn btn-primary" type="button">
-															<i class="fa fa-search"></i>
-													</button>
-												</div>
+											<div class="input-group-btn">
+												<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+											</div>
 										</div>
 									</form>
 								</li>
 								<li class="messages-item">
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
-										<img src="upload/765-default-avatar.png" class="messages-item-avatar">
+										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 											<span class="messages-item-from">Ulises Robles</span>
 											<div class="messages-item-time">
 												<span class="text">10:23 PM</span>
@@ -289,7 +340,7 @@
 										</li>
 										<li class="messages-item active starred">
 											<span title="Remove star" class="messages-item-star"><i class="fa fa-star"></i></span>
-											<img src="upload/default_avatar_female.jpg" class="messages-item-avatar">
+											<img src="../../upload/default_avatar_female.jpg" class="messages-item-avatar">
 											<span class="messages-item-from">Yaylet Rojas</span>
 											<div class="messages-item-time">
 												<span class="text">08:46 PM</span>
@@ -340,7 +391,7 @@
 										<li class="messages-item">
 											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 											<span class="messages-item-attachment"><i class="fa fa-paperclip"></i></span>
-											<img src="upload/default_avatar_female.jpg" class="messages-item-avatar">
+											<img src="../../upload/default_avatar_female.jpg" class="messages-item-avatar">
 											<span class="messages-item-from">Yasmin Torres</span>
 											<div class="messages-item-time">
 												<span class="text">04:03 PM</span>
@@ -404,10 +455,10 @@
 												New frontfinal layout
 											</div>
 											<div class="message-actions">
-												<a title="Move to trash" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
-												<a title="Reply" href="#"><i class="fa fa-reply"></i></a>
-												<a title="Reply to all" href="#"><i class="fa fa-reply-all"></i></a>
-												<a title="Forward" href="#"><i class="fa fa-long-arrow-right"></i></a>
+												<a title="Mover a la papelera" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+												<a title="Responder" href="#"><i class="fa fa-reply"></i></a>
+												<a title="Responder a todos" href="#"><i class="fa fa-reply-all"></i></a>
+												<a title="Siguiente" href="#"><i class="fa fa-long-arrow-right"></i></a>
 											</div>
 										</div>
 										<div class="message-content">
@@ -438,51 +489,6 @@
 		<!-- inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
 		<!-- final: FOOTER -->
-		<!-- inicio: BOOTSTRAP EXTfinalED MODALS -->
-		<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-				<h4 class="modal-title">Escriba su mensaje</h4>
-			</div>
-			<form action="controlado_mensaje.php" method="post">
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-4">
-						<p>
-							<label for="name">Nombre:</label>
-							<input name="nombre" type="text" id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
-						</p>
-						<p>
-						<label for="destinatario">Destinatario:</label>
-							<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
-								<option value="">&nbsp;</option>
-								<option value="">Ulises Robles</option>
-								<option value="">Yaylet Rojas</option>
-								<option value="">Yasmin Torres</option>
-							</select>
-						</p>
-						<p>
-							<label for="mensaje">Mensaje:</label>
-							<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
-						</p>
-					</div>
-				</div>
-			</div>
-			</form>
-			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-light-grey">
-					Cancelar
-				</button>
-				<button type="button" class="btn btn-primary">
-					Enviar
-				</button>
-			</div>
-		</div>
-
-		<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
-		<!-- final: BOOTSTRAP EXTfinalED MODALS -->
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>
@@ -492,26 +498,27 @@
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![finalif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- final: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
-		<script src="plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
-		<script src="js/ui-modals.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="../../js/ui-modals.js"></script>
 		<!-- final: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				validarMensaje.inin();
 				UIModals.init();
 			});
 		</script>
