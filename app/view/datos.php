@@ -234,7 +234,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="#" role="form" class="smart-wizard form-horizontal" id="form">
+									<form action="#" role="form" class="smart-wizard form-horizontal" id="form2">
 										<div id="wizard" class="swMain">
 											<ul>
 												<li>
@@ -379,11 +379,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="sexo" id="sexo_f" >
+															<input type="radio" class="grey" value="f" name="sexo" id="sexo" >
 															Femenino
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="sexo"  id="sexo_m">
+															<input type="radio" class="grey" value="m" name="sexo"  id="sexo">
 															Masculino
 														</label>
 													</div>
@@ -406,11 +406,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="CNE" id="CNE_si" >
+															<input type="radio" class="grey" value="si" name="CNE" id="CNE" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="CNE"  id="CNE_no">
+															<input type="radio" class="grey" value="no" name="CNE"  id="CNE">
 															No
 														</label>
 													</div>
@@ -613,8 +613,8 @@
 														</button>
 													</div>
 													<div class="col-sm-2 col-sm-offset-3">
-														<button class="btn btn-blue next-step btn-block">
-															Siguiente <i class="fa fa-arrow-circle-right"></i>
+														<button class="btn btn-success next-step btn-block">
+															Registrar <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
 												</div>
@@ -802,6 +802,25 @@
 														<button class="btn btn-success finish-step btn-block">
 															Finalizar <i class="fa fa-arrow-circle-right"></i>
 														</button>
+														<?php
+															if(!empty($_POST)){
+															if ($_POST['valor'] == '1' ) { ?>
+
+																<div class="alert alert-success">
+																	<button data-dismiss="alert" class="close" type="button">&times;</button>
+																	<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+																	<p>Registro realizado satisfatoriamente.</p>
+																</div>
+															<?php}
+															else{ ?>
+																<div class="alert alert-block alert-danger fade in">
+																	<button data-dismiss="alert" class="close" type="button">&times;</button>
+																	<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
+																	<p>No se logró Registrar</p>
+																</div>
+															<?php	}
+															} ?>
+
 													</div>
 												</div>
 											</div>
@@ -828,7 +847,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="../../https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
 		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -851,6 +870,7 @@
 			jQuery(document).ready(function() {
 				Main.init();
 				FormWizard.init();
+				formulario_censo.init()
 			});
 		</script>
 	</body>

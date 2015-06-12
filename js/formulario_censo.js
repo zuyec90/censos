@@ -61,14 +61,14 @@ var FormValidator = function () {
                     required: true
                 },
                 tipo: {
-                    required: true
+                    required: false
                     minlength: 20,
                 },
                 pensionado: {
                     required: true
                 }
                 institucion: {
-                    required: true
+                    required: false
                     minlength: 20,
                 }
                 telfcel: {
@@ -90,10 +90,10 @@ var FormValidator = function () {
                     required: true,
                     email: true
                 }
-                 estado civil: {
+                estado_civil: {
                     required: true
                 }
-                nivel de instruccion: {
+                nivel_instruccion: {
                     required: true,
                 }
                  profesion: {
@@ -111,14 +111,32 @@ var FormValidator = function () {
                 }
             },
             messages: {
-                firstname: "Por favor ingrese los nombres",
-                lastname: "Por favor ingrese los apellidos",
+                nombre: "Por favor ingrese los nombres",
+                apellido: "Por favor ingrese los apellidos",
+                cedula: "Por favor ingrese el numero de cedúla",
+                fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
+                edad: "Por favor ingrese la edad",
+                sexo:"Por favor seleccione el sexo",
+                CNE: "Por favor seleccione el campo",
+                tiempo: "Por favor ingrese el tiempo",
+                incapacitado: "Por favor seleccione si es incapacitado",
+                pensionado: "Por favor seleccione la opción",
+                telfcel: "Por favor ingrese el telefono",
+                telfhab: "Por favor ingrese el telefono",
+                telfofic: "Por favor ingrese el telefono",
                 email: {
                     required: "Se necesita un email de contacto",
                     email: "Debe tener un formato name@domain.com"
-                },
-                sexo: "Por favor seleccione su sexo"
-                }
+                }, 
+                estado civil: "Por favor seleccione el estado",
+                nivel de instruccion: "Por favor seleccione el nivel de instrucción",
+                profesion: "Por favor ingrese la profesión",
+                trabaja: "Por favor ingrese el campo",
+                ingreso: "Por favor seleccione el campo",
+                ingreso_mensual: "Por favor ingrese el campo",
+
+     
+                
             },
             invalidHandler: function (event, validator) { //display error alert on form submit
                 successHandler2.hide();
