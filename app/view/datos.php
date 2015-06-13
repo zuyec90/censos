@@ -234,7 +234,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="#" role="form" class="smart-wizard form-horizontal" id="form2">
+									<form action="#" role="form" class="smart-wizard form-horizontal" id="form">
 										<div id="wizard" class="swMain">
 											<ul>
 												<li>
@@ -862,15 +862,15 @@
 		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="../../plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="../../plugins/jquery-validation/dist/jquery.validate.js"></script>
 		<script src="../../plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 		<script src="../../js/form-wizard.js"></script>
+
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
 				FormWizard.init();
-				formulario_censo.init()
 			});
 		</script>
 	</body>

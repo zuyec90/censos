@@ -45,8 +45,8 @@ var FormWizard = function () {
             },
             ignore: ':hidden',
             rules: {
-                username: {
-                    minlength: 2,
+                nombre: {
+                    minlength: 1,
                     required: true
                 },
                 email: {
