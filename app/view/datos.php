@@ -871,6 +871,7 @@
 			jQuery(document).ready(function() {
 				Main.init();
 				FormWizard.init();
+				form-validation.init();
 			});
 		</script>
 	</body>

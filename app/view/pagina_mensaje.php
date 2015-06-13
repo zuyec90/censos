@@ -13,9 +13,7 @@
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<script type="text/javascript">
-		function hola(){
-			alert('aqui');
-		}
+		
 		function validar(){
         var nombre = document.getElementById("nombre").value;
         var destinatario = document.getElementById("destino").value;
@@ -25,7 +23,7 @@
             alert("Debes de indicar el nombre");
             return;
         }
-        if(destino ==""){
+        if(destinatario ==""){
             alert("Debes escoger un destinatario");
             return;
         }
@@ -35,7 +33,6 @@
         }
         document.getElementById("form").submit();
 }
-
 		</script>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
@@ -238,7 +235,7 @@
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title">Escriba su mensaje</h4>
 						</div>
-						<form action="ali_mensaje.php" method="post" role="form" id="form">
+						<form action="pagina_mensaje.php" method="post" role="form" id="form">
 							<div class="modal-body">
 								<div class="row">
 									<div class="col-md-4">
@@ -537,7 +534,6 @@
 		<script>
 		jQuery(document).ready(function() {
 			Main.init();
-
 			UIModals.init();
 		});
 

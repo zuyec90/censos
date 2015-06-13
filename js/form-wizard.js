@@ -46,63 +46,30 @@ var FormWizard = function () {
             ignore: ':hidden',
             rules: {
                 nombre: {
-                    minlength: 1,
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                password: {
-                    minlength: 6,
-                    required: true
-                },
-                password_again: {
-                    required: true,
-                    minlength: 5,
-                    equalTo: "#password"
-                },
-                full_name: {
-                    required: true,
-                    minlength: 2,
-                },
-                phone: {
-                    required: true
-                },
-                gender: {
-                    required: true
-                },
-                address: {
-                    required: true
-                },
-                city: {
-                    required: true
-                },
-                country: {
-                    required: true
-                },
-                card_name: {
-                    required: true
-                },
-                card_number: {
-                    minlength: 16,
-                    maxlength: 16,
-                    required: true
-                },
-                card_cvc: {
-                    digits: true,
-                    required: true,
                     minlength: 3,
-                    maxlength: 4
-                },
-                card_expiry_yyyy: "cardExpiry",
-                payment: {
                     required: true,
-                    minlength: 1
-                }
+                },
+                 apellido: {
+                    minlength: 3,
+                    required: true,
+                },
+                cedula: {
+                    minlength: 8,
+                    number: true,
+                    required: true,
+                },
+               fecha_nacimiento: {
+                    minlength: 8,
+                    required: true,
+                },
+               
             },
             messages: {
-                firstname: "Please specify your first name"
+                nombre: "Por favor ingrese los nombres",
+                apellido: "Por favor ingrese los apellidos",
+                cedula: "Por favor ingrese el numero de cedúla",
+                fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
+                edad: "Por favor ingrese la edad",
             },
             highlight: function (element) {
                 $(element).closest('.help-block').removeClass('valid');
