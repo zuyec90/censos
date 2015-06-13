@@ -17,10 +17,7 @@ include ('../Controller/MensajeController.php');
 
 $Mensaje = new Mensaje;
 
-$Msj = array('id_user_rece' =>5 , 'id_user'=>8, 'mensaje'=>"hola como estas" );
-
-
-if ($Mensaje->Crear($Msj) == 1) {
+if ($Mensaje->Crear($_POST) == 1) {
 
 
 #aqui va todo tu proceso y a la hora de ir a la pagina 1 pones asi.

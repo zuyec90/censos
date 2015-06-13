@@ -239,10 +239,11 @@
 							<div class="modal-body">
 								<div class="row">
 									<div class="col-md-4">
-										<label for="name">Nombre:</label>
-										<input name="nombre" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<label for="name">Nombre: Gleiver Gil</label>
+										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<br>
 										<label for="destinatario">Destinatario:</label>
-											<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
 												<option value="">Seleccione una opcion;</option>
 												<option value="1">Ulises Robles</option>
 												<option value="2">Yaylet Rojas</option>
