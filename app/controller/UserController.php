@@ -67,6 +67,21 @@ class User extends DataModel
 
 
 	}
+
+	public function eliminar($id = Null)
+	{
+		$this->Conect();
+
+		if (!empty($id)) {
+			$sql = "UPDATE `censo`.`usuario` SET `status` = '1' WHERE `usuario`.`id_user` = '".$id."' ";
+			mysql_query($sql) or die ('error 104 no se pudo modificar el usuario');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
 }
 
 
