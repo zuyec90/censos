@@ -57,7 +57,7 @@ class User extends DataModel
 			$respuesta = mysql_fetch_assoc($Selection);
 
 		}else{
-			$sql = "SELECT * FROM `usuario` ";
+			$sql = "SELECT * FROM `usuario` WHERE  `status` <> '0'";
 			$respuesta = mysql_query($sql) or die ("Error 201 no se logró consultar");
 
 		}

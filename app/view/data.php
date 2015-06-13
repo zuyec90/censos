@@ -138,7 +138,7 @@ $resultado = $user->Select();
 												<td>
 													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
+													<a href="../lib/UserEliminar.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
 													<i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>

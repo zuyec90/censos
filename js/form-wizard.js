@@ -45,7 +45,7 @@ var FormWizard = function () {
             },
             ignore: ':hidden',
             rules: {
-                nombre: {
+                Nombres: {
                     minlength: 3,
                     required: true,
                 },
@@ -59,10 +59,21 @@ var FormWizard = function () {
                     required: true,
                 },
                fecha_nacimiento: {
-                    minlength: 8,
                     required: true,
                 },
-               
+                nacionalidad:{
+                     required: true,
+                },
+                fecha_d:{
+                     required: true,
+                },
+                fecha_m:{
+                     required: true,
+                },
+                fecha_a:{
+                     required: true,
+                },
+
             },
             messages: {
                 nombre: "Por favor ingrese los nombres",

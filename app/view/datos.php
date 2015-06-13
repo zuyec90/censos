@@ -329,8 +329,8 @@
 													<div class="col-sm-4">
 														<div class="row">
 															<div class="col-sm-4">
-																<select class="form-control" id="fecha" name="fecha_d">
-																	<option value="fecha_nacimiento">DD</option>
+																<select class="form-control" id="fecha_d" name="fecha_d">
+																	<option value="">DD</option>
 																	<?php
 																		for ($i=1; $i < 32 ; $i++) {
 																			echo "<option value=".$i.">".$i."</option>";
@@ -340,8 +340,8 @@
 																</select>
 															</div>
 															<div class="col-sm-4">
-																<select class="form-control" id="fecha" name="fecha_m">
-																	<option value="fecha_nacimiento">MM</option>
+																<select class="form-control" id="fecha_m" name="fecha_m">
+																	<option value="">MM</option>
 																	<?php
 																		for ($i=1; $i < 13 ; $i++) {
 																			echo "<option value=".$i.">".$i."</option>";
@@ -351,8 +351,8 @@
 																</select>
 															</div>
 															<div class="col-sm-4">
-																<select class="form-control" id="fecha" name="fecha_a">
-																	<option value="fecha_nacimiento">AAAA</option>
+																<select class="form-control" id="fecha_a" name="fecha_a">
+																	<option value="">AAAA</option>
 																	<?php
 																		for ($i=1910; $i < 2016 ; $i++) {
 																			echo "<option value=".$i.">".$i."</option>";
