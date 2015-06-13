@@ -13,7 +13,7 @@
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<script type="text/javascript">
-		
+
 		function validar(){
         var nombre = document.getElementById("nombre").value;
         var destinatario = document.getElementById("destino").value;
@@ -235,18 +235,18 @@
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title">Escriba su mensaje</h4>
 						</div>
-						<form action="pagina_mensaje.php" method="post" role="form" id="form">
+						<form action="../lib/MensajeCrear.php" method="post" role="form" id="form">
 							<div class="modal-body">
 								<div class="row">
 									<div class="col-md-4">
 										<label for="name">Nombre:</label>
-										<input name="nombre" type="text" id="nombre"  placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<input name="nombre" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="destino" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
-												<option value="">&nbsp;</option>
-												<option value="">Ulises Robles</option>
-												<option value="">Yaylet Rojas</option>
-												<option value="">Yasmin Torres</option>
+												<option value="">Seleccione una opcion;</option>
+												<option value="1">Ulises Robles</option>
+												<option value="2">Yaylet Rojas</option>
+												<option value="3">Yasmin Torres</option>
 											</select>
 										<label for="mensaje">Mensaje:</label>
 										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>

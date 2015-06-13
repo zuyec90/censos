@@ -68,7 +68,7 @@ class User extends DataModel
 
 	}
 
-	public function eliminar($id = Null)
+	public function Eliminar($id = Null)
 	{
 		$this->Conect();
 

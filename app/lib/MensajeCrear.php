@@ -13,7 +13,7 @@ caso solo esta la conexion
 */
 
 
-include ('../Controller/UserController.php');
+include ('../Controller/MensajeController.php');
 
 $Mensaje = new Mensaje;
 
@@ -25,6 +25,7 @@ if ($Mensaje->Crear($Msj) == 1) {
 
 #aqui va todo tu proceso y a la hora de ir a la pagina 1 pones asi.
 echo "El mensaje ha sido enviado con exito";
-else
+}else{
 echo "El mensaje no pudo enviarse";
+}
 ?>

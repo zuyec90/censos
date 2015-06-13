@@ -234,7 +234,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="#" role="form" class="smart-wizard form-horizontal" id="form">
+									<form action="../lib/JefeRegistrar.php" method="post" role="form" class="smart-wizard form-horizontal" id="form">
 										<div id="wizard" class="swMain">
 											<ul>
 												<li>
@@ -290,7 +290,7 @@
 														Nombres <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+														<input type="text" class="form-control" id="nombre" name="Nombres" placeholder="">
 													</div>
 												</div>
 												<div class="form-group">
@@ -308,15 +308,15 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="cedula" id="cedula_v" >
+															<input type="radio" class="grey" value="f" name="nacionalidad" id="nacionalidad" >
 															V
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="cedula"  id="cedula_e">
+															<input type="radio" class="grey" value="m" name="nacionalidad"  id="nacionalidad">
 															E
 														</label>
 														<div class="col-sm-4">
-																<input type="text" class="form-control" name="numero" id="numero" placeholder="" maxlength="8">
+																<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8">
 														</div>
 													</div>
 												</div>
