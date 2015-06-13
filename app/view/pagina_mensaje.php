@@ -12,6 +12,31 @@
 	<body>
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
+		<script type="text/javascript">
+		function hola(){
+			alert('aqui');
+		}
+		function validar(){
+        var nombre = document.getElementById("nombre").value;
+        var destinatario = document.getElementById("destino").value;
+        var mensaje = document.getElementById("mensaje").value;
+
+        if(nombre ==""){
+            alert("Debes de indicar el nombre");
+            return;
+        }
+        if(destino ==""){
+            alert("Debes escoger un destinatario");
+            return;
+        }
+        if(mensaje ==""){
+            alert("Debes escribir un mensaje");
+            return;
+        }
+        document.getElementById("form").submit();
+}
+
+		</script>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
@@ -233,7 +258,7 @@
 							</div>
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="validarMensaje()">
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()">
 									<?php
 									if(!empty($_POST)){
 									if ($_POST['valor'] == '1' ) { ?>
@@ -258,7 +283,7 @@
 					</div>
 					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 					<!-- final: BOOTSTRAP EXTED MODALS -->
-					
+
 					<!-- inicio: INBOX PANEL -->
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -512,10 +537,12 @@
 		<script>
 		jQuery(document).ready(function() {
 			Main.init();
-			validarMensaje.init();
+
 			UIModals.init();
 		});
+
 		</script>
+
 	</body>
 	<!-- final: BODY -->
 </html>
