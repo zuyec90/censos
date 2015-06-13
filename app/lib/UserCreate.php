@@ -15,10 +15,11 @@ caso solo esta la conexion
 
 include ('../Controller/UserController.php');
 
-$d = new User;
+$User = new User;
 
 
-if ($d->Crear($_POST) == 1) {
+
+if ($User->Crear($_POST) == 1) {
 
 
 #aqui va todo tu proceso y a la hora de ir a la pagina 1 pones asi.

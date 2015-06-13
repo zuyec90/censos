@@ -1,6 +1,6 @@
 <?php
 /* veremos cuales son los
-errores 
+errores
 Esperanza*/
 include ('../config/config.php');
 
@@ -19,7 +19,7 @@ class censo extends DataModel
 			return "0";
 		}else{
 
-			$sql = INSERT INTO `censos`.`jefeflia` (`Nombres`, `Apellidos`, `id_cedula`, `Fnacimiento`, `Edad`, `Sexo`, `CNE`, `Tcomunidad`, `Incapacitado`, `Tipoincap`, `Pensionado`, `Institucion`, `Telfcel`, `Telfhab`, `Telfofic`, `Email`, `Ecivil`, `Ninstruccion`, `Profesion`, `Trabaja`, `Ingresofliar`, `Ingreso`) VALUES ('EDE', 'HER', '12345', '1', '1', '1', '1', '1', '1', '1', '1', '111', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1');
+			$sql = "INSERT INTO `censos`.`jefeflia` (`Nombres`, `Apellidos`, `id_cedula`, `Fnacimiento`, `Edad`, `Sexo`, `CNE`, `Tcomunidad`, `Incapacitado`, `Tipoincap`, `Pensionado`, `Institucion`, `Telfcel`, `Telfhab`, `Telfofic`, `Email`, `Ecivil`, `Ninstruccion`, `Profesion`, `Trabaja`, `Ingresofliar`, `Ingreso`) VALUES ('EDE', 'HER', '12345', '1', '1', '1', '1', '1', '1', '1', '1', '111', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1')";
 			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
 
 			return "1";
@@ -33,7 +33,7 @@ class censo extends DataModel
 		$sql = "SELECT * FROM `jefeflia` WHERE `cedula`= ".$cedula."";
 
 		$respuesta = mysql_query($sql) or die ("Error 201 no se encontraron resultados");
-		$correcto = mysql_fetch_assoc($respuesta); 
+		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
 	}
@@ -45,15 +45,15 @@ class censo extends DataModel
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
 		$respuesta = mysql_query($sql) or die ("Error 202 no se logró consultar");
-		$correcto = mysql_fetch_assoc($respuesta); 
+		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
 
-		
+
 	}
 
 
-	
+
 
 }
 
