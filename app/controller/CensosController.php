@@ -1,25 +1,25 @@
 <?php
 /* veremos cuales son los
-errores
+errores 
 Esperanza*/
 include ('../config/config.php');
 
 class censo extends DataModel
 {
 
-	public function Registrar($data = Null)
+	public function Registrar($datos = Null)
 	{
 
 		$this->Conect();
 
-		$e = $this->Verificarcenso($data['cedula']);
+		$e = $this->Verificarcenso($datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
 		if (!empty($e)){
 
 			return "0";
 		}else{
-
-			$sql = "INSERT INTO `censos`.`jefeflia` (`Nombres`, `Apellidos`, `id_cedula`, `Fnacimiento`, `Edad`, `Sexo`, `CNE`, `Tcomunidad`, `Incapacitado`, `Tipoincap`, `Pensionado`, `Institucion`, `Telfcel`, `Telfhab`, `Telfofic`, `Email`, `Ecivil`, `Ninstruccion`, `Profesion`, `Trabaja`, `Ingresofliar`, `Ingreso`) VALUES ('EDE', 'HER', '12345', '1', '1', '1', '1', '1', '1', '1', '1', '111', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1')";
+						// cambiar segun base de datos INSERT
+			$sql = "INSERT INTO `jefeflia` (`Nombres`, `Apellidos`, `id_cedula`) VALUES ('".$datos['Nombres']."', '".$datos['Apellidos']."', '".$datos['id_cedula']."'";
 			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
 
 			return "1";
@@ -33,7 +33,7 @@ class censo extends DataModel
 		$sql = "SELECT * FROM `jefeflia` WHERE `cedula`= ".$cedula."";
 
 		$respuesta = mysql_query($sql) or die ("Error 201 no se encontraron resultados");
-		$correcto = mysql_fetch_assoc($respuesta);
+		$correcto = mysql_fetch_assoc($respuesta); 
 
 		return $correcto; //imprimirlo en la vista
 	}
@@ -45,15 +45,15 @@ class censo extends DataModel
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
 		$respuesta = mysql_query($sql) or die ("Error 202 no se logró consultar");
-		$correcto = mysql_fetch_assoc($respuesta);
+		$correcto = mysql_fetch_assoc($respuesta); 
 
 		return $correcto; //imprimirlo en la vista
 
-
+		
 	}
 
 
-
+	
 
 }
 
