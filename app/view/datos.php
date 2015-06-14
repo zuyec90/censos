@@ -816,7 +816,7 @@
 																<div class="alert alert-block alert-danger fade in">
 																	<button data-dismiss="alert" class="close" type="button">&times;</button>
 																	<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
-																	<p>No se logró Registrar</p>
+																	<p>No se logro Registrar</p>
 																</div>
 															<?php	}
 															} ?>

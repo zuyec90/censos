@@ -48,7 +48,7 @@ class User extends DataModel
 		$valida = mysql_fetch_assoc($resultado);
 	}
 
-	public function Select($id = Null)
+	public function Selectjefe($id = Null)
 	{
 		$this->Conect();
 		if (!empty($id)) {

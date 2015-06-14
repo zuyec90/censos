@@ -14,7 +14,7 @@ class censo extends DataModel
 
 		$cedula = $this->Verificarcenso($datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
-		if (!empty($e)){
+		if (!empty($cedula)){
 
 			return "0";
 		}else{
@@ -51,6 +51,23 @@ class censo extends DataModel
 
 
 	}
+
+	public function Selectjefe($id = Null)
+	{
+		$this->Conect();
+		if (!empty($id)) {
+			$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
+			$Selection = mysql_query($sql) or die ("Error 203 no se logró consultar");
+			$respuesta = mysql_fetch_assoc($Selection);
+
+		}else{
+			$sql = "SELECT * FROM `jefeflia` WHERE  `cedula` <> '0'";
+			$respuesta = mysql_query($sql) or die ("Error 204 no se logró consultar");
+
+		}
+
+
+		return $respuesta; //imprimirlo en la vista
 
 
 
