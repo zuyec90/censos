@@ -245,12 +245,12 @@ $resultado = $MSJ->Select();
 							<div class="modal-body">
 								<div class="row">
 									<div class="col-md-4">
-										<label for="name">Nombre: Gleiver Gil</label>
+										<label for="name">Nombre: Usuario</label>
 										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<br>
 										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
-												<option value="">Seleccione una opcion;</option>
+												<option value="">Seleccione un opción</option>
 												<option value="1">Ulises Robles</option>
 												<option value="2">Yaylet Rojas</option>
 												<option value="3">Yasmin Torres</option>
@@ -501,6 +501,24 @@ $resultado = $MSJ->Select();
 								</div>
 							</div>
 							<!-- fin: INBOX PANEL -->
+							<tbody>
+								<?php 	while ($msjs = mysql_fetch_assoc($resultado)) {  ?>
+									<tr>
+										<td><?php echo $msjs['id_notificacion'];?></td>
+										<td><?php echo $msjs['id_user_rece'];?></td>
+										<td><?php echo $msjs['id_user'];?></td>
+										<td><?php echo $msjs['mensaje'];?></td>
+										<td><?php echo $msjs['fecha_creacion'];?></td>
+										<td><?php echo $msjs['status'];?></td>
+										<td>
+											<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
+											<i class="fa fa-edit"></i></a>&nbsp;
+											<a href="../lib/UserEliminar.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
+											<i class="fa fa-trash-o"></i></a>
+										</td>
+									</tr>
+								<?php }?>
+							</tbody>
 						</div>
 					</div>
 					<!-- fin: PAGE CONTENT-->
