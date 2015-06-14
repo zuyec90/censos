@@ -266,7 +266,6 @@ $resultado = $MSJ->Select();
 									<?php
 									if(!empty($_POST)){
 									if ($_POST['valor'] == '1' ) { ?>
-
 										<div class="alert alert-block alert-success fade in">
 											<button data-dismiss="alert" class="close" type="button">&times;</button>
 											<h4 class="alert-heading"><i class="fa fa-check-circle"></i> Enviado!</h4>
