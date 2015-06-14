@@ -69,7 +69,7 @@ class censo extends DataModel
 
 		return $respuesta; //imprimirlo en la vista
 
-
+	}
 
 
 }
