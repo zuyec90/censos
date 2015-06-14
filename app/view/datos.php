@@ -290,7 +290,7 @@
 														Nombres <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="nombre" name="Nombres" placeholder="">
+														<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
 													</div>
 												</div>
 												<div class="form-group">
@@ -406,11 +406,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="CNE" id="CNE" >
+															<input type="radio" class="grey" value="si" name="cne" id="cne" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="CNE"  id="CNE">
+															<input type="radio" class="grey" value="no" name="cne"  id="cne">
 															No
 														</label>
 													</div>
@@ -421,7 +421,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo" id="tiempo" placeholder="" maxlength="6">
+														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="" maxlength="6">
 													</div>
 												</div>
 												<div class="form-group">
@@ -430,11 +430,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado_si" >
+															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado_no">
+															<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
 															No
 														</label>
 													</div>
@@ -444,7 +444,7 @@
 														Tipo<span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="tipo" id="tipo" placeholder="">
+																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="">
 													</div>
 												</div>
 
@@ -454,11 +454,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado_si" >
+															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado_no">
+															<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado">
 															No
 														</label>
 													</div>
@@ -571,11 +571,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja_si" >
+															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja" >
 															Si
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="trabaja"  id="trabaja_no">
+															<input type="radio" class="grey" value="no" name="trabaja"  id="trabaja">
 															No
 														</label>
 													</div>
@@ -586,7 +586,7 @@
 														Clasificación Ingreso Familiar <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<select class="form-control" id="ingreso" name="ingreso">
+														<select class="form-control" id="clasificacion_ingreso_familiar" name="clasificacion_ingreso_familiar">
 															<option value="">&nbsp;</option>
 															<option value="Diario">Diario</option>
 															<option value="Semanal">Semanal</option>
@@ -602,7 +602,7 @@
 														Ingreso Mensual <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" id="mensual" name="mensual" placeholder="" maxlength="6">
+														<input type="text" class="float-left margin-select" id="ingreso_mensual" name="ingreso_mensual" placeholder="" maxlength="6">
 													</div>
 												</div>
 
@@ -644,7 +644,7 @@
 														Cedúla:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="cedula" data-display="numero"></p>
+														<p class="form-control-static display-value" data-display="nacionalidad" ></p> <p class="form-control-static display-value" data-display="cedula" ></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -652,7 +652,7 @@
 														Fecha de Nacimiento:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="fecha"></p>
+														<p class="form-control-static display-value" data-display="fecha_d"></p> <p class="form-control-static display-value" data-display="fecha_m"></p> <p class="form-control-static display-value" data-display="fecha_a"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -676,7 +676,7 @@
 														CNE:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="CNE"></p>
+														<p class="form-control-static display-value" data-display="cne"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -684,7 +684,7 @@
 														Tiempo en la Comunidad:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="tiempo"></p>
+														<p class="form-control-static display-value" data-display="tiempo_comunidad"></p>
 													</div>
 												</div>
 												<h3>Características</h3>
@@ -701,7 +701,7 @@
 														Tipo de Discapacidad:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="tipo"></p>
+														<p class="form-control-static display-value" data-display="tipo_incapacitado"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -762,7 +762,7 @@
 														Nivel de Instrucción:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="nievl_instruccion"></p>
+														<p class="form-control-static display-value" data-display="nivel_instruccion"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -786,7 +786,7 @@
 														Clasificación Ingreso Familiar:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="ingreso"></p>
+														<p class="form-control-static display-value" data-display="clasificacion_ingreso_familiar"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -794,7 +794,7 @@
 														Ingreso Mensual:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="mensual"></p>
+														<p class="form-control-static display-value" data-display="ingreso_mensual"></p>
 													</div>
 												</div>
 												<div class="form-group">

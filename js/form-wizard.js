@@ -45,7 +45,7 @@ var FormWizard = function () {
             },
             ignore: ':hidden',
             rules: {
-                Nombres: {
+                nombre: {
                     minlength: 3,
                     required: true,
                 },
@@ -58,7 +58,7 @@ var FormWizard = function () {
                     number: true,
                     required: true,
                 },
-               fecha_nacimiento: {
+                fecha_nacimiento: {
                     required: true,
                 },
                 nacionalidad:{
@@ -73,6 +73,8 @@ var FormWizard = function () {
                 fecha_a:{
                      required: true,
                 },
+              
+
 
             },
             messages: {
@@ -80,7 +82,8 @@ var FormWizard = function () {
                 apellido: "Por favor ingrese los apellidos",
                 cedula: "Por favor ingrese el numero de cedúla",
                 fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
-                edad: "Por favor ingrese la edad",
+
+                
             },
             highlight: function (element) {
                 $(element).closest('.help-block').removeClass('valid');
@@ -136,7 +139,7 @@ var FormWizard = function () {
         if (validateAllSteps()) {
             alert('form submit function');
             $('.anchor').children("li").last().children("a").removeClass('wait').removeClass('selected').addClass('done');
-            //wizardForm.submit();
+            wizardForm.submit();
         }
     };
     var validateSteps = function (stepnumber, nextstep) {
