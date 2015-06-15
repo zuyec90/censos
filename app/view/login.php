@@ -31,7 +31,7 @@
 							<span class="input-icon">
 								<input type="password" class="form-control password" name="password" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
-								<a class="forgot" href="#">
+								<a class="forgot" href="recuperar_contrasenia.php">
 									Olvide mi contraseña
 								</a> </span>
 						</div>
@@ -46,7 +46,7 @@
 						</div>
 						<div class="new-account">
 							No posee una cuenta?
-							<a href="#" class="register">
+							<a href="form_registro.php" class="register">
 								Crear una cuenta
 							</a>
 						</div>

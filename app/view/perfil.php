@@ -7,7 +7,7 @@ if (!empty($_GET['id_user'])) {
 }else{
 	$id_user = Null;
 }
-$resultado = $user->Select($id_user);
+$resultado = $user->Seleccionar($id_user);
 
 ?>
 

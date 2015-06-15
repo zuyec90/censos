@@ -11,7 +11,7 @@ class User extends DataModel
 
 		$this->Conect();
 
-		$e = $this->VerifyUser($data['cedula'],$data['nombre'],$data['email']);
+		$e = $this->VerificarUsuario($data['cedula'],$data['nombre'],$data['email']);
 
 		if (!empty($e)){
 
@@ -19,7 +19,7 @@ class User extends DataModel
 		}else{
 
 
-			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['direccion'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."',NOW() );";
+			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`,`fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['direccion'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."', '".$data['status'] ."',NOW() );";
 			mysql_query($sql) or die ('error 104 no se pudo crear el usuario');
 
 			return "1";
@@ -29,7 +29,7 @@ class User extends DataModel
 
 	}
 
-	public function VerifyUser($ci = Null, $user = Null, $email = Null)
+	public function VerificarUsuario($ci = Null, $user = Null, $email = Null)
 	{
 
 		$sql = "SELECT * FROM `usuario` WHERE `cedula`= ".$ci." or ( `email`= '".$email."' or `usuario` = '".$user."' )";
@@ -40,7 +40,7 @@ class User extends DataModel
 		return $valida;
 	}
 
-	public function modificar($data = Null)
+	public function Modificar($data = Null)
 	{
 		$sql = "SELECT * FROM `usuario` WHERE `cedula`= ".$ci." or ( `email`= '".$email."' or `usuario` = '".$user."' )";
 
@@ -48,7 +48,7 @@ class User extends DataModel
 		$valida = mysql_fetch_assoc($resultado);
 	}
 
-	public function Selectjefe($id = Null)
+	public function Seleccionar($id = Null)
 	{
 		$this->Conect();
 		if (!empty($id)) {

@@ -2,7 +2,7 @@
 //error_reporting();
 require_once ('../controller/UserController.php');
 $user = new User;
-$resultado = $user->Select();
+$resultado = $user->Seleccionar();
 ?>
 
 <!DOCTYPE html>

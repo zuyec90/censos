@@ -76,7 +76,10 @@
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Registro <small>de Usuarios</small></h1>
+								<h1><i class="fa fa-pencil-square teal"></i> Registro <small>de Usuarios</small></h1>
+									<p>
+										Crea una cuenta para gestionar todo lo que haces.
+									</p>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -123,12 +126,7 @@
 									</div>
 							<?php	}
 							} ?>
-
-									<h2><i class="fa fa-pencil-square teal"></i> REGISTRO</h2>
-									<p>
-										Crea una cuenta para gestionar todo lo que haces.
-									</p>
-
+									
 									<hr>
 									<form action="app/lib/UserCreate.php" method="POST" role="form" id="form">
 										<div class="row">
