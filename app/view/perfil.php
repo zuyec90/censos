@@ -473,7 +473,7 @@ $resultado = $user->Seleccionar($id_user);
 												<div class="col-md-4">
 													<br>
 													<button class="btn btn-teal btn-block" type="submit">
-														Continuar <i class="fa fa-arrow-circle-right"></i>
+														Modificar <i class="fa fa-arrow-circle-right"></i>
 													</button>
 												</div>
 											</div>

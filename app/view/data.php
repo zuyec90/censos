@@ -3,6 +3,7 @@
 require_once ('../controller/UserController.php');
 $user = new User;
 $resultado = $user->Seleccionar();
+
 ?>
 
 <!DOCTYPE html>

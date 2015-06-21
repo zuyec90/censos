@@ -42,12 +42,17 @@ class User extends DataModel
 
 	public function Modificar($data = Null)
 	{
-		$sql = "SELECT * FROM `usuario` WHERE `cedula`= ".$ci." or ( `email`= '".$email."' or `usuario` = '".$user."' )";
+		$this->Conect();
+		if (!empty($data['id'])) {
+			$sql = "UPDATE `usuario` SET `nombre` = '".$data['nombre'] ."', `apellido` = '".$data['apellido'] ."', `cedula` = '".$data['cedula'] ."', `email` = '".$data['email'] ."', `celular` = '".$data['celular'] ."', `sexo` = '".$data['sexo'] ."', `direccion` = '".$data['direccion'] ."', `voceria` = '".$data['voceria'] ."', `perfil` = '".$data['perfil'] ."', `usuario` = '".$data['usuario'] ."', `contrasenia` = '".$data['contrasenia'] ."' WHERE `id_user` = '".$data['id'] ."' ";
+			mysql_query($sql) or die ('error 104 no se pudo eliminar el usuario');
 
-		$resultado = mysql_query($sql) or die ("error 103 no logra consultar");
-		$valida = mysql_fetch_assoc($resultado);
+			return "1";
+		}
+		else{
+			return "0";
+		}
 	}
-
 	public function Seleccionar($id = Null)
 	{
 		$this->Conect();
@@ -62,9 +67,7 @@ class User extends DataModel
 
 		}
 
-
 		return $respuesta; //imprimirlo en la vista
-
 
 	}
 
@@ -73,8 +76,8 @@ class User extends DataModel
 		$this->Conect();
 
 		if (!empty($id)) {
-			$sql = "UPDATE `censo`.`usuario` SET `status` = '1' WHERE `usuario`.`id_user` = '".$id."' ";
-			mysql_query($sql) or die ('error 104 no se pudo modificar el usuario');
+			$sql = "UPDATE `usuario` SET `status` = '1' WHERE `id_user` = '".$id."' ";
+			mysql_query($sql) or die ('error 104 no se pudo eliminar el usuario');
 
 			return "1";
 		}
