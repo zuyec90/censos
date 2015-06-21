@@ -155,13 +155,13 @@ $resultado = $user->Seleccionar($id_user);
 																<td>Correo Electronico:</td>
 																<td>
 																<a href="">
-																	usuario@ejemplo.com
+																	<?php echo $resultado['email'] ;?>
 																</a></td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Telefono:</td>
-																<td>(0418)-123-4567</td>
+																<td><?php echo $resultado['celular'] ;?></td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 														</tbody>
@@ -180,12 +180,12 @@ $resultado = $user->Seleccionar($id_user);
 															</tr>
 															<tr>
 																<td>Voceria</td>
-																<td>Unidad</td>
+																<td><?php echo $resultado['voceria'] ;?></td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Usuario</td>
-																<td><span class="label label-sm label-info">Administrador</span></td>
+																<td><span class="label label-sm label-info"><?php echo $resultado['perfil'] ;?></span></td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<table class="table table-condensed table-hover">
@@ -218,8 +218,8 @@ $resultado = $user->Seleccionar($id_user);
 												<div class="row">
 													<div class="col-sm-3">
 														<button class="btn btn-icon btn-block pulsate">
-															<i class="clip-bubble-2"></i>
-															Mensajes <span class="badge badge-info"> 23 </span>
+															<a href="pagina_mensaje.php"><i class="clip-bubble-2"></i>
+															Mensajes <span class="badge badge-info"> 23 </span></a>
 														</button>
 													</div>
 													<div class="col-sm-3">
@@ -314,140 +314,6 @@ $resultado = $user->Seleccionar($id_user);
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label class="control-label">
-															Nombre Completo
-														</label>
-														<input type="text" placeholder="Pedro Perez" class="form-control" id="firstname" name="firstname">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Correo Electronico
-														</label>
-														<input type="email" placeholder="correo@ejemplo.com" class="form-control" id="email" name="email">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Telefono
-														</label>
-														<input type="email" placeholder="(0418)-123-4567" class="form-control" id="phone" name="email">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Clave
-														</label>
-														<input type="password" placeholder="password" class="form-control" name="password" id="password">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Confirmación de Clave
-														</label>
-														<input type="password"  placeholder="password" class="form-control" id="password_again" name="password_again">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Voceria
-														</label>
-														<input type="password"  placeholder="voceria" class="form-control" id="password_again" name="password_again">
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-group connected-group">
-														<label class="control-label">
-															Fecha de Nacimiento
-														</label>
-														<div class="row">
-															<div class="col-md-3">
-																<select name="dd" id="dd" class="form-control" >
-																	<option value="">DD</option>
-																	<option value="01">1</option>
-																	<option value="02">2</option>
-																	<option value="03">3</option>
-																	<option value="04">4</option>
-																	<option value="05">5</option>
-																	<option value="06">6</option>
-																	<option value="07">7</option>
-																	<option value="08">8</option>
-																	<option value="09">9</option>
-																	<option value="10">10</option>
-																	<option value="11">11</option>
-																	<option value="12">12</option>
-																	<option value="13">13</option>
-																	<option value="14">14</option>
-																	<option value="15">15</option>
-																	<option value="16">16</option>
-																	<option value="17">17</option>
-																	<option value="18">18</option>
-																	<option value="19">19</option>
-																	<option value="20">20</option>
-																	<option value="21" selected="selected">21</option>
-																	<option value="22">22</option>
-																	<option value="23">23</option>
-																	<option value="24">24</option>
-																	<option value="25">25</option>
-																	<option value="26">26</option>
-																	<option value="27">27</option>
-																	<option value="28">28</option>
-																	<option value="29">29</option>
-																	<option value="30">30</option>
-																	<option value="31">31</option>
-																</select>
-															</div>
-															<div class="col-md-3">
-																<select name="mm" id="mm" class="form-control" >
-																	<option value="">MM</option>
-																	<option value="01">1</option>
-																	<option value="02">2</option>
-																	<option value="03">3</option>
-																	<option value="04">4</option>
-																	<option value="05">5</option>
-																	<option value="06">6</option>
-																	<option value="07">7</option>
-																	<option value="08">8</option>
-																	<option value="09">9</option>
-																	<option value="10" selected="selected">10</option>
-																	<option value="11">11</option>
-																	<option value="12">12</option>
-																</select>
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder="AÑO" id="yyyy" name="yyyy" class="form-control">
-															</div>
-														</div>
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Sexo
-														</label>
-														<div>
-															<label class="radio-inline">
-																<input type="radio" class="grey" value="" name="gender" id="gender_female">
-																Femenino
-															</label>
-															<label class="radio-inline">
-																<input type="radio" class="grey" value="" name="gender"  id="gender_male" checked="checked">
-																Masculino
-															</label>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-md-4">
-															<div class="form-group">
-																<label class="control-label">
-																	Código de área
-																</label>
-																<input class="form-control" placeholder="12345" type="text" name="zipcode" id="zipcode">
-															</div>
-														</div>
-														<div class="col-md-8">
-															<div class="form-group">
-																<label class="control-label">
-																	Ciudad
-																</label>
-																<input class="form-control tooltips" placeholder="Caracas" type="text" data-original-title="We'll display it when you write reviews" data-rel="tooltip"  title="" data-placement="top" name="city" id="city">
-															</div>
-														</div>
-													</div>
-													<div class="form-group">
 														<label>
 															Cargar imagen
 														</label>
@@ -465,8 +331,93 @@ $resultado = $user->Seleccionar($id_user);
 															</div>
 														</div>
 													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Nombre
+														</label>
+														<input type="text" placeholder="" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombre'] ;?>">
+													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Apellido
+														</label>
+														<input type="text" placeholder="" class="form-control" id="apellido" name="apellido" value="<?php echo $resultado['apellido'] ;?>">
+													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Cédula
+														</label>
+														<input type="text" placeholder="" class="form-control" id="cedula" name="cedula" value="<?php echo $resultado['cedula'] ;?>">
+													</div>													
+													<div class="form-group">
+												<label for="form-field-mask-2">
+													Teléfono
+												</label>
+												<div class="input-group">
+													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" value="<?php echo $resultado['email'] ;?>">
+												</div>
+												<div class="form-group">
+														<label class="control-label">
+															Sexo
+														</label>
+														<div>
+															<label class="radio-inline">
+																<input type="radio" class="grey" value="f" name="gender" id="femenino">
+																Femenino
+															</label>
+															<label class="radio-inline">
+																<input type="radio" class="grey" value="m" name="gender"  id="masculino" checked="checked">
+																Masculino
+															</label>
+															</div>
+														</div>
+													</div>								
+														
+											</div>
+												<div class="row">
+												<div class="col-md-5">
+													<div class="form-group">
+														<label class="control-label">
+															Correo Electronico
+														</label>
+														<input type="email" placeholder="" class="form-control" id="email" name="email" value="<?php echo $resultado['email'] ;?>">
+													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Dirección
+														</label>
+														<input type="text" placeholder="" class="form-control" id="direccion" name="direccion" value="<?php echo $resultado['direccion'] ;?>">
+													</div>
+													<div class="form-group">
+														<label class="control-label">
+															Unidad de Trabajo al que pertenece
+														</label>
+														<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
+													</div>												
+														<div class="form-group">
+														<label class="control-label">
+															Tipo de Usuario
+														</label>
+														<input type="text"  placeholder="" class="form-control" id="perfil" name="perfil" value="<?php echo $resultado['perfil'] ;?>">
+													</div>												
+													<div class="form-group">
+													<span class="input-icon">
+														<input type="text" class="form-control" name="usuario" value="<?php echo $resultado['usuario'] ;?>">
+														<i class="fa fa-user"></i> </span>
+												</div>
+												<div class="form-group connected-group">
+													<label class="control-label">
+														Contraseña<span class="symbol required"></span>
+													</label>
+														<span class="input-icon">
+													<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>">
+													<i class="fa fa-lock"></i>													
+													
 												</div>
 											</div>
+										</div>
+										</div>
 
 											<div class="row">
 
