@@ -86,119 +86,7 @@ $resultado = $MSJ->Select();
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- inicio: STYLE SELECTOR BOX -->
-							<div id="style_selector" class="hidden-xs">
-								<div id="style_selector_container">
-									<div class="style-main-title">
-										Selector de estilo
-									</div>
-									<div class="box-title">
-										Elija su estilo de diseño
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="layout">
-												<option value="default">Ancho</option><option value="boxed">Caja</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Elija su estilo de encabezado
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="header">
-												<option value="fixed">Fijo</option><option value="default">Predefinido</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Elija su estilo de pie de página
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="footer">
-												<option value="default">Predefinido</option><option value="fixed">Fijo</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Fondos
-									</div>
-									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
-									</div>
-									<div class="box-title">
-										5 Esquemas predefinidos de colores
-									</div>
-									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
-									</div>
-									<div class="box-title">
-										Diseñar estilo de esquema
-									</div>
-									<div class="images">
-										<div class="form-group">
-											<label>
-												Básico
-											</label>
-											<input type="text" value="#ffffff" class="color-base">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #ffffff"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Texto
-											</label>
-											<input type="text" value="#555555" class="color-text">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #555555"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Elemento
-											</label>
-											<input type="text" value="#007AFF" class="color-badge">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #007AFF"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div style="height:25px;line-height:25px; text-align: center">
-										<a class="clear_style" href="#">
-											Borrar estilo
-										</a>
-										<a class="save_style" href="#">
-											Guardar estilo
-										</a>
-									</div>
-								</div>
-								<div class="style-toggle close"></div>
-							</div>
+							
 							<!-- fin: STYLE SELECTOR BOX -->
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
@@ -231,7 +119,32 @@ $resultado = $MSJ->Select();
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
+						<?php
+
+							if(!empty($_POST)){
+								if ($_POST['valor'] == '1' ) { ?>
+
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Se envio</strong> You successfully read this important alert message.
+									</div>
+
+									<?php
+									}else{ ?>
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Well done!</strong> You successfully read this important alert message.
+									</div>
+							<?php	}
+							} ?>
 					<div class="panel-body">
+
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
 					<!-- final: BOOTSTRAP EXTED MODALS PANEL -->
@@ -263,23 +176,7 @@ $resultado = $MSJ->Select();
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
 								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()">
-									<?php
-									if(!empty($_POST)){
-									if ($_POST['valor'] == '1' ) { ?>
-										<div class="alert alert-block alert-success fade in">
-											<button data-dismiss="alert" class="close" type="button">&times;</button>
-											<h4 class="alert-heading"><i class="fa fa-check-circle"></i> Enviado!</h4>
-											<p>Tu mensaje ha sido enviado satisfatoriamente.</p>
-										</div>
-									<?php}
-									else{ ?>
-										<div class="alert alert-block alert-danger fade in">
-											<button data-dismiss="alert" class="close" type="button">&times;</button>
-											<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
-											<p>Se ha producido un error al enviar el mensaje,intentelo nuevamne.</p>
-										</div>
-									<?php	}
-									} ?>
+								
 								</input>
 							</div>
 						</form>
@@ -310,12 +207,16 @@ $resultado = $MSJ->Select();
 										</div>
 									</form>
 								</li>
+								<?php 	while ($MSJS = mysql_fetch_assoc($resultado)) { 
+								 ?>
 								<li class="messages-item">
+								
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
-											<span class="messages-item-from">Ulises Robles</span>
+											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
 											<div class="messages-item-time">
-												<span class="text">10:23 PM</span>
+												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
+
 												<div class="messages-item-actions">
 													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
 													<div class="dropdown">
@@ -340,6 +241,7 @@ $resultado = $MSJ->Select();
 																</a>
 															</li>
 														</ul>
+
 													</div>
 													<div class="dropdown">
 														<a data-toggle="dropdown" title="Attach to tag" href="#"><i class="fa fa-tag"></i></a>
@@ -357,111 +259,14 @@ $resultado = $MSJ->Select();
 													</div>
 												</div>
 											</div>
-											<span class="messages-item-subject">Lorem ipsumdolor sit amet ...</span>
-											<span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do antera ...</span>
-										</li>
-										<li class="messages-item active starred">
-											<span title="Remove star" class="messages-item-star"><i class="fa fa-star"></i></span>
-											<img src="../../upload/default_avatar_female.jpg" class="messages-item-avatar">
-											<span class="messages-item-from">Yaylet Rojas</span>
-											<div class="messages-item-time">
-												<span class="text">08:46 PM</span>
-												<div class="messages-item-actions">
-													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Move to folder" href="#"><i class="fa fa-folder-open"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#">
-																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fa fa-ban"></i>
-																	Correo no desado
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fa fa-trash-o"></i>
-																	Borrar
-																</a>
-															</li>
-														</ul>
-													</div>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Attach to tag" href="#"><i class="fa fa-tag"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#"><i class="tag-icon red"></i>Important</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon teal"></i>Work</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon green"></i>Home</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<span class="messages-item-subject">Duis autem vel eum iriure ...</span>
-											<span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do antera ...</span>
-										</li>
-										<li class="messages-item">
-											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
-											<span class="messages-item-attachment"><i class="fa fa-paperclip"></i></span>
-											<img src="../../upload/default_avatar_female.jpg" class="messages-item-avatar">
-											<span class="messages-item-from">Yasmin Torres</span>
-											<div class="messages-item-time">
-												<span class="text">04:03 PM</span>
-												<div class="messages-item-actions">
-													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Move to folder" href="#"><i class="fa fa-folder-open"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#">
-																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fa fa-ban"></i>
-																	Correo no deseado
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fa fa-trash-o"></i>
-																	Borrar
-																</a>
-															</li>
-														</ul>
-													</div>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Attach to tag" href="#"><i class="fa fa-tag"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#"><i class="tag-icon red"></i>Important</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon teal"></i>Work</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon green"></i>Home</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<span class="messages-item-subject">Lorem ipsumdolor sit amet ...</span>
-											<span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do antera ...</span>
-										</li>
+
+											<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
+											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
+										
+										</li>	
+										<?php } ?>
 									</ul>
+									
 									<div class="messages-content">
 										<div class="message-header">
 											<div class="message-time">
@@ -500,24 +305,7 @@ $resultado = $MSJ->Select();
 								</div>
 							</div>
 							<!-- fin: INBOX PANEL -->
-							<tbody>
-								<?php 	while ($msjs = mysql_fetch_assoc($resultado)) {  ?>
-									<tr>
-										<td><?php echo $msjs['id_notificacion'];?></td>
-										<td><?php echo $msjs['id_user_rece'];?></td>
-										<td><?php echo $msjs['id_user'];?></td>
-										<td><?php echo $msjs['mensaje'];?></td>
-										<td><?php echo $msjs['fecha_creacion'];?></td>
-										<td><?php echo $msjs['status'];?></td>
-										<td>
-											<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
-											<i class="fa fa-edit"></i></a>&nbsp;
-											<a href="../lib/UserEliminar.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
-											<i class="fa fa-trash-o"></i></a>
-										</td>
-									</tr>
-								<?php }?>
-							</tbody>
+							
 						</div>
 					</div>
 					<!-- fin: PAGE CONTENT-->
@@ -554,11 +342,16 @@ $resultado = $MSJ->Select();
 		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
 		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
 		<script src="../../js/ui-modals.js"></script>
+		<script src="../../plugins/bootstrap-paginator/src/bootstrap-paginator.js"></script>
+		<script src="../../plugins/jquery.pulsate/jquery.pulsate.min.js"></script>
+		<script src="../../plugins/gritter/js/jquery.gritter.min.js"></script>
+		<script src="../../js/ui-elements.js"></script>
 		<!-- final: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 		jQuery(document).ready(function() {
 			Main.init();
 			UIModals.init();
+			UIElements.init();
 		});
 
 		</script>

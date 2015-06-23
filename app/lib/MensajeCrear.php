@@ -19,7 +19,6 @@ $Mensaje = new Mensaje;
 
 if ($Mensaje->Crear($_POST) == 1) {
 
-
 #aqui va todo tu proceso y a la hora de ir a la pagina 1 pones asi.
 echo "<form name='form' action='../view/pagina_mensaje.php' method='post'>";
 echo "<input type='hidden' name='valor' value='1'>";
@@ -31,4 +30,5 @@ echo "<input type='hidden' name='valor' value='0'>";
 echo "</form>";
 echo "<script language=javascript>document.form.submit();</script>";
 }
+
 ?>
