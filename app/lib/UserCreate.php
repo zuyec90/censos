@@ -17,8 +17,6 @@ include ('../Controller/UserController.php');
 
 $User = new User;
 
-
-
 if ($User->Crear($_POST) == 1) {
 
 
