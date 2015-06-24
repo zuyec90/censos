@@ -1,9 +1,15 @@
+<?php
+require_once ('../controller/CensosController.php');
+$censo = new censo;
+$respuesta = $censo->Selectjefe();
+?>
+
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js"> //luego de colocarlo en carpeta no funciona el buscador...
+<html lang="en" class="no-js">
 	<!--<![endif]-->
 	<!--inicio: HEAD -->
 	<?php require_once('head.php'); ?>
@@ -173,6 +179,25 @@
 												</td>
 											</tr>
 										</tbody>
+										<tbody>
+										<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
+
+											<tr>
+												<td><?php echo $censo['idjefe_familia'];?></td>
+												
+												<td><?php echo $censo['nombres'];?></td>
+												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
+												<td><?php echo $censo['cedula'];?></td>
+												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
+												<td>
+													<a href="consultaperfil.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
+													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
+													<i class="fa fa-trash-o"></i></a>
+												</td>
+											</tr>
+											<?php }?>
+										</tbody>
 									</table>
 								</div>
 							</div>
@@ -207,13 +232,13 @@
 		<script src="../../plugins/less/less-1.5.0.min.js"></script>
 		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
 		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!--inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
-		<script src="js/table-data.js"></script>
+		<script src="../../js/table-data.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
