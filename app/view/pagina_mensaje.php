@@ -129,22 +129,21 @@ $resultado = $MSJ->Select();
 											&times;
 										</button>
 										<i class="fa fa-check-circle"></i>
-										<strong>Se envio</strong> You successfully read this important alert message.
+										<strong>Su mensaje se ha enviado satisfactoriamente.</strong>
 									</div>
 
 									<?php
 									}else{ ?>
-									<div class="alert alert-success">
+									<div class="alert alert-danger">
 										<button data-dismiss="alert" class="close">
 											&times;
 										</button>
 										<i class="fa fa-check-circle"></i>
-										<strong>Well done!</strong> You successfully read this important alert message.
+										<strong>Su mensaje no pudo ser enviado.</strong>
 									</div>
 							<?php	}
 							} ?>
 					<div class="panel-body">
-
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
 					<!-- final: BOOTSTRAP EXTED MODALS PANEL -->
@@ -175,9 +174,7 @@ $resultado = $MSJ->Select();
 							</div>
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()">
-								
-								</input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()"></input>
 							</div>
 						</form>
 					</div>

@@ -73,6 +73,69 @@ var FormWizard = function () {
                 fecha_a:{
                      required: true,
                 },
+                 edad: {
+                    minlength: 3
+                    required: true,
+                },
+                sexo: {
+                    required: true,
+                },
+                CNE: {
+                    required: true,
+                },
+                tiempo: {
+                    required: true,
+                },
+                incapacitado: {
+                    required: true,
+                },
+                tipo: {
+                    minlength: 20,
+                },
+                pensionado: {
+                    required: true,
+                }
+                institucion: {
+                    minlength: 20,
+                }
+                telfcel: {
+                    required: true,
+                    minlength: 10,
+                    number: true,
+                }
+                telfhab: {
+                    required: true,
+                    inlength: 10,
+                    number: true,
+                }
+                telfofic: {
+                    required: true,
+                    inlength: 10,
+                    number: true,
+                }
+                email: {
+                    required: true,
+                    email: true
+                }
+                estado_civil: {
+                    required: true,
+                }
+                nivel_instruccion: {
+                    required: true,
+                }
+                 profesion: {
+                    required: true,
+                }
+                trabaja: {
+                    required: true,
+                }
+                ingreso: {
+                    required: true,
+                }
+                ingreso_mensual: {
+                    required: true,
+                    number: true,
+                }
               
 
 
@@ -82,6 +145,25 @@ var FormWizard = function () {
                 apellido: "Por favor ingrese los apellidos",
                 cedula: "Por favor ingrese el numero de cedúla",
                 fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
+                edad: "Por favor ingrese la edad",
+                sexo:"Por favor seleccione el sexo",
+                CNE: "Por favor seleccione el campo",
+                tiempo: "Por favor ingrese el tiempo",
+                incapacitado: "Por favor seleccione si es incapacitado",
+                pensionado: "Por favor seleccione la opción",
+                telfcel: "Por favor ingrese el telefono",
+                telfhab: "Por favor ingrese el telefono",
+                telfofic: "Por favor ingrese el telefono",
+                email: {
+                    required: "Se necesita un email de contacto",
+                    email: "Debe tener un formato name@dominio.com"
+                }, 
+                estado civil: "Por favor seleccione el estado",
+                nivel de instruccion: "Por favor seleccione el nivel de instrucción",
+                profesion: "Por favor ingrese la profesión",
+                trabaja: "Por favor ingrese el campo",
+                ingreso: "Por favor seleccione el campo",
+                ingreso_mensual: "Por favor ingrese el campo",
 
                 
             },
