@@ -64,21 +64,12 @@ var FormWizard = function () {
                 nacionalidad:{
                      required: true,
                 },
-                fecha_d:{
-                     required: true,
-                },
-                fecha_m:{
-                     required: true,
-                },
-                fecha_a:{
-                     required: true,
-                },
                  edad: {
-                    minlength: 3
-                    required: true,
+                    minlength: 3,
+                    required: true
                 },
                 sexo: {
-                    required: true,
+                    required: true
                 },
                 CNE: {
                     required: true,
@@ -94,49 +85,39 @@ var FormWizard = function () {
                 },
                 pensionado: {
                     required: true,
-                }
+                },
                 institucion: {
                     minlength: 20,
-                }
+                },
                 telfcel: {
                     required: true,
                     minlength: 10,
-                    number: true,
-                }
-                telfhab: {
-                    required: true,
-                    inlength: 10,
-                    number: true,
-                }
-                telfofic: {
-                    required: true,
-                    inlength: 10,
-                    number: true,
-                }
+                    number: true
+                },
                 email: {
                     required: true,
                     email: true
-                }
+                },
                 estado_civil: {
                     required: true,
-                }
+                },
                 nivel_instruccion: {
                     required: true,
-                }
+                },
                  profesion: {
                     required: true,
-                }
+                },
                 trabaja: {
                     required: true,
-                }
+                },
                 ingreso: {
                     required: true,
-                }
+                },
                 ingreso_mensual: {
                     required: true,
                     number: true,
                 }
-              
+
 
 
             },
@@ -157,15 +138,15 @@ var FormWizard = function () {
                 email: {
                     required: "Se necesita un email de contacto",
                     email: "Debe tener un formato name@dominio.com"
-                }, 
-                estado civil: "Por favor seleccione el estado",
-                nivel de instruccion: "Por favor seleccione el nivel de instrucción",
+                },
+                estado_civil: "Por favor seleccione el estado",
+                nivel_de_instruccion: "Por favor seleccione el nivel de instrucción",
                 profesion: "Por favor ingrese la profesión",
                 trabaja: "Por favor ingrese el campo",
                 ingreso: "Por favor seleccione el campo",
                 ingreso_mensual: "Por favor ingrese el campo",
 
-                
+
             },
             highlight: function (element) {
                 $(element).closest('.help-block').removeClass('valid');
@@ -219,7 +200,6 @@ var FormWizard = function () {
     };
     var onFinish = function (obj, context) {
         if (validateAllSteps()) {
-            alert('form submit function');
             $('.anchor').children("li").last().children("a").removeClass('wait').removeClass('selected').addClass('done');
             wizardForm.submit();
         }
