@@ -6,8 +6,8 @@ class Mensaje extends DataModel
 
 	public function Crear($data = NULL)
 	{
-
 		$this->Conect();
+
 
 		if (!empty($data)){			
 			
@@ -21,6 +21,7 @@ class Mensaje extends DataModel
 		}
 
 	}
+
 	public function Select($msj = Null)
 	{
 		$this->Conect();
@@ -28,13 +29,23 @@ class Mensaje extends DataModel
 			$sql = "SELECT * FROM `notificacion` WHERE `id_notificacion`= '".$msj."' ";
 			$SelectionMsj = mysql_query($sql) or die ("Error 301 no se logró consultar");
 			$respuesta = mysql_fetch_assoc($SelectionMsj);
-
 		}else{
 			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '0'";
-			$respuesta = mysql_query($sql) or die ("Error 301 no se logró consultar");
-
+			$respuesta = mysql_query($sql) or die ("Error 302 no se logró consultar");
 		}
 		return $respuesta;
 	}
+
+	public function Eliminar($MsJ = Null)
+	{
+		$this->Conect();
+		if (!empty($MsJ)) {
+			$sql = "UPDATE `notificacion` SET `status` = '1' WHERE `id_notificacion` = '".$MsJ."' ";
+			mysql_query($sql) or die ('Error 303 no se pudo eliminar el mensaje');
+			return "1";
+		}
+		else{
+			return "0";
+		}
 }
 ?>

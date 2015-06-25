@@ -71,6 +71,21 @@ class censo extends DataModel
 
 	}
 
+		public function Eliminarjefe($id = Null)
+	{
+		$this->Conect();
+
+		if (!empty($id)) {
+			$sql = "UPDATE `jefeflia` SET `status` = '1' WHERE `idjefe_familia` = '".$id."' ";
+			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
+
 
 }
 
