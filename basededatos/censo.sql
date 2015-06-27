@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2015 a las 16:22:08
+-- Tiempo de generación: 28-06-2015 a las 01:35:35
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.5.19
 
@@ -29,24 +29,31 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `grupo_fliar` (
 `id_familiar` int(255) NOT NULL,
   `idjefe_familia` int(255) NOT NULL,
-  `cedula` int(15) DEFAULT NULL,
-  `Nombre` varchar(30) NOT NULL COMMENT 'Nombre de la persona del grupo familiar',
-  `Apellido` varchar(30) NOT NULL COMMENT 'Apellido de la persona del grupo familiar',
-  `Sexo` varchar(9) NOT NULL COMMENT 'Sexo de la persona del grupo familiar',
-  `Fnacimiento` int(8) NOT NULL COMMENT 'Fecha de nacimiento de la persona del grupo familiar',
-  `Edad` int(3) NOT NULL COMMENT 'Edad de la persona del grupo familiar',
-  `Incapacitado` varchar(2) NOT NULL COMMENT 'Si la persona es discapicitada',
-  `Tipoincap` varchar(20) NOT NULL COMMENT 'Tipo de incapacidad de la persona del grupo familiar',
-  `Emb_tempr` varchar(2) NOT NULL COMMENT 'Si lapersona posee un embarazo temprano',
-  `Parentesco` varchar(10) NOT NULL COMMENT 'Parentesco de la persona del grupo familiar con el jefe de familia',
-  `Nintrucción` varchar(20) NOT NULL COMMENT 'Nivel de intruccion de la persona del grupo familiar',
-  `CNE` varchar(2) NOT NULL COMMENT 'Si la persona esta inscrita en el CNE',
-  `Profesion` varchar(20) NOT NULL COMMENT 'Profesion de la persona del grupo familiar',
-  `Pensionado` varchar(2) NOT NULL COMMENT 'Si la persopna es pensionada',
-  `Ing_mensual` varchar(10) NOT NULL COMMENT 'Ingreso mensual de la persona del grupo familiar',
-  `Observacion` varchar(50) NOT NULL COMMENT 'Si se le desea agregar alguna otra observacion',
+  `cedula` int(8) DEFAULT NULL,
+  `nombre` varchar(30) NOT NULL COMMENT 'Nombre de la persona del grupo familiar',
+  `apellido` varchar(30) NOT NULL COMMENT 'Apellido de la persona del grupo familiar',
+  `sexo` varchar(1) NOT NULL COMMENT 'Sexo de la persona del grupo familiar',
+  `fecha_nacimiento` date NOT NULL COMMENT 'Fecha de nacimiento de la persona del grupo familiar',
+  `edad` int(3) NOT NULL COMMENT 'Edad de la persona del grupo familiar',
+  `incapacitado` varchar(2) NOT NULL COMMENT 'Si la persona es discapicitada',
+  `Tipo_incapacitado` varchar(20) NOT NULL COMMENT 'Tipo de incapacidad de la persona del grupo familiar',
+  `Embarazo_tempr` varchar(2) NOT NULL COMMENT 'Si lapersona posee un embarazo temprano',
+  `parentesco` varchar(10) NOT NULL COMMENT 'Parentesco de la persona del grupo familiar con el jefe de familia',
+  `nivel_instrucción` varchar(20) NOT NULL COMMENT 'Nivel de intruccion de la persona del grupo familiar',
+  `cne` varchar(2) NOT NULL COMMENT 'Si la persona esta inscrita en el CNE',
+  `profesion` varchar(20) NOT NULL COMMENT 'Profesion de la persona del grupo familiar',
+  `pensionado` varchar(2) NOT NULL COMMENT 'Si la persopna es pensionada',
+  `ingreso_mensual` varchar(6) NOT NULL COMMENT 'Ingreso mensual de la persona del grupo familiar',
+  `observacion` varchar(50) NOT NULL COMMENT 'Si se le desea agregar alguna otra observacion',
   `status` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
+
+--
+-- Volcado de datos para la tabla `grupo_fliar`
+--
+
+INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instrucción`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES
+(1, 6, 2063, 'ewe', 'dwf', 'f', '2015-06-02', 12, 'no', 'gb', 'xv', 'gsg', 'xg', 'xf', 'xf', 'ze', '10', 'RFF', 1);
 
 -- --------------------------------------------------------
 
@@ -79,18 +86,21 @@ CREATE TABLE IF NOT EXISTS `jefeflia` (
   `profesion` varchar(20) NOT NULL COMMENT 'profesion jefe flia',
   `trabaja` varchar(2) NOT NULL COMMENT 'trabaja jefe flia',
   `clasificacion_ingreso_familiar` varchar(22) NOT NULL COMMENT 'clasificacion ingreso familiar',
-  `ingreso_mensual` int(6) NOT NULL COMMENT 'ingreso mensual jefe flia'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo';
+  `ingreso_mensual` int(6) NOT NULL COMMENT 'ingreso mensual jefe flia',
+  `fecha_creacion` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo';
 
 --
 -- Volcado de datos para la tabla `jefeflia`
 --
 
-INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES
-(1, 'ASDASDASD', 'sdasDASDASD', 'f', 12312312, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123),
-(2, 'ASDASDASD', 'sdasDASDASD', 'f', 11123333, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 1, 'ASDASWDAS ', 'si', 'Mensual', 123123),
-(4, 'ASDASDASD', 'sdasDASDASD', 'f', 22234542, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 1, 'ASDASWDAS ', 'si', 'Mensual', 123123),
-(5, 'ASDASDASD', 'sdasDASDASD', 'f', 23131231, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123);
+INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`, `fecha_creacion`) VALUES
+(1, 'ASDASDASD', 'sdasDASDASD', 'f', 12312312, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00'),
+(2, 'ASDASDASD', 'sdasDASDASD', 'f', 11123333, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 1, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00'),
+(4, 'ASDASDASD', 'sdasDASDASD', 'f', 22234542, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 1, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00'),
+(5, 'ASDASDASD', 'sdasDASDASD', 'f', 23131231, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00'),
+(6, 'ede', 'sum', 'v', 20603430, '1912-03-04', 23, 'f', 'si', '1d', 'no', '', 'no', '', 0, 0, 0, '', 'soltero (a', 'Sin InstrucciÃ³n', 1, 'dsasdasd', 'no', '', 0, '0000-00-00'),
+(7, 'ede', 'sdas', 'v', 21474836, '1913-03-03', 23, 'f', 'no', '1a', 'no', '', 'no', '', 0, 0, 0, '', 'soltero (a', 'Sin InstrucciÃ³n', 1, '', 'no', '', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -100,6 +110,7 @@ INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`
 
 CREATE TABLE IF NOT EXISTS `notificacion` (
 `id_notificacion` int(255) NOT NULL,
+  `id_respuesta` int(255) NOT NULL,
   `id_user_rece` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
@@ -111,9 +122,9 @@ CREATE TABLE IF NOT EXISTS `notificacion` (
 -- Volcado de datos para la tabla `notificacion`
 --
 
-INSERT INTO `notificacion` (`id_notificacion`, `id_user_rece`, `id_user`, `mensaje`, `fecha_creacion`, `status`) VALUES
-(1, 5, 8, 'hola como estas', '2015-06-13', 0),
-(2, 0, 0, '', '2015-06-20', 0);
+INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `id_user`, `mensaje`, `fecha_creacion`, `status`) VALUES
+(1, 0, 5, 8, 'hola como estas', '2015-06-13', 0),
+(2, 1, 8, 5, '', '2015-06-20', 0);
 
 -- --------------------------------------------------------
 
@@ -226,12 +237,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `grupo_fliar`
 --
 ALTER TABLE `grupo_fliar`
-MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT;
+MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `jefeflia`
 --
 ALTER TABLE `jefeflia`
-MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',AUTO_INCREMENT=6;
+MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `notificacion`
 --

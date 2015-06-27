@@ -65,7 +65,7 @@ var FormWizard = function () {
                      required: true,
                 },
                  edad: {
-                    minlength: 3,
+                    minlength: 1,
                     required: true
                 },
                 sexo: {
@@ -90,14 +90,10 @@ var FormWizard = function () {
                     minlength: 20,
                 },
                 telfcel: {
-                    required: true,
                     minlength: 10,
                     number: true
                 },
-                email: {
-                    required: true,
-                    email: true
-                },
+
                 estado_civil: {
                     required: true,
                 },

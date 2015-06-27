@@ -86,7 +86,7 @@ $resultado = $MSJ->Select();
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- inicio: STYLE SELECTOR BOX -->
-							
+
 							<!-- fin: STYLE SELECTOR BOX -->
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
@@ -201,19 +201,19 @@ $resultado = $MSJ->Select();
 											<div class="input-group-btn">
 												<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
 											</div>
-										</div> 
+										</div>
 									</form>
 								</li>
-								<?php 	var_dump($MSJS = mysql_fetch_assoc($resultado)) { 
+								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 								 ?>
-								<li class="messages-item">
-								
+								<li id="msj" class="messages-item">
+
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
 											<div class="messages-item-time">
+												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_user_rece'];?>">
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
-
 												<div class="messages-item-actions">
 													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
 													<div class="dropdown">
@@ -259,12 +259,15 @@ $resultado = $MSJ->Select();
 
 											<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
 											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
-										
-										</li>	
+
+										</li>
 										<?php } ?>
 									</ul>
-									
+
 									<div class="messages-content">
+										<div class="morecommentloader" style="display:none;">
+											<img src="../../images/loading.gif">
+										</div>
 										<div class="message-header">
 											<div class="message-time">
 												11 NOV 2014, 11:46 PM
@@ -302,7 +305,7 @@ $resultado = $MSJ->Select();
 								</div>
 							</div>
 							<!-- fin: INBOX PANEL -->
-							
+
 						</div>
 					</div>
 					<!-- fin: PAGE CONTENT-->
@@ -349,7 +352,39 @@ $resultado = $MSJ->Select();
 			Main.init();
 			UIModals.init();
 			UIElements.init();
+
 		});
+		$("#msj").click(function() {
+			var id_notificacion = $("#id_notificacion").val();
+			$.ajax({
+				url: '../lib/MensajeIndividual.php',
+				type: 'POST',
+				dataType: 'json',
+				data: {'id_notificacion':id_notificacion},
+				beforeSend: function(){
+					$('.morecommentloader').show();
+				},
+				success: function(responce){
+					$('.morecommentloader').hide();
+					$('.messages-content').html(responce);
+
+
+					if (responce){
+						var output = eval(responce);
+				        $('.prvcmntcont').append(output[1]);
+				        loadmoreajax = 1;
+						loadmorecmntcnt += 10;
+					}else{
+						loadmore = 0;
+				        loadmoreajax = 1;
+				        $('.loadmorecomment').html('No more comments');
+					}
+				}
+			});
+
+		});
+
+
 
 		</script>
 

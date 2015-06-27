@@ -4,20 +4,21 @@ include ('../Controller/CensosController.php');
 
 $Jefe = new Censo;
 
-	if (!isset($_POST['idjefe_familia'])) {
+	if (isset($_POST['idjefe_familia'])) {
 		echo "string1";
 			@$idjefe_familia = $_POST['idjefe_familia'];
-		}elseif (!isset($_GET['idjefe_familia'])) {
+		}elseif(isset($_GET['idjefe_familia'])) {
 			echo "string";
 			@$idjefe_familia = $_GET['idjefe_familia'];
 		}else{
-			echo "string2";
-			$idjefe_familia = Null;
-	}
+			$idjefe_familia = null;
+		}
 
-	$resulatdo = $Jefe->Selectjefe($idjefe_familia);
-
+	//echo "<br><br><br><br>".$idjefe_familia."<br><br><br><br>";
+	$resultado = $Jefe->Selectjefe($idjefe_familia);
+//var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
+//var_dump($familiares);
 
 
 
@@ -60,6 +61,9 @@ $Jefe = new Censo;
 			<div class="main-content">
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
 		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+
+	 	<form action="../lib/FamiliarRegistrar.php" method="post" role="form" >
+
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 					&times;
@@ -75,6 +79,7 @@ $Jefe = new Censo;
 									<h5>Nombres</h5>
 							</label>
 									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+									<input type="hidden" class="form-control" id="id_familiar" name="id_familiar" value="<?php echo $idjefe_familia;?>">
 							<label class="col-sm-3 control-label">
 									<h5>Apellidos</h5>
 							</label>
@@ -97,36 +102,34 @@ $Jefe = new Censo;
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
 
 						</div>
-
-
 					</div>
 					<div class="col-md-6">
 
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Embarazo Temprano</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Parentesco</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Grado Instrucción</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>CNE</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Profesión</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Pensionado</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">
+							<label class="col-sm-3 control-label">
 									<h5>Ing. Mensual</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
@@ -142,6 +145,8 @@ $Jefe = new Censo;
 					Registrar
 				</button>
 			</div>
+		</form>
+
 		</div>
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
@@ -328,85 +333,85 @@ $Jefe = new Censo;
 															<tr>
 																<th colspan="3">Datos</th>
 															</tr>
-															<?php
-															echo $_POST['idjefe_familia'];
-																	if (!isset($_POST['idjefe_familia'])) {
-		echo "string1";
-			@$idjefe_familia = $_POST['idjefe_familia'];
-		}elseif (!isset($_GET['idjefe_familia'])) {
-			echo "string";
-			@$idjefe_familia = $_GET['idjefe_familia'];
-		}else{
-			echo "string2";
-			$idjefe_familia = Null;
-	}
 
-	$resulatdo = $Jefe->Selectjefe($idjefe_familia);
-
-	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
-
-
-
-															?>
 														</thead>
 														<tbody>
 															<tr>
 																<td>Nombres:</td>
 																<td>
-																	www.example.com
+																	<?php echo $resultado['nombres']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Apellidos:</td>
 																<td>
-																	peter@example.com
+																	<?php echo $resultado['apellidos']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
-																<td>Cedúla:</td>
-																<td>(641)-734-4763</td>
+																<td>Nacionalidad:</td>
+																<td>
+																	<?php echo $resultado['nacionalidad']; ?>
+																</td>
+																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+															</tr>
+															<tr>
+																<td>Cedula:</td>
+																<td>
+																	<?php echo $resultado['cedula']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Fecha de Nacimiento:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['fecha_nacimiento']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 
 															<tr>
 																<td>Edad:</td>
-																<td>UI Designer</td>
+																<td>
+																	<?php echo $resultado['edad']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Sexo:</td>
-																<td>56 min</td>
+																<td>
+																	<?php echo $resultado['sexo']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
-																<td>Senior Marketing Manager</td>
+																<td>
+																	<?php echo $resultado['cne']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tiempo en la Comunidad:</td>
 																<td>
-																	Kenneth Ross
+																	<?php echo $resultado['tiempo_comunidad']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Incapacitado:</td>
-																<td>21 October 1982</td>
+																<td>
+																	<?php echo $resultado['incapacitado']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tipo:</td>
-																<td>New company web site development, HR Management</td>
+																<td>
+																	<?php echo $resultado['tipo_incapacitado']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 														</tbody>
@@ -425,83 +430,85 @@ $Jefe = new Censo;
 														<tbody>
 															<tr>
 																<td>Pensionado:</td>
-																<td>(641)-734-4763</td>
+																<td>
+																<?php echo $resultado['pensionado']; ?>
+																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Institución:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['institucion']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Cel.:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['telfcel']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Hab.:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['telfhab']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Ofic.:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['telfofic']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Email:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['email']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Estado Civil:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['estado_civil']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Nivel de instrucción:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['nivel_instruccion']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Profesión / Oficio:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['profesion']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Trabaja Actualmente:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['trabaja']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Clasificación Ingreso Familiar:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['clasificacion_ingreso_familiar']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Ingreso Mensual:</td>
 																<td>
-																	peterclark82
+																	<?php echo $resultado['ingreso_mensual']; ?>
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>

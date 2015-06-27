@@ -308,11 +308,11 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="nacionalidad" id="nacionalidad" >
+															<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad" >
 															V
 														</label>
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="nacionalidad"  id="nacionalidad">
+															<input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad">
 															E
 														</label>
 														<div class="col-sm-4">
@@ -441,7 +441,7 @@
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tipo<span class="symbol required"></span>
+														Tipo
 													</label>
 													<div class="col-sm-4">
 																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="">
