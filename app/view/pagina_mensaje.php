@@ -201,7 +201,7 @@ $resultado = $MSJ->Select();
 											<div class="input-group-btn">
 												<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
 											</div>
-										</div>
+										</div> 
 									</form>
 								</li>
 								<?php 	while ($MSJS = mysql_fetch_assoc($resultado)) { 
