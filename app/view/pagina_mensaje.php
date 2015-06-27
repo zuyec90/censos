@@ -204,7 +204,7 @@ $resultado = $MSJ->Select();
 										</div> 
 									</form>
 								</li>
-								<?php 	while ($MSJS = mysql_fetch_assoc($resultado)) { 
+								<?php 	var_dump($MSJS = mysql_fetch_assoc($resultado)) { 
 								 ?>
 								<li class="messages-item">
 								
@@ -232,7 +232,7 @@ $resultado = $MSJ->Select();
 																</a>
 															</li>
 															<li>
-																<a href="#">
+																<a href="../lib/MensajeEliminar.php?id_user=<?php echo $users['id_user'];?>">
 																	<i class="fa fa-trash-o"></i>
 																	Borrar
 																</a>
