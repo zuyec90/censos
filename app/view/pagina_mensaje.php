@@ -204,7 +204,7 @@ $resultado = $MSJ->Select();
 										</div> 
 									</form>
 								</li>
-								<?php 	while ($MSJS = mysql_fetch_assoc($resultado)) { 
+								<?php 	var_dump($MSJS = mysql_fetch_assoc($resultado)) { 
 								 ?>
 								<li class="messages-item">
 								

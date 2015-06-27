@@ -88,8 +88,6 @@ class censo extends DataModel
 		}
 
 
-
-
 		public function Eliminarjefe($id = Null)
 	{
 		$this->Conect();
