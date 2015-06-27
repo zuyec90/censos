@@ -19,7 +19,9 @@ class censo extends DataModel
 		return "0";
 		}else{
 						// cambiar segun base de datos INSERT
-			$sql = "INSERT INTO `jefeflia` ( `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES ( '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."', NOW(), '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
+			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
+
+			$sql = "INSERT INTO `jefeflia` ( `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES ( '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
 
 			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
 
@@ -27,7 +29,6 @@ class censo extends DataModel
 		}
 
 	}
-
 	public function Verificarcenso($cedula = Null)
 	{
 
@@ -39,13 +40,48 @@ class censo extends DataModel
 		return $correcto; //imprimirlo en la vista
 	}
 
+	public function RegistrarFamiliar($datos = Null)
+	{
+
+		$this->Conect();
+
+		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido']); //los datos dentro del parentesis se pasan al INSERT luego de values
+
+		if (!empty($valido)){
+
+		return "0";
+		}else{
+			// cambiar segun base de datos INSERT
+			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
+
+			$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instrucción`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '".$datos['idjefe_familia']."', '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', '".$datos['Tipo_incapacitado']."', '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', '".$datos['nivel_instrucción']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
+
+				return "1";
+		}
+
+	}
+	public function VerificarFamiliar($nombre, $apellido)
+	{
+
+		$sql = "SELECT * FROM `grupo_fliar` WHERE `nombre`= ".$nombre." and `apellido`= ".$apellido."    " ;
+
+		$respuesta = mysql_query($sql) or die ("Error 203 no se encontraron resultados");
+		$correcto = mysql_fetch_assoc($respuesta);
+
+		return $correcto; //imprimirlo en la vista
+	}
+
+
+
+
 
 	public function Consulta($id = Null)
 	{
 		$this->Conect();
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
-		$respuesta = mysql_query($sql) or die ("Error 202 no se logró consultar");
+		$respuesta = mysql_query($sql) or die ("Error 202 no se logro consultar");
 		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
