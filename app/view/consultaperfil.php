@@ -41,10 +41,10 @@ $respuesta = $censo->Selectjefe();
 				<!--inicio: PANEL CONFIGURATION MODAL FORM -->
 				<div id="panel-config" class="modal fade" tabindex="-1" data-width="160" style="display: none;" data-backdrop="static" data-keyboard="false" style="display: none;">
 			<div class="modal-header">
-				
+
 				<h4 class="modal-title">¿Eliminar?</h4>
 			</div>
-			
+
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn btn-primary">
 					Cancelar
@@ -71,11 +71,11 @@ $respuesta = $censo->Selectjefe();
 								<li class="active">
 									Censo
 								</li>
-								
+
 							</ol>
 							<div class="page-header">
 								<h1> Consulta <small>Lista de Censados</small></h1>
-								
+
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -106,91 +106,22 @@ $respuesta = $censo->Selectjefe();
 												<th class="hidden-xs">Apellidos</th>
 												<th>Cédula</th>
 												<th class="hidden-xs">Edad</th>
-												
+
 												<th>Opciones</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>												
-												<td><a href="consultadatos.php"> Ulises </a></td>
-												<td class="hidden-xs">Robles</td>
-												<td>12345678</td>
-												<td class="hidden-xs">56</td>
-												<td>													
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
-													<i class="fa fa-trash-o"></i></a>													
-												</td>
-											</tr>
-											
-											<tr>
-												<td>2</td>												
-												<td><a href="consultadatos.php">Maria</a></td>
-												<td class="hitdden-xs">Robles</td>
-												<td>V852369</td>
-												<td class="hidden-xs">34</td>
-												<td>
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
-													<i class="fa fa-trash-o"></i></a>													
-												</td>
-											</tr>
-											<tr>
-												<td>3</td>												
-												<td><a href="consultadatos.php">Pedro</a></td>
-												<td class="hidden-xs">Martinez</td>
-												<td>741852</td>
-												<td class="hidden-xs">29</td>
-												<td>													
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
-													<i class="fa fa-trash-o"></i></a>
-																								
-												</td>
-											</tr>
-											<tr>
-												<td>4</td>												
-												<td><a href="consultadatos.php">Gleiver</a></td>
-												<td class="hidden-xs">Gil</td>
-												<td>18761800</td>
-												<td class="hidden-xs">25</td>
-												<td>													
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
-													<i class="fa fa-trash-o"></i></a>
-												</td>
-											</tr>
-											<tr>
-												<td>5</td>												
-												<td><a href="consultadatos.php">Samantha</a></td>
-												<td class="hidden-xs">Hernandez</td>
-												<td>30589247</td>
-												<td class="hidden-xs">20</td>
-												<td>													
-													<a href="#" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Modificar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="#panel-config" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar" data-toggle="modal">
-													<i class="fa fa-trash-o"></i></a>													
-												</td>
-											</tr>
-										</tbody>
 										<tbody>
 										<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
 
 											<tr>
 												<td><?php echo $censo['idjefe_familia'];?></td>
-												
+
 												<td><?php echo $censo['nombres'];?></td>
 												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
 												<td><?php echo $censo['cedula'];?></td>
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
 												<td>
-													<a href="consultaperfil.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
+													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
 													<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
 													<i class="fa fa-trash-o"></i></a>

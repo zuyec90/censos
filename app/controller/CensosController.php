@@ -16,13 +16,14 @@ class censo extends DataModel
 
 		if (!empty($cedula)){
 
-			return "1";
+		return "0";
 		}else{
 						// cambiar segun base de datos INSERT
-			$sql = "INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES (NULL, '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."', 'NOW()', '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."');";
+			$sql = "INSERT INTO `jefeflia` ( `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES ( '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."', NOW(), '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
+
 			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
 
-			return "0";
+				return "1";
 		}
 
 	}
@@ -61,7 +62,7 @@ class censo extends DataModel
 			$respuesta = mysql_fetch_assoc($Selection);
 
 		}else{
-			$sql = "SELECT * FROM `jefeflia` WHERE  `cedula` <> '0'";
+			$sql = "SELECT * FROM `jefeflia` WHERE  `status` <> '0'";
 			$respuesta = mysql_query($sql) or die ("Error 204 no se logró consultar");
 
 		}
@@ -71,12 +72,30 @@ class censo extends DataModel
 
 	}
 
+	public function SelectFamiliar($id = Null)
+		{
+			$this->Conect();
+			if (!empty($id)) {
+				$sql = "SELECT * FROM `grupo_fliar` WHERE `idjefe_familia`= '".$id."' AND  `status` <> 0";
+				$respuesta = mysql_query($sql) or die ("Error 203 no se logró consultar");
+
+			}else{
+				return 0;
+			}
+
+			return $respuesta; //imprimirlo en la vista
+
+		}
+
+
+
+
 		public function Eliminarjefe($id = Null)
 	{
 		$this->Conect();
 
 		if (!empty($id)) {
-			$sql = "UPDATE `jefeflia` SET `status` = '1' WHERE `idjefe_familia` = '".$id."' ";
+			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia` = '".$id."' ";
 			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
 
 			return "1";
