@@ -217,9 +217,9 @@
 					<br>
 					<!-- inicio: INBOX PANEL -->
 					<div class="panel panel-default">
-						<div class="panel-heading">
-							<i class="fa fa-envelope-o"></i>
-								Bandeja de entrada
+								<div class="panel-heading">
+									<i class="fa fa-envelope-o"></i>
+									Inbox
 									<div class="panel-tools">
 										<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
 										</a>
@@ -236,25 +236,25 @@
 											<i class="fa fa-times"></i>
 										</a>
 									</div>
-						</div>
-						<div class="panel-body messages">
-							<ul class="messages-list">
-								<li class="messages-search">
-									<form action="#" class="form-inline">
-										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
-												<div class="input-group-btn">
-													<button class="btn btn-primary" type="button">
+								</div>
+								<div class="panel-body messages">
+									<ul class="messages-list">
+										<li class="messages-search">
+											<form action="#" class="form-inline">
+												<div class="input-group">
+													<input type="text" class="form-control" placeholder="Search messages...">
+													<div class="input-group-btn">
+														<button class="btn btn-primary" type="button">
 															<i class="fa fa-search"></i>
-													</button>
+														</button>
+													</div>
 												</div>
-										</div>
-									</form>
-								</li>
-								<li class="messages-item">
-									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
-										<img src="upload/765-default-avatar.png" class="messages-item-avatar">
-											<span class="messages-item-from">Ulises Robles</span>
+											</form>
+										</li>
+										<li class="messages-item">
+											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+											<img alt="" src="assets/images/avatar-1.jpg" class="messages-item-avatar">
+											<span class="messages-item-from">Peter Clark</span>
 											<div class="messages-item-time">
 												<span class="text">10:23 PM</span>
 												<div class="messages-item-actions">
@@ -265,19 +265,19 @@
 															<li>
 																<a href="#">
 																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
+																	Mark as Read
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-ban"></i>
-																	Correo no deseado
+																	Spam
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-trash-o"></i>
-																	Borrar
+																	Delete
 																</a>
 															</li>
 														</ul>
@@ -303,8 +303,8 @@
 										</li>
 										<li class="messages-item active starred">
 											<span title="Remove star" class="messages-item-star"><i class="fa fa-star"></i></span>
-											<img src="upload/default_avatar_female.jpg" class="messages-item-avatar">
-											<span class="messages-item-from">Yaylet Rojas</span>
+											<img alt="" src="assets/images/avatar-2.jpg" class="messages-item-avatar">
+											<span class="messages-item-from">Nicole Bell</span>
 											<div class="messages-item-time">
 												<span class="text">08:46 PM</span>
 												<div class="messages-item-actions">
@@ -315,19 +315,19 @@
 															<li>
 																<a href="#">
 																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
+																	Mark as Read
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-ban"></i>
-																	Correo no desado
+																	Spam
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-trash-o"></i>
-																	Borrar
+																	Delete
 																</a>
 															</li>
 														</ul>
@@ -354,8 +354,8 @@
 										<li class="messages-item">
 											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 											<span class="messages-item-attachment"><i class="fa fa-paperclip"></i></span>
-											<img src="upload/default_avatar_female.jpg" class="messages-item-avatar">
-											<span class="messages-item-from">Yasmin Torres</span>
+											<img alt="" src="assets/images/avatar-3.jpg" class="messages-item-avatar">
+											<span class="messages-item-from">Steven Thompson</span>
 											<div class="messages-item-time">
 												<span class="text">04:03 PM</span>
 												<div class="messages-item-actions">
@@ -366,19 +366,19 @@
 															<li>
 																<a href="#">
 																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
+																	Mark as Read
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-ban"></i>
-																	Correo no deseado
+																	Spam
 																</a>
 															</li>
 															<li>
 																<a href="#">
 																	<i class="fa fa-trash-o"></i>
-																	Borrar
+																	Delete
 																</a>
 															</li>
 														</ul>
@@ -402,6 +402,56 @@
 											<span class="messages-item-subject">Lorem ipsumdolor sit amet ...</span>
 											<span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do antera ...</span>
 										</li>
+										<li class="messages-item">
+											<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+											<img alt="" src="assets/images/avatar-1.jpg" class="messages-item-avatar">
+											<span class="messages-item-from">Peter Clark</span>
+											<div class="messages-item-time">
+												<span class="text">11:16 AM</span>
+												<div class="messages-item-actions">
+													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
+													<div class="dropdown">
+														<a data-toggle="dropdown" title="Move to folder" href="#"><i class="fa fa-folder-open"></i></a>
+														<ul class="dropdown-menu pull-right">
+															<li>
+																<a href="#">
+																	<i class="fa fa-pencil"></i>
+																	Mark as Read
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<i class="fa fa-ban"></i>
+																	Spam
+																</a>
+															</li>
+															<li>
+																<a href="#">
+																	<i class="fa fa-trash-o"></i>
+																	Delete
+																</a>
+															</li>
+														</ul>
+													</div>
+													<div class="dropdown">
+														<a data-toggle="dropdown" title="Attach to tag" href="#"><i class="fa fa-tag"></i></a>
+														<ul class="dropdown-menu pull-right">
+															<li>
+																<a href="#"><i class="tag-icon red"></i>Important</a>
+															</li>
+															<li>
+																<a href="#"><i class="tag-icon teal"></i>Work</a>
+															</li>
+															<li>
+																<a href="#"><i class="tag-icon green"></i>Home</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<span class="messages-item-subject">Duis autem vel eum iriure ...</span>
+											<span class="messages-item-preview">Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do antera ...</span>
+										</li>
 									</ul>
 									<div class="messages-content">
 										<div class="message-header">
@@ -415,7 +465,7 @@
 												To: Peter Clark
 											</div>
 											<div class="message-subject">
-												New frontfinal layout
+												New frontend layout
 											</div>
 											<div class="message-actions">
 												<a title="Move to trash" href="#"><i class="fa fa-trash-o"></i></a>
@@ -429,7 +479,7 @@
 												<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 											</p>
 											<p>
-												Duis autem vel eum iriure dolor in hfinalrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleiffinal option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+												Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
 												Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
 											</p>
 											<p>
@@ -440,9 +490,6 @@
 									</div>
 								</div>
 							</div>
-							<!-- fin: INBOX PANEL -->
-						</div>
-					</div>
 					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>

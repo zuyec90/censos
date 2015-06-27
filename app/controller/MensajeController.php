@@ -9,14 +9,14 @@ class Mensaje extends DataModel
 		$this->Conect();
 
 
-		if (!empty($data)){			
-			
+		if (!empty($data)){
+
 			$sql = "INSERT INTO `notificacion` (`id_notificacion`, `id_user_rece`, `id_user`, `mensaje`, `fecha_creacion`, `status`) VALUES (NULL, '".$data['id_user_rece'] ."', '".$data['id_user'] ."', '".$data['mensaje'] ."', NOW(), '1')";
-			mysql_query($sql) or die ('error 301 no se pudo crear el mensaje');	
-			
-			return "1";				
-		}else{						
-									
+			mysql_query($sql) or die ('error 301 no se pudo crear el mensaje');
+
+			return "1";
+		}else{
+
 			return "0";
 		}
 
@@ -30,8 +30,8 @@ class Mensaje extends DataModel
 			$SelectionMsj = mysql_query($sql) or die ("Error 301 no se logró consultar");
 			$respuesta = mysql_fetch_assoc($SelectionMsj);
 		}else{
-			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '0'";
-			$respuesta = mysql_query($sql) or die ("Error 302 no se logró consultar");
+			$sql = "SELECT * FROM `notificacion`  ";
+			$respuesta = mysql_query($sql) or die ("Error 302 no se logr consultar");
 		}
 		return $respuesta;
 	}
