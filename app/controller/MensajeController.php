@@ -47,5 +47,6 @@ class Mensaje extends DataModel
 		else{
 			return "0";
 		}
+	}
 }
 ?>
