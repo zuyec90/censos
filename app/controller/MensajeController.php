@@ -133,9 +133,9 @@ class Mensaje extends DataModel
 			$row = mysql_fetch_assoc($validacion);
 
 			$fecha = $row['fecha_creacion']; //fecha que tengo en formato UNIX en mi tabla 
-			echo $fecha."<br>";
+			
 			$fecha1 = date("Y-m-d H:i:s",time()); //tomo fecha y hora actual 
-			echo $fecha1."<br>";
+			
 		$resultado= $this->calcula_hora($fecha, $fecha1)."<br>";
 		if ($resultado<=4) {
 			return "1";
