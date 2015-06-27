@@ -48,6 +48,18 @@ class Mensaje extends DataModel
 			return "0";
 		}
 	}
+	public function Leido($id_notificacion = Null)
+	{
+		$this->Conect();
+		if (!empty($id_notificacion)) {
+			$sql = "UPDATE `notificacion` SET `status` = '1' WHERE `id_notificacion` = '".$id_notificacion."' ";
+			mysql_query($sql) or die ('Error 304 no se pudo actualizar el mensaje');
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
 
 		public function respuesta($resp = Null)
 

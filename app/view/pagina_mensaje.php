@@ -232,7 +232,7 @@ $resultado = $MSJ->Select();
 																</a>
 															</li>
 															<li>
-																<a href="#">
+																<a href="../lib/MensajeEliminar.php?id_user=<?php echo $users['id_user'];?>">
 																	<i class="fa fa-trash-o"></i>
 																	Borrar
 																</a>
