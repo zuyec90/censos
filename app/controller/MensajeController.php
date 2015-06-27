@@ -49,5 +49,19 @@ class Mensaje extends DataModel
 		}
 	}
 
+		public function respuesta($resp = Null)
+
+	{
+		$this->Conect();
+		if (!empty($resp)) {
+			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$resp."' ";
+			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
+
 }
 ?>
