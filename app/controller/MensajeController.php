@@ -40,7 +40,7 @@ class Mensaje extends DataModel
 
 	public	function calcula_hora($fecha_entrada,$fecha_salida) {
 		
-		$fecha1=strtotime($fecha_salida);
+		$fecha1=strtotime($fecha_salida);		//strtotime convirte la fecha y la hora en un valor unico (numero calculable)
 		
 		$fecha2=strtotime($fecha_entrada);
 		
