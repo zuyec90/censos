@@ -306,7 +306,7 @@ $resultado = $user->Seleccionar($id_user);
 										</div>
 									</div>
 									<div id="panel_edit_account" class="tab-pane">
-										<form action="#" role="form" id="form">
+										<form action="../lib/UserUpdate.php" method="POST" role="form" id="form">
 											<div class="row">
 												<div class="col-md-12">
 													<h3>Información de Cuenta</h3>
@@ -336,6 +336,7 @@ $resultado = $user->Seleccionar($id_user);
 															Nombre
 														</label>
 														<input type="text" placeholder="" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombre'] ;?>">
+														<input type="hidden" placeholder="" class="form-control" id="id_user" name="id_user" value="<?php echo $resultado['id_user']; ?>">
 													</div>
 													<div class="form-group">
 														<label class="control-label">
@@ -348,7 +349,7 @@ $resultado = $user->Seleccionar($id_user);
 															Cédula
 														</label>
 														<input type="text" placeholder="" class="form-control" id="cedula" name="cedula" value="<?php echo $resultado['cedula'] ;?>">
-													</div>													
+													</div>
 													<div class="form-group">
 												<label for="form-field-mask-2">
 													Teléfono
@@ -363,17 +364,17 @@ $resultado = $user->Seleccionar($id_user);
 														</label>
 														<div>
 															<label class="radio-inline">
-																<input type="radio" class="grey" value="f" name="gender" id="femenino">
+																<input type="radio" class="grey" value="f" name="sexo" id="femenino">
 																Femenino
 															</label>
 															<label class="radio-inline">
-																<input type="radio" class="grey" value="m" name="gender"  id="masculino" checked="checked">
+																<input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">
 																Masculino
 															</label>
 															</div>
 														</div>
-													</div>								
-														
+													</div>
+
 											</div>
 												<div class="row">
 												<div class="col-md-5">
@@ -394,13 +395,13 @@ $resultado = $user->Seleccionar($id_user);
 															Unidad de Trabajo al que pertenece
 														</label>
 														<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
-													</div>												
+													</div>
 														<div class="form-group">
 														<label class="control-label">
 															Tipo de Usuario
 														</label>
 														<input type="text"  placeholder="" class="form-control" id="perfil" name="perfil" value="<?php echo $resultado['perfil'] ;?>">
-													</div>												
+													</div>
 													<div class="form-group">
 													<span class="input-icon">
 														<input type="text" class="form-control" name="usuario" value="<?php echo $resultado['usuario'] ;?>">
@@ -412,8 +413,8 @@ $resultado = $user->Seleccionar($id_user);
 													</label>
 														<span class="input-icon">
 													<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>">
-													<i class="fa fa-lock"></i>													
-													
+													<i class="fa fa-lock"></i>
+
 												</div>
 											</div>
 										</div>

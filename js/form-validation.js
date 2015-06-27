@@ -69,7 +69,7 @@ var FormValidator = function () {
                 apellido: "por favor ingrese el nombre ",
                 email: {
                     required: "necesitamos un mail de contacto ",
-                    email: "Your email address must be in the format of name@domain.com"
+                    email: "su correo debe tener este formato name@domain.com"
                 },
                 sexo: "por favor select su sexo!"
             },

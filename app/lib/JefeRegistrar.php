@@ -9,13 +9,18 @@ $Jefe = new Censo;
 if ($Jefe->Registrar($_POST) == 1) {
 
 
-echo "Registro satisfactorio";
+echo "<form name='form' action='../view/consultadatos.php' method='post'>";
+echo "<input type='hidden' name='idjefe_familia' value='".$_POST['idjefe_familia']."'>";
+echo "</form>";
+echo "<script language=javascript>document.form.submit();</script>";
 
 
  } else{
 
-
-echo "No se logro registrar";
+echo "<form name='form' action='../view/datos.php' method='post'>";
+echo "<input type='hidden' name='valor' value='0'>";
+echo "</form>";
+echo "<script language=javascript>document.form.submit();</script>";
 
  }
 

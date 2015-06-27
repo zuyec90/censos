@@ -126,9 +126,9 @@
 									</div>
 							<?php	}
 							} ?>
-									
+
 									<hr>
-									<form action="app/lib/UserCreate.php" method="POST" role="form" id="form">
+									<form action="../lib/UserCreate.php" method="POST" role="form" id="form">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
@@ -193,7 +193,7 @@
 													Teléfono
 												</label>
 												<div class="input-group">
-													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+													<a class="input-group-addon"> <i class="fa fa-phone"></i> </a>
 													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular">
 												</div>
 											</div>
@@ -284,14 +284,10 @@
 										</div>
 										<div class="row">
 											<div class="col-md-8">
-												<p>
-													Al registrarse , usted estará de acuerdo con la política y los Términos &amp; Condiciones.
-												</p>
+
 											</div>
 											<div class="col-md-4">
-												<button class="btn btn-green btn-block" type="submit">
-													Registrar <i class="fa fa-arrow-circle-right"></i>
-												</button>
+												<input type="submit" value="enviar" name="enviar">
 											</div>
 										</div>
 									</form>
@@ -345,8 +341,8 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				FormValidator.init();
-				UIElements.init();
+				//FormValidator.init();
+				//UIElements.init();
 			});
 
 		</script>

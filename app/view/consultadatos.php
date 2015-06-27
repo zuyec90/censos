@@ -1,3 +1,29 @@
+<?php
+
+include ('../Controller/CensosController.php');
+
+$Jefe = new Censo;
+
+	if (!isset($_POST['idjefe_familia'])) {
+		echo "string1";
+			@$idjefe_familia = $_POST['idjefe_familia'];
+		}elseif (!isset($_GET['idjefe_familia'])) {
+			echo "string";
+			@$idjefe_familia = $_GET['idjefe_familia'];
+		}else{
+			echo "string2";
+			$idjefe_familia = Null;
+	}
+
+	$resulatdo = $Jefe->Selectjefe($idjefe_familia);
+
+	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
@@ -49,58 +75,58 @@
 									<h5>Nombres</h5>
 							</label>
 									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
-							<label class="col-sm-3 control-label">	
+							<label class="col-sm-3 control-label">
 									<h5>Apellidos</h5>
 							</label>
 									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
-							<label class="col-sm-3 control-label">	
+							<label class="col-sm-3 control-label">
 									<h5>Sexo</h5>
 							</label>
 									<input type="text" class="form-control" id="sexo" name="sexo" placeholder="">
-							<label class="col-sm-3 control-label">	
+							<label class="col-sm-3 control-label">
 									<h5>Cedúla</h5>
 							</label>
 									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="">
-							<label class="col-sm-3 control-label">	
+							<label class="col-sm-3 control-label">
 									<h5>Fecha Nacimiento</h5>
 							</label>
 									<input type="text" class="form-control" id="fecha_nacimiento" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">	
+							<label class="col-sm-3 control-label">
 									<h5> Discapacidad/ Tipo</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-								
+
 						</div>
 
-						
+
 					</div>
 					<div class="col-md-6">
-						
-						<label class="col-sm-3 control-label">	
+
+						<label class="col-sm-3 control-label">
 									<h5>Embarazo Temprano</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>Parentesco</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>Grado Instrucción</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>CNE</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>Profesión</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>Pensionado</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-						<label class="col-sm-3 control-label">	
+						<label class="col-sm-3 control-label">
 									<h5>Ing. Mensual</h5>
 							</label>
 									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
@@ -302,6 +328,26 @@
 															<tr>
 																<th colspan="3">Datos</th>
 															</tr>
+															<?php
+															echo $_POST['idjefe_familia'];
+																	if (!isset($_POST['idjefe_familia'])) {
+		echo "string1";
+			@$idjefe_familia = $_POST['idjefe_familia'];
+		}elseif (!isset($_GET['idjefe_familia'])) {
+			echo "string";
+			@$idjefe_familia = $_GET['idjefe_familia'];
+		}else{
+			echo "string2";
+			$idjefe_familia = Null;
+	}
+
+	$resulatdo = $Jefe->Selectjefe($idjefe_familia);
+
+	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
+
+
+
+															?>
 														</thead>
 														<tbody>
 															<tr>
@@ -564,7 +610,7 @@
 									<div id="panel_projects" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">
-												
+
 											</div>
 										</form>
 									</div>
