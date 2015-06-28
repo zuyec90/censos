@@ -12,6 +12,7 @@ $resultado = $MSJ->Select();
 <html lang="es" class="no-js">
 	<!--<![finalif]-->
 	<!-- inicio: HEAD -->
+
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
@@ -206,13 +207,13 @@ $resultado = $MSJ->Select();
 								</li>
 								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 								 ?>
-								<li id="msj" class="messages-item">
+								<li class="msj messages-item">
 
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
 											<div class="messages-item-time">
-												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_user_rece'];?>">
+												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
 												<div class="messages-item-actions">
 													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
@@ -268,39 +269,10 @@ $resultado = $MSJ->Select();
 										<div class="morecommentloader" style="display:none;">
 											<img src="../../images/loading.gif">
 										</div>
-										<div class="message-header">
-											<div class="message-time">
-												11 NOV 2014, 11:46 PM
-											</div>
-											<div class="message-from">
-												Nicole Bell &lt;nicole@example.com&gt;
-											</div>
-											<div class="message-to">
-												To: Peter Clark
-											</div>
-											<div class="message-subject">
-												New frontfinal layout
-											</div>
-											<div class="message-actions">
-												<a title="Mover a la papelera" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
-												<a title="Responder" href="#"><i class="fa fa-reply"></i></a>
-												<a title="Responder a todos" href="#"><i class="fa fa-reply-all"></i></a>
-												<a title="Siguiente" href="#"><i class="fa fa-long-arrow-right"></i></a>
-											</div>
+										<div id="MostrarMsj">
+
 										</div>
-										<div class="message-content">
-											<p>
-												<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-											</p>
-											<p>
-												Duis autem vel eum iriure dolor in hfinalrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleiffinal option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
-												Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
-											</p>
-											<p>
-												Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit ligula. In accumsan mauris at augue feugiat consequat. Aenean consequat sem sed velit sagittis dignissim. Phasellus quis convallis est. Praesent porttitor mauris nec lectus mollis, eget sodales libero venenatis. Cras eget vestibulum turpis. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam turpis velit, tempor vitae libero ac, fermentum laoreet dolor.
-											</p>
-										</div>
+
 									</div>
 								</div>
 							</div>
@@ -354,33 +326,27 @@ $resultado = $MSJ->Select();
 			UIElements.init();
 
 		});
-		$("#msj").click(function() {
+		$(".msj").click(function() {
+			$('.morecommentloader').show();
 			var id_notificacion = $("#id_notificacion").val();
-			$.ajax({
+			var url = '../lib/MensajeIndividual.php';
+			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
+				$('#MostrarMsj').html(respondText);
+				$('.morecommentloader').hide();
+			});
+
+			/*$.ajax({
 				url: '../lib/MensajeIndividual.php',
 				type: 'POST',
 				dataType: 'json',
 				data: {'id_notificacion':id_notificacion},
 				beforeSend: function(){
-					$('.morecommentloader').show();
+					//$('.morecommentloader').show();
 				},
-				success: function(responce){
-					$('.morecommentloader').hide();
-					$('.messages-content').html(responce);
-
-
-					if (responce){
-						var output = eval(responce);
-				        $('.prvcmntcont').append(output[1]);
-				        loadmoreajax = 1;
-						loadmorecmntcnt += 10;
-					}else{
-						loadmore = 0;
-				        loadmoreajax = 1;
-				        $('.loadmorecomment').html('No more comments');
-					}
+				success: function(html){
+					$('.morecommentloader').show();
 				}
-			});
+			});*/
 
 		});
 

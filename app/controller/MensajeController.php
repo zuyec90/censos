@@ -74,7 +74,8 @@ class Mensaje extends DataModel
 	{
 		$this->Conect();
 		if (!empty($msj)) {
-			$sql = "SELECT * FROM `notificacion` WHERE `id_notificacion`= '".$msj."' ";
+			$sql = "SELECT * FROM `notificacion` WHERE `id_notificacion` = '".$msj."' ";
+
 			$SelectionMsj = mysql_query($sql) or die ("Error 301 no se logró consultar");
 			$respuesta = mysql_fetch_assoc($SelectionMsj);
 		}else{
