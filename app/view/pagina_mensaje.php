@@ -64,7 +64,7 @@ $User = $MSJ->ConsultaUser();
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
-
+				
 				<!-- /.modal -->
 				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
@@ -192,10 +192,9 @@ $User = $MSJ->ConsultaUser();
 						<div class="panel-heading">
 							<i class="fa fa-envelope-o"></i>Bandeja de entrada
 							<div class="panel-tools">
-								<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
-								<a class="btn btn-xs btn-link panel-refresh" href="#"><i class="fa fa-refresh"></i></a>
-								<a class="btn btn-xs btn-link panel-expand" href="#"><i class="fa fa-resize-full"></i></a>
-								<a class="btn btn-xs btn-link panel-close" href="#"><i class="fa fa-times"></i></a>
+								<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
+									<i class="fa fa-question"></i>
+								</a>
 							</div>
 						</div>
 						<div class="panel-body messages">
