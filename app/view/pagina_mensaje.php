@@ -104,7 +104,7 @@ $resultado = $MSJ->Select();
 					<!-- inicio: PAGE CONTENT -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
 						<?php
-							if(!empty($_POST)){
+							if(!empty($_POST['valor'])){
 								if ($_POST['valor'] == '1' ) { ?>
 
 									<div class="alert alert-success">
@@ -123,6 +123,31 @@ $resultado = $MSJ->Select();
 										</button>
 										<i class="fa fa-check-circle"></i>
 										<strong>Su mensaje no pudo ser enviado.</strong>
+									</div>
+							<?php	}
+							} ?>
+
+													<?php
+									@$_POST['eliminado'];		
+							if(!empty($_POST)){
+								if ($_POST['eliminado'] == '1' ) { ?>
+
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
+									</div>
+
+									<?php
+									}else{ ?>
+									<div class="alert alert-danger">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Su mensaje no se pudo eliminar.</strong>
 									</div>
 							<?php	}
 							} ?>
@@ -191,15 +216,11 @@ $resultado = $MSJ->Select();
 								 ?>
 								<li onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class=" messages-item">
 
-										<span title="Mark as starred" class="messages-item active starred"><i class="fa fa-star"></i></span>
+									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
-
 											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
-
 											<div class="messages-item-time">
-
 												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
-
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
 												<div class="messages-item-actions">
 													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
@@ -313,15 +334,15 @@ $resultado = $MSJ->Select();
 
 		});
 		function VerMsj (id_notificacion) {
-
+			
 			$('.morecommentloader').show();
 			var url = '../lib/MensajeIndividual.php';
 			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
 				$('#MostrarMsj').html(respondText);
 				$('.morecommentloader').hide();
 			});
-
 		}
+		
 
 
 		</script>
