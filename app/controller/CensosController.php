@@ -29,15 +29,30 @@ class censo extends DataModel
 		}
 
 	}
+	
 	public function Verificarcenso($cedula = Null)
 	{
 
 		$sql = "SELECT * FROM `jefeflia` WHERE `cedula`= ".$cedula."";
 
-		$respuesta = mysql_query($sql) or die ("Error 201 no se encontraron resultados");
+		$respuesta = mysql_query($sql) or die ("Error 202 no se encontraron resultados");
 		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
+	}
+
+	public function Modificar($datos = Null)
+	{
+		$this->Conect();
+		if (!empty($datos['idjefe_familia'])) {
+			$sql = "UPDATE `jefeflia` SET `nombres` = '".$datos['nombres']."', `apellidos` = '".$datos['apellidos']."', `nacionalidad` = '".$datos['nacionalidad']."',`cedula` = '".$datos['cedula']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."' , `edad` = '".$datos['edad']."', `sexo` = '".$datos['sexo']."', `cne` = '".$datos['cne']."', `tiempo_comunidad` = '".$datos['tiempo_comunidad']."', `incapacitado` = '".$datos['incapacitado']."', `tipo_incapacitado` = '".$datos['tipo_incapacitado']."', `pensionado` ='".$datos['pensionado']."', `institucion` = '".$datos['institucion']."', `telfcel` = '".$datos['telfcel']."', `telfhab` = '".$datos['telfhab']."', `telfofic` = '".$datos['telfofic']."', `email` = '".$datos['email']."', `estado_civil` = '".$datos['estado_civil']."', `nivel_instruccion` = '".$datos['nivel_instruccion']."', `profesion` ='".$datos['profesion']."', `trabaja` = '".$datos['trabaja']."', `clasificacion_ingreso_familiar` = '".$datos['clasificacion_ingreso_familiar']."', `ingreso_mensual` = '".$datos['ingreso_mensual'] ."' WHERE `idjefe_familia` = '".$datos['idjefe_familia'] ."'";
+			mysql_query($sql) or die ('Error 203 no se pueden modificar los datos');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
 	}
 
 	public function RegistrarFamiliar($datos = Null)
@@ -72,8 +87,19 @@ class censo extends DataModel
 		return $correcto; //imprimirlo en la vista
 	}
 
+	public function ModificarFamiliar($datos = Null)
+	{
+		$this->Conect();
+		if (!empty($datos['id_familiar'])) {
+			$sql = "UPDATE `grupo_fliar` SET `cedula` = '".$datos['cedula']."', `nombre = '".$datos['nombre']."', `apellido` = '".$datos['apellido']."', `sexo` = '".$datos['sexo']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."', `edad` = '".$datos['edad']."', `incapacitado` = '".$datos['incapacitado']."', `Tipo_incapacitado` = '".$datos['Tipo_incapacitado']."', `Embarazo_tempr` = '".$datos['Embarazo_tempr']."', `parentesco` = '".$datos['parentesco']."', `nivel_instrucción` = '".$datos['nivel_instrucción']."', `cne` = '".$datos['cne']."', `profesion` = '".$datos['profesion']."', `pensionado` = '".$datos['pensionado']."', `ingreso_mensual` = '".$datos['ingreso_mensual']."', `observacion` = '".$datos['observacion'] ."' WHERE `id_familiar` = '".$datos['id_familiar'] ."'";
+			mysql_query($sql) or die ('Error 204 no se pueden modificar los datos');
 
-
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
 
 
 	public function Consulta($id = Null)
