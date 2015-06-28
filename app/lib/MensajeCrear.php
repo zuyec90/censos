@@ -1,3 +1,4 @@
+
 <?php
 /*
 include ('../config/config.php'); // se incluye el archivo donde estara la clase navegando segun el directorio
