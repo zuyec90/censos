@@ -62,7 +62,7 @@ class User extends DataModel
 			$respuesta = mysql_fetch_assoc($Selection);
 
 		}else{
-			$sql = "SELECT * FROM `usuario` WHERE  `status` <> '3'";
+			$sql = "SELECT * FROM `usuario` WHERE  `status` <> '2'";
 			$respuesta = mysql_query($sql) or die ("Error 201 no se logró consultar");
 
 		}
@@ -76,7 +76,7 @@ class User extends DataModel
 		$this->Conect();
 
 		if (!empty($id)) {
-			$sql = "UPDATE `usuario` SET `status` = '3' WHERE `id_user` = '".$id."' ";
+			$sql = "UPDATE `usuario` SET `status` = '2' WHERE `id_user` = '".$id."' ";
 			mysql_query($sql) or die ('error 104 no se pudo eliminar el usuario');
 
 			return "1";
