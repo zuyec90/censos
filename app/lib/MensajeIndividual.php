@@ -35,7 +35,7 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-								<button name="id_notificacion" type="button"class="btn btn-danger" >Eliminar</button>
+								<a href="<?PHP echo "../lib/MensajeEliminar.php?id_notificacion=".$resultado['id_notificacion'];  ?>" name="id_notificacion" type="button"class="btn btn-danger" >Eliminar</a>
 							</div>
 						</div>
 				</div>
