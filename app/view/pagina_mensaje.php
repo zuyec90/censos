@@ -3,7 +3,7 @@
 require_once ('../controller/MensajeController.php');
 $MSJ = new Mensaje;
 $resultado = $MSJ->Select();
-
+ 
 ?>
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->

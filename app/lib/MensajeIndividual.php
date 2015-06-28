@@ -6,7 +6,7 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 $receptor = $MSJ->ConsultaReceptor($resultado['id_user_rece']);
 $emisor = $MSJ->ConsultaReceptor($resultado['id_user']);
 
-?>
+?> 
 		<div class="message-header">
 			<div class="message-time">
 			<?PHP echo $resultado['fecha_creacion']; ?>
