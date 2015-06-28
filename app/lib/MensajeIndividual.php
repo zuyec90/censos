@@ -43,5 +43,4 @@ $eliminar = $MSJ->Eliminar($_POST['id_notificacion']);
 			</div>
 		</div>
 		<div class="message-content">
-
 		</div>
