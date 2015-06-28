@@ -17,6 +17,7 @@ $Jefe = new Censo;
 //var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -618,10 +619,23 @@ $Jefe = new Censo;
 
 													</table>
 													<div class="form-group">
-													<div class="col-sm-2 col-sm-offset-8">
-														<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+													<?php
 
-													</div>
+													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
+													   if ($tiempo != 1) { ?>
+														<div class="col-sm-2 col-sm-offset-8">
+															<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+														</div>
+													<?php	}else{ ?>
+														<div class="col-sm-2 col-sm-offset-8">
+															<a  class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+																Solicitar Modificacion
+															</a>
+														</div>
+													<?php } ?>
+
+
+
 												</div>
 												</div>
 											</div>
