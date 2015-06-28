@@ -243,6 +243,19 @@ class censo extends DataModel
 			return "0";
 		}
 	}
+	public function ConsultaUser($id_user = Null)
+		{
+			$this->Conect();
+			if (!empty($id_user)) {
+				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
+				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
+				$respuesta = mysql_fetch_assoc($SelectionMsj);
+			}else{
+				$sql = "SELECT * FROM `usuario` WHERE  `status` <> '2'";
+				$respuesta = mysql_query($sql) or die ("Error 308 no se logró consultar");
+			}
+			return $respuesta;
+		}
 
 
 }

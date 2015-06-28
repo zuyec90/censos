@@ -17,6 +17,8 @@ $Jefe = new Censo;
 //var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
+	$User = $Jefe->ConsultaUser();
+	var_dump($User);
 
 ?>
 
@@ -61,6 +63,40 @@ $Jefe = new Censo;
 			</div>
 			<!-- inicio: PAGE -->
 			<div class="main-content">
+			<!-- inicio: BOOTSTRAP EXTED MODALS -->
+					<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Escriba su mensaje</h4>
+						</div>
+						<form action="../lib/MensajeCrear.php" method="post" role="form" id="form">
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="name">Nombre: Usuario</label>
+										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<br>
+										<label for="destinatario">Destinatario:</label>
+											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+
+												<option value="">Seleccione un opción</option>
+												<?php while($users = mysql_fetch_assoc($User)) {?>
+												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
+												<?php } ?>
+											</select>
+										<label for="mensaje">Mensaje:</label>
+										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()"></input>
+							</div>
+						</form>
+					</div>
+					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
+					<!-- final: BOOTSTRAP EXTED MODALS -->
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
 		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 
@@ -138,7 +174,7 @@ $Jefe = new Censo;
 
 								</div>
 									<input type="text" name="incapacitado"  id="incapacitado" class="form-control">
-							
+
 
 						</div>
 					</div>
@@ -639,12 +675,12 @@ $Jefe = new Censo;
 
 													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
 													   if ($tiempo != 1) { ?>
-														<div class="col-sm-2 col-sm-offset-8">
-															<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+														<div class="col-sm-4 ">
+															<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
 														</div>
 													<?php	}else{ ?>
-														<div class="col-sm-2 col-sm-offset-8">
-															<a  class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+														<div class="col-sm-4 ">
+															<a href="#responsive" data-toggle="modal"   class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
 																Solicitar Modificacion
 															</a>
 														</div>
@@ -819,11 +855,19 @@ $Jefe = new Censo;
 																		</tr>
 																	</tbody>
 																</table>
-																<div class="form-group">
-																	<div class="col-sm-2 col-sm-offset-8">
-																		<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+																<?php
+																$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
+																   if ($tiempo != 1) { ?>
+																	<div class="col-sm-4 col-sm-offset-4">
+																		<input type="submit" value="Modificar" class="btn btn-yellow btn-block "  style ="margin-top: 25px; ">
 																	</div>
-																</div>
+																<?php	}else{ ?>
+																	<div class="col-sm-4 col-sm-offset-4">
+																		<a href="#responsive" data-toggle="modal"   class="btn btn-yellow btn-block "  style ="margin-top: 25px; ">
+																			Solicitar Modificacion
+																		</a>
+																	</div>
+																<?php } ?>
 															</div>
 													</div>
 											</div>
