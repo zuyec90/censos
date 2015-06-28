@@ -605,70 +605,71 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Nombres:</td>
 																			<td>
-																				<?php echo $datofamiliar['nombre']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['nombre']; ?>" name="nombre">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Apellidos:</td>
 																			<td>
-																				<?php echo $datofamiliar['apellido']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['apellido']; ?>" name="apellido">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Sexo</td>
 																			<td>
-																				<?php echo $datofamiliar['sexo']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
-																				<?php echo $datofamiliar['cedula']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Fecha Nacimiento:</td>
 																			<td>
-																				<?php echo $datofamiliar['fecha_nacimiento']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
 																			<td>
-																				<?php echo $datofamiliar['incapacitado']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Embarazo temprano:</td>
 																			<td>
-																				<?php echo $datofamiliar['Embarazo_tempr']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Parentesco:</td>
 																			<td>
-																				<?php echo $datofamiliar['parentesco']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['parentesco']; ?>" name="parentesco">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Grado de Instrucción:</td>
 																			<td>
-																				<?php echo $datofamiliar['nivel_instruccion']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['nivel_instruccion']; ?>" name="nivel_instruccion">
+																				
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>CNE:</td>
 																			<td>
-																				<?php echo $datofamiliar['cne']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
