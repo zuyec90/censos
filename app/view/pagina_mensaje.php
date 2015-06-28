@@ -102,57 +102,6 @@ $resultado = $MSJ->Select();
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
-					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
-<<<<<<< HEAD
-						<?php
-							if(!empty($_POST['valor'])){
-								if ($_POST['valor'] == '1' ) { ?>
-
-									<div class="alert alert-success">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Su mensaje se ha enviado satisfactoriamente.</strong>
-									</div>
-
-									<?php
-									}else{ ?>
-									<div class="alert alert-danger">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Su mensaje no pudo ser enviado.</strong>
-									</div>
-							<?php	}
-							} ?>
-
-													<?php
-									@$_POST['eliminado'];
-							if(!empty($_POST)){
-								if ($_POST['eliminado'] == '1' ) { ?>
-
-									<div class="alert alert-success">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
-									</div>
-
-									<?php
-									}else{ ?>
-									<div class="alert alert-danger">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Su mensaje no se pudo eliminar.</strong>
-									</div>
-							<?php	}
-							} ?>
-=======
 					<?php
 					if(!empty($_POST['valor'])){
 					if ($_POST['valor'] == '1' ) { ?>
@@ -174,9 +123,9 @@ $resultado = $MSJ->Select();
 						</div>
 					<?php	}
 					} ?>
-					
+
 					<?php
-					@$_POST['eliminado'];		
+					@$_POST['eliminado'];
 					if(!empty($_POST)){
 					if ($_POST['eliminado'] == '1' ) { ?>
 					<div class="alert alert-success">
@@ -197,7 +146,7 @@ $resultado = $MSJ->Select();
 						</div>
 					<?php	}
 					} ?>
->>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
+
 					<div class="panel-body">
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
@@ -339,12 +288,7 @@ $resultado = $MSJ->Select();
 				$('.morecommentloader').hide();
 			});
 		}
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
 		</script>
 
 	</body>

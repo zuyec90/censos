@@ -375,6 +375,24 @@ $Jefe = new Censo;
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
+					<?php
+						@$_POST['valor'];
+							if(!empty($_POST)){
+								if ($_POST['valor'] == '1' ) { ?>
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close" type="button">&times;</button>
+											<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+											<p>Modificación realizada satisfatoriamente.</p>
+									</div>
+					<?php}
+							else{ ?>
+									<div class="alert alert-block alert-danger fade in">
+										<button data-dismiss="alert" class="close" type="button">&times;</button>
+											<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
+											<p>No se logro Modificar</p>
+									</div>
+					<?php	}
+					} ?>
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="tabbable">
@@ -604,24 +622,7 @@ $Jefe = new Censo;
 													<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-8">
 														<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
-														<?php
-															@$_POST['valor'];
-															if(!empty($_POST)){
-															if ($_POST['valor'] == '1' ) { ?>
-																<div class="alert alert-success">
-																	<button data-dismiss="alert" class="close" type="button">&times;</button>
-																	<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
-																	<p>Modificación realizada satisfatoriamente.</p>
-																</div>
-															<?php}
-															else{ ?>
-																<div class="alert alert-block alert-danger fade in">
-																	<button data-dismiss="alert" class="close" type="button">&times;</button>
-																	<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
-																	<p>No se logro Modificar</p>
-																</div>
-															<?php	}
-															} ?>
+
 													</div>
 												</div>
 												</div>
