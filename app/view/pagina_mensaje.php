@@ -190,7 +190,7 @@ $resultado = $MSJ->Select();
 								</li>
 								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 								 ?>
-								<li class="msj messages-item">
+								<li onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class=" messages-item">
 
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
@@ -245,7 +245,7 @@ $resultado = $MSJ->Select();
 											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
 
 										</li>
-										<?php } ?>
+								<?php } ?>
 									</ul>
 
 									<div class="messages-content">
@@ -309,30 +309,16 @@ $resultado = $MSJ->Select();
 			UIElements.init();
 
 		});
-		$(".msj").click(function() {
+		function VerMsj (id_notificacion) {
+			
 			$('.morecommentloader').show();
-			var id_notificacion = $("#id_notificacion").val();
 			var url = '../lib/MensajeIndividual.php';
 			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
 				$('#MostrarMsj').html(respondText);
 				$('.morecommentloader').hide();
 			});
-
-			/*$.ajax({
-				url: '../lib/MensajeIndividual.php',
-				type: 'POST',
-				dataType: 'json',
-				data: {'id_notificacion':id_notificacion},
-				beforeSend: function(){
-					//$('.morecommentloader').show();
-				},
-				success: function(html){
-					$('.morecommentloader').show();
-				}
-			});*/
-
-		});
-
+		}
+		
 
 
 		</script>
