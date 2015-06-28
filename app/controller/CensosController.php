@@ -79,8 +79,8 @@ class censo extends DataModel
 	public function VerificarFamiliar($nombre, $apellido)
 	{
 
-		$sql = "SELECT * FROM `grupo_fliar` WHERE `nombre`= ".$nombre." and `apellido`= ".$apellido."    " ;
-
+		$sql = "SELECT * FROM `grupo_fliar` WHERE `nombre`= '".$nombre."' and `apellido`= '".$apellido."'    " ;
+		//echo $sql;
 		$respuesta = mysql_query($sql) or die ("Error 203 no se encontraron resultados");
 		$correcto = mysql_fetch_assoc($respuesta);
 
