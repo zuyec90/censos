@@ -3,7 +3,8 @@
 require_once ('../controller/MensajeController.php');
 $MSJ = new Mensaje;
 $resultado = $MSJ->Select();
- 
+$User = $MSJ->ConsultaUser();
+
 ?>
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -165,13 +166,14 @@ $resultado = $MSJ->Select();
 										<label for="name">Nombre: Usuario</label>
 										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<br>
-										<label for="destinatario">Destinatario:</label>
+										<label for="destinatario">Destinatario:</label>											
 											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+												
 												<option value="">Seleccione un opción</option>
-												<option value="1">Ulises Robles</option>
-												<option value="2">Yaylet Rojas</option>
-												<option value="3">Yasmin Torres</option>
-											</select>
+												<?php while($users = mysql_fetch_assoc($User)) {?>												
+												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
+												<?php } ?>
+											</select>											
 										<label for="mensaje">Mensaje:</label>
 										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
 									</div>
