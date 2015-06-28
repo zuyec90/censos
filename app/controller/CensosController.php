@@ -34,10 +34,24 @@ class censo extends DataModel
 
 		$sql = "SELECT * FROM `jefeflia` WHERE `cedula`= ".$cedula."";
 
-		$respuesta = mysql_query($sql) or die ("Error 201 no se encontraron resultados");
+		$respuesta = mysql_query($sql) or die ("Error 202 no se encontraron resultados");
 		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
+	}
+
+	public function Modificar($datos = Null)
+	{
+		$this->Conect();
+		if (!empty($data['idjefe_familia'])) {
+			$sql = "UPDATE `jefeflia` SET `nombres` = '".$datos['nombre']."', `apellidos` = '".$datos['apellido']."', `nacionalidad` = '".$datos['nacionalidad']."',`cedula` = '".$datos['cedula']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."' , `edad` = '".$datos['edad']."', `sexo` = '".$datos['sexo']."', `cne` = '".$datos['cne']."', `tiempo_comunidad` = '".$datos['tiempo_comunidad']."', `incapacitado` = '".$datos['incapacitado']."', `tipo_incapacitado` = '".$datos['tipo_incapacitado']."', `pensionado` ='".$datos['pensionado']."', `institucion` = '".$datos['institucion']."', `telfcel` = '".$datos['telfcel']."', `telfhab` = '".$datos['telfhab']."', `telfofic` = '".$datos['telfofic']."', `email` = '".$datos['email']."', `estado_civil` = '".$datos['estado_civil']."', `nivel_instruccion` = '".$datos['nivel_instruccion']."', `profesion` ='".$datos['profesion']."', `trabaja` = '".$datos['trabaja']."', `clasificacion_ingreso_familiar` = '".$datos['clasificacion_ingreso_familiar']."', `ingreso_mensual` = '".$datos['ingreso_mensual'] ."' WHERE `idjefe_familia` = '".$datos['idjefe_familia'] ."'";
+			mysql_query($sql) or die ('Error 203 no se pueden modificar los datos');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
 	}
 
 	public function RegistrarFamiliar($datos = Null)
