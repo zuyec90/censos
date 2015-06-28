@@ -16,10 +16,10 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 				<?PHP echo $resultado['id_user'];  ?>
 			</div>
 			<div class="message-to">
-				To: Peter Clark
+				<?PHP echo $resultado['id_user_rece'];  ?>
 			</div>
 			<div class="message-subject">
-				New frontfinal layout
+				Modificación
 			</div>
 			<div class="message-actions">
 
@@ -45,4 +45,5 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 			</div>
 		</div>
 		<div class="message-content">
+		<?PHP echo $resultado['mensaje'];  ?>
 		</div>
