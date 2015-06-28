@@ -19,8 +19,6 @@ $Jefe = new Censo;
 //var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
-
-
 ?>
 
 
@@ -410,73 +408,74 @@ $Jefe = new Censo;
 															<tr>
 																<td>Apellidos:</td>
 																<td>
-																	<?php echo $resultado['apellidos']; ?>
+																	<input type="text" value="<?php echo $resultado['apellidos']; ?>" name="apellidos">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Nacionalidad:</td>
 																<td>
-																	<?php echo $resultado['nacionalidad']; ?>
+																	<input type="text" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Cedula:</td>
 																<td>
-																	<?php echo $resultado['cedula']; ?>
+																	<input type="text" value="<?php echo $resultado['cedula']; ?>" name="cedula">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Fecha de Nacimiento:</td>
 																<td>
-																	<?php echo $resultado['fecha_nacimiento']; ?>
+																	<input type="text" value="<?php echo $resultado['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 
 															<tr>
 																<td>Edad:</td>
 																<td>
-																	<?php echo $resultado['edad']; ?>
+																	<input type="text" value="<?php echo $resultado['edad']; ?>" name="edad">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Sexo:</td>
 																<td>
-																	<?php echo $resultado['sexo']; ?>
+																	<input type="text" value="<?php echo $resultado['sexo']; ?>" name="sexo">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
 																<td>
-																	<?php echo $resultado['cne']; ?>
+																	<input type="text" value="<?php echo $resultado['cne']; ?>" name="cne">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tiempo en la Comunidad:</td>
 																<td>
-																	<?php echo $resultado['tiempo_comunidad']; ?>
+																	<input type="text" value="<?php echo $resultado['tiempo_comunidad']; ?>" name="tiempo_comunidad">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Incapacitado:</td>
 																<td>
-																	<?php echo $resultado['incapacitado']; ?>
+																	<input type="text" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tipo:</td>
 																<td>
-																	<?php echo $resultado['tipo_incapacitado']; ?>
+																	<input type="text" value="<?php echo $resultado['tipo_incapacitado']; ?>" name="tipo">
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+
 															</tr>
 														</tbody>
 													</table>
@@ -495,86 +494,87 @@ $Jefe = new Censo;
 															<tr>
 																<td>Pensionado:</td>
 																<td>
-																<?php echo $resultado['pensionado']; ?>
+																<input type="text" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Institución:</td>
 																<td>
-																	<?php echo $resultado['institucion']; ?>
+																	<input type="text" value="<?php echo $resultado['institucion']; ?>" name="pensionado">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Cel.:</td>
 																<td>
-																	<?php echo $resultado['telfcel']; ?>
+																	<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Hab.:</td>
 																<td>
-																	<?php echo $resultado['telfhab']; ?>
+																	<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tel. Ofic.:</td>
 																<td>
-																	<?php echo $resultado['telfofic']; ?>
+																	<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Email:</td>
 																<td>
-																	<?php echo $resultado['email']; ?>
+																	<input type="text" value="<?php echo $resultado['email']; ?>" name="email">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Estado Civil:</td>
 																<td>
-																	<?php echo $resultado['estado_civil']; ?>
+																	<input type="text" value="<?php echo $resultado['estado_civil']; ?>" name="estado_civil">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Nivel de instrucción:</td>
 																<td>
-																	<?php echo $resultado['nivel_instruccion']; ?>
+																	<input type="text" value="<?php echo $resultado['nivel_instruccion']; ?>" name="nivel_instruccion">
+
 																</td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Profesión / Oficio:</td>
 																<td>
-																	<?php echo $resultado['profesion']; ?>
+																	<input type="text" value="<?php echo $resultado['profesion']; ?>" name="profesion">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Trabaja Actualmente:</td>
 																<td>
-																	<?php echo $resultado['trabaja']; ?>
+																	<input type="text" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Clasificación Ingreso Familiar:</td>
 																<td>
-																	<?php echo $resultado['clasificacion_ingreso_familiar']; ?>
+																	<input type="text" value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" name="clasificacion_ingreso_familiar">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Ingreso Mensual:</td>
 																<td>
-																	<?php echo $resultado['ingreso_mensual']; ?>
+																	<input type="text" value="<?php echo $resultado['ingreso_mensual']; ?>" name="ingreso_mensual">
+
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 														</tbody>
 													</table>
@@ -607,70 +607,71 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Nombres:</td>
 																			<td>
-																				<?php echo $datofamiliar['nombre']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['nombre']; ?>" name="nombre">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Apellidos:</td>
 																			<td>
-																				<?php echo $datofamiliar['apellido']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['apellido']; ?>" name="apellido">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Sexo</td>
 																			<td>
-																				<?php echo $datofamiliar['sexo']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
-																				<?php echo $datofamiliar['cedula']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Fecha Nacimiento:</td>
 																			<td>
-																				<?php echo $datofamiliar['fecha_nacimiento']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
 																			<td>
-																				<?php echo $datofamiliar['incapacitado']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Embarazo temprano:</td>
 																			<td>
-																				<?php echo $datofamiliar['Embarazo_tempr']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Parentesco:</td>
 																			<td>
-																				<?php echo $datofamiliar['parentesco']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['parentesco']; ?>" name="parentesco">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Grado de Instrucción:</td>
 																			<td>
-																				<?php echo $datofamiliar['nivel_instruccion']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['nivel_instruccion']; ?>" name="nivel_instruccion">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>CNE:</td>
 																			<td>
-																				<?php echo $datofamiliar['cne']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
