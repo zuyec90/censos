@@ -64,7 +64,7 @@ $User = $MSJ->ConsultaUser();
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
-				
+
 				<!-- /.modal -->
 				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
@@ -111,7 +111,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-checkmark-circle"></i>
 							<strong>Su mensaje se ha enviado satisfactoriamente.</strong>
 						</div>
 					<?php
@@ -120,7 +120,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-cancel-circle"></i>
 							<strong>Su mensaje no pudo ser enviado.</strong>
 						</div>
 					<?php	}
@@ -134,7 +134,7 @@ $User = $MSJ->ConsultaUser();
 						<button data-dismiss="alert" class="close">
 							&times;
 						</button>
-						<i class="fa fa-check-circle"></i>
+						<i class="clip-checkmark-circle"></i>
 						<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
 					</div>
 					<?php
@@ -143,7 +143,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-cancel-circle"></i>
 							<strong>Su mensaje no se pudo eliminar.</strong>
 						</div>
 					<?php	}

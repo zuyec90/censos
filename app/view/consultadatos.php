@@ -17,6 +17,9 @@ $Jefe = new Censo;
 //var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
+	$User = $Jefe->ConsultaUser();
+	var_dump($User);
+
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +63,40 @@ $Jefe = new Censo;
 			</div>
 			<!-- inicio: PAGE -->
 			<div class="main-content">
+			<!-- inicio: BOOTSTRAP EXTED MODALS -->
+					<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Escriba su mensaje</h4>
+						</div>
+						<form action="../lib/MensajeCrear.php" method="post" role="form" id="form">
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="name">Nombre: Usuario</label>
+										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<br>
+										<label for="destinatario">Destinatario:</label>
+											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+
+												<option value="">Seleccione un opción</option>
+												<?php while($users = mysql_fetch_assoc($User)) {?>
+												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
+												<?php } ?>
+											</select>
+										<label for="mensaje">Mensaje:</label>
+										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()"></input>
+							</div>
+						</form>
+					</div>
+					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
+					<!-- final: BOOTSTRAP EXTED MODALS -->
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
 		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 
@@ -134,11 +171,9 @@ $Jefe = new Censo;
 										<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
 										 no
 									</label>
+
 								</div>
-							<label class="col-sm-3 control-label">
-									Discapacidad/ Tipo
-							</label>
-							<input type="text" class="form-control" id="Tipo_incapacitado" name="Tipo_incapacitado" placeholder="">
+									<input type="text" name="incapacitado"  id="incapacitado" class="form-control">
 
 						</div>
 					</div>
@@ -164,7 +199,16 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
 									Grado Instrucción
 							</label>
-								<input type="text" class="form-control" id="nivel_instruccion" name="nivel_instruccion" placeholder="">
+									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+										<option value="">&nbsp;</option>
+										<option value="nivel_instruccion">Sin Instrucción</option>
+										<option value="nivel_instruccion">Básica</option>
+										<option value="nivel_instruccion">Bachiller</option>
+										<option value="nivel_instruccion">Técnico Medio</option>
+										<option value="nivel_instruccion">Técnico Superior</option>
+										<option value="nivel_instruccion">Universitario</option>
+										<option value="nivel_instruccion">Postgrado</option>
+									</select>
 							<div class="form-group">
 								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								CNE
@@ -454,21 +498,24 @@ $Jefe = new Censo;
 															<tr>
 																<td>Nacionalidad:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	V
+																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	E
 
 																</td>
 															</tr>
 															<tr>
 																<td>Cedula:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['cedula']; ?>" name="cedula">
+																	<input type="text" value="<?php echo $resultado['cedula']; ?>" name="cedula" maxlength="8">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Fecha de Nacimiento:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+																	<input type="date" class="form-control" value="<?php echo $resultado['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="2000-01-02">
 
 																</td>
 															</tr>
@@ -476,21 +523,26 @@ $Jefe = new Censo;
 															<tr>
 																<td>Edad:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['edad']; ?>" name="edad">
+																	<input type="text" value="<?php echo $resultado['edad']; ?>" name="edad" maxlength="3">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Sexo:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['sexo']; ?>" name="sexo">
-
+																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
+																	F
+																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
+																	M
 																</td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	No
 
 																</td>
 															</tr>
@@ -504,7 +556,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Incapacitado:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	No
 
 																</td>
 															</tr>
@@ -533,7 +588,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Pensionado:</td>
 																<td>
-																<input type="text" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																Si
+																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																No
 
 																</td>
 															</tr>
@@ -547,21 +605,21 @@ $Jefe = new Censo;
 															<tr>
 																<td>Tel. Cel.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel">
+																	<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Tel. Hab.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab">
+																	<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Tel. Ofic.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic">
+																	<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
 
 																</td>
 															</tr>
@@ -575,14 +633,29 @@ $Jefe = new Censo;
 															<tr>
 																<td>Estado Civil:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['estado_civil']; ?>" name="estado_civil">
-
+																		<select class="form-control" id="estado_civil" name="estado_civil">
+																			<option value="">&nbsp;</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">soltero (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Casado (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Divorciado (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Viudo (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Concubinato (a)</option>
+																		</select>
 																</td>
 															</tr>
 															<tr>
 																<td>Nivel de instrucción:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['nivel_instruccion']; ?>" name="nivel_instruccion">
+																	<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+																		<option value="">&nbsp;</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Sin Instrucción</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Básica</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Bachiller</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Técnico Medio</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Técnico Superior</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Universitario</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Postgrado</option>
+																	</select>
 
 																</td>
 															</tr>
@@ -596,14 +669,24 @@ $Jefe = new Censo;
 															<tr>
 																<td>Trabaja Actualmente:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	No
 
 																</td>
 															</tr>
 															<tr>
 																<td>Clasificación Ingreso Familiar:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" name="clasificacion_ingreso_familiar">
+																	<select class="form-control" id="clasificacion_ingreso_familiar" name="clasificacion_ingreso_familiar">
+																		<option value="">&nbsp;</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Diario</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Semanal</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Quincenal</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Mensual</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Por Trabajo Realizado</option>
+																	</select>
 
 																</td>
 															</tr>
@@ -618,10 +701,23 @@ $Jefe = new Censo;
 
 													</table>
 													<div class="form-group">
-													<div class="col-sm-2 col-sm-offset-8">
-														<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+													<?php
 
-													</div>
+													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
+													   if ($tiempo != 1) { ?>
+														<div class="col-sm-4 ">
+															<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
+														</div>
+													<?php	}else{ ?>
+														<div class="col-sm-4 ">
+															<a href="#responsive" data-toggle="modal"   class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
+																Solicitar Modificacion
+															</a>
+														</div>
+													<?php } ?>
+
+
+
 												</div>
 												</div>
 											</div>
@@ -686,13 +782,20 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Sexo</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				F
+																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				M
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
+																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				V
+																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				E
 																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
 
 																			</td>
@@ -700,13 +803,17 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Fecha Nacimiento:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+																				<input type="date"class="form-control" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="2000-01-02" tabindex="5">
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
 																			<td>
+																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				No
 																				<input type="text" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
 
 																			</td>
@@ -714,7 +821,10 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Embarazo temprano:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				No
 
 																			</td>
 																		</tr>
@@ -728,14 +838,26 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Grado de Instrucción:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['nivel_instruccion']; ?>" name="nivel_instruccion">
+																				<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+																					<option value="">&nbsp;</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Sin Instrucción</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Básica</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Bachiller</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Medio</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Superior</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Universitario</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Postgrado</option>
+																				</select>
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>CNE:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				No
 
 																			</td>
 																		</tr>
@@ -749,7 +871,10 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Pensionado:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				No
 
 																			</td>
 																		</tr>
@@ -769,11 +894,19 @@ $Jefe = new Censo;
 																		</tr>
 																	</tbody>
 																</table>
-																<div class="form-group">
-																	<div class="col-sm-2 col-sm-offset-8">
-																		<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+																<?php
+																$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
+																   if ($tiempo != 1) { ?>
+																	<div class="col-sm-4 col-sm-offset-4">
+																		<input type="submit" value="Modificar" class="btn btn-yellow btn-block "  style ="margin-top: 25px; ">
 																	</div>
-																</div>
+																<?php	}else{ ?>
+																	<div class="col-sm-4 col-sm-offset-4">
+																		<a href="#responsive" data-toggle="modal"   class="btn btn-yellow btn-block "  style ="margin-top: 25px; ">
+																			Solicitar Modificacion
+																		</a>
+																	</div>
+																<?php } ?>
 															</div>
 													</div>
 											</div>
