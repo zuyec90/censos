@@ -84,7 +84,7 @@ $Jefe = new Censo;
 									Nombres
 							</label>
 									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
-									<input type="hidden" class="form-control" id="id_familiar" name="id_familiar" value="<?php echo $idjefe_familia;?>">
+									<input type="hidden" class="form-control" id="idjefe_familia" name="idjefe_familia" value="<?php echo $idjefe_familia;?>">
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
 									Apellidos
 							</label>
@@ -198,9 +198,9 @@ $Jefe = new Censo;
 				<button type="button" data-dismiss="modal" class="btn btn-danger">
 					Cancelar
 				</button>
-				<button type="button" class="btn btn-success">
-					Registrar
-				</button>
+				<input type="submit" class="btn btn-success" name="enviar" value="Registrar">
+
+
 			</div>
 		</form>
 
@@ -402,9 +402,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Nombres:</td>
 																<td>
-																	<?php echo $resultado['nombres']; ?>
+																<input type="text" value="<?php echo $resultado['nombres']; ?>" name="nombres" >
+
 																</td>
-																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+
 															</tr>
 															<tr>
 																<td>Apellidos:</td>
