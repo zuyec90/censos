@@ -104,8 +104,7 @@ $resultado = $MSJ->Select();
 					<!-- inicio: PAGE CONTENT -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
 						<?php
-
-							if(!empty($_POST)){
+							if(!empty($_POST['valor'])){
 								if ($_POST['valor'] == '1' ) { ?>
 
 									<div class="alert alert-success">
@@ -124,6 +123,31 @@ $resultado = $MSJ->Select();
 										</button>
 										<i class="fa fa-check-circle"></i>
 										<strong>Su mensaje no pudo ser enviado.</strong>
+									</div>
+							<?php	}
+							} ?>
+
+													<?php
+									@$_POST['eliminado'];		
+							if(!empty($_POST)){
+								if ($_POST['eliminado'] == '1' ) { ?>
+
+									<div class="alert alert-success">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
+									</div>
+
+									<?php
+									}else{ ?>
+									<div class="alert alert-danger">
+										<button data-dismiss="alert" class="close">
+											&times;
+										</button>
+										<i class="fa fa-check-circle"></i>
+										<strong>Su mensaje no se pudo eliminar.</strong>
 									</div>
 							<?php	}
 							} ?>
