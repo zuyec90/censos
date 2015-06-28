@@ -62,24 +62,7 @@ $resultado = $MSJ->Select();
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
-				<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Eliminar Mensaje</h4>
-						</div>
-						<div class="modal-body">
-							Desea eliminar este mensaje?
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-							<button type="button"class="btn btn-danger">Eliminar</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
 
-					<!-- /.modal-dialog -->
-				</div>
 				<!-- /.modal -->
 				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
