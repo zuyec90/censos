@@ -90,6 +90,16 @@ $Jefe = new Censo;
 									<input type="text" class="form-control" id="sexo" name="sexo" placeholder="">
 							<label class="col-sm-3 control-label">
 									<h5>Cedúla</h5>
+								<div class="col-sm-7">
+											<label class="radio-inline">
+												<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad" >
+															V
+											</label>
+											<label class="radio-inline">
+												<input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad">
+															E
+											</label>
+								</div>
 							</label>
 									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="">
 							<label class="col-sm-3 control-label">

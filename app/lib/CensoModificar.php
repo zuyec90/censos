@@ -4,7 +4,7 @@ include ('../Controller/CensosController.php');
 $Censo = new Censo;
 
 if ($Censo->Modificar($_POST) == 1) {
-	echo "se puede modificar";
+	echo "Actualización Exitosa";
 	/*echo "<form name='form' action='../../data.php' method='post'>";
 	echo "<input type='hidden' name='valor' value='1'>";
 	echo "</form>";
@@ -18,7 +18,7 @@ else{
 	echo "<script language=javascript>document.form.submit();</script>";*/
 
 }else{
-	echo "no se puede";
+	echo "No se logro actualizar...";
 }
 
 ?>
