@@ -30,7 +30,7 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-								<a href="<?PHP echo "../lib/MensajeEliminar.php?id_notificacion=".$resultado['id_notificacion'];  ?>" name="id_notificacion" type="button"class="btn btn-danger" >Eliminar</a>
+								<a href="<?PHP echo "../lib/MensajeEliminar.php?id_notificacion=".$resultado['id_notificacion'];?>" name="id_notificacion" type="button"class="btn btn-danger" >Eliminar</a>
 							</div>
 						</div>
 					</div>
@@ -45,12 +45,19 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-md-6">
+<<<<<<< HEAD
 											<label for="name">Nombre: Usuario</label>
 											<input name="id_user" type="hidden" id="nombre"  value="5" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 											<br>
 											<label for="destinatario">Destinatario:</label>
 											<input type="hidden" name="id_respuesta" id="id_respuesta" value="<?php echo $resultado['id_user_rece'];?>"></input>
 											<br>
+=======
+											<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+											
+											<input type="hidden" name="id_respuesta" id="id_respuesta"></input>
+											
+>>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
 											<label for="mensaje">Mensaje:</label>
 											<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 400px; height: 60px;"></textarea>
 										</div>
@@ -63,7 +70,11 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 							</div>
 						</div>
 					</form>
+<<<<<<< HEAD
 				<a title="Siguiente" href="#"><i class="fa fa-long-arrow-right"></i></a>
+=======
+				<a title="Siguiente" href="<?PHP echo "../view/pagina_mensaje.php?id_notificacion=".$resultado['id_notificacion'];?>"><i class="fa fa-long-arrow-right"></i></a>		
+>>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
 			</div>
 		</div>
 		<div class="message-content">

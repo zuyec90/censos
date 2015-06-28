@@ -103,6 +103,7 @@ $resultado = $MSJ->Select();
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
+<<<<<<< HEAD
 						<?php
 							if(!empty($_POST['valor'])){
 								if ($_POST['valor'] == '1' ) { ?>
@@ -151,6 +152,52 @@ $resultado = $MSJ->Select();
 									</div>
 							<?php	}
 							} ?>
+=======
+					<?php
+					if(!empty($_POST['valor'])){
+					if ($_POST['valor'] == '1' ) { ?>
+						<div class="alert alert-success">
+							<button data-dismiss="alert" class="close">
+								&times;
+							</button>
+							<i class="fa fa-check-circle"></i>
+							<strong>Su mensaje se ha enviado satisfactoriamente.</strong>
+						</div>
+					<?php
+					}else{ ?>
+						<div class="alert alert-danger">
+							<button data-dismiss="alert" class="close">
+								&times;
+							</button>
+							<i class="fa fa-check-circle"></i>
+							<strong>Su mensaje no pudo ser enviado.</strong>
+						</div>
+					<?php	}
+					} ?>
+					
+					<?php
+					@$_POST['eliminado'];		
+					if(!empty($_POST)){
+					if ($_POST['eliminado'] == '1' ) { ?>
+					<div class="alert alert-success">
+						<button data-dismiss="alert" class="close">
+							&times;
+						</button>
+						<i class="fa fa-check-circle"></i>
+						<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
+					</div>
+					<?php
+					}else{ ?>
+						<div class="alert alert-danger">
+							<button data-dismiss="alert" class="close">
+								&times;
+							</button>
+							<i class="fa fa-check-circle"></i>
+							<strong>Su mensaje no se pudo eliminar.</strong>
+						</div>
+					<?php	}
+					} ?>
+>>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
 					<div class="panel-body">
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
@@ -188,7 +235,6 @@ $resultado = $MSJ->Select();
 					</div>
 					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 					<!-- final: BOOTSTRAP EXTED MODALS -->
-
 					<!-- inicio: INBOX PANEL -->
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -215,76 +261,28 @@ $resultado = $MSJ->Select();
 								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 								 ?>
 								<li onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class=" messages-item">
-
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
 											<div class="messages-item-time">
 												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
-												<div class="messages-item-actions">
-													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Move to folder" href="#"><i class="fa fa-folder-open"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#">
-																	<i class="fa fa-pencil"></i>
-																	Marcar como leído
-																</a>
-															</li>
-															<li>
-																<a href="#">
-																	<i class="fa fa-ban"></i>
-																	Correo no deseado
-																</a>
-															</li>
-															<li>
-																<a href="../lib/MensajeEliminar.php?id_user=<?php echo $users['id_user'];?>">
-																	<i class="fa fa-trash-o"></i>
-																	Borrar
-																</a>
-															</li>
-														</ul>
-
-													</div>
-													<div class="dropdown">
-														<a data-toggle="dropdown" title="Attach to tag" href="#"><i class="fa fa-tag"></i></a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="#"><i class="tag-icon red"></i>Important</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon teal"></i>Work</a>
-															</li>
-															<li>
-																<a href="#"><i class="tag-icon green"></i>Home</a>
-															</li>
-														</ul>
-													</div>
-												</div>
 											</div>
-
 											<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
 											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
-
 										</li>
 								<?php } ?>
 									</ul>
-
 									<div class="messages-content">
 										<div class="morecommentloader" style="display:none;">
 											<img src="../../images/loading.gif">
 										</div>
 										<div id="MostrarMsj">
-
 										</div>
-
 									</div>
 								</div>
 							</div>
 							<!-- fin: INBOX PANEL -->
-
 						</div>
 					</div>
 					<!-- fin: PAGE CONTENT-->
@@ -331,7 +329,6 @@ $resultado = $MSJ->Select();
 			Main.init();
 			UIModals.init();
 			UIElements.init();
-
 		});
 		function VerMsj (id_notificacion) {
 
@@ -342,9 +339,12 @@ $resultado = $MSJ->Select();
 				$('.morecommentloader').hide();
 			});
 		}
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> d41840e77fa034885a42a1c3d41637182f0e81f9
 		</script>
 
 	</body>
