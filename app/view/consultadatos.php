@@ -18,7 +18,6 @@ $Jefe = new Censo;
 	$resultado = $Jefe->Selectjefe($idjefe_familia);
 //var_dump($resultado);
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
-//var_dump($familiares);
 
 
 
@@ -35,6 +34,13 @@ $Jefe = new Censo;
 	<!-- inicio: HEAD -->
 		<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
+	<style type="text/css">
+
+	.col-sm-3{
+		width: 100%!important;
+	}
+
+	</style>
 	<!-- inicio: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
@@ -63,7 +69,6 @@ $Jefe = new Censo;
 		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 
 	 	<form action="../lib/FamiliarRegistrar.php" method="post" role="form" >
-
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 					&times;
@@ -75,76 +80,118 @@ $Jefe = new Censo;
 					<div class="col-md-6">
 						<h4>Ingrese los Datos</h4>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">
-									<h5>Nombres</h5>
+							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
+									Nombres
 							</label>
 									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
 									<input type="hidden" class="form-control" id="id_familiar" name="id_familiar" value="<?php echo $idjefe_familia;?>">
-							<label class="col-sm-3 control-label">
-									<h5>Apellidos</h5>
+							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
+									Apellidos
 							</label>
 									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>Sexo</h5>
+							<div>
+							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
+								Sexo
 							</label>
-									<input type="text" class="form-control" id="sexo" name="sexo" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>Cedúla</h5>
-								<div class="col-sm-7">
-											<label class="radio-inline">
-												<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad" >
-															V
-											</label>
-											<label class="radio-inline">
-												<input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad">
-															E
-											</label>
+								<div>
+									<label class="radio-inline">
+									<input type="radio" class="grey" value="f" name="sexo" id="sexo_f">
+										Femenino
+									</label>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="m" name="sexo"  id="sexo_m">
+										 Masculino
+									</label>
 								</div>
+							</div>
+							<label class="control-label"  style=" margin-top: 12px; margin-left: 15px;">
+								Cedula
 							</label>
-									<input type="text" class="form-control" id="cedula" name="cedula" placeholder="">
+							<div>
+								<label class="radio-inline">
+									<input type="radio" class="grey" value="V" name="nacionalidad" id="nacionalidad_V">
+									V
+								</label>
+								<label class="radio-inline">
+									<input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad_E">
+									E
+								</label>
+							</div>
+							<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8">
+
+							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">
+									Fecha Nacimiento
+							</label>
+								<input type="date" class="form-control" name="bday" min="2000-01-02"><br>
 							<label class="col-sm-3 control-label">
-									<h5>Fecha Nacimiento</h5>
+									Discapacidad/ Tipo
 							</label>
-									<input type="text" class="form-control" id="fecha_nacimiento" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5> Discapacidad/ Tipo</h5>
-							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+							<input type="text" class="form-control" id="incapacitado" name="incapacitado" placeholder="">
 
 						</div>
 					</div>
 					<div class="col-md-6">
+							<label class="control-label" style=" margin-top: 51px; margin-left: 15px;">
+									Embarazo Temprano
+							</label>
+							<div>
+								<label class="radio-inline">
+									<input type="radio" class="grey" value="si" name="Embarazo_tempr" id="Embarazo_tempr_si">
+										Si
+								</label>
+								<label class="radio-inline">
+									<input type="radio" class="grey" value="no" name="Embarazo_tempr"  id="Embarazo_tempr_no">
+										No
+								</label>
+							</div>
 
 							<label class="col-sm-3 control-label">
-									<h5>Embarazo Temprano</h5>
+									Parentesco
 							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+									<input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="">
+							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
+									Grado Instrucción
+							</label>
+								<input type="text" class="form-control" id="nivel_instruccion" name="nivel_instruccion" placeholder="">
+							<div class="form-group">
+								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
+								CNE
+								</label>
+								<div>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="si" name="cne" id="cne_si">
+										Si
+									</label>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="no" name="cne"  id="cne_no">
+										No
+									</label>
+								</div>
+							</div>
 							<label class="col-sm-3 control-label">
-									<h5>Parentesco</h5>
+									Profesión
 							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
+							<input type="text" class="form-control" id="profesion" name="profesion" placeholder="">
+							<div class="form-group">
+								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
+										Pensionado
+								</label>
+								<div>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="si" name="pensionado" id="pensionado_si">
+											Si
+									</label>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado_no">
+											No
+									</label>
+								</div>
+							</div>
 							<label class="col-sm-3 control-label">
-									<h5>Grado Instrucción</h5>
+								Ing. Mensual
 							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>CNE</h5>
-							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>Profesión</h5>
-							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>Pensionado</h5>
-							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-							<label class="col-sm-3 control-label">
-									<h5>Ing. Mensual</h5>
-							</label>
-									<input type="text" class="form-control" id="cedúla" name="cedúla" placeholder="">
-
-					</div>
+								<input type="text" class="form-control" id="ingreso_mensual" name="ingreso_mensual" placeholder="">
+						</div>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -318,11 +365,17 @@ $Jefe = new Censo;
 											Jefe de Familia
 										</a>
 									</li>
+									<?PHP
+										$familiares = $Jefe->SelectFamiliar($idjefe_familia);
+
+									while ($familiar = mysql_fetch_assoc($familiares)) { ?>
 									<li>
-										<a data-toggle="tab" href="#panel_edit_account">
-											Grupo Familiar
+										<a data-toggle="tab" href="<?php echo "#panel_edit_account".$familiar['id_familiar']; ?>">
+									<?php  echo	$familiar['nombre']; ?>
 										</a>
 									</li>
+									<?php } ?>
+
 									<li>
 										<a data-toggle="modal" href="#panel-config">
 											+
@@ -351,35 +404,35 @@ $Jefe = new Censo;
 																<td>
 																	<?php echo $resultado['nombres']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Apellidos:</td>
 																<td>
 																	<?php echo $resultado['apellidos']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Nacionalidad:</td>
 																<td>
 																	<?php echo $resultado['nacionalidad']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Cedula:</td>
 																<td>
 																	<?php echo $resultado['cedula']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Fecha de Nacimiento:</td>
 																<td>
 																	<?php echo $resultado['fecha_nacimiento']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 
 															<tr>
@@ -387,42 +440,42 @@ $Jefe = new Censo;
 																<td>
 																	<?php echo $resultado['edad']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Sexo:</td>
 																<td>
 																	<?php echo $resultado['sexo']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
 																<td>
 																	<?php echo $resultado['cne']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tiempo en la Comunidad:</td>
 																<td>
 																	<?php echo $resultado['tiempo_comunidad']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Incapacitado:</td>
 																<td>
 																	<?php echo $resultado['incapacitado']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Tipo:</td>
 																<td>
 																	<?php echo $resultado['tipo_incapacitado']; ?>
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																<td><a href="" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 														</tbody>
 													</table>
@@ -528,7 +581,13 @@ $Jefe = new Censo;
 											</div>
 										</div>
 									</div>
-									<div id="panel_edit_account" class="tab-pane">
+
+
+									<?PHP
+										$datosfamiliares = $Jefe->SelectFamiliar($idjefe_familia);
+
+									 while ($datofamiliar = mysql_fetch_assoc($datosfamiliares)) { ?>
+									<div id="<?php echo "panel_edit_account".$datofamiliar['id_familiar']; ?>" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">
 												<div class="col-md-12">
@@ -547,74 +606,99 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Nombres:</td>
 																			<td>
-																				www.example.com
+																				<?php echo $datofamiliar['nombre']; ?>
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Apellidos:</td>
 																			<td>
-																				peter@example.com
+																				<?php echo $datofamiliar['apellido']; ?>
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Sexo</td>
-																			<td>(641)-734-4763</td>
+																			<td>
+																				<?php echo $datofamiliar['sexo']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
-																				peterclark82
+																				<?php echo $datofamiliar['cedula']; ?>
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Fecha Nacimiento:</td>
-																			<td>UI Designer</td>
+																			<td>
+																				<?php echo $datofamiliar['fecha_nacimiento']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
-																			<td>56 min</td>
+																			<td>
+																				<?php echo $datofamiliar['incapacitado']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Embarazo temprano:</td>
-																			<td>Senior Marketing Manager</td>
+																			<td>
+																				<?php echo $datofamiliar['Embarazo_tempr']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Parentesco:</td>
 																			<td>
-																				Kenneth Ross
+																				<?php echo $datofamiliar['parentesco']; ?>
 																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Grado de Instrucción:</td>
-																			<td>21 October 1982</td>
+																			<td>
+																				<?php echo $datofamiliar['nivel_instruccion']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>CNE:</td>
-																			<td>New company web site development, HR Management</td>
+																			<td>
+																				<?php echo $datofamiliar['cne']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Profesión:</td>
-																			<td>New company web site development, HR Management</td>
+																			<td>
+																				<?php echo $datofamiliar['profesion']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Pensionado:</td>
-																			<td>New company web site development, HR Management</td>
+																			<td>
+																				<?php echo $datofamiliar['pensionado']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Ing. Mensual:</td>
-																			<td>New company web site development, HR Management</td>
+																			<td>
+																				<?php echo $datofamiliar['ingreso_mensual']; ?>
+																			</td>
+																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
+																		</tr>
+																		<tr>
+																			<td>Observación:</td>
+																			<td>
+																				<?php echo $datofamiliar['observacion']; ?>
+																			</td>
 																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																	</tbody>
@@ -624,6 +708,7 @@ $Jefe = new Censo;
 											</div>
 										</form>
 									</div>
+									<?php  } ?>
 									<div id="panel_projects" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">

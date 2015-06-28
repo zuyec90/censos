@@ -1,4 +1,3 @@
-
 <?php
 require_once ('../controller/MensajeController.php');
 $MSJ = new Mensaje;
@@ -64,7 +63,7 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 							</div>
 						</div>
 					</form>
-				<a title="Siguiente" href="#"><i class="fa fa-long-arrow-right"></i></a>
+				<a title="Siguiente" href="#"><i class="fa fa-long-arrow-right"></i></a>		
 			</div>
 		</div>
 		<div class="message-content">
