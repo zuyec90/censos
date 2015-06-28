@@ -62,24 +62,7 @@ $resultado = $MSJ->Select();
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: ELIMINAR MENSAJE MODAL FORM -->
-				<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Eliminar Mensaje</h4>
-						</div>
-						<div class="modal-body">
-							Desea eliminar este mensaje?
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-							<button type="button"class="btn btn-danger">Eliminar</button>
-						</div>
-					</div>
-					<!-- /.modal-content -->
 
-					<!-- /.modal-dialog -->
-				</div>
 				<!-- /.modal -->
 				<!-- final: ELIMINAR MENSAJE MODAL FORM -->
 				<div class="container">
@@ -121,7 +104,6 @@ $resultado = $MSJ->Select();
 					<!-- inicio: PAGE CONTENT -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS PANEL -->
 						<?php
-
 							if(!empty($_POST)){
 								if ($_POST['valor'] == '1' ) { ?>
 
@@ -207,13 +189,17 @@ $resultado = $MSJ->Select();
 								</li>
 								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 								 ?>
-								<li class="msj messages-item">
+								<li onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class=" messages-item">
 
-									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+										<span title="Mark as starred" class="messages-item active starred"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
+
 											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
+
 											<div class="messages-item-time">
+
 												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
+
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
 												<div class="messages-item-actions">
 													<a data-toggle="dropdown" title="Reply" href="#"><i class="fa fa-mail-reply"></i></a>
@@ -262,7 +248,7 @@ $resultado = $MSJ->Select();
 											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
 
 										</li>
-										<?php } ?>
+								<?php } ?>
 									</ul>
 
 									<div class="messages-content">
@@ -326,17 +312,16 @@ $resultado = $MSJ->Select();
 			UIElements.init();
 
 		});
-		$(".msj").click(function() {
+		function VerMsj (id_notificacion) {
+
 			$('.morecommentloader').show();
-			var id_notificacion = $("#id_notificacion").val();
 			var url = '../lib/MensajeIndividual.php';
 			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
 				$('#MostrarMsj').html(respondText);
 				$('.morecommentloader').hide();
 			});
 
-		});
-
+		}
 
 
 		</script>
