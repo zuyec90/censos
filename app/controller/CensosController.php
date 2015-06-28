@@ -90,9 +90,9 @@ class censo extends DataModel
 	public function ModificarFamiliar($datos = Null)
 	{
 		$this->Conect();
-		if (!empty($data['id_familiar'])) {
-			$sql = "UPDATE `grupo_fliar` SET `cedula` = '".$datos['cedula']."', `nombre =  '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', '".$datos['Tipo_incapacitado']."', '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', '".$datos['nivel_instrucción']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion'] ."' WHERE `idjefe_familia` = '".$datos['idjefe_familia'] ."'";
-			mysql_query($sql) or die ('Error 203 no se pueden modificar los datos');
+		if (!empty($datos['id_familiar'])) {
+			$sql = "UPDATE `grupo_fliar` SET `cedula` = '".$datos['cedula']."', `nombre = '".$datos['nombre']."', `apellido` = '".$datos['apellido']."', `sexo` = '".$datos['sexo']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."', `edad` = '".$datos['edad']."', `incapacitado` = '".$datos['incapacitado']."', `Tipo_incapacitado` = '".$datos['Tipo_incapacitado']."', `Embarazo_tempr` = '".$datos['Embarazo_tempr']."', `parentesco` = '".$datos['parentesco']."', `nivel_instrucción` = '".$datos['nivel_instrucción']."', `cne` = '".$datos['cne']."', `profesion` = '".$datos['profesion']."', `pensionado` = '".$datos['pensionado']."', `ingreso_mensual` = '".$datos['ingreso_mensual']."', `observacion` = '".$datos['observacion'] ."' WHERE `id_familiar` = '".$datos['id_familiar'] ."'";
+			mysql_query($sql) or die ('Error 204 no se pueden modificar los datos');
 
 			return "1";
 		}
@@ -100,9 +100,6 @@ class censo extends DataModel
 			return "0";
 		}
 	}
-
-
-
 
 
 	public function Consulta($id = Null)
