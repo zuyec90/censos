@@ -1,8 +1,10 @@
 <?php
 require_once ('../controller/MensajeController.php');
+require_once ('../controller/UserController.php');
 $MSJ = new Mensaje;
 $resultado = $MSJ->Select($_POST['id_notificacion']);
 $leidos = $MSJ->Leido($_POST['id_notificacion']);
+
 ?>
 		<div class="message-header">
 			<div class="message-time">
@@ -64,4 +66,8 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 			</div>
 		</div>
 		<div class="message-content">
+		<p>
+					<?php echo $resultado['mensaje']; ?>
+
+				</p>
 		</div>
