@@ -1,9 +1,10 @@
 <?php
 require_once ('../controller/MensajeController.php');
-require_once ('../controller/UserController.php');
 $MSJ = new Mensaje;
 $resultado = $MSJ->Select($_POST['id_notificacion']);
 $leidos = $MSJ->Leido($_POST['id_notificacion']);
+$receptor = $MSJ->ConsultaReceptor($resultado['id_user_rece']);
+$emisor = $MSJ->ConsultaReceptor($resultado['id_user']);
 
 ?>
 		<div class="message-header">
@@ -11,13 +12,13 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 			<?PHP echo $resultado['fecha_creacion']; ?>
 			</div>
 			<div class="message-from">
-				<?PHP echo $resultado['id_user'];  ?>
+				<?PHP echo $receptor['nombre']." ".$receptor['apellido'];  ?>
 			</div>
 			<div class="message-to">
-				To: Peter Clark
+				<?PHP echo $emisor['nombre']." ".$emisor['apellido'];  ?>
 			</div>
 			<div class="message-subject">
-				New frontfinal layout
+				Modificación de datos
 			</div>
 			<div class="message-actions">
 				<a title="Mover a la papelera" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>

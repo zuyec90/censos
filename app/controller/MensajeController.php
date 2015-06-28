@@ -147,5 +147,18 @@ class Mensaje extends DataModel
 			return "0";
 		}
 	}
+	public function ConsultaReceptor($id_user = Null)
+		{
+			$this->Conect();
+			if (!empty($id_user)) {
+				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
+				$SelectionMsj = mysql_query($sql) or die ("Error 301 no se logró consultar");
+				$respuesta = mysql_fetch_assoc($SelectionMsj);
+			}else{
+				return "no hay id user";
+			}
+			return $respuesta;
+		}
+
 }
 ?>

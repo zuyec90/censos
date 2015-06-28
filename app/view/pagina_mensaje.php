@@ -3,6 +3,7 @@
 require_once ('../controller/MensajeController.php');
 $MSJ = new Mensaje;
 $resultado = $MSJ->Select();
+
 ?>
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -208,11 +209,13 @@ $resultado = $MSJ->Select();
 									</form>
 								</li>
 								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
+									$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
+									$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
 								 ?>
 								<li id="<?php echo "id".$MSJS['id_notificacion']; ?> " onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class="<?php if($MSJS['status'] != 1) { echo "active starred";} ?> messages-item <?php echo "id".$MSJS['id_notificacion']; ?>">
 									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
 										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
-											<span class="messages-item-from"><?php echo $MSJS['id_user_rece'];?></span>
+											<span class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
 											<div class="messages-item-time">
 												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
