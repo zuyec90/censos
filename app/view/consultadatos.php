@@ -134,11 +134,10 @@ $Jefe = new Censo;
 										<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
 										 no
 									</label>
+
 								</div>
-							<label class="col-sm-3 control-label">
-									Discapacidad/ Tipo
-							</label>
-							<input type="text" class="form-control" id="Tipo_incapacitado" name="Tipo_incapacitado" placeholder="">
+									<input type="text" name="incapacitado"  id="incapacitado" class="form-control">
+							
 
 						</div>
 					</div>
@@ -454,21 +453,24 @@ $Jefe = new Censo;
 															<tr>
 																<td>Nacionalidad:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	V
+																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
+																	E
 
 																</td>
 															</tr>
 															<tr>
 																<td>Cedula:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['cedula']; ?>" name="cedula">
+																	<input type="text" value="<?php echo $resultado['cedula']; ?>" name="cedula" maxlength="8">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Fecha de Nacimiento:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+																	<input type="date" class="form-control" value="<?php echo $resultado['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="2000-01-02">
 
 																</td>
 															</tr>
@@ -483,14 +485,19 @@ $Jefe = new Censo;
 															<tr>
 																<td>Sexo:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['sexo']; ?>" name="sexo">
-
+																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
+																	F
+																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
+																	M
 																</td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
+																	No
 
 																</td>
 															</tr>
@@ -504,7 +511,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Incapacitado:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
+																	No
 
 																</td>
 															</tr>
@@ -533,7 +543,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Pensionado:</td>
 																<td>
-																<input type="text" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																Si
+																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
+																No
 
 																</td>
 															</tr>
@@ -596,7 +609,10 @@ $Jefe = new Censo;
 															<tr>
 																<td>Trabaja Actualmente:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	Si
+																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
+																	No
 
 																</td>
 															</tr>
@@ -686,13 +702,20 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Sexo</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				F
+																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																				M
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
+																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				V
+																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				E
 																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
 
 																			</td>
@@ -700,13 +723,17 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Fecha Nacimiento:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento">
+																				<input type="date"class="form-control" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="2000-01-02" tabindex="5">
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
 																			<td>
+																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				No
 																				<input type="text" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
 
 																			</td>
@@ -714,7 +741,10 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Embarazo temprano:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				No
 
 																			</td>
 																		</tr>
@@ -735,7 +765,10 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>CNE:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				No
 
 																			</td>
 																		</tr>
@@ -749,7 +782,10 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Pensionado:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				Si
+																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				No
 
 																			</td>
 																		</tr>
