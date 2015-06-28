@@ -175,7 +175,6 @@ $Jefe = new Censo;
 								</div>
 									<input type="text" name="incapacitado"  id="incapacitado" class="form-control">
 
-
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -200,7 +199,16 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
 									Grado Instrucción
 							</label>
-								<input type="text" class="form-control" id="nivel_instruccion" name="nivel_instruccion" placeholder="">
+									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+										<option value="">&nbsp;</option>
+										<option value="nivel_instruccion">Sin Instrucción</option>
+										<option value="nivel_instruccion">Básica</option>
+										<option value="nivel_instruccion">Bachiller</option>
+										<option value="nivel_instruccion">Técnico Medio</option>
+										<option value="nivel_instruccion">Técnico Superior</option>
+										<option value="nivel_instruccion">Universitario</option>
+										<option value="nivel_instruccion">Postgrado</option>
+									</select>
 							<div class="form-group">
 								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								CNE
@@ -515,7 +523,7 @@ $Jefe = new Censo;
 															<tr>
 																<td>Edad:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['edad']; ?>" name="edad">
+																	<input type="text" value="<?php echo $resultado['edad']; ?>" name="edad" maxlength="3">
 
 																</td>
 															</tr>
@@ -597,21 +605,21 @@ $Jefe = new Censo;
 															<tr>
 																<td>Tel. Cel.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel">
+																	<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Tel. Hab.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab">
+																	<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
 
 																</td>
 															</tr>
 															<tr>
 																<td>Tel. Ofic.:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic">
+																	<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
 
 																</td>
 															</tr>
@@ -625,14 +633,29 @@ $Jefe = new Censo;
 															<tr>
 																<td>Estado Civil:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['estado_civil']; ?>" name="estado_civil">
-
+																		<select class="form-control" id="estado_civil" name="estado_civil">
+																			<option value="">&nbsp;</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">soltero (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Casado (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Divorciado (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Viudo (a)</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>">Concubinato (a)</option>
+																		</select>
 																</td>
 															</tr>
 															<tr>
 																<td>Nivel de instrucción:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['nivel_instruccion']; ?>" name="nivel_instruccion">
+																	<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+																		<option value="">&nbsp;</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Sin Instrucción</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Básica</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Bachiller</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Técnico Medio</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Técnico Superior</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Universitario</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Postgrado</option>
+																	</select>
 
 																</td>
 															</tr>
@@ -656,7 +679,14 @@ $Jefe = new Censo;
 															<tr>
 																<td>Clasificación Ingreso Familiar:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" name="clasificacion_ingreso_familiar">
+																	<select class="form-control" id="clasificacion_ingreso_familiar" name="clasificacion_ingreso_familiar">
+																		<option value="">&nbsp;</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Diario</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Semanal</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Quincenal</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Mensual</option>
+																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Por Trabajo Realizado</option>
+																	</select>
 
 																</td>
 															</tr>
@@ -808,7 +838,16 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Grado de Instrucción:</td>
 																			<td>
-																				<input type="text" value="<?php echo $datofamiliar['nivel_instruccion']; ?>" name="nivel_instruccion">
+																				<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+																					<option value="">&nbsp;</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Sin Instrucción</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Básica</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Bachiller</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Medio</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Superior</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Universitario</option>
+																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Postgrado</option>
+																				</select>
 
 																			</td>
 																		</tr>
