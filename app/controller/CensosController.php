@@ -29,7 +29,7 @@ class censo extends DataModel
 		}
 
 	}
-	
+
 	public function Verificarcenso($cedula = Null)
 	{
 
@@ -100,7 +100,7 @@ class censo extends DataModel
 			return "0";
 		}
 	}
- 
+
 
 	public function Consulta($id = Null)
 	{
@@ -138,7 +138,8 @@ class censo extends DataModel
 		{
 			$this->Conect();
 			if (!empty($id)) {
-				$sql = "SELECT * FROM `grupo_fliar` WHERE `idjefe_familia`= '".$id."' AND  `status` <> 0";
+				$sql = "SELECT * FROM `grupo_fliar` WHERE `idjefe_familia`= '".$id."' AND  `status` <> 0 ";
+
 				$respuesta = mysql_query($sql) or die ("Error 203 no se logró consultar");
 
 			}else{

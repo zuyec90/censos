@@ -335,19 +335,6 @@ $resultado = $MSJ->Select();
 				$('.morecommentloader').hide();
 			});
 
-			/*$.ajax({
-				url: '../lib/MensajeIndividual.php',
-				type: 'POST',
-				dataType: 'json',
-				data: {'id_notificacion':id_notificacion},
-				beforeSend: function(){
-					//$('.morecommentloader').show();
-				},
-				success: function(html){
-					$('.morecommentloader').show();
-				}
-			});*/
-
 		});
 
 
