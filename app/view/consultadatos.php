@@ -5,14 +5,12 @@ include ('../Controller/CensosController.php');
 $Jefe = new Censo;
 
 	if (isset($_POST['idjefe_familia'])) {
-		echo "string1";
-			@$idjefe_familia = $_POST['idjefe_familia'];
+			@$idjefe_familia = $_POST['idjefe_familia']; //@ para que no aparezca el error 'notice' variables indefinidas
 		}elseif(isset($_GET['idjefe_familia'])) {
-			echo "string";
-			@$idjefe_familia = $_GET['idjefe_familia'];
+			@$idjefe_familia = $_GET['idjefe_familia']; //se hacen dos if. Si la variable viene por post o si viene por get
 		}else{
 			$idjefe_familia = null;
-		}
+		} //No es necesario hacer dos procesos de if debido a que solo se necesita buscar el jefe para vincularlo con el familiar
 
 	//echo "<br><br><br><br>".$idjefe_familia."<br><br><br><br>";
 	$resultado = $Jefe->Selectjefe($idjefe_familia);
@@ -20,7 +18,6 @@ $Jefe = new Censo;
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
 ?>
-
 
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -93,11 +90,11 @@ $Jefe = new Censo;
 							</label>
 								<div>
 									<label class="radio-inline">
-									<input type="radio" class="grey" value="f" name="sexo" id="sexo_f">
+									<input type="radio" class="grey" value="f" name="sexo" id="sexo">
 										Femenino
 									</label>
 									<label class="radio-inline">
-										<input type="radio" class="grey" value="m" name="sexo"  id="sexo_m">
+										<input type="radio" class="grey" value="m" name="sexo"  id="sexo">
 										 Masculino
 									</label>
 								</div>
@@ -384,8 +381,8 @@ $Jefe = new Censo;
 											<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
 											<p>Modificación realizada satisfatoriamente.</p>
 									</div>
-					<?php}
-							else{ ?>
+					<?php
+							}else{ ?>
 									<div class="alert alert-block alert-danger fade in">
 										<button data-dismiss="alert" class="close" type="button">&times;</button>
 											<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
@@ -393,6 +390,7 @@ $Jefe = new Censo;
 									</div>
 					<?php	}
 					} ?>
+
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="tabbable">
@@ -513,7 +511,7 @@ $Jefe = new Censo;
 															<tr>
 																<td>Tipo:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['tipo_incapacitado']; ?>" name="tipo_incapacitado">
+																	<input type="text" value="<?php echo $resultado['Tipo_incapacitado']; ?>" name="Tipo_incapacitado">
 
 																</td>
 
@@ -631,19 +629,38 @@ $Jefe = new Censo;
 										</form>
 									</div>
 
+									<?php
+										@$_POST['valor'];
+											if(!empty($_POST)){
+												if ($_POST['valor'] == '1' ) { ?>
+													<div class="alert alert-success">
+														<button data-dismiss="alert" class="close" type="button">&times;</button>
+															<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+															<p>Modificación realizada satisfatoriamente.</p>
+													</div>
+									<?php
+											}else{ ?>
+													<div class="alert alert-block alert-danger fade in">
+														<button data-dismiss="alert" class="close" type="button">&times;</button>
+															<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
+															<p>No se logro Modificar</p>
+													</div>
+									<?php	}
+									} ?>
+
 									<?PHP
 										$datosfamiliares = $Jefe->SelectFamiliar($idjefe_familia);
 
 									 while ($datofamiliar = mysql_fetch_assoc($datosfamiliares)) { ?>
 
 									<div id="<?php echo "panel_edit_account".$datofamiliar['id_familiar']; ?>" class="tab-pane">
-										<form action="#" role="form" id="form">
+										<form action="../lib/CensoModificar.php" method="POST" role="form" id="form">
 											<div class="row">
 												<div class="col-md-12">
 													<h3>Familiar</h3>
 													<hr>
 												</div>
-													<div class="col-sm-5 col-md-4">
+													<div class="col-sm-7 col-md-8">
 														<div class="user-left">
 																<table class="table table-condensed table-hover">
 																	<thead>
@@ -656,7 +673,7 @@ $Jefe = new Censo;
 																			<td>Nombres:</td>
 																			<td>
 																				<input type="text" value="<?php echo $datofamiliar['nombre']; ?>" name="nombre">
-
+																				<input type="hidden" value="<?php echo $datofamiliar['id_familiar']; ?>" name="id_familiar" >
 																			</td>
 																		</tr>
 																		<tr>
@@ -754,27 +771,7 @@ $Jefe = new Censo;
 																</table>
 																<div class="form-group">
 																	<div class="col-sm-2 col-sm-offset-8">
-																		<button class="btn btn-success finish-step btn-block">
-																		Modificar <i class="fa fa-arrow-circle-right"></i>
-																		</button>
-																			<?php
-																				@$_POST['valor'];
-																				if(!empty($_POST)){
-																				if ($_POST['valor'] == '1' ) { ?>
-																	<div class="alert alert-success">
-																		<button data-dismiss="alert" class="close" type="button">&times;</button>
-																		<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
-																		<p>Modificación realizada satisfatoriamente.</p>
-																	</div>
-																			<?php}
-																		else{ ?>
-																	<div class="alert alert-block alert-danger fade in">
-																		<button data-dismiss="alert" class="close" type="button">&times;</button>
-																		<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
-																		<p>No se logro Modificar</p>
-																	</div>
-																			<?php	}
-																			} ?>
+																		<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
 																	</div>
 																</div>
 															</div>
