@@ -128,7 +128,7 @@ $resultado = $MSJ->Select();
 							} ?>
 
 													<?php
-									@$_POST['eliminado'];		
+									@$_POST['eliminado'];
 							if(!empty($_POST)){
 								if ($_POST['eliminado'] == '1' ) { ?>
 
@@ -334,7 +334,7 @@ $resultado = $MSJ->Select();
 
 		});
 		function VerMsj (id_notificacion) {
-			
+
 			$('.morecommentloader').show();
 			var url = '../lib/MensajeIndividual.php';
 			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
@@ -342,7 +342,7 @@ $resultado = $MSJ->Select();
 				$('.morecommentloader').hide();
 			});
 		}
-		
+
 
 
 		</script>

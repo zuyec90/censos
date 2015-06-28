@@ -120,11 +120,28 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">
 									Fecha Nacimiento
 							</label>
-								<input type="date" class="form-control" name="bday" min="2000-01-02"><br>
+								<input type="date" class="form-control" name="fecha_nacimiento" min="2000-01-02"><br>
+							<label class="col-sm-3 control-label">
+									Edad
+							</label>
+							<input type="text" class="form-control" id="edad" name="edad" placeholder="">
+							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
+								Discapacidad
+							</label>
+								<div>
+									<label class="radio-inline">
+									<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado">
+										si
+									</label>
+									<label class="radio-inline">
+										<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
+										 no
+									</label>
+								</div>
 							<label class="col-sm-3 control-label">
 									Discapacidad/ Tipo
 							</label>
-							<input type="text" class="form-control" id="incapacitado" name="incapacitado" placeholder="">
+							<input type="text" class="form-control" id="Tipo_incapacitado" name="Tipo_incapacitado" placeholder="">
 
 						</div>
 					</div>
@@ -189,6 +206,10 @@ $Jefe = new Censo;
 								Ing. Mensual
 							</label>
 								<input type="text" class="form-control" id="ingreso_mensual" name="ingreso_mensual" placeholder="">
+							<label class="col-sm-3 control-label">
+								Observacion
+							</label>
+								<input type="text" class="form-control" id="observacion" name="observacion" placeholder="">
 						</div>
 				</div>
 			</div>
@@ -382,6 +403,7 @@ $Jefe = new Censo;
 								</ul>
 								<div class="tab-content">
 									<div id="panel_overview" class="tab-pane in active">
+									<form name="JefeFamiliar" method="POST" action="../lib/CensoModificar.php">
 										<div class="row">
 										<div class="col-md-12">
 													<h3>Jefe de Familia</h3>
@@ -401,6 +423,7 @@ $Jefe = new Censo;
 																<td>Nombres:</td>
 																<td>
 																<input type="text" value="<?php echo $resultado['nombres']; ?>" name="nombres" >
+																<input type="hidden" value="<?php echo $resultado['idjefe_familia']; ?>" name="idjefe_familia" >
 
 																</td>
 
@@ -472,7 +495,7 @@ $Jefe = new Censo;
 															<tr>
 																<td>Tipo:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['tipo_incapacitado']; ?>" name="tipo">
+																	<input type="text" value="<?php echo $resultado['tipo_incapacitado']; ?>" name="tipo_incapacitado">
 
 																</td>
 
@@ -501,7 +524,7 @@ $Jefe = new Censo;
 															<tr>
 																<td>Institución:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['institucion']; ?>" name="pensionado">
+																	<input type="text" value="<?php echo $resultado['institucion']; ?>" name="institucion">
 
 																</td>
 															</tr>
@@ -546,7 +569,6 @@ $Jefe = new Censo;
 																	<input type="text" value="<?php echo $resultado['nivel_instruccion']; ?>" name="nivel_instruccion">
 
 																</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<tr>
 																<td>Profesión / Oficio:</td>
@@ -577,17 +599,42 @@ $Jefe = new Censo;
 																</td>
 															</tr>
 														</tbody>
+
 													</table>
+													<div class="form-group">
+													<div class="col-sm-2 col-sm-offset-8">
+														<input type="submit" value="Modificar" class="btn btn-success finish-step btn-block"  style ="margin-top: 25px; ">
+														<?php
+															@$_POST['valor'];
+															if(!empty($_POST)){
+															if ($_POST['valor'] == '1' ) { ?>
+																<div class="alert alert-success">
+																	<button data-dismiss="alert" class="close" type="button">&times;</button>
+																	<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+																	<p>Modificación realizada satisfatoriamente.</p>
+																</div>
+															<?php}
+															else{ ?>
+																<div class="alert alert-block alert-danger fade in">
+																	<button data-dismiss="alert" class="close" type="button">&times;</button>
+																	<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
+																	<p>No se logro Modificar</p>
+																</div>
+															<?php	}
+															} ?>
+													</div>
+												</div>
 												</div>
 											</div>
 										</div>
+										</form>
 									</div>
-
 
 									<?PHP
 										$datosfamiliares = $Jefe->SelectFamiliar($idjefe_familia);
 
 									 while ($datofamiliar = mysql_fetch_assoc($datosfamiliares)) { ?>
+
 									<div id="<?php echo "panel_edit_account".$datofamiliar['id_familiar']; ?>" class="tab-pane">
 										<form action="#" role="form" id="form">
 											<div class="row">
@@ -673,38 +720,62 @@ $Jefe = new Censo;
 																				<input type="text" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
 
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Profesión:</td>
 																			<td>
-																				<?php echo $datofamiliar['profesion']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['profesion']; ?>" name="profesion">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Pensionado:</td>
 																			<td>
-																				<?php echo $datofamiliar['pensionado']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Ing. Mensual:</td>
 																			<td>
-																				<?php echo $datofamiliar['ingreso_mensual']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['ingreso_mensual']; ?>" name="ingreso_mensual">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																		<tr>
 																			<td>Observación:</td>
 																			<td>
-																				<?php echo $datofamiliar['observacion']; ?>
+																				<input type="text" value="<?php echo $datofamiliar['observacion']; ?>" name="observacion">
+
 																			</td>
-																			<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 																		</tr>
 																	</tbody>
 																</table>
+																<div class="form-group">
+																	<div class="col-sm-2 col-sm-offset-8">
+																		<button class="btn btn-success finish-step btn-block">
+																		Modificar <i class="fa fa-arrow-circle-right"></i>
+																		</button>
+																			<?php
+																				@$_POST['valor'];
+																				if(!empty($_POST)){
+																				if ($_POST['valor'] == '1' ) { ?>
+																	<div class="alert alert-success">
+																		<button data-dismiss="alert" class="close" type="button">&times;</button>
+																		<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+																		<p>Modificación realizada satisfatoriamente.</p>
+																	</div>
+																			<?php}
+																		else{ ?>
+																	<div class="alert alert-block alert-danger fade in">
+																		<button data-dismiss="alert" class="close" type="button">&times;</button>
+																		<h4 class="alert-heading"><i class="fa fa-times-circle"></i></h4>
+																		<p>No se logro Modificar</p>
+																	</div>
+																			<?php	}
+																			} ?>
+																	</div>
+																</div>
 															</div>
 													</div>
 											</div>

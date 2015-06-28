@@ -10,6 +10,7 @@ class DataModel
 
 	 public function Conect()
 	{
+		//error_reporting(0);
 		$user = 'root';
 		$pass ='';
 		$bd = 'censo';
@@ -17,6 +18,8 @@ class DataModel
 		$Conexion =  mysql_connect($servidor, $user, $pass ) or die("Error 101 conexion bd ");
 		mysql_select_db($bd) or die ('Error 102 No se ha seleccionado la base de datos ');
 		return $Conexion ;
+
+
 	}
 
 

@@ -41,7 +41,7 @@ class censo extends DataModel
 		return $correcto; //imprimirlo en la vista
 	}
 
-	public function Modificar($datos = Null)
+	public function ModificarJefeflia($datos = Null)
 	{
 		$this->Conect();
 		if (!empty($datos['idjefe_familia'])) {
@@ -60,26 +60,32 @@ class censo extends DataModel
 
 		$this->Conect();
 
-		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido']); //los datos dentro del parentesis se pasan al INSERT luego de values
+		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido'], $datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
 		if (!empty($valido)){
 
 		return "0";
 		}else{
 			// cambiar segun base de datos INSERT
-			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
 
-			$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instrucción`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '".$datos['idjefe_familia']."', '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', '".$datos['Tipo_incapacitado']."', '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', '".$datos['nivel_instrucción']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+
+			$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '".$datos['idjefe_familia']."', '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', '".$datos['Tipo_incapacitado']."', '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+
 			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
 
 				return "1";
 		}
 
 	}
-	public function VerificarFamiliar($nombre, $apellido)
+	public function VerificarFamiliar($nombre = NULL, $apellido = NULL, $cedula = NULL)
 	{
+		if (!empty($cedula)) {
+		$sql = "SELECT * FROM `grupo_fliar` WHERE ( `nombre`= '".$nombre."' and `apellido`= '".$apellido."' ) or  `cedula`= ".$cedula." " ;
 
-		$sql = "SELECT * FROM `grupo_fliar` WHERE `nombre`= '".$nombre."' and `apellido`= '".$apellido."'    " ;
+		}else{
+		$sql = "SELECT * FROM `grupo_fliar` WHERE  `nombre`= '".$nombre."' and `apellido`= '".$apellido."' " ;
+
+		}
 		//echo $sql;
 		$respuesta = mysql_query($sql) or die ("Error 203 no se encontraron resultados");
 		$correcto = mysql_fetch_assoc($respuesta);
