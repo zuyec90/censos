@@ -1,9 +1,12 @@
 
 <?php
+session_start();
+echo $_SESSION['id_user'] ;
+
 require_once ('../controller/UserController.php');
 $user = new User;
-if (!empty($_GET['id_user'])) {
-	$id_user = $_GET['id_user'];
+if (!empty($_SESSION['id_user'])) {
+	$id_user = $_SESSION['id_user'];
 }else{
 	$id_user = Null;
 }

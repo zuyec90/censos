@@ -5,6 +5,38 @@ include ('../config/config.php');
 */
 class User extends DataModel
 {
+	public function login($data = Null)
+	{
+
+		$this->Conect();
+
+		$sql = "SELECT * FROM `usuario` WHERE `usuario`= '".$data['usuario']."' ";
+		//echo $sql;
+		$resultado = mysql_query($sql) or die ("error 103 no logra consultar");
+		$valida = mysql_fetch_assoc($resultado);
+
+		//var_dump($valida);
+		if (!empty($valida)){
+			if ($valida['contrasenia'] == $data['contrasenia']  ) {
+				session_start();
+				$_SESSION['nombre'] = $valida['nombre'];
+				$_SESSION['id_user'] = $valida['id_user'];
+				$_SESSION['perfil'] = $valida['perfil'];
+
+				return 1;
+			}else{
+				return 0;
+			}
+
+		}else{
+
+			return 0;
+		}
+
+
+
+	}
+
 
 	public function Crear($data = Null)
 	{
