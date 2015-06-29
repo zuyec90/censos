@@ -234,7 +234,10 @@ class censo extends DataModel
 		$this->Conect();
 
 		if (!empty($id)) {
-			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia` = '".$id."' ";
+			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia`  = '".$id."' ";
+			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
+
+			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id_."' ";
 			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
 
 			return "1";
@@ -243,6 +246,24 @@ class censo extends DataModel
 			return "0";
 		}
 	}
+
+	public function Eliminarjefe($id = Null)
+	{
+		$this->Conect();
+
+		if (!empty($id)) {
+
+			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id_."' ";
+			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
+	}
+
+
 	public function ConsultaUser($id_user = Null)
 		{
 			$this->Conect();
