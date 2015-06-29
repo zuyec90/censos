@@ -111,7 +111,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-checkmark-circle"></i>
 							<strong>Su mensaje se ha enviado satisfactoriamente.</strong>
 						</div>
 					<?php
@@ -120,7 +120,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-cancel-circle"></i>
 							<strong>Su mensaje no pudo ser enviado.</strong>
 						</div>
 					<?php	}
@@ -134,7 +134,7 @@ $User = $MSJ->ConsultaUser();
 						<button data-dismiss="alert" class="close">
 							&times;
 						</button>
-						<i class="fa fa-check-circle"></i>
+						<i class="clip-checkmark-circle"></i>
 						<strong>Su mensaje se ha eliminado satisfactoriamente.</strong>
 					</div>
 					<?php
@@ -143,7 +143,7 @@ $User = $MSJ->ConsultaUser();
 							<button data-dismiss="alert" class="close">
 								&times;
 							</button>
-							<i class="fa fa-check-circle"></i>
+							<i class="clip-cancel-circle"></i>
 							<strong>Su mensaje no se pudo eliminar.</strong>
 						</div>
 					<?php	}
@@ -192,10 +192,9 @@ $User = $MSJ->ConsultaUser();
 						<div class="panel-heading">
 							<i class="fa fa-envelope-o"></i>Bandeja de entrada
 							<div class="panel-tools">
-								<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
-								<a class="btn btn-xs btn-link panel-refresh" href="#"><i class="fa fa-refresh"></i></a>
-								<a class="btn btn-xs btn-link panel-expand" href="#"><i class="fa fa-resize-full"></i></a>
-								<a class="btn btn-xs btn-link panel-close" href="#"><i class="fa fa-times"></i></a>
+								<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
+									<i class="fa fa-question"></i>
+								</a>
 							</div>
 						</div>
 						<div class="panel-body messages">
