@@ -276,122 +276,7 @@ $Jefe = new Censo;
 				<div class="container">
 					<!-- inicio: PAGE HEADER -->
 					<div class="row">
-						<div class="col-sm-12">
-							<!-- inicio: STYLE SELECTOR BOX -->
-							<div id="style_selector" class="hidden-xs">
-								<div id="style_selector_container">
-									<div class="style-main-title">
-										Style Selector
-									</div>
-									<div class="box-title">
-										Choose Your Layout Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="layout">
-												<option value="default">Wide</option><option value="boxed">Boxed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Header Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="header">
-												<option value="fixed">Fixed</option><option value="default">Default</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Footer Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="footer">
-												<option value="default">Default</option><option value="fixed">Fixed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Backgrounds for Boxed Version
-									</div>
-									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
-									</div>
-									<div class="box-title">
-										5 Predefined Color Schemes
-									</div>
-									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
-									</div>
-									<div class="box-title">
-										Style it with LESS
-									</div>
-									<div class="images">
-										<div class="form-group">
-											<label>
-												Basic
-											</label>
-											<input type="text" value="#ffffff" class="color-base">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #ffffff"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Text
-											</label>
-											<input type="text" value="#555555" class="color-text">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #555555"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Elements
-											</label>
-											<input type="text" value="#007AFF" class="color-badge">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #007AFF"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div style="height:25px;line-height:25px; text-align: center">
-										<a class="clear_style" href="#">
-											Clear Styles
-										</a>
-										<a class="save_style" href="#">
-											Save Styles
-										</a>
-									</div>
-								</div>
-								<div class="style-toggle close"></div>
-							</div>
-							<!-- fin: STYLE SELECTOR BOX -->
+						<div class="col-sm-12">				
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
@@ -504,10 +389,22 @@ $Jefe = new Censo;
 															<tr>
 																<td>Nacionalidad:</td>
 																<td>
-																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
-																	V
-																	<input type="radio" value="<?php echo $resultado['nacionalidad']; ?>" name="nacionalidad">
-																	E
+																	<?PHP 
+																		if ($resultado['nacionalidad'] == 'v') { ?>
+																			<input type="radio" value="v"  checked="checked" name="nacionalidad">
+																				V
+																	<?PHP }else{ ?>
+																			<input type="radio" value="v" name="nacionalidad">
+																				V
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['nacionalidad'] == 'e') { ?>
+																			<input type="radio" value="e"  checked="checked" name="nacionalidad">
+																				E
+																	<?PHP }else{ ?>
+																				<input type="radio" value="e" name="nacionalidad">
+																				E
+																	<?PHP } ?>
 
 																</td>
 															</tr>
@@ -536,19 +433,43 @@ $Jefe = new Censo;
 															<tr>
 																<td>Sexo:</td>
 																<td>
-																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
-																	F
-																	<input type="radio" value="<?php echo $resultado['sexo']; ?>" name="sexo">
-																	M
+																	<?PHP 
+																		if ($resultado['sexo'] == 'v') { ?>
+																			<input type="radio" value="v"  checked="checked" name="sexo">
+																				F
+																	<?PHP }else{ ?>
+																			<input type="radio" value="v" name="sexo">
+																				F
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['sexo'] == 'e') { ?>
+																			<input type="radio" value="e"  checked="checked" name="sexo">
+																				M
+																	<?PHP }else{ ?>
+																				<input type="radio" value="e" name="sexo">
+																				M
+																	<?PHP } ?>
 																</td>
 															</tr>
 															<tr>
 																<td>CNE:</td>
 																<td>
-																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
-																	Si
-																	<input type="radio" value="<?php echo $resultado['cne']; ?>" name="cne">
-																	No
+																	<?PHP 
+																		if ($resultado['cne'] == 'si') { ?>
+																			<input type="radio" value="si"  checked="checked" name="cne">
+																				Si
+																	<?PHP }else{ ?>
+																			<input type="radio" value="si" name="cne">
+																				Si
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['cne'] == 'no') { ?>
+																			<input type="radio" value="no"  checked="checked" name="cne">
+																				No
+																	<?PHP }else{ ?>
+																				<input type="radio" value="no" name="cne">
+																				No
+																	<?PHP } ?>
 
 																</td>
 															</tr>
@@ -562,17 +483,29 @@ $Jefe = new Censo;
 															<tr>
 																<td>Incapacitado:</td>
 																<td>
-																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
-																	Si
-																	<input type="radio" value="<?php echo $resultado['incapacitado']; ?>" name="incapacitado">
-																	No
+																	<?PHP 
+																		if ($resultado['incapacitado'] == 'si') { ?>
+																			<input type="radio" value="si"  checked="checked" name="incapacitado">
+																				Si
+																	<?PHP }else{ ?>
+																			<input type="radio" value="si" name="incapacitado">
+																				Si
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['incapacitado'] == 'no') { ?>
+																			<input type="radio" value="no"  checked="checked" name="incapacitado">
+																				No
+																	<?PHP }else{ ?>
+																				<input type="radio" value="no" name="incapacitado">
+																				No
+																	<?PHP } ?>
 
 																</td>
 															</tr>
 															<tr>
 																<td>Tipo:</td>
 																<td>
-																	<input type="text" value="<?php echo $resultado['Tipo_incapacitado']; ?>" name="Tipo_incapacitado">
+																	<input type="text" value="<?php echo $resultado['tipo_incapacitado']; ?>" name="tipo_incapacitado">
 
 																</td>
 
@@ -594,10 +527,22 @@ $Jefe = new Censo;
 															<tr>
 																<td>Pensionado:</td>
 																<td>
-																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
-																Si
-																<input type="radio" value="<?php echo $resultado['pensionado']; ?>" name="pensionado">
-																No
+																<?PHP 
+																		if ($resultado['pensionado'] == 'si') { ?>
+																			<input type="radio" value="si"  checked="checked" name="pensionado">
+																				Si
+																	<?PHP }else{ ?>
+																			<input type="radio" value="si" name="pensionado">
+																				Si
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['pensionado'] == 'no') { ?>
+																			<input type="radio" value="no"  checked="checked" name="pensionado">
+																				No
+																	<?PHP }else{ ?>
+																				<input type="radio" value="no" name="pensionado">
+																				No
+																	<?PHP } ?>
 
 																</td>
 															</tr>
@@ -640,7 +585,7 @@ $Jefe = new Censo;
 																<td>Estado Civil:</td>
 																<td>
 																		<select class="form-control" id="estado_civil" name="estado_civil">
-																			<option value="">&nbsp;</option>
+																			<option value="<?php echo $resultado['estado_civil']; ?>"><?php echo $resultado['estado_civil']; ?></option>
 																			<option value="<?php echo $resultado['estado_civil']; ?>">soltero (a)</option>
 																			<option value="<?php echo $resultado['estado_civil']; ?>">Casado (a)</option>
 																			<option value="<?php echo $resultado['estado_civil']; ?>">Divorciado (a)</option>
@@ -653,7 +598,7 @@ $Jefe = new Censo;
 																<td>Nivel de instrucción:</td>
 																<td>
 																	<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
-																		<option value="">&nbsp;</option>
+																		<option value="<?php echo $resultado['nivel_instruccion']; ?>"><?php echo $resultado['nivel_instruccion']; ?></option>
 																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Sin Instrucción</option>
 																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Básica</option>
 																		<option value="<?php echo $resultado['nivel_instruccion']; ?>">Bachiller</option>
@@ -675,18 +620,29 @@ $Jefe = new Censo;
 															<tr>
 																<td>Trabaja Actualmente:</td>
 																<td>
-																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
-																	Si
-																	<input type="radio" value="<?php echo $resultado['trabaja']; ?>" name="trabaja">
-																	No
-
+																	<?PHP 
+																		if ($resultado['trabaja'] == 'si') { ?>
+																			<input type="radio" value="si"  checked="checked" name="trabaja">
+																				Si
+																	<?PHP }else{ ?>
+																			<input type="radio" value="si" name="trabaja">
+																				Si
+																	<?PHP } ?>
+																	<?PHP 
+																		if ($resultado['trabaja'] == 'no') { ?>
+																			<input type="radio" value="no"  checked="checked" name="trabaja">
+																				No
+																	<?PHP }else{ ?>
+																				<input type="radio" value="no" name="trabaja">
+																				No
+																	<?PHP } ?>
 																</td>
 															</tr>
 															<tr>
 																<td>Clasificación Ingreso Familiar:</td>
 																<td>
 																	<select class="form-control" id="clasificacion_ingreso_familiar" name="clasificacion_ingreso_familiar">
-																		<option value="">&nbsp;</option>
+																		<option value="<?php $resultado['clasificacion_ingreso_familiar']?>"><?php echo $resultado['clasificacion_ingreso_familiar'];?></option>
 																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Diario</option>
 																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Semanal</option>
 																		<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Quincenal</option>
@@ -789,20 +745,46 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Sexo</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																			<?PHP 
+																				if ($datofamiliar['sexo'] == 'f') { ?>
+																					<input type="radio" value="f"  checked="checked" name="sexo">
 																				F
-																				<input type="radio" value="<?php echo $datofamiliar['sexo']; ?>" name="sexo">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="f" name="sexo">
+																				F
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['sexo'] == 'm') { ?>
+																					<input type="radio" value="m"  checked="checked" name="sexo">
 																				M
+																			<?PHP }else{ ?>
+																				<input type="radio" value="m" name="sexo">
+																				M
+																			<?PHP } ?>
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Cedúla:</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																				<?PHP 
+																				if ($datofamiliar['nacionalidad'] == 'v') { ?>
+																					<input type="radio" value="v"  checked="checked" name="nacionalidad">
 																				V
-																				<input type="radio" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="v" name="nacionalidad">
+																				V
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['nacionalidad'] == 'e') { ?>
+																					<input type="radio" value="e"  checked="checked" name="nacionalidad">
 																				E
+																			<?PHP }else{ ?>
+																				<input type="radio" value="e" name="nacionalidad">
+																				E
+																			<?PHP } ?>
+
+																				
 																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
 
 																			</td>
@@ -817,21 +799,46 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Personas/ Discapacidad Tipo:</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																				<?PHP 
+																				if ($datofamiliar['incapacitado'] == 'si') { ?>
+																					<input type="radio" value="si"  checked="checked" name="incapacitado">
 																				Si
-																				<input type="radio" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="si" name="incapacitado">
+																				Si
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['incapacitado'] == 'no') { ?>
+																					<input type="radio" value="no"  checked="checked" name="incapacitado">
 																				No
-																				<input type="text" value="<?php echo $datofamiliar['incapacitado']; ?>" name="incapacitado">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="no" name="incapacitado">
+																				No
+																			<?PHP } ?>
+																				
+																				<input type="text" value="<?php echo $datofamiliar['Tipo_incapacitado']; ?>" name="Tipo_incapacitado">
 
 																			</td>
 																		</tr>
 																		<tr>
 																			<td>Embarazo temprano:</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																				<?PHP 
+																				if ($datofamiliar['Embarazo_tempr'] == 'si') { ?>
+																					<input type="radio" value="si"  checked="checked" name="Embarazo_tempr">
 																				Si
-																				<input type="radio" value="<?php echo $datofamiliar['Embarazo_tempr']; ?>" name="Embarazo_tempr">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="si" name="Embarazo_tempr">
+																				Si
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['Embarazo_tempr'] == 'no') { ?>
+																					<input type="radio" value="no"  checked="checked" name="Embarazo_tempr">
 																				No
+																			<?PHP }else{ ?>
+																				<input type="radio" value="no" name="Embarazo_tempr">
+																				No
+																			<?PHP } ?>
 
 																			</td>
 																		</tr>
@@ -846,7 +853,7 @@ $Jefe = new Censo;
 																			<td>Grado de Instrucción:</td>
 																			<td>
 																				<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
-																					<option value="">&nbsp;</option>
+																					<option value="<?php $datofamiliar['nivel_instruccion'] ?>"><?php echo $datofamiliar['nivel_instruccion'];?></option>
 																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Sin Instrucción</option>
 																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Básica</option>
 																					<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Bachiller</option>
@@ -861,10 +868,23 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>CNE:</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																				<?PHP 
+																				if ($datofamiliar['cne'] == 'si') { ?>
+																					<input type="radio" value="si"  checked="checked" name="cne">
 																				Si
-																				<input type="radio" value="<?php echo $datofamiliar['cne']; ?>" name="cne">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="si" name="cne">
+																				Si
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['cne'] == 'no') { ?>
+																					<input type="radio" value="no"  checked="checked" name="cne">
 																				No
+																			<?PHP }else{ ?>
+																				<input type="radio" value="no" name="cne">
+																				No
+																			<?PHP } ?>
+
 
 																			</td>
 																		</tr>
@@ -878,10 +898,23 @@ $Jefe = new Censo;
 																		<tr>
 																			<td>Pensionado:</td>
 																			<td>
-																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																				<?PHP 
+																				if ($datofamiliar['pensionado'] == 'si') { ?>
+																					<input type="radio" value="si"  checked="checked" name="pensionado">
 																				Si
-																				<input type="radio" value="<?php echo $datofamiliar['pensionado']; ?>" name="pensionado">
+																			<?PHP }else{ ?>
+																				<input type="radio" value="si" name="pensionado">
+																				Si
+																			<?PHP } ?>
+																			<?PHP 
+																				if ($datofamiliar['pensionado'] == 'no') { ?>
+																					<input type="radio" value="no"  checked="checked" name="pensionado">
 																				No
+																			<?PHP }else{ ?>
+																				<input type="radio" value="no" name="pensionado">
+																				No
+																			<?PHP } ?>
+
 
 																			</td>
 																		</tr>
