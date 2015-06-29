@@ -68,18 +68,18 @@ class Mensaje extends DataModel
 		$this->Conect();
 		if (!empty($datos)) {
 
-			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$datos."' ";
-			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
-
-
-
-			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$datos."' ";
-			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
+			$sql = "INSERT INTO `notificacion` (`id_notificacion`, `id_user_rece`, `id_user`, `mensaje`, `fecha_creacion`, `status`) VALUES (NULL, '".$data['id_user_rece'] ."', '".$data['id_user'] ."', '".$data['mensaje'] ."', NOW(), '0')";
+			mysql_query($sql) or die ('Error 306 no se pudo responder el mensaje');
+			
 			return "1";
 		}
 		else{
 			return "0";
 		}
+
+			$sql = "UPDATE `notificacion` SET `status` = '0' WHERE `id_respuesta` = '".$datos."' ";
+			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
+
 	}
 
 
@@ -88,7 +88,7 @@ class Mensaje extends DataModel
 			$this->Conect();
 			if (!empty($id_user)) {
 				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
-				$SelectionMsj = mysql_query($sql) or die ("Error 306 no se logró consultar");
+				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
 				return "no hay id user";
@@ -100,11 +100,11 @@ class Mensaje extends DataModel
 			$this->Conect();
 			if (!empty($id_user)) {
 				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
-				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
+				$SelectionMsj = mysql_query($sql) or die ("Error 308 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
 				$sql = "SELECT * FROM `usuario` WHERE  `status` <> '2'";
-				$respuesta = mysql_query($sql) or die ("Error 308 no se logró consultar");
+				$respuesta = mysql_query($sql) or die ("Error 309 no se logró consultar");
 			}
 			return $respuesta;
 		}
