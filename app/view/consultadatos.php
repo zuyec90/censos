@@ -69,31 +69,37 @@ $Jefe = new Censo;
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title">Escriba su mensaje</h4>
 						</div>
-						<form action="../lib/MensajeCrear.php" method="post" role="form" id="form">
+						<form id="Formulario" name="form">
 							<div class="modal-body">
 								<div class="row">
-									<div class="col-md-4">
-										<label for="name">Nombre: Usuario</label>
-										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+									<div class="col-md-6">
+										<label  for="name">Nombre: Usuario</label>
+										<input name="id_user" type="hidden" id="id_user" class="form-controlR"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<br>
 										<label for="destinatario">Destinatario:</label>
-											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
+											<select id="id_user_rece" name="id_user_rece" class="form-controlR" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
 
-												<option value="">Seleccione un opción</option>
+												<option value="">Seleccione un Administrador</option>
 												<?php while($users = mysql_fetch_assoc($User)) {?>
 												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
 												<?php } ?>
 											</select>
 										<label for="mensaje">Mensaje:</label>
-										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+									</div>
+									<div class="col-md-12">
+										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-controlR" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+										<div id="MostrarMsj">
+
+										</div>
 									</div>
 								</div>
 							</div>
+						</form>
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()"></input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="enviar()"></input>
 							</div>
-						</form>
+
 					</div>
 					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 					<!-- final: BOOTSTRAP EXTED MODALS -->
@@ -969,6 +975,22 @@ $Jefe = new Censo;
 				PagesUserProfile.init();
 				UIModals.init();
 			});
+
+			function enviar() {
+
+			var id_user_rece = $('#id_user_rece').val();
+			var id_user = $('#id_user').val();
+			var mensaje = $('#mensaje').val();
+			var ajax = 'si';
+			$('.form-controlR').hide();
+			var url = '../lib/MensajeCrear.php';
+			$.post(url,{'id_user_rece':id_user_rece,'id_user':id_user,'mensaje':mensaje,'ajax':ajax},function(respondText){
+				$('#MostrarMsj').html(respondText);
+
+			});
+
+			}
+
 		</script>
 	</body>
 	<!-- fin: BODY -->

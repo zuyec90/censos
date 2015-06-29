@@ -166,14 +166,14 @@ $User = $MSJ->ConsultaUser();
 										<label for="name">Nombre: Usuario</label>
 										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<br>
-										<label for="destinatario">Destinatario:</label>											
+										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
-												
+
 												<option value="">Seleccione un opción</option>
-												<?php while($users = mysql_fetch_assoc($User)) {?>												
+												<?php while($users = mysql_fetch_assoc($User)) {?>
 												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
 												<?php } ?>
-											</select>											
+											</select>
 										<label for="mensaje">Mensaje:</label>
 										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje2" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
 									</div>
@@ -292,9 +292,9 @@ $User = $MSJ->ConsultaUser();
 				$('.morecommentloader').hide();
 			});
 			var idselector = ".id"+id_notificacion;
-			
+
 			$(idselector).removeClass("active starred");
- 
+
 		}
 
 		</script>
