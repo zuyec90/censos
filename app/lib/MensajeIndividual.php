@@ -48,7 +48,7 @@ $emisor = $MSJ->ConsultaReceptor($resultado['id_user']);
 								<div class="modal-body">
 									<div class="row">
 										<div class="col-md-6">
-											<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+											<input name="id_user" type="hidden" id="nombre"  value="5" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 
 											<input type="hidden" name="id_respuesta" id="id_respuesta"></input>
 
