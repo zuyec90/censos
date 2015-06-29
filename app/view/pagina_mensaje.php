@@ -26,7 +26,7 @@ $User = $MSJ->ConsultaUser();
 		function validar(){
         var nombre = document.getElementById("nombre").value;
         var destinatario = document.getElementById("destino").value;
-        var mensaje = document.getElementById("mensaje").value;
+        var mensaje = document.getElementById("mensaje2").value;
 
         if(nombre ==""){
             alert("Debes de indicar el nombre");
@@ -175,7 +175,7 @@ $User = $MSJ->ConsultaUser();
 												<?php } ?>
 											</select>											
 										<label for="mensaje">Mensaje:</label>
-										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
+										<textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje2" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 600px; height: 80px;"></textarea>
 									</div>
 								</div>
 							</div>
