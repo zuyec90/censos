@@ -666,7 +666,7 @@ $Jefe = new Censo;
 													<?php
 
 													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
-													echo "dsdfs". $tiempo;
+													
 													   if ($tiempo == 1) { ?>
 														<div class="col-sm-4 ">
 															<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
