@@ -68,9 +68,12 @@ class censo extends DataModel
 
 			$fecha1 = date("Y-m-d H:i:s",time()); //tomo fecha y hora actual
 
-		$resultado= $this->calcula_hora($fecha, $fecha1)."<br>";
+		$resultado= $this->calcula_hora($fecha, $fecha1);
+
 		if ($resultado<=4) {
 			return "1";
+		}else{
+			return "0";
 		}
 
 		}
@@ -247,7 +250,7 @@ class censo extends DataModel
 		}
 	}
 
-	public function Eliminarjefe($id = Null)
+	public function EliminarFamiliar($id = Null)
 	{
 		$this->Conect();
 

@@ -43,6 +43,15 @@ $User = $MSJ->ConsultaUser();
         document.getElementById("form").submit();
 }
 		</script>
+		<style type="text/css">
+			.cortar{
+
+			  height:20px;
+			  text-overflow:ellipsis;
+			  white-space:nowrap;
+			  overflow:hidden;
+			}
+		</style>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
@@ -222,8 +231,8 @@ $User = $MSJ->ConsultaUser();
 													<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 													<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
 												</div>
-												<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
-												<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
+												<span class="messages-item-subject cortar"><?php echo $MSJS['mensaje'];?></span>
+
 									</li>
 									<?php } ?>
 								</div>

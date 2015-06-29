@@ -18,7 +18,7 @@ $Jefe = new Censo;
 	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
 	$User = $Jefe->ConsultaUser();
-	var_dump($User);
+
 
 ?>
 
@@ -710,7 +710,8 @@ $Jefe = new Censo;
 													<?php
 
 													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
-													   if ($tiempo != 1) { ?>
+													echo "dsdfs". $tiempo;
+													   if ($tiempo == 1) { ?>
 														<div class="col-sm-4 ">
 															<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
 														</div>
