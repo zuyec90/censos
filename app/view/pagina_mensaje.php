@@ -51,6 +51,13 @@ $User = $MSJ->ConsultaUser();
 			  white-space:nowrap;
 			  overflow:hidden;
 			}
+			.contador{
+				width: 30px;
+				float: left!important;
+				position: absolute!important;
+				z-index: 999;
+				margin-top: 6px;
+			}
 		</style>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
@@ -222,10 +229,19 @@ $User = $MSJ->ConsultaUser();
 									<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
 										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
+										$num =  $MSJ->Contar($MSJS['id_notificacion']);
+										if ($num['COUNT(*)']!= 0) { ?>
+											<span class="badge badge-danger contador" > <?php echo $num['COUNT(*)'];?> </span>
+								<?php 		}
 									 ?>
+
+
 									<li id="<?php echo "id".$MSJS['id_notificacion']; ?> " onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class="<?php if($MSJS['status'] != 1) { echo "active starred";} ?> messages-item <?php echo "id".$MSJS['id_notificacion']; ?>">
+
 										<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+
 											<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
+
 												<span class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
 												<div class="messages-item-time">
 													<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">

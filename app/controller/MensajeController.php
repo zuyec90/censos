@@ -31,8 +31,24 @@ class Mensaje extends DataModel
 
 			$SelectionMsj = mysql_query($sql) or die ("Error 301 no se logró consultar");
 			$respuesta = mysql_fetch_assoc($SelectionMsj);
+
 		}else{
-			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' ORDER BY  `id_notificacion` DESC";
+			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' ORDER BY  `id_notificacion` DESC";
+			$respuesta = mysql_query($sql) or die ("Error 302 no se logró consultar");
+		}
+		return $respuesta;
+	}
+
+	public function Selecthijos($id_notificacion = Null)
+	{
+		$this->Conect();
+		if (!empty($id_notificacion)) {
+			$sql = "SELECT * FROM `notificacion` WHERE (`id_respuesta` = '".$id_notificacion."' and `status` <> '2' ) ORDER BY  `id_notificacion` DESC  ";
+
+			$respuesta = mysql_query($sql) or die ("Error 301 no se logro seleccionar hijos");
+
+		}else{
+			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' ORDER BY  `id_notificacion` DESC";
 			$respuesta = mysql_query($sql) or die ("Error 302 no se logró consultar");
 		}
 		return $respuesta;
@@ -63,18 +79,24 @@ class Mensaje extends DataModel
 		}
 	}
 
-		public function respuesta($resp = Null)
-
+		public function respuesta($data = Null)
 	{
 		$this->Conect();
-		if (!empty($resp)) {
-			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$resp."' ";
+		if (!empty($data)) {
+			$sql = "INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `id_user`, `mensaje`, `fecha_creacion`, `status`) VALUES (NULL, '".$data['id_notificacion']."', '".$data['id_user_rece'] ."', '".$data['id_user'] ."', '".$data['mensaje'] ."', NOW(), '0')";
+			mysql_query($sql) or die ('Error 306 no se pudo responder el mensaje');
+
+			$sql = "UPDATE `notificacion` SET `status` = '0' WHERE `id_notificacion` = '".$data['id_notificacion']."' ";
 			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
+
 			return "1";
 		}
 		else{
 			return "0";
 		}
+
+
+
 	}
 
 
@@ -83,7 +105,7 @@ class Mensaje extends DataModel
 			$this->Conect();
 			if (!empty($id_user)) {
 				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
-				$SelectionMsj = mysql_query($sql) or die ("Error 306 no se logró consultar");
+				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
 				return "no hay id user";
@@ -95,12 +117,21 @@ class Mensaje extends DataModel
 			$this->Conect();
 			if (!empty($id_user)) {
 				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
-				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
+				$SelectionMsj = mysql_query($sql) or die ("Error 308 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
 				$sql = "SELECT * FROM `usuario` WHERE  `status` <> '2'";
-				$respuesta = mysql_query($sql) or die ("Error 308 no se logró consultar");
+				$respuesta = mysql_query($sql) or die ("Error 309 no se logró consultar");
 			}
+			return $respuesta;
+		}
+
+	public function Contar($id_notificacion = Null)
+		{
+			$sql = "SELECT COUNT(*) FROM `notificacion` WHERE `id_respuesta` = ".$id_notificacion." ";
+			$respuesta = mysql_query($sql);
+			$respuesta = mysql_fetch_assoc($respuesta);
+
 			return $respuesta;
 		}
 
