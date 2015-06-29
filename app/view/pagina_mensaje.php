@@ -127,8 +127,7 @@ $User = $MSJ->ConsultaUser();
 					} ?>
 
 					<?php
-					@$_POST['eliminado'];
-					if(!empty($_POST)){
+					if(isset($_POST['eliminado'])){
 					if ($_POST['eliminado'] == '1' ) { ?>
 					<div class="alert alert-success">
 						<button data-dismiss="alert" class="close">
@@ -197,9 +196,10 @@ $User = $MSJ->ConsultaUser();
 								</a>
 							</div>
 						</div>
-						<div class="panel-body messages">
-							<ul class="messages-list">
-								<li class="messages-search">
+						<div class="panel-body messages ">
+							<div>
+								<ul class="messages-list">
+									<li class="messages-search">
 									<form action="#" class="form-inline">
 										<div class="input-group">
 											<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
@@ -208,24 +208,27 @@ $User = $MSJ->ConsultaUser();
 											</div>
 										</div>
 									</form>
-								</li>
-								<?php while($MSJS = mysql_fetch_assoc($resultado)) {
-									$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
-									$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
-								 ?>
-								<li id="<?php echo "id".$MSJS['id_notificacion']; ?> " onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class="<?php if($MSJS['status'] != 1) { echo "active starred";} ?> messages-item <?php echo "id".$MSJS['id_notificacion']; ?>">
-									<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
-										<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
-											<span class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
-											<div class="messages-item-time">
-												<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
-												<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
-											</div>
-											<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
-											<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
-										</li>
-								<?php } ?>
-									</ul>
+									</li>
+								<div class="panel-body messages panel-scroll ps-container" style="height: 88%;">
+									<?php while($MSJS = mysql_fetch_assoc($resultado)) {
+										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
+										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
+									 ?>
+									<li id="<?php echo "id".$MSJS['id_notificacion']; ?> " onclick="<?php echo "VerMsj(".$MSJS['id_notificacion'].")"; ?>" class="<?php if($MSJS['status'] != 1) { echo "active starred";} ?> messages-item <?php echo "id".$MSJS['id_notificacion']; ?>">
+										<span title="Mark as starred" class="messages-item-star"><i class="fa fa-star"></i></span>
+											<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
+												<span class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
+												<div class="messages-item-time">
+													<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
+													<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
+												</div>
+												<span class="messages-item-subject"><?php echo $MSJS['mensaje'];?></span>
+												<span class="messages-item-preview"><?php echo $MSJS['mensaje'];?></span>
+									</li>
+									<?php } ?>
+								</div>
+								</ul>
+							</div>
 									<div class="messages-content">
 										<div class="morecommentloader" style="display:none;">
 											<img src="../../images/loading.gif">
