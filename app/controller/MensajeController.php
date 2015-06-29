@@ -63,12 +63,17 @@ class Mensaje extends DataModel
 		}
 	}
 
-		public function respuesta($resp = Null)
-
+		public function respuesta($datos = Null)
 	{
 		$this->Conect();
-		if (!empty($resp)) {
-			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$resp."' ";
+		if (!empty($datos)) {
+
+			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$datos."' ";
+			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
+
+
+
+			$sql = "UPDATE `notificacion` SET `status` = '3' WHERE `id_notificacion` = '".$datos."' ";
 			mysql_query($sql) or die ('Error 305 no se pudo responder el mensaje');
 			return "1";
 		}
@@ -103,6 +108,7 @@ class Mensaje extends DataModel
 			}
 			return $respuesta;
 		}
+
 
 }
 ?>
