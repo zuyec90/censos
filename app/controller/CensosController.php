@@ -251,7 +251,7 @@ class censo extends DataModel
 				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
-				$sql = "SELECT * FROM `usuario` WHERE  `status` <> '2'";
+				$sql = "SELECT * FROM `usuario` WHERE  `status` <> 2 and `perfil` = 0";
 				$respuesta = mysql_query($sql) or die ("Error 308 no se logró consultar");
 			}
 			return $respuesta;
