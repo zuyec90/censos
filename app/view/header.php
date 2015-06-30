@@ -8,8 +8,8 @@
 					</button>
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
-					<a class="nvbar-brand" href="home.php">
-						<img src="../../upload/logo1.png" class="rounded-img" width="55" height="50">Consejo Comunal "Santa Inés
+					<a class="nvbar-brand" href="home.php" style="font-size: 22px;text-decoration: none;font-style: italic;">
+						<img src="../../upload/logo1.png" class="rounded-img" width="55" height="50"> Consejo Comunal "Santa Inés
 					</a>
 					<!-- fin: LOGO -->
 				</div>

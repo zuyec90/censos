@@ -100,27 +100,62 @@
 										<tbody>
 											<tr>
 												<td style="width:5%">Edad</td>
-												<td style="width:20%">
+												<td style="width:10%">
 													<div class="example">
 														<div id="slider_example_1" class="slider-teal"></div>
 													</div>
 												</td>
-												<td style="width:5%">Edad</td>
-												<td style="width:20%">
+												<td style="width:5%">Sexo</td>
+												<td style="width:10%">
 													<div class="example">
-														<div id="slider_example_1" class="slider-teal"></div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="f" name="sexo" id="sexo" >
+															F
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="m" name="sexo"  id="sexo">
+															M
+														</label>
 													</div>
 												</td>
-												<td style="width:5%">Edad</td>
-												<td style="width:20%">
+												<td style="width:5%">Pensionado</td>
+												<td style="width:10%">
 													<div class="example">
-														<div id="slider_example_1" class="slider-teal"></div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado">
+															No
+														</label>
+
 													</div>
 												</td>
-												<td style="width:5%">Edad</td>
-												<td style="width:20%">
+												<td style="width:5%">Discapacidad</td>
+												<td style="width:10%">
 													<div class="example">
-														<div id="slider_example_1" class="slider-teal"></div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
+															No
+														</label>
+													</div>
+												</td>
+												<td style="width:5%">Trabajo</td>
+												<td style="width:10%">
+													<div class="example">
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja" >
+															Si
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="no" name="trabaja"  id="trabaja">
+															No
+														</label>
 													</div>
 												</td>
 
@@ -137,26 +172,10 @@
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
 									Label Formatter
-									<div class="panel-tools">
-										<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-										</a>
-										<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-											<i class="fa fa-wrench"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-refresh" href="#">
-											<i class="fa fa-refresh"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-close" href="#">
-											<i class="fa fa-times"></i>
-										</a>
-									</div>
 								</div>
 								<div class="panel-body">
 									<div class="flot-small-container">
-										<div id="placeholder8" class="flot-placeholder"></div>
+										<div id="placeholder82" class="flot-placeholder"></div>
 									</div>
 								</div>
 							</div>
@@ -200,13 +219,54 @@
 		<script src="../../plugins/jQRangeSlider/jQAllRangeSliders-min.js"></script>
 		<script src="../../plugins/jQuery-Knob/js/jquery.knob.js"></script>
 		<script src="../../js/ui-sliders.js"></script>
+		<script src="../../plugins/flot/jquery.flot.js"></script>
+		<script src="../../plugins/flot/jquery.flot.resize.js"></script>
+		<script src="../../plugins/flot/jquery.flot.categories.js"></script>
+		<script src="../../plugins/flot/jquery.flot.pie.js"></script>
+
 
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				//Charts.init();
 				UISliders.init();
-			});
+				var data = [],
+				series = Math.floor(Math.random() * 6) + 3;
+
+				for (var i = 0; i < series; i++) {
+					data[i] = {
+						label: "Series" + (i + 1),
+						data: Math.floor(Math.random() * 100) + 1
+					}
+				}
+
+
+				$.plot('#placeholder82', data, {
+				    series: {
+				        pie: {
+				            show: true,
+				            radius: 1,
+				            label: {
+				                show: true,
+				                radius: 3/4,
+				                formatter: labelFormatter,
+				                background: {
+				                    opacity: 0.5,
+				                    color: '#000'
+				                }
+				            }
+				        }
+				    },
+				    legend: {
+				        show: true
+				    }
+				});
+
+				function labelFormatter(label, series) {
+				return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+				}
+		});
 		</script>
 	</body>
 	<!-- fin: BODY -->

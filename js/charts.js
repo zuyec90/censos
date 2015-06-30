@@ -1,10 +1,10 @@
 var Charts = function () {
     //function to initiate jQRangeSlider
-    //There are plenty of options you can set to control the precise looks of your plot. 
+    //There are plenty of options you can set to control the precise looks of your plot.
     //You can control the ticks on the axes, the legend, the graph type, etc.
     //For more information, please visit http://www.flotcharts.org/
     var runCharts = function () {
-        // Basic Chart 
+        // Basic Chart
         var d1 = [];
         for (var i = 0; i < Math.PI * 2; i += 0.25) {
             d1.push([i, Math.sin(i)]);
@@ -60,7 +60,7 @@ var Charts = function () {
                 }
             }
         });
-        // Toggling Series 
+        // Toggling Series
         var datasets = {
             "usa": {
                 label: "USA",
@@ -271,7 +271,7 @@ var Charts = function () {
             }
         }
         plotAccordingToChoices();
-        // Interactivity 
+        // Interactivity
         function randValue() {
             return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
         }
@@ -412,7 +412,7 @@ var Charts = function () {
                 previousPoint = null;
             }
         });
-        //Real Time 
+        //Real Time
         // We use an inline data source in the example, usually data would
         // be fetched from a server
         var data = [],
@@ -473,7 +473,7 @@ var Charts = function () {
             setTimeout(update, updateInterval);
         }
         update();
-        //Categories 
+        //Categories
         var data_category = [
             ["January", 10],
             ["February", 8],
@@ -573,7 +573,7 @@ var Charts = function () {
         ctx.lineTo(o.left, o.top);
         ctx.fillStyle = "#000";
         ctx.fill();
-        // Default Pie 
+        // Default Pie
         var data_pie = [],
             series = Math.floor(Math.random() * 6) + 3;
         for (var i = 0; i < series; i++) {
@@ -589,8 +589,8 @@ var Charts = function () {
                 }
             }
         });
-        // Label Formatter 
-        $.plot('#placeholder8', data_pie, {
+        // Label Formatter
+        $.plot('#placeholder82', data_pie, {
             series: {
                 pie: {
                     show: true,
@@ -609,7 +609,7 @@ var Charts = function () {
                 show: false
             }
         });
-        // Label Style 
+        // Label Style
         $.plot('#placeholder9', data_pie, {
             series: {
                 pie: {
@@ -647,7 +647,7 @@ var Charts = function () {
                 show: false
             }
         });
-        // Tilted Pie 
+        // Tilted Pie
         $.plot('#placeholder11', data_pie, {
             series: {
                 pie: {
