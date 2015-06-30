@@ -88,14 +88,7 @@ $respuesta = $censo->Selectjefe();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<strong>Censo</strong>
-									<div class="panel-tools">
-										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-											<i class="fa fa-question"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-									</div>
+
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">

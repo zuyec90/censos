@@ -101,16 +101,6 @@ $User = $MSJ->ConsultaUser();
 								<li class="active">
 									Mensajes
 								</li>
-								<li class="search-box">
-									<form class="sidebar-search">
-										<div class="form-group">
-											<input type="text" placeholder="Busqueda...">
-											<button class="submit">
-												<i class="clip-search-3"></i>
-											</button>
-										</div>
-									</form>
-								</li>
 							</ol>
 							<div class="page-header">
 								<h1>Mensajes</h1>
@@ -206,11 +196,6 @@ $User = $MSJ->ConsultaUser();
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<i class="fa fa-envelope-o"></i>Bandeja de entrada
-							<div class="panel-tools">
-								<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-									<i class="fa fa-question"></i>
-								</a>
-							</div>
 						</div>
 						<div class="panel-body messages ">
 							<div>

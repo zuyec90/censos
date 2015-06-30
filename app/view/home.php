@@ -119,7 +119,7 @@
 									<h2>Generar Reportes</h2>
 								</div>
 								<div class="content">
-									 Consulte los datos que sean de su interes de forma totalicidad, obteniendoun reporte en formato pdf.
+									 Consulte los datos que sean de su interes de manera totalicidad, obteniendo un reporte en formato pdf para imprimir.
 								</div>
 								<a class="view-more" href="consulta.php">
 									<i class="clip-arrow-right-2"></i>
