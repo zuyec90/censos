@@ -162,7 +162,8 @@
 											</tr>
 										</tbody>
 									</table>
-								</div>
+									<a href="#" id="Reporte" class="btn btn-green btn-lg btn-block"> Generar Reporte</a>
+							</div>
 						</div>
 					</div>
 					<div class="row" id="respuesta">
@@ -231,41 +232,21 @@
 				Main.init();
 				//Charts.init();
 				UISliders.init();
-				var data = [],
-				series = Math.floor(Math.random() * 6) + 3;
-
-				for (var i = 0; i < series; i++) {
-					data[i] = {
-						label: "Series" + (i + 1),
-						data: Math.floor(Math.random() * 100) + 1
-					}
-				}
 
 
-				$.plot('#placeholder82', data, {
-				    series: {
-				        pie: {
-				            show: true,
-				            radius: 1,
-				            label: {
-				                show: true,
-				                radius: 3/4,
-				                formatter: labelFormatter,
-				                background: {
-				                    opacity: 0.5,
-				                    color: '#000'
-				                }
-				            }
-				        }
-				    },
-				    legend: {
-				        show: true
-				    }
-				});
+			$('#Reporte').click(function() {
 
-				function labelFormatter(label, series) {
-				return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
-				}
+			var sexo = $('#sexo').val();
+			var pensionado = $('#pensionado').val();
+			var incapacitado = $('#incapacitado').val();
+			var trabaja = $('#trabaja').val();
+			var url = '../lib/CensoReporte.php';
+
+			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
+
+			});
+
+			});
 		});
 		</script>
 	</body>
