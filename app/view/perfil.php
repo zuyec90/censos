@@ -116,11 +116,6 @@ $resultado = $user->Seleccionar($id_user);
 											Datos
 										</a>
 									</li>
-									<li>
-										<a data-toggle="tab" href="#panel_edit_account">
-											Editar
-										</a>
-									</li>
 								</ul>
 								<div class="tab-content">
 									<div id="panel_overview" class="tab-pane in active">
@@ -215,125 +210,15 @@ $resultado = $user->Seleccionar($id_user);
 												</div>
 											</div>
 											<div class="col-sm-7 col-md-8">
-												<p>
-
-												</p>
-												<div class="row">
-													<div class="col-sm-3">
-														<button class="btn btn-icon btn-block pulsate">
-															<a href="pagina_mensaje.php"><i class="clip-bubble-2"></i>
-															Mensajes <span class="badge badge-info"> 23 </span></a>
-														</button>
-													</div>
-													<div class="col-sm-3">
-														<button class="btn btn-icon btn-block">
-															<i class="clip-list-3"></i>
-															Notificaciones <span class="badge badge-info"> 9 </span>
-														</button>
-													</div>
-												</div>
-												<div class="panel panel-white">
-													<div class="panel-heading">
-														<i class="clip-menu"></i>
-														Actividades Recientes
-														<div class="panel-tools">
-															<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-															</a>
-															<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
-																<i class="fa fa-wrench"></i>
-															</a>
-															<a class="btn btn-xs btn-link panel-refresh" href="#">
-																<i class="fa fa-refresh"></i>
-															</a>
-															<a class="btn btn-xs btn-link panel-close" href="#">
-																<i class="fa fa-times"></i>
-															</a>
-														</div>
-													</div>
-													<div class="panel-body panel-scroll" style="height:300px">
-														<ul class="activities">
-															<li>
-																<a class="activity" href="javascript:void(0)">
-																	<i class="clip-upload-2 circle-icon circle-green"></i>
-																	<span class="desc">Ha cargado un nuevo documento.</span>
-																	<div class="time">
-																		<i class="fa fa-time bigger-110"></i>
-																		2 min.
-																	</div>
-																</a>
-															</li>
-															<li>
-																<a class="activity" href="javascript:void(0)">
-																	<img alt="image" src="../../upload/default_avatar_small.png">
-																	<span class="desc">Yasmin Torres le envió un mensaje.</span>
-																	<div class="time">
-																		<i class="fa fa-time bigger-110"></i>
-																		3 horas.
-																	</div>
-																</a>
-															</li>
-															<li>
-																<a class="activity" href="javascript:void(0)">
-																	<i class="clip-data circle-icon circle-bricky"></i>
-																	<span class="desc">Modificación en la Base de Datos.</span>
-																	<div class="time">
-																		<i class="fa fa-time bigger-110"></i>
-																		5 horas.
-																	</div>
-																</a>
-															</li>
-															<li>
-																<a class="activity" href="javascript:void(0)">
-																	<i class="clip-images-2 circle-icon circle-green"></i>
-																	<span class="desc">Yailet Rojas cargo una nueva imagen.</span>
-																	<div class="time">
-																		<i class="fa fa-time bigger-110"></i>
-																		9 horas.
-																	</div>
-																</a>
-															</li>
-															<li>
-																<a class="activity" href="javascript:void(0)">
-																	<i class="clip-image circle-icon circle-green"></i>
-																	<span class="desc">Ulises Robles cargo una nueva imagen.</span>
-																	<div class="time">
-																		<i class="fa fa-time bigger-110"></i>
-																		12 horas.
-																	</div>
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 									<div id="panel_edit_account" class="tab-pane">
 										<form action="../lib/UserUpdate.php" method="POST" role="form" id="form">
 											<div class="row">
 												<div class="col-md-12">
-													<h3>Información de Cuenta</h3>
+													<h4>Información de Cuenta</h4>
 													<hr>
 												</div>
 												<div class="col-md-6">
-													<div class="form-group">
-														<label>
-															Cargar imagen
-														</label>
-														<div class="fileupload fileupload-new" data-provides="fileupload">
-															<div class="fileupload-new thumbnail" style="width: 150px; height: 150px;"><img src="../../upload/765-default-avatar.png" alt="">
-															</div>
 
-															<div class="user-edit-image-buttons">
-																<span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture"></i> Seleccione la imagen</span><span class="fileupload-exists"><i class="fa fa-picture"></i> </span>
-																	<input type="file">
-																</span>
-																<a href="#" class="btn fileupload-exists btn-danger" data-dismiss="fileupload">
-																	<i class="fa fa-times"></i> Eliminar
-																</a>
-															</div>
-														</div>
-													</div>
 													<div class="form-group">
 														<label class="control-label">
 															Nombre
@@ -435,6 +320,10 @@ $resultado = $user->Seleccionar($id_user);
 
 										</form>
 									</div>
+											</div>
+										</div>
+									</div>
+
 
 								</div>
 							</div>
