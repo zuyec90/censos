@@ -82,46 +82,47 @@
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
+
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="core-box">
 								<div class="heading">
 									<i class="clip-user-4 circle-icon circle-green"></i>
-									<h2>Manage Users</h2>
+									<h2>Gestionar Usuario</h2>
 								</div>
 								<div class="content">
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+									El administrador puede usar esta herramienta para administrar y controlar el acceso de los usuarios mediante un conjunto de permisos.
 								</div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="data.php">
+									<i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-clip circle-icon circle-teal"></i>
-									<h2>Manage Orders</h2>
+									<i class="clip-stack-empty circle-icon circle-teal"></i>
+									<h2>Gestionar Censo</h2>
 								</div>
 								<div class="content">
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+									Aqui se obtendran los datos de los censados de una forma detallada y de forma ordenada donde se podran realizar cambios si este lo necesita. 
 								</div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="consultaperfil.php">
+									<i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-database circle-icon circle-bricky"></i>
-									<h2>Manage Data</h2>
+									<i class="clip-file-pdf circle-icon circle-bricky"></i>
+									<h2>Generar Reportes</h2>
 								</div>
 								<div class="content">
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+									 Consulte los datos que sean de su interes de forma totalicidad, obteniendoun reporte en formato pdf.
 								</div>
-								<a class="view-more" href="#">
-									View More <i class="clip-arrow-right-2"></i>
+								<a class="view-more" href="consulta.php">
+									<i class="clip-arrow-right-2"></i>
 								</a>
 							</div>
 						</div>
