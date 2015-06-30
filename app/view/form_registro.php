@@ -227,10 +227,10 @@
 													</label>
 													<select class="form-control" id="dropdown" name="voceria">
 														<option value="">Selecciona a la Unidad de Trabajo al que pertenece</option>
-														<option value="usuario1">Unidad Ejecutiva</option>
-														<option value="usuario2">Unidad de Contraloría Social</option>
-														<option value="vocero2">Unidad Electoral Permanente</option>
-														<option value="vocero2">Unidad Administrativa y Financiera Comunitaria</option>
+														<option value="Unidad Ejecutiva">Unidad Ejecutiva</option>
+														<option value="Unidad de Contraloría Social">Unidad de Contraloría Social</option>
+														<option value="Unidad Electoral Permanente">Unidad Electoral Permanente</option>
+														<option value="Unidad Administrativa y Financiera Comunitaria">Unidad Administrativa y Financiera Comunitaria</option>
 													</select>
 												</div>
 												<div class="form-group">

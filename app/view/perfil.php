@@ -188,7 +188,26 @@ $resultado = $user->Seleccionar($id_user);
 															</tr>
 															<tr>
 																<td>Usuario</td>
-																<td><span class="label label-sm label-info"><?php echo $resultado['perfil'] ;?></span></td>
+																<td><span class="label label-sm label-info">
+																<?php
+
+																 switch ($resultado['perfil']) {
+																 	case 1:
+																 		echo " Operador ";
+																 		break;
+																 	case 2:
+																 		echo " Administrador ";
+																 		break;
+
+																 	default:
+																 		echo " Usuario ";
+																 		break;
+																 }
+
+																?>
+
+
+																</span></td>
 																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
 															</tr>
 															<table class="table table-condensed table-hover">
@@ -197,13 +216,7 @@ $resultado = $user->Seleccionar($id_user);
 																<th colspan="3">Información Adicional</th>
 															</tr>
 														</thead>
-														<tbody>
-															<tr>
-																<td>Fecha de Nacimiento</td>
-																<td>21 Octubre 1982</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-														</tbody>
+
 													</table>
 														</tbody>
 													</table>

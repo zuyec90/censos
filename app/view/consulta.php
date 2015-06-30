@@ -64,121 +64,7 @@
 					<!-- inicio: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
-							<!-- inicio: STYLE SELECTOR BOX -->
-							<div id="style_selector" class="hidden-xs">
-								<div id="style_selector_container">
-									<div class="style-main-title">
-										Style Selector
-									</div>
-									<div class="box-title">
-										Choose Your Layout Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="layout">
-												<option value="default">Wide</option><option value="boxed">Boxed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Header Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="header">
-												<option value="fixed">Fixed</option><option value="default">Default</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Footer Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="footer">
-												<option value="default">Default</option><option value="fixed">Fixed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Backgrounds for Boxed Version
-									</div>
-									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="../../images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="../../images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="../../images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="../../images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="../../images/bg_5.png"></a>
-									</div>
-									<div class="box-title">
-										5 Predefined Color Schemes
-									</div>
-									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="../../images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="../../images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="../../images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="../../images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="../../images/green.png"></a>
-									</div>
-									<div class="box-title">
-										Style it with LESS
-									</div>
-									<div class="images">
-										<div class="form-group">
-											<label>
-												Basic
-											</label>
-											<input type="text" value="#ffffff" class="color-base">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #ffffff"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Text
-											</label>
-											<input type="text" value="#555555" class="color-text">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #555555"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Elements
-											</label>
-											<input type="text" value="#007AFF" class="color-badge">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #007AFF"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div style="height:25px;line-height:25px; text-align: center">
-										<a class="clear_style" href="#">
-											Clear Styles
-										</a>
-										<a class="save_style" href="#">
-											Save Styles
-										</a>
-									</div>
-								</div>
-								<div class="style-toggle close"></div>
-							</div>
-							<!-- fin: STYLE SELECTOR BOX -->
+
 							<!-- inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
@@ -187,7 +73,7 @@
 										Consulta / Censo
 									</a>
 								</li>
-								
+
 								<li class="search-box">
 									<form class="sidebar-search">
 										<div class="form-group">
@@ -209,44 +95,76 @@
 					<!-- inicio: PAGE CONTENT -->
 					<div class="row">
 						<div class="col-sm-12">
-							<h3>Busqueda:</h3>
-							<form method="" id="frm" class="form-inline" action="consulta.php">
-								<label>
-									<div class="dropdown">
-										  <button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" style="margin-left: 150px">
-										    Seleccione
-										    <span class="caret"></span>
-										  </button>
-										 
-										  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="margin-left: 150px">
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Cedúla</a>
-										    </li>
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Edad</a>
-										    </li>
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Sexo</a>
-										    </li>
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Incapacitado</a>
-										    </li>
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Pensionado</a>
-										    </li>
-										    <li role="presentation">
-										      <a role="menuitem" tabindex="-1" href="#">Trabajadores</a>
-										    </li>
-										  </ul>
-									</div>
-								</label>
-								<button type="submit" class="btn btn-success" style="margin-left: 120px">
-									Buscar
-								</button>
-							</form>
+							<div class="panel-body">
+									<table class="table sliders table-striped">
+										<tbody>
+											<tr>
+												<td style="width:5%">Edad</td>
+												<td style="width:20%">
+													<div class="example">
+														<div id="slider_example_1" class="slider-teal"></div>
+													</div>
+												</td>
+												<td style="width:5%">Edad</td>
+												<td style="width:20%">
+													<div class="example">
+														<div id="slider_example_1" class="slider-teal"></div>
+													</div>
+												</td>
+												<td style="width:5%">Edad</td>
+												<td style="width:20%">
+													<div class="example">
+														<div id="slider_example_1" class="slider-teal"></div>
+													</div>
+												</td>
+												<td style="width:5%">Edad</td>
+												<td style="width:20%">
+													<div class="example">
+														<div id="slider_example_1" class="slider-teal"></div>
+													</div>
+												</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
 						</div>
 					</div>
-					
+					<div class="row" id="respuesta">
+						<div class="col-md-12">
+							<!-- start: LABEL FORMATTER PANEL -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-external-link-square"></i>
+									Label Formatter
+									<div class="panel-tools">
+										<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+										</a>
+										<a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+											<i class="fa fa-wrench"></i>
+										</a>
+										<a class="btn btn-xs btn-link panel-refresh" href="#">
+											<i class="fa fa-refresh"></i>
+										</a>
+										<a class="btn btn-xs btn-link panel-expand" href="#">
+											<i class="fa fa-resize-full"></i>
+										</a>
+										<a class="btn btn-xs btn-link panel-close" href="#">
+											<i class="fa fa-times"></i>
+										</a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="flot-small-container">
+										<div id="placeholder8" class="flot-placeholder"></div>
+									</div>
+								</div>
+							</div>
+							<!-- end: LABEL FORMATTER PANEL -->
+						</div>
+
+					</div>
+
 					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>
@@ -278,25 +196,16 @@
 		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="../../plugins/jquery-mockjax/jquery.mockjax.js"></script>
-		<script src="../../plugins/moment/moment.js"></script>
-		<script src="../../plugins/select2/select2.min.js"></script>
-		<script src="../../plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-		<script src="../../plugins/x-editable/js/bootstrap-editable.min.js"></script>
-		<script src="../../plugins/typeaheadjs/typeaheadjs.js"></script>
-		<script src="../../plugins/typeaheadjs/lib/typeahead.js"></script>
-		<script src="../../plugins/jquery-address/address.js"></script>
-		<script src="../../plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.min.js"></script>
-		<script src="../../plugins/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5.js"></script>
-		<script src="../../plugins/wysihtml5/wysihtml5.js"></script>
-		<script src="../../plugins/x-editable/demo-mock.js"></script>
-		<script src="../../plugins/x-editable/demo.js"></script>
-		<script src="../../plugins/js/jquery.min.js"></script>
-   		<script src="../../plugins/js/bootstrap.min.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+		<script src="../../plugins/jQRangeSlider/jQAllRangeSliders-min.js"></script>
+		<script src="../../plugins/jQuery-Knob/js/jquery.knob.js"></script>
+		<script src="../../js/ui-sliders.js"></script>
+
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				UISliders.init();
 			});
 		</script>
 	</body>

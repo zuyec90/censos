@@ -18,11 +18,14 @@ class User extends DataModel
 		//var_dump($valida);
 		if (!empty($valida)){
 			if ($valida['contrasenia'] == $data['contrasenia']  ) {
-				session_start();
+				if(!isset($_SESSION))
+				{
+				        session_start();
+				}
 				$_SESSION['nombre'] = $valida['nombre'];
 				$_SESSION['id_user'] = $valida['id_user'];
 				$_SESSION['perfil'] = $valida['perfil'];
-
+				$_SESSION['login'] = 'si';
 				return 1;
 			}else{
 				return 0;
@@ -87,6 +90,12 @@ class User extends DataModel
 	}
 	public function Seleccionar($id = Null)
 	{
+		if(!isset($_SESSION))
+		{
+		        session_start();
+		}
+		$this->Seguridad();
+		$this->ValidaPerfil(2);
 		$this->Conect();
 		if (!empty($id)) {
 			$sql = "SELECT * FROM `usuario` WHERE `id_user`= '".$id."' ";

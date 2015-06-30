@@ -165,34 +165,34 @@
 		<!-- end: FOOTER -->
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
-		<script src="plugins/respond.min.js"></script>
-		<script src="plugins/excanvas.min.js"></script>
+		<script src="../../plugins/respond.min.js"></script>
+		<script src="../../plugins/excanvas.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<!--<![endif]-->
-		<script src="plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="plugins/less/less-1.5.0.min.js"></script>
-		<script src="plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../../plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="../../plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="../../plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="../../plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="../../plugins/less/less-1.5.0.min.js"></script>
+		<script src="../../plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="../../plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!-- inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script src="plugins/flot/jquery.flot.js"></script>
-		<script src="plugins/flot/jquery.flot.pie.js"></script>
-		<script src="plugins/flot/jquery.flot.resize.min.js"></script>
-		<script src="plugins/jquery.sparkline/jquery.sparkline.js"></script>
-		<script src="plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-		<script src="plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-		<script src="plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
-		<script src="js/index.js"></script>
+		<script src="../../plugins/flot/jquery.flot.js"></script>
+		<script src="../../plugins/flot/jquery.flot.pie.js"></script>
+		<script src="../../plugins/flot/jquery.flot.resize.min.js"></script>
+		<script src="../../plugins/jquery.sparkline/jquery.sparkline.js"></script>
+		<script src="../../plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="../../plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="../../plugins/fullcalendar/fullcalendar/fullcalendar.js"></script>
+		<script src="../../js/index.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

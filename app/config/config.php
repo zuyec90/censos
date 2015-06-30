@@ -22,6 +22,25 @@ class DataModel
 
 	}
 
+	public function Seguridad()
+	{
+
+		if (empty($_SESSION['login'])) {
+			header("Location: login.php");
+		}
+
+	}
+
+	public function ValidaPerfil($perfil = Null)
+	{
+
+		if ($_SESSION['perfil'] != $perfil  ) {
+			//echo $_SESSION['perfil']." - ". $perfil ;
+			header("Location: home.php?auth=no");
+		}
+
+	}
+
 
 
 }

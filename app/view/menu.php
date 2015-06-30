@@ -16,12 +16,6 @@
 								<span class="title"> Censos </span><i class="icon-arrow"></i>
 								<span class="selected"></span>
 							</a>
-						<ul class="sub-menu">
-							<li>
-								<a href="javascript:void(0)"><i class="glyphicon glyphicon-list"></i>
-									<span class="title"> Registro de Censo </span><i class="icon-arrow"></i>
-									<span class="selected"></span>
-								</a>
 							<ul class="sub-menu">
 
 								<li>
@@ -38,17 +32,17 @@
 								</li>
 								<li>
 									<a href="consulta.php">
-										<span class="title">Consulta</span>
+										<span class="title">Reportes</span>
 									</a>
 								</li>
-								<li>
-									<a href="../clip-one-rtl/index.html">
-										<span class="title"> RTL Version (Por si necesitan agregar algo) </span>
-									</a>
-								</li>
-							</ul>
+
 							</ul>
 						</li>
+						<li>
+							<a href="pagina_mensaje.php"><i class="clip-bubble-2"></i>
+								<span class="title"> Mensajes </span>
+								<span class="selected"></span>
+							</a>
 						</li>
 
 					</ul>

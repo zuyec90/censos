@@ -97,21 +97,12 @@
 									</a>
 								</li>
 								<li>
-									<a href="pages_calendar.html">
-										<i class="clip-calendar"></i>
-										&nbsp;Calendario
-									</a>
-								<li>
 									<a href="pagina_mensaje.php">
 										<i class="clip-bubble-4"></i>
 										&nbsp;Mensajes
 									</a>
 								</li>
 								<li class="divider"></li>
-								<li>
-									<a href="utility_lock_screen.html"><i class="clip-locked"></i>
-										&nbsp;Contraseña </a>
-								</li>
 								<li>
 									<a href="login_example1.html">
 										<i class="clip-exit"></i>
