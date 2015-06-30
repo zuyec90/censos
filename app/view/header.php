@@ -102,7 +102,6 @@
 										&nbsp;Mensajes
 									</a>
 								</li>
-								<li class="divider"></li>
 								<li>
 									<a href="login_example1.html">
 										<i class="clip-exit"></i>

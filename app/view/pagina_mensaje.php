@@ -206,11 +206,6 @@ $User = $MSJ->ConsultaUser();
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<i class="fa fa-envelope-o"></i>Bandeja de entrada
-							<div class="panel-tools">
-								<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-									<i class="fa fa-question"></i>
-								</a>
-							</div>
 						</div>
 						<div class="panel-body messages ">
 							<div>
