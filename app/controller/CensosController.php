@@ -29,7 +29,7 @@ class censo extends DataModel
 
 			$resultado= $minutos2.':'.$segundos_2.' Minutos';
 
-		}elseif($segundos>3599 && $segundos<86400){/* horas */
+		}elseif($segundos>3599 && $segundos<86400){ /* horas */
 
 			$resultado= $horas.':'.$minutos2.':'.$segundos_2;
 
@@ -95,9 +95,9 @@ class censo extends DataModel
 						// cambiar segun base de datos INSERT
 			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
 
-			$sql = "INSERT INTO `jefeflia` ( `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES ( '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
+			$sql = "INSERT INTO `jefeflia` ( `idjefe_familia`,`nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES (NULL, '".$datos['nombres']."', '".$datos['apellidos']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
 
-			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
+			mysql_query($sql) or die ('Error 201 no se pudo crear el usuario');
 
 				return "1";
 		}
@@ -133,6 +133,8 @@ class censo extends DataModel
 	{
 
 		$this->Conect();
+
+		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '', NULL, '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', NULL, NULL, NULL, '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', NULL, NULL, NULL, NULL, NULL, '".$datos['status']."')";
 
 		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido'], $datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
