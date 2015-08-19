@@ -42,7 +42,30 @@ $Jefe = new Censo;
 	<!-- inicio: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
+
 		<?php require_once('header.php'); ?>
+
+		<script type="text/javascript"> 
+			function revisar() {
+				var nombre = document.getElementById("nombre").value;
+				var destinatario = document.getElementById("apellido").value;
+				var mensaje = document.getElementById("sexo").value;
+					if(formulario.nombre == ""){ 
+						alert('Debe ingresar el nombre'); 
+						return;
+					}
+					if(formulario.apellido == ""){
+						alert('Debes ingresar el apellido');
+						return; 
+					}
+					if(formulario.sexo == ""){
+						alert('Debes ingresar el sexo');
+						return; 
+					}
+				document.getElementById("form").submit();
+			} 
+		</script>
+	
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
@@ -97,16 +120,17 @@ $Jefe = new Censo;
 						</form>
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="enviar()"></input>
+								<input type="button" value="Enviar" class="btn btn-primary" onclick="revisar()"></input>
 							</div>
 
 					</div>
 					<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
 					<!-- final: BOOTSTRAP EXTED MODALS -->
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
+
 		<div id="panel-config" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
 
-	 	<form action="../lib/FamiliarRegistrar.php" method="post" role="form" >
+	 	<form action="../lib/FamiliarRegistrar.php" method="post" role="form" onsubmit="return revisar()">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 					&times;
@@ -121,23 +145,24 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
 									Nombres
 							</label>
-									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el nombre" required/>
 									<input type="hidden" class="form-control" id="idjefe_familia" name="idjefe_familia" value="<?php echo $idjefe_familia;?>">
+
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
 									Apellidos
 							</label>
-									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
+									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el Apellido" required/>
 							<div>
 							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								Sexo
 							</label>
 								<div>
 									<label class="radio-inline">
-									<input type="radio" class="grey" value="f" name="sexo" id="sexo">
+									<input type="radio" class="grey" value="f" name="sexo" id="sexo" title="Seleccione el sexo" required/>
 										Femenino
 									</label>
 									<label class="radio-inline">
-										<input type="radio" class="grey" value="m" name="sexo"  id="sexo">
+										<input type="radio" class="grey" value="m" name="sexo"  id="sexo" title="Seleccione el sexo" required/>
 										 Masculino
 									</label>
 								</div>
@@ -155,26 +180,26 @@ $Jefe = new Censo;
 									E
 								</label>
 							</div>
-							<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8">
+							<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8" pattern="[0-9]*">
 
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">
 									Fecha Nacimiento
 							</label>
-								<input type="date" class="form-control" name="fecha_nacimiento" min="2000-01-02"><br>
+								<input type="date" class="form-control" name="fecha_nacimiento" min="2000-01-02" title="Ingrese la fecha de nacimiento" required/><br>
 							<label class="col-sm-3 control-label">
 									Edad
 							</label>
-							<input type="text" class="form-control" id="edad" name="edad" placeholder="">
+							<input type="text" class="form-control" id="edad" name="edad" placeholder="" pattern="[0-9]*" maxlength="3" title="Ingrese la edad" required/>
 							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								Discapacidad
 							</label>
 								<div>
 									<label class="radio-inline">
-									<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado">
+									<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado" title="Favor seleccione" required/>
 										si
 									</label>
 									<label class="radio-inline">
-										<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
+										<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado" title="Favor seleccione" required/>
 										 no
 									</label>
 
@@ -189,11 +214,11 @@ $Jefe = new Censo;
 							</label>
 							<div>
 								<label class="radio-inline">
-									<input type="radio" class="grey" value="si" name="Embarazo_tempr" id="Embarazo_tempr_si">
+									<input type="radio" class="grey" value="si" name="Embarazo_tempr" id="Embarazo_tempr_si" title="Favor Seleccione" required/>
 										Si
 								</label>
 								<label class="radio-inline">
-									<input type="radio" class="grey" value="no" name="Embarazo_tempr"  id="Embarazo_tempr_no">
+									<input type="radio" class="grey" value="no" name="Embarazo_tempr"  id="Embarazo_tempr_no" title="Favor Seleccione" required/>
 										No
 								</label>
 							</div>
@@ -201,11 +226,12 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label">
 									Parentesco
 							</label>
-									<input type="text" class="form-control" id="parentesco" name="parentesco" placeholder="">
+									<input type="text" class="form-control" id="parentesco" name="parentesco" title="Favor Seleccione" required/>
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
 									Grado Instrucción
 							</label>
-									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
+
+									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion" required>
 										<option value="">&nbsp;</option>
 										<option value="nivel_instruccion">Sin Instrucción</option>
 										<option value="nivel_instruccion">Básica</option>
@@ -221,11 +247,11 @@ $Jefe = new Censo;
 								</label>
 								<div>
 									<label class="radio-inline">
-										<input type="radio" class="grey" value="si" name="cne" id="cne_si">
+										<input type="radio" class="grey" value="si" name="cne" id="cne_si" title="Favor seleccione" required/>
 										Si
 									</label>
 									<label class="radio-inline">
-										<input type="radio" class="grey" value="no" name="cne"  id="cne_no">
+										<input type="radio" class="grey" value="no" name="cne"  id="cne_no" title="Favor Seleccione" required/>
 										No
 									</label>
 								</div>
@@ -233,7 +259,7 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label">
 									Profesión
 							</label>
-							<input type="text" class="form-control" id="profesion" name="profesion" placeholder="">
+							<input type="text" class="form-control" id="profesion" name="profesion" placeholder="" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el nombre" required/>
 							<div class="form-group">
 								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 										Pensionado
@@ -264,7 +290,7 @@ $Jefe = new Censo;
 				<button type="button" data-dismiss="modal" class="btn btn-danger">
 					Cancelar
 				</button>
-				<input type="submit" class="btn btn-success" name="enviar" value="Registrar">
+				<input type="submit" class="btn btn-success" name="enviar" value="Registrar" onclick="validar()">
 
 
 			</div>
