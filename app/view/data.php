@@ -139,8 +139,24 @@ $resultado = $user->Seleccionar();
 												<td>
 													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="../lib/UserEliminar.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Elimina">
-													<i class="fa fa-trash-o"></i></a>
+													<div class="message-actions">
+														<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+															<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+																		<h4 class="modal-title">Eliminar Mensaje</h4>
+																	</div>
+																	<div class="modal-body">
+																		Desea eliminar este mensaje?
+																	</div>
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+																		<a href="../lib/UserEliminar.php?id_user=<?php echo $users['id_user'];?>" name="id_user" type="button"class="btn btn-danger" >Eliminar</a>
+																	</div>
+																</div>
+															</div>
+													</div>
 												</td>
 											</tr>
 											<?php }?>

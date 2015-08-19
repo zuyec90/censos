@@ -27,10 +27,10 @@ $cadena = $MSJ->Selecthijos($_POST['id_notificacion']);
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								<h4 class="modal-title">Eliminar Mensaje</h4>
+								<h4 class="modal-title">Eliminar Mensajes</h4>
 							</div>
 							<div class="modal-body">
-								Desea eliminar este mensaje?
+								Desea eliminar todos los mensajes de este usuario?
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
