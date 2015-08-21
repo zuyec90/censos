@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2015 a las 22:41:07
+-- Tiempo de generación: 06-05-2010 a las 07:56:21
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.5.19
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `censo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bitacora`
+--
+
+CREATE TABLE IF NOT EXISTS `bitacora` (
+`id_bitacora` int(255) NOT NULL,
+  `id_user` int(255) NOT NULL,
+  `idjefe_familia` int(255) NOT NULL,
+  `fecha_accion` date NOT NULL,
+  `accion` varchar(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `bitacora`
+--
+
+INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES
+(1, 0, 0, '2015-08-03', 'Eliminar');
 
 -- --------------------------------------------------------
 
@@ -46,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `grupo_fliar` (
   `ingreso_mensual` varchar(6) DEFAULT NULL COMMENT 'Ingreso mensual de la persona del grupo familiar',
   `observacion` varchar(50) DEFAULT NULL COMMENT 'Si se le desea agregar alguna otra observacion',
   `status` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
 
 --
 -- Volcado de datos para la tabla `grupo_fliar`
@@ -61,7 +82,8 @@ INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, 
 (12, 4, 123123, 'dasdasd', 'dasdasd', 'f', '2015-06-10', 31231, 'da', '', 'si', 'eqweqw', 'nivel_instruccion', 'si', 'eqweqwe', 'si', '231231', 'wqeqweqweqwe', 1),
 (13, 0, 20603430, 'edelis', 'perez', 'f', '2000-01-02', 23, '', '', 'no', 'hija', 'nivel_instruccion', 'si', 'lalal', 'no', '2000', 'hiiiii', 1),
 (14, 0, NULL, 'ede', '', '', '0000-00-00', 0, NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, 0),
-(15, 0, NULL, 'lola', '', '', '0000-00-00', 0, NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, 0);
+(15, 0, NULL, 'lola', '', '', '0000-00-00', 0, NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, 0),
+(17, 0, NULL, 'PRUEBA', '', '', '0000-00-00', 0, NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -105,9 +127,9 @@ CREATE TABLE IF NOT EXISTS `jefeflia` (
 INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`, `fecha_creacion`) VALUES
 (1, 'ASDASDASD', 'sdasDASDASD', 'f', 12312312, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00 00:00:00'),
 (2, 'ASDASDASD3213123', 'sdasDASDASD', '', 11123333, '2015-06-25', 213, '', '', '123123', '', '', '', '', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', '', '', 1, 'ASDASWDAS ', '', '', 123123, '0000-00-00 00:00:00'),
-(4, 'ASDASDASD', 'sdasDASDASD', 'f', 22234542, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 1, 'ASDASWDAS ', 'si', 'Mensual', 123123, '2015-06-28 10:56:00'),
+(4, 'ASDASDASD', 'sdasDASDASD', 'f', 22234542, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123, '2015-06-28 10:56:00'),
 (5, 'A', 'sda', 'f', 23131231, '2015-06-25', 213, 'm', 'si', '123123', 'si', '23123', 'si', 'WEQWEQWEQWEQWEQWEQWE', 2147483647, 2147483647, 2147483647, 'sadas@sdas.asd', 'soltero (a', 'BÃ¡sica', 0, 'ASDASWDAS ', 'si', 'Mensual', 123123, '0000-00-00 00:00:00'),
-(6, 'ede', 'sum', 'v', 20603430, '1912-03-04', 23, 'f', 'si', '1d', 'no', '', 'no', '', 0, 0, 0, '', 'soltero (a', 'Sin InstrucciÃ³n', 1, 'dsasdasd', 'no', '', 0, '0000-00-00 00:00:00'),
+(6, 'ede', 'sum', 'v', 20603430, '1912-03-04', 23, 'f', 'si', '1d', 'no', '', 'no', '', 0, 0, 0, '', 'soltero (a', 'Sin InstrucciÃ³n', 0, 'dsasdasd', 'no', '', 0, '0000-00-00 00:00:00'),
 (7, 'ede', 'sdas', 'v', 21474836, '1913-03-03', 23, 'f', 'no', '1a', 'no', '', 'no', '', 0, 0, 0, '', 'soltero (a', 'Sin InstrucciÃ³n', 1, '', 'no', '', 0, '0000-00-00 00:00:00'),
 (9, 'TTRYRT', 'RT', 'v', 34534132, '1926-03-13', 231, 'f', 'si', '132', 'si', '3', 'no', '3123FSDDFSSDSDSDFSDS', 2147483647, 2147483647, 2147483647, 'saul_cfa@hotmail.com', 'soltero (a', 'BÃ¡sica', 1, 'DDSAASDASD', 'si', 'Diario', 123123, '0000-00-00 00:00:00'),
 (10, 'etetett', 'etetertet', 'v', 21312312, '1923-05-16', 121, 'm', 'si', '1231', 'si', '21312', 'si', '12fsdfsdfsdfsdfsdfsd', 2147483647, 2147483647, 2147483647, 'saul_cfa@hotmail.com', 'Casado (a)', 'TÃ©cnico Superior', 0, 'qweqwe', 'si', 'Semanal', 231231, '0000-00-00 00:00:00');
@@ -126,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `notificacion` (
   `mensaje` text NOT NULL,
   `fecha_creacion` date NOT NULL,
   `status` int(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `notificacion`
@@ -138,7 +160,7 @@ INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `
 (43, 0, 4, 5, 'dfsdfsdfsd', '2015-06-28', 1),
 (44, 0, 3, 5, 'sdfsdfsdfs', '2015-06-28', 1),
 (45, 0, 6, 5, 'fsdfsfsdf', '2015-06-28', 1),
-(46, 0, 6, 5, 'sdasdas', '2015-06-28', 1),
+(46, 0, 6, 5, 'sdasdas', '2015-06-28', 2),
 (47, 0, 2, 5, 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza clÂ´sica de la literatura del Latin, que data del aÃ±o 45 antes de Cristo, haciendo que este adquiera mas de 2000 aÃ±os de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontrÃ³ una de las palabras mÃ¡s oscuras de la lengua del latÃ­n, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latÃ­n, descubriÃ³ la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El Mal) por Cicero, escrito en el aÃ±o 45 antes de Cristo. Este libro es un tratado de teorÃ­a de Ã©ticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum', '2015-06-28', 2),
 (48, 47, 5, 2, 'dsasdasdasdasd', '2015-06-28', 1),
 (50, 0, 2, 5, 'sadasdasd', '2015-06-29', 2),
@@ -146,7 +168,9 @@ INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `
 (52, 48, 2, 5, 'asdasdasdas que vaina ', '2015-06-29', 1),
 (53, 47, 5, 2, 'dasdahjsdvhasvdhgasvdhgsvadhgasvd dsfsgdfvhsdvfhsvdfhvsdhvfshdgfvhgsdvfhgsdvfhgsd f sgdh fgs vdfhgs vdfh gsvdhgf svdhg fsdhg fshgd vghsd vfhgs dvfhgs dvfhg svdfhgs', '2015-06-29', 0),
 (54, 47, 2, 5, 'que vaina ', '2015-06-29', 0),
-(55, 50, 5, 2, 'miera esta vaina', '2015-06-29', 0);
+(55, 50, 5, 2, 'miera esta vaina', '2015-06-29', 0),
+(56, 0, 6, 5, 'fbrwsdbcsnvfejmirebvsduibufvig', '2015-08-19', 2),
+(57, 0, 6, 5, 'thddgrsdhthtrth', '2015-08-19', 2);
 
 -- --------------------------------------------------------
 
@@ -204,8 +228,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`, `fecha_creado`) VALUES
-(1, 'd', '', 0, '14', 12, 'f', 'fd', 'df', 0, '1', 'gfds', 3, '2015-05-13'),
-(2, 'zuye', 'zxczx', 0, '2147483647', 2147483647, '', '', '', 0, '0', 'vocero1', 3, '2015-05-29'),
+(1, 'd', '', 0, '14', 12, 'f', 'fd', 'df', 0, '1', 'gfds', 2, '2015-05-13'),
+(2, 'zuye', 'zxczx', 0, '2147483647', 2147483647, '', '', '', 0, '0', 'vocero1', 2, '2015-05-29'),
 (3, 'ddq', 'dded1sdasd', 231231231, 'zuyecci@gmail.com1', 2147483647, 'm', 'asdfghjkl1', 'usuario11', 1, 'fcg1sd', 'fgf1', 1, '2015-05-29'),
 (4, 'sadasd', 'sadasd', 125216, 'saul_cfa@hotmail.com', 1165161, 'f', 'asdasdasdasdasd', 'usuario1', 1, 'gvghv', 'asdasd', 1, '2015-05-30'),
 (5, 'sdasd', 'dasdasd', 45616514, 'sdasdasdasdas@sadasd.asda', 1561616, 'm', 'dasdasd', 'usuario1', 1, 'asdasd', 'asdasd', 3, '2015-05-30'),
@@ -214,6 +238,12 @@ INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celu
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `bitacora`
+--
+ALTER TABLE `bitacora`
+ ADD PRIMARY KEY (`id_bitacora`);
 
 --
 -- Indices de la tabla `grupo_fliar`
@@ -256,10 +286,15 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `bitacora`
+--
+ALTER TABLE `bitacora`
+MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `grupo_fliar`
 --
 ALTER TABLE `grupo_fliar`
-MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `jefeflia`
 --
@@ -269,7 +304,7 @@ MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria
 -- AUTO_INCREMENT de la tabla `notificacion`
 --
 ALTER TABLE `notificacion`
-MODIFY `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
+MODIFY `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT de la tabla `perfil`
 --
