@@ -407,10 +407,10 @@
 														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
 															<option value="">&nbsp;</option>
 															<option value="Sin Instrucción">Sin Instrucción</option>
-															<option value="Básica">Básica</option>
+															<option value="Basica">Básica</option>
 															<option value="Bachiller">Bachiller</option>
-															<option value="Técnico Medio">Técnico Medio</option>
-															<option value="Técnico Superior">Técnico Superior</option>
+															<option value="Tecnico Medio">Técnico Medio</option>
+															<option value="Tecnico Superior">Técnico Superior</option>
 															<option value="Universitario">Universitario</option>
 															<option value="Postgrado">Postgrado</option>
 														</select>

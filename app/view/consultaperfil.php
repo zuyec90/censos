@@ -39,21 +39,19 @@ $respuesta = $censo->Selectjefe();
 			<!--inicio: PAGE -->
 			<div class="main-content">
 				<!--inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div id="panel-config" class="modal fade" tabindex="-1" data-width="160" style="display: none;" data-backdrop="static" data-keyboard="false" style="display: none;">
-			<div class="modal-header">
-
-				<h4 class="modal-title">¿Eliminar?</h4>
-			</div>
-
-			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-primary">
-					Cancelar
-				</button>
-				<button type="button" data-dismiss="modal" class="btn btn-danger" href="panel_projects">
-					Eliminar
-				</button>
-			</div>
-		</div>
+				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="false" style="display: block; margin-top: -102.5px;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">× &times;</button>
+								<h4 class="modal-title">Desea eliminar este Jefe de Familia?</h4>
+						</div>
+													
+						<div class="modal-footer">
+							<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
+							<input type="button" value="Eliminar" class="btn btn-danger"></input>
+						</div>
+					</div>
+				</div>	
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -120,9 +118,10 @@ $respuesta = $censo->Selectjefe();
 													<i class="fa fa-trash-o"></i></a>
 												</td>
 											</tr>
-											<?php }?>
+										<?php }?>
 										</tbody>
 									</table>
+
 								</div>
 							</div>
 							<!-- fin: DYNAMIC TABLE PANEL -->
@@ -159,17 +158,23 @@ $respuesta = $censo->Selectjefe();
 		<script src="../../js/main.js"></script>
 		<!-- fin: MAIN JAVASCRIPTS -->
 		<!--inicio: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
 		<script type="text/javascript" src="../../plugins/select2/select2.min.js"></script>
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
 		<script src="../../js/table-data.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="../../js/ui-modals.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				UIModals.init();
 				TableData.init();
 			});
 		</script>
+
 	</body>
 	<!-- fin: BODY -->
 </html>
