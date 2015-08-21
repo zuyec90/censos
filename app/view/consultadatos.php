@@ -42,9 +42,7 @@ $Jefe = new Censo;
 	<!-- inicio: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
-
 		<?php require_once('header.php'); ?>
-
 		<script type="text/javascript"> 
 			function revisar() {
 				var nombre = document.getElementById("nombre").value;
@@ -65,7 +63,6 @@ $Jefe = new Censo;
 				document.getElementById("form").submit();
 			} 
 		</script>
-	
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
@@ -120,7 +117,7 @@ $Jefe = new Censo;
 						</form>
 							<div class="modal-footer">
 								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="revisar()"></input>
+								<input type="button" value="Enviar" class="btn btn-primary"></input>
 							</div>
 
 					</div>
@@ -290,7 +287,7 @@ $Jefe = new Censo;
 				<button type="button" data-dismiss="modal" class="btn btn-danger">
 					Cancelar
 				</button>
-				<input type="submit" class="btn btn-success" name="enviar" value="Registrar" onclick="validar()">
+				<input type="submit" class="btn btn-success" name="enviar" value="Registrar">
 
 
 			</div>
