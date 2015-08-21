@@ -151,7 +151,7 @@
 														Nombres <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+														<input type="text" class="form-control" id="nombre" name="nombres" placeholder="">
 													</div>
 												</div>
 												<div class="form-group">
@@ -159,7 +159,7 @@
 														Apellidos <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="apellido" name="apellido" placeholder="">
+														<input type="text" class="form-control" id="apellido" name="apellidos" placeholder="">
 													</div>
 												</div>
 
@@ -488,7 +488,7 @@
 														Nombre:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="nombre"></p>
+														<p class="form-control-static display-value" data-display="nombres"></p>
 													</div>
 												</div>
 												<div class="form-group">
@@ -496,7 +496,7 @@
 														Apellido
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="apellido"></p>
+														<p class="form-control-static display-value" data-display="apellidos"></p>
 													</div>
 												</div>
 												<h3>Perfil</h3>

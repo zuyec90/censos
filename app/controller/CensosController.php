@@ -29,7 +29,7 @@ class censo extends DataModel
 
 			$resultado= $minutos2.':'.$segundos_2.' Minutos';
 
-		}elseif($segundos>3599 && $segundos<86400){/* horas */
+		}elseif($segundos>3599 && $segundos<86400){ /* horas */
 
 			$resultado= $horas.':'.$minutos2.':'.$segundos_2;
 
@@ -95,9 +95,9 @@ class censo extends DataModel
 						// cambiar segun base de datos INSERT
 			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
 
-			$sql = "INSERT INTO `jefeflia` ( `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES ( '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
+			$sql = "INSERT INTO `jefeflia` ( `idjefe_familia`,`nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES (NULL, '".$datos['nombres']."', '".$datos['apellidos']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
 
-			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
+			mysql_query($sql) or die ('Error 201 no se pudo crear el usuario');
 
 				return "1";
 		}
@@ -134,6 +134,8 @@ class censo extends DataModel
 
 		$this->Conect();
 
+		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, NULL, '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', ".$datos['Tipo_incapacitado'].", '".$datos['Embarazo_tempr']."', '".$datos['parentesco'].", '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+
 		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido'], $datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
 		if (!empty($valido)){
@@ -143,9 +145,9 @@ class censo extends DataModel
 			// cambiar segun base de datos INSERT
 
 
-			$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '".$datos['idjefe_familia']."', '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', '".$datos['Tipo_incapacitado']."', '".$datos['Embarazo_tempr']."', '".$datos['parentesco']."', '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, NULL, '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', ".$datos['Tipo_incapacitado'].", '".$datos['Embarazo_tempr']."', '".$datos['parentesco'].", '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
 
-			mysql_query($sql) or die ('error 201 no se pudo crear el usuario');
+			mysql_query($sql) or die ('Error 204 no se pudo registrar el usuario');
 
 				return "1";
 		}
@@ -161,7 +163,7 @@ class censo extends DataModel
 
 		}
 		//echo $sql;
-		$respuesta = mysql_query($sql) or die ("Error 203 no se encontraron resultados");
+		$respuesta = mysql_query($sql) or die ("Error 205 no se encontraron resultados");
 		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
@@ -173,7 +175,7 @@ class censo extends DataModel
 		if (!empty($datos['id_familiar'])) {
 			$sql = "UPDATE `grupo_fliar` SET `cedula` = '".$datos['cedula']."', `nombre = '".$datos['nombre']."', `apellido` = '".$datos['apellido']."', `sexo` = '".$datos['sexo']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."', `edad` = '".$datos['edad']."', `incapacitado` = '".$datos['incapacitado']."', `Tipo_incapacitado` = '".$datos['Tipo_incapacitado']."', `Embarazo_tempr` = '".$datos['Embarazo_tempr']."', `parentesco` = '".$datos['parentesco']."', `nivel_instruccion` = '".$datos['nivel_instruccion']."', `cne` = '".$datos['cne']."', `profesion` = '".$datos['profesion']."', `pensionado` = '".$datos['pensionado']."', `ingreso_mensual` = '".$datos['ingreso_mensual']."', `observacion` = '".$datos['observacion'] ."' WHERE `id_familiar` = '".$datos['id_familiar'] ."' ";
 			echo $sql;
-			mysql_query($sql) or die ('Error 204 no se pueden modificar los datos');
+			mysql_query($sql) or die ('Error 206 no se pueden modificar los datos');
 
 			return "1";
 		}
@@ -188,7 +190,7 @@ class censo extends DataModel
 		$this->Conect();
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
-		$respuesta = mysql_query($sql) or die ("Error 202 no se logro consultar");
+		$respuesta = mysql_query($sql) or die ("Error 207 no se logro consultar");
 		$correcto = mysql_fetch_assoc($respuesta);
 
 		return $correcto; //imprimirlo en la vista
@@ -201,12 +203,12 @@ class censo extends DataModel
 		$this->Conect();
 		if (!empty($id)) {
 			$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
-			$Selection = mysql_query($sql) or die ("Error 203 no se logró consultar");
+			$Selection = mysql_query($sql) or die ("Error 208 no se logró consultar");
 			$respuesta = mysql_fetch_assoc($Selection);
 
 		}else{
 			$sql = "SELECT * FROM `jefeflia` WHERE  `status` <> '0'";
-			$respuesta = mysql_query($sql) or die ("Error 204 no se logró consultar");
+			$respuesta = mysql_query($sql) or die ("Error 208 no se logró consultar");
 
 		}
 
@@ -221,7 +223,7 @@ class censo extends DataModel
 			if (!empty($id)) {
 				$sql = "SELECT * FROM `grupo_fliar` WHERE `id_familiar`= '".$id."' AND  `status` <> 0 ";
 
-				$respuesta = mysql_query($sql) or die ("Error 203 no se logró consultar");
+				$respuesta = mysql_query($sql) or die ("Error 209 no se logró consultar");
 
 			}else{
 				return 0;
@@ -238,10 +240,7 @@ class censo extends DataModel
 
 		if (!empty($id)) {
 			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia`  = '".$id."' ";
-			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
-
-			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id_."' ";
-			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
+			mysql_query($sql) or die ('Error 210 no se pudo eliminar');
 
 			return "1";
 		}
@@ -256,8 +255,8 @@ class censo extends DataModel
 
 		if (!empty($id)) {
 
-			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id_."' ";
-			mysql_query($sql) or die ('Error 205 no se pudo eliminar');
+			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id."' ";
+			mysql_query($sql) or die ('Error 211 no se pudo eliminar');
 
 			return "1";
 		}
@@ -272,11 +271,11 @@ class censo extends DataModel
 			$this->Conect();
 			if (!empty($id_user)) {
 				$sql = "SELECT * FROM `usuario` WHERE `id_user` = '".$id_user."' ";
-				$SelectionMsj = mysql_query($sql) or die ("Error 307 no se logró consultar");
+				$SelectionMsj = mysql_query($sql) or die ("Error 212 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
 				$sql = "SELECT * FROM `usuario` WHERE  `status` <> 2 and `perfil` = 0";
-				$respuesta = mysql_query($sql) or die ("Error 308 no se logró consultar");
+				$respuesta = mysql_query($sql) or die ("Error 212 no se logró consultar");
 			}
 			return $respuesta;
 		}

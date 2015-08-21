@@ -114,8 +114,23 @@ $respuesta = $censo->Selectjefe();
 												<td>
 													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
 													<i class="fa fa-edit"></i></a>&nbsp;
-													<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-bricky tooltips" data-placement="top" data-original-title="Eliminar">
-													<i class="fa fa-trash-o"></i></a>
+													<div class="message-actions">
+														<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+															<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+																		<h4 class="modal-title">Eliminar Perfil</h4>
+																	</div>
+																	<div class="modal-body">
+																		Desea eliminar este perfil?
+																	<div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+																		<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" name="idjefe_familia" type="button"class="btn btn-danger" >Eliminar</a>
+																	</div>
+																</div>
+															</div>
+													</div>
 												</td>
 											</tr>
 										<?php }?>
