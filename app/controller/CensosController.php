@@ -134,7 +134,7 @@ class censo extends DataModel
 
 		$this->Conect();
 
-		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, NULL, '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', ".$datos['Tipo_incapacitado'].", '".$datos['Embarazo_tempr']."', '".$datos['parentesco'].", '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '', NULL, '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', NULL, NULL, NULL, '".$datos['parentesco']."', '".$datos['nivel_instruccion']."', NULL, NULL, NULL, NULL, NULL, '1')";
 
 		$valido = $this->VerificarFamiliar($datos['nombre'], $datos['apellido'], $datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
 
@@ -142,10 +142,9 @@ class censo extends DataModel
 
 		return "0";
 		}else{
-			// cambiar segun base de datos INSERT
 
 
-		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, NULL, '".$datos['cedula']."', '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', '".$datos['incapacitado']."', ".$datos['Tipo_incapacitado'].", '".$datos['Embarazo_tempr']."', '".$datos['parentesco'].", '".$datos['nivel_instruccion']."', '".$datos['cne']."', '".$datos['profesion']."', '".$datos['pensionado']."', '".$datos['ingreso_mensual']."', '".$datos['observacion']."', '1')";
+		$sql = "INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES (NULL, '', NULL, '".$datos['nombre']."', '".$datos['apellido']."', '".$datos['sexo']."', '".$datos['fecha_nacimiento']."', '".$datos['edad']."', NULL, NULL, NULL, '".$datos['parentesco']."', '".$datos['nivel_instruccion']."', NULL, NULL, NULL, NULL, NULL, '1')";
 
 			mysql_query($sql) or die ('Error 204 no se pudo registrar el usuario');
 
@@ -279,6 +278,15 @@ class censo extends DataModel
 			}
 			return $respuesta;
 		}
+
+
+	public function Bitacora($data= Null)
+	{
+		$sql = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '', '', '".$data['fecha_accion'] ."', '".$data['accion'] ."');";
+		mysql_query($sql) or die ('213 NO existen datos');
+
+
+	}
 
 
 }

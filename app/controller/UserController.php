@@ -36,8 +36,6 @@ class User extends DataModel
 			return 0;
 		}
 
-
-
 	}
 
 
@@ -127,13 +125,6 @@ class User extends DataModel
 	}
 
 
-	public function Bitacora($data= Null)
-	{
-		$sql = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '', '', '".$data['fecha_accion'] ."', '".$data['accion'] ."');";
-		mysql_query($sql) or die ('NO existen datos');
-
-
-	}
 }
 
 
