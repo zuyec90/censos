@@ -107,7 +107,7 @@ $respuesta = $censo->Selectjefe();
 											<tr>
 												<td><?php echo $censo['idjefe_familia'];?></td>
 
-												<td><?php echo $censo['nombres']; ?></td>
+												<td><a href="consultadatos.php"> <?php echo $censo['nombres']; ?> </a></td> 
 												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
 												<td><?php echo $censo['cedula'];?></td>
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
