@@ -326,7 +326,7 @@
 												</div>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Institución<span class="symbol required"></span>
+														Institución<span class=""></span>
 													</label>
 													<div class="col-sm-4">
 																<input type="text" class="float-left margin-select" name="institucion" id="institucion" placeholder="">

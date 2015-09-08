@@ -80,7 +80,7 @@ $respuesta = $censo->Selectjefe();
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!--inicio: PAGE CONTENT -->
-					<div class="row">
+					<div class="row"><a href="">
 						<div class="col-md-12">
 							<!--inicio: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
@@ -107,7 +107,7 @@ $respuesta = $censo->Selectjefe();
 											<tr>
 												<td><?php echo $censo['idjefe_familia'];?></td>
 
-												<td><?php echo $censo['nombres'];?></td>
+												<td><?php echo $censo['nombres']; ?></td>
 												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
 												<td><?php echo $censo['cedula'];?></td>
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>

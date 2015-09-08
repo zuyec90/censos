@@ -1,9 +1,11 @@
 <?php
-include ('../controller/CensosController.php');
+include ('../controller/BitacoraController.php');
 
-$resultado = new Censo;
+$resultado = new Bitacora;
 
-$reporte = $resultado->Bitacora($id_bitacora);
+$registro = $resultado->Registro($id_bitacora);
+$modificacion = $resultado->Modificacion($id_bitacora);
+$consulta = $resultado->Consultas($id_bitacora);
 
 ?>
 
@@ -101,17 +103,17 @@ $reporte = $resultado->Bitacora($id_bitacora);
 													</label>
 												</div></td>
 												<td>
-													<input type="text" value="<?php echo $reporte['nombre']; ?>" name="nombre" >
-													<input type="hidden" value="<?php echo $reporte['id_user']; ?>" name="id_user" >
+													<input type="text" value="<?php echo $registro['nombre']; ?>" name="nombre" >
+													<input type="hidden" value="<?php echo $registro['id_user']; ?>" name="id_user" >
 												</td>
 												<td class="hidden-xs">
-													<input type="text" value="<?php echo $reporte['idjefe_familia']; ?>" name="idjefe_familia">
+													<input type="text" value="<?php echo $registro['idjefe_familia']; ?>" name="idjefe_familia">
 												</td>
 												<td>
-													<input type="date" value="<?php echo $reporte['fecha_accion']; ?>" name="fecha_accion">
+													<input type="date" value="<?php echo $registro['fecha_accion']; ?>" name="fecha_accion">
 												</td>
 												<td class="hidden-xs"><span class="label label-sm label-warning">
-													<input type="text" value="<?php echo $reporte['accion']; ?>" name="accion">
+													<input type="text" value="<?php echo $registro['accion']; ?>" name="accion">
 												</span></td>
 											</tr>
 											
