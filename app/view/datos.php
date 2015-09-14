@@ -335,34 +335,57 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Cel. <span class="symbol required"></span>
+														Tel. Cel. <span class=""></span>
 													</label>
+													<div class="col-sm-2">
+														<select class="form-control" id="codigo_cel" name="codigo_cel">
+															<option value="">&nbsp;</option>
+															<option value="416">0416</option>
+															<option value="426">0426</option>
+															<option value="412">0412</option>
+															<option value="414">0414</option>
+															<option value="424">0424</option>
+														</select>
+													</div>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="telfcel" id="telfcel" placeholder="" maxlength="11">
+														<input type="text" class="float-left margin-select" name="telfcel" id="telfcel" placeholder="" maxlength="7">
+													</div>
+
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Tel. Hab. <span class=""></span>
+													</label>
+													<div class="col-sm-2">
+														<select class="form-control" id="codigo_hab" name="codigo_hab">
+															<option value="">&nbsp;</option>
+															<option value="0212">0212</option>
+														</select>
+													</div>
+													<div class="col-sm-4">
+																<input type="text" class="float-left margin-select" name="telfhab" id="telfhab" placeholder="" maxlength="7">
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Hab. <span class="symbol required"></span>
+														Tel. Ofic. <span class=""></span>
 													</label>
+													<div class="col-sm-2">
+														<select class="form-control" id="codigo_ofic" name="codigo_ofic">
+															<option value="">&nbsp;</option>
+															<option value="0212">0212</option>
+														</select>
+													</div>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="telfhab" id="telfhab" placeholder="" maxlength="11">
+																<input type="text" class="float-left margin-select" name="telfofic" id="telfofic" placeholder="" maxlength="7">
 													</div>
 												</div>
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Ofic. <span class="symbol required"></span>
-													</label>
-													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="telfofic" id="telfofic" placeholder="" maxlength="11">
-													</div>
-												</div>
-
-												<div class="form-group">
-													<label class="col-sm-3 control-label">
-														Email <span class="symbol required"></span>
+														Email <span class=""></span>
 													</label>
 													<div class="col-sm-7">
 														<input type="email" class="float-left margin-select" id="email" name="email" placeholder="nombre@ejemplo.com">
@@ -586,21 +609,21 @@
 														Tel. Cel:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="telfcel"></p>
+														<p class="form-control-static display-value" data-display="codigo_cel"></p><p class="form-control-static display-value" data-display="telfcel" ></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
 														Tel. Hab.:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="telfhab"></p>
+														<p class="form-control-static display-value" data-display="codigo_hab"></p><p class="form-control-static display-value" data-display="telfhab"></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">
 														Tel. Ofic.:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="telfofic"></p>
+														<p class="form-control-static display-value" data-display="codigo_ofic"></p><p class="form-control-static display-value" data-display="telfofic"></p>
 													</div>
 												</div><div class="form-group">
 													<label class="col-sm-3 control-label">

@@ -54,7 +54,7 @@ var FormWizard = function () {
                     required: true,
                 },
                 cedula: {
-                    minlength: 8,
+                    minlength: 6,
                     number: true,
                     required: true,
                 },
@@ -88,10 +88,6 @@ var FormWizard = function () {
                 },
                 institucion: {
                     minlength: 20,
-                },
-                telfcel: {
-                    minlength: 10,
-                    number: true
                 },
 
                 estado_civil: {
