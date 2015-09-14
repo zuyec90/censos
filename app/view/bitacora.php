@@ -3,9 +3,10 @@ include ('../controller/BitacoraController.php');
 
 $resultado = new Bitacora;
 
-$r = $resultado->Selectbitacora($idjefe_familia);
-$m = $resultado->SelectbitacoraUser($id_user);
+$r = $resultado->Selectbitacora();
+$m = $resultado->SelectbitacoraUser();
 $c = $resultado->BitacoraValidacionTiempo();
+$s = $resultado->Accion();
 
 ?>
 
@@ -110,10 +111,20 @@ $c = $resultado->BitacoraValidacionTiempo();
 													<input type="text" value="<?php echo $r['idjefe_familia']; ?>" name="idjefe_familia">
 												</td>
 												<td>
-													<input type="datetime" value="<?php echo $c['BitacoraValidacionTiempo']; ?>" name="BitacoraValidacionTiempo">
+													<input type="datetime" value="<?php echo $c['BitacoraValidacionTiempo']; ?>" name="fecha_accion">
 												</td>
 												<td class="hidden-xs"><span class="label label-sm label-warning">
-													<input type="text" value="<?php echo $r['accion']; ?>" name="accion">
+
+													<?PHP 
+														$s = $resultado->Accion();
+
+														if ($s['idjefe_familia'] == '1') { ?>
+														<input type="text" value="<?php echo $s['Accion']; ?>" name="accion">
+													<?PHP } ?>
+													<?PHP 
+														if ($s['idjefe_familia'] == '0') { ?>
+														<input type="text" value="<?php echo $s['Accion']; ?>" name="accion">
+													<?PHP } ?>
 												</span></td>
 											</tr>
 											

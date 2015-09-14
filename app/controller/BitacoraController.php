@@ -5,7 +5,19 @@ include ('../config/config.php');
 class Bitacora extends DataModel
 {
 
-	public function Registro($datos= Null)
+	public function Accion($accion=Null)
+	{
+		if(!empty($accion['idjefe_familia'])){
+
+			$sql= "SELECT * FROM `jefeflia` WHERE `status`= '1' " ;
+
+		}else{
+		$sql = "SELECT * FROM `jefeflia` WHERE  `status`= '0' " ;
+
+		}
+	}
+
+	public function bitacora($datos= Null)
 	{
 		$this->Conect();
 
@@ -19,6 +31,30 @@ class Bitacora extends DataModel
 			return "1";
 		}
 
+
+	}
+
+
+	public function Registro($datos = Null)
+	{
+
+		$this->Conect();
+
+		$cedula = $this->Verificarcenso($datos['cedula']); //los datos dentro del parentesis se pasan al INSERT luego de values
+
+		if (!empty($cedula)){
+
+		return "0";
+		}else{
+					
+			$datos['fecha_nacimiento'] = $datos['fecha_a']."-".$datos['fecha_m']."-".$datos['fecha_d'];
+
+			$sql = "INSERT INTO `jefeflia` ( `idjefe_familia`,`nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `telfcel`, `telfhab`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`) VALUES (NULL, '".$datos['nombres']."', '".$datos['apellidos']."', '".$datos['nacionalidad']."', '".$datos['cedula']."','".$datos['fecha_nacimiento']."' , '".$datos['edad']."', '".$datos['sexo']."', '".$datos['cne']."', '".$datos['tiempo_comunidad']."', '".$datos['incapacitado']."', '".$datos['tipo_incapacitado']."', '".$datos['pensionado']."', '".$datos['institucion']."', '".$datos['telfcel']."', '".$datos['telfhab']."', '".$datos['telfofic']."', '".$datos['email']."', '".$datos['estado_civil']."', '".$datos['nivel_instruccion']."', '1','".$datos['profesion']."', '".$datos['trabaja']."', '".$datos['clasificacion_ingreso_familiar']."', '".$datos['ingreso_mensual']."')";
+
+			mysql_query($sql) or die ('Error 201 no se pudo crear el usuario');
+
+				return "1";
+		}
 
 	}
 
@@ -47,6 +83,21 @@ class Bitacora extends DataModel
 		return $correcto; //imprimirlo en la vista
 
 
+	}
+
+	public function Elimino($id = Null)
+	{
+		$this->Conect();
+
+		if (!empty($id)) {
+			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia`  = '".$id."' ";
+			mysql_query($sql) or die ('Error 210 no se pudo eliminar');
+
+			return "1";
+		}
+		else{
+			return "0";
+		}
 	}
 
 	public function Selectbitacora($id = Null)
