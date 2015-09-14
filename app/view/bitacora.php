@@ -3,9 +3,9 @@ include ('../controller/BitacoraController.php');
 
 $resultado = new Bitacora;
 
-$registro = $resultado->Registro($id_bitacora);
-$modificacion = $resultado->Modificacion($id_bitacora);
-$consulta = $resultado->Consultas($id_bitacora);
+$r = $resultado->Selectbitacora($idjefe_familia);
+$m = $resultado->SelectbitacoraUser($id_user);
+$c = $resultado->BitacoraValidacionTiempo();
 
 ?>
 
@@ -103,17 +103,17 @@ $consulta = $resultado->Consultas($id_bitacora);
 													</label>
 												</div></td>
 												<td>
-													<input type="text" value="<?php echo $registro['nombre']; ?>" name="nombre" >
-													<input type="hidden" value="<?php echo $registro['id_user']; ?>" name="id_user" >
+													<input type="text" value="<?php echo $m['nombre']; ?>" name="nombre" >
+													<input type="hidden" value="<?php echo $m['id_user']; ?>" name="id_user" >
 												</td>
 												<td class="hidden-xs">
-													<input type="text" value="<?php echo $registro['idjefe_familia']; ?>" name="idjefe_familia">
+													<input type="text" value="<?php echo $r['idjefe_familia']; ?>" name="idjefe_familia">
 												</td>
 												<td>
-													<input type="date" value="<?php echo $registro['fecha_accion']; ?>" name="fecha_accion">
+													<input type="datetime" value="<?php echo $c['BitacoraValidacionTiempo']; ?>" name="BitacoraValidacionTiempo">
 												</td>
 												<td class="hidden-xs"><span class="label label-sm label-warning">
-													<input type="text" value="<?php echo $registro['accion']; ?>" name="accion">
+													<input type="text" value="<?php echo $r['accion']; ?>" name="accion">
 												</span></td>
 											</tr>
 											
