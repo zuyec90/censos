@@ -9,7 +9,7 @@
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body>
+	<body style= "text-align: justify;">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->
@@ -75,7 +75,7 @@
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1> Sistema <small>Control de censo</small></h1>
+								<h1><center> Bienvenido </center></h1>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -84,46 +84,35 @@
 					<!-- inicio: PAGE CONTENT -->
 
 					<div class="row">
-						<div class="col-sm-4">
+					<div class="col-sm-12">
+						<div class="core-box">
+								<div class="heading">
+									<center><h2>Reseña Historica Consejo Comunal "Santa Inés"</h2></center>
+								</div>
+								<div class="content">
+									El Consejo Comunal “Santa Inés” es una comunidad perteneciente a la Parroquia Sucre, Municipio Libertador del Distrito Capital. Deriva su nombre por medio de una asamblea de ciudadanos,  donde  a través de la participación popular lograron expresar sus ideas y opiniones, siendo aceptada en este caso por la mayoría la opinión de una de una de las participantes de la comunidad, el emplear como nombre del Consejo Comunal a “Santa Inés”, representado por los ciudadanos tanto a nivel religioso como la virgen de los jóvenes, como a nivel político por el nombre de la campaña política de reelección realizada por el presidente Hugo Chávez Frías en el año 2004. El Consejo Comunal “Santa Inés” posee como linderos la segunda calle de los Frailes, desde la entrada de Macayapa hasta el callejón San Luis, callejón San Antonio, parte del callejón las palmas y parte alta del muro de la segunda calle.
+								</div>
+						</div>
+					</div>
+						<div class="col-sm-6">
 							<div class="core-box">
 								<div class="heading">
 									<i class="clip-user-4 circle-icon circle-green"></i>
-									<h2>Gestionar Usuario</h2>
+									<h2>Misión del Consejo Comunal</h2>
 								</div>
 								<div class="content">
-									El administrador puede usar esta herramienta para administrar y controlar el acceso de los usuarios mediante un conjunto de permisos.
+									Promover y consolidar la democracia participativa y protagónica, mediante la promoción y el fortalecimiento de todas aquellas expresiones organizativas y comunitarias que propicien el ejercicio de la corresponsabilidad social en la gestión pública. Es decir que con solo ser miembro de alguna comunidad puedes y tienes el deber y derecho a la participación protagónica en cada uno de los ámbitos de tu comunidad puesto que tú tienes la última opinión. Los consejos comunales son la forma de participación más abierta al público o comunidad.
 								</div>
-								<a class="view-more" href="data.php">
-									<i class="clip-arrow-right-2"></i>
-								</a>
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-6">
 							<div class="core-box">
 								<div class="heading">
-									<i class="clip-stack-empty circle-icon circle-teal"></i>
-									<h2>Gestionar Censo</h2>
+									<i class=" clip-world circle-icon circle-teal"></i>
+									<h2>Visión del Consejo Comunal</h2>
 								</div>
 								<div class="content">
-									Aqui se obtendran los datos de los censados de una forma detallada y de forma ordenada donde se podran realizar cambios si este lo necesita. 
-								</div>
-								<a class="view-more" href="consultaperfil.php">
-									<i class="clip-arrow-right-2"></i>
-								</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="core-box">
-								<div class="heading">
-									<i class="clip-file-pdf circle-icon circle-bricky"></i>
-									<h2>Generar Reportes</h2>
-								</div>
-								<div class="content">
-									 Consulte los datos que sean de su interes de manera totalicidad, obteniendo un reporte en formato pdf para imprimir.
-								</div>
-								<a class="view-more" href="consulta.php">
-									<i class="clip-arrow-right-2"></i>
-								</a>
+									Generar un cambio revolucionario en la comunidad que propicie un desarrollo armónico local, logrando elevar el espíritu y nivel de nuestros pobladores, garantizan do seguridad, solidez, dinamismo, sustentabilidad, permanencia y equidad, en el crecimiento de la economía comunal, para garantizar una justa distribución de la riqueza mediante una plantificación estratégica, democrática, participativa y de consulta abierta de las y los habitantes de la comunidad en ambiente de sana paz y ética como las refleja, en el artículo 2 de la ley de los consejos comunales.
 							</div>
 						</div>
 					</div>
