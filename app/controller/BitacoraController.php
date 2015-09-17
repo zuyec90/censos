@@ -31,7 +31,6 @@ class Bitacora extends DataModel
 			return "1";
 		}
 
-
 	}
 
 

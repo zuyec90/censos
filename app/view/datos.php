@@ -498,7 +498,7 @@
 													</div>
 													<div class="col-sm-2 col-sm-offset-3">
 														<button class="btn btn-success next-step btn-block">
-															Registrar <i class="fa fa-arrow-circle-right"></i>
+															Continuar <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
 												</div>
@@ -684,7 +684,7 @@
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-8">
 														<button class="btn btn-success finish-step btn-block">
-															Finalizar <i class="fa fa-arrow-circle-right"></i>
+															Registrar <i class="fa fa-arrow-circle-right"></i>
 														</button>
 														<?php
 															if(!empty($_POST)){
