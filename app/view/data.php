@@ -86,7 +86,7 @@ $resultado = $user->Seleccionar();
 
 							</ol>
 							<div class="page-header">
-								<h1> Lista <small>de Usuarios</small></h1>
+								<h2> Lista <small>de Usuarios</small></h2>
 								<a href="form_registro.php"><button type="button" class="btn btn-info"><i class="clip-data">&nbsp;Crear Usuarios</i></button></a>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
@@ -100,21 +100,12 @@ $resultado = $user->Seleccionar();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 								<strong>Usuarios</strong>
-									<div class="panel-tools">
-										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-											<i class="fa fa-question"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-									</div>
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 										<thead>
 											<tr>
 												<th>N°&nbsp; &nbsp; </th>
-												<th>Foto</th>
 												<th>Nombre Completo</th>
 												<th class="hidden-xs">Usuario</th>
 												<th>Cargo</th>
@@ -128,27 +119,22 @@ $resultado = $user->Seleccionar();
 
 											<tr>
 												<td><?php echo $users['id_user'];?></td>
-												<td>
-													<a href="perfil.php">
-													<img src="../../images/avatar-1.jpg" alt="image"/></a>
-													</td>
 												<td><?php echo $users['nombre'];?></td>
 												<td class="hidden-xs"><?php echo $users['usuario'];?></td>
 												<td><?php echo $users['voceria'];?></td>
 												<td class="hidden-xs"><?php echo $users['email'];?></td>
 												<td>
-													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
+													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
 													<div class="message-actions">
-														<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
 															<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
 																<div class="modal-content">
 																	<div class="modal-header">
 																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																		<h4 class="modal-title">Eliminar Mensaje</h4>
-																	</div>
+																		<h4 class="modal-title">Eliminar Usuario</h4>	
+					  												</div>
 																	<div class="modal-body">
-																		Desea eliminar este mensaje?
+																		Desea eliminar este Usuario?
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -202,10 +188,15 @@ $resultado = $user->Seleccionar();
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../../plugins/DataTables/media/js/DT_bootstrap.js"></script>
 		<script src="../../js/table-data.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
+		<script src="../../js/ui-modals.js"></script>
+
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
+				UIModals.init();
 				TableData.init();
 			});
 		</script>

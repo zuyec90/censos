@@ -43,9 +43,8 @@ $respuesta = $censo->Selectjefe();
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">× &times;</button>
-								<h4 class="modal-title">Desea eliminar este Jefe de Familia?</h4>
-						</div>
-													
+							<h4 class="modal-title">Desea eliminar este Jefe de Familia?</h4>
+						</div>					
 						<div class="modal-footer">
 							<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
 							<input type="button" value="Eliminar" class="btn btn-danger"></input>
@@ -62,31 +61,25 @@ $respuesta = $censo->Selectjefe();
 							<ol class="breadcrumb">
 								<li>
 									<i class="clip-pencil"></i>
-									<a href="consultaperfil.php">
-										Consulta
-									</a>
+									<a href="consultaperfil.php">Consulta</a>
 								</li>
-								<li class="active">
-									Censo
+								<li class="active">Censo
 								</li>
-
 							</ol>
 							<div class="page-header">
-								<h1> Consulta <small>Lista de Censados</small></h1>
-
+								<h2>Lista de Censados</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!--inicio: PAGE CONTENT -->
-					<div class="row"><a href="">
+					<div class="row">
 						<div class="col-md-12">
 							<!--inicio: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<strong>Censo</strong>
-
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
@@ -97,46 +90,42 @@ $respuesta = $censo->Selectjefe();
 												<th class="hidden-xs">Apellidos</th>
 												<th>Cédula</th>
 												<th class="hidden-xs">Edad</th>
-
 												<th>Opciones</th>
 											</tr>
 										</thead>
 										<tbody>
-										<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
-
+											<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
 											<tr>
 												<td><?php echo $censo['idjefe_familia'];?></td>
-
 												<td><a href="consultadatos.php"> <?php echo $censo['nombres']; ?> </a></td> 
 												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
 												<td><?php echo $censo['cedula'];?></td>
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
 												<td>
-													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 45px;">
-													<i class="fa fa-edit"></i></a>&nbsp;
+													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
+													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
 													<div class="message-actions">
-														<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
-															<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+														<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 																		<h4 class="modal-title">Eliminar Perfil</h4>
-																	</div>
-																	<div class="modal-body">
+																</div>
+																<div class="modal-body">
 																		Desea eliminar este perfil?
-																	<div class="modal-footer">
-																		<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-																		<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" name="idjefe_familia" type="button"class="btn btn-danger" >Eliminar</a>
-																	</div>
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+																	<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" name="idjefe_familia" type="button"class="btn btn-danger" >Eliminar</a>
 																</div>
 															</div>
+														</div>
 													</div>
 												</td>
 											</tr>
 										<?php }?>
 										</tbody>
 									</table>
-
 								</div>
 							</div>
 							<!-- fin: DYNAMIC TABLE PANEL -->
@@ -189,7 +178,6 @@ $respuesta = $censo->Selectjefe();
 				TableData.init();
 			});
 		</script>
-
 	</body>
 	<!-- fin: BODY -->
 </html>

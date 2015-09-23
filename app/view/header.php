@@ -1,3 +1,6 @@
+
+
+
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<!-- inicio: TOP NAVIGATION CONTAINER -->
 			<div class="container">
@@ -8,8 +11,8 @@
 					</button>
 					<!-- fin: RESPONSIVE MENU TOGGLER -->
 					<!-- inicio: LOGO -->
-					<a class="nvbar-brand" href="home.php" style="font-size: 22px;text-decoration: none;font-style: italic;">
-						<img src="../../upload/logo1.png" class="rounded-img" width="55" height="50"> Consejo Comunal "Santa Inés
+					<a class="nvbar-brand" href="home.php" style="font-size: 22px;text-decoration: none; font-style: italic;">
+						<img src="../../images/1.jpg">Consejo Comunal "Santa Inés &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../images/2.jpg"> <!--<img src="img src="../../upload/logo1.png" class="rounded-img" width="55" height="50"">-->
 					</a>
 					<!-- fin: LOGO -->
 				</div>
@@ -19,7 +22,6 @@
 						<!-- inicio: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-								<img src="../../upload/765-default-avatar.png" width="30" height="30" class="circle-img" alt="">
 								<span class="username">Ulises Robles</span>
 								<i class="clip-chevron-down"></i>
 							</a>

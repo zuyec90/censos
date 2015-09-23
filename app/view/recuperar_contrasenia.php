@@ -14,21 +14,12 @@
 			<div class="logo"><h4><b>Consejo Comunal</b></h4></h4><center><img src="../../upload/logo1.png" width="70" height="70" class="img-rounded"></center></i><h4><b>"Santa Inés"</b></h4>
 			</div>
 			<!-- inicio: LOGIN BOX -->
-			<center><div class="row">
+			<div class="row">
 						<div class="col-sm-8">
 							<!-- start: FORM WIZARD PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									
 									Recuperar Contraseña
-									<div class="panel-tools">
-										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-											<i class="fa fa-question"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-									</div>
 								</div>
 								<div class="panel-body">
 									<form action="#" role="form" class="smart-wizard form-horizontal" id="form">
@@ -305,7 +296,7 @@
 							</div>
 							<!-- end: FORM WIZARD PANEL -->
 						</div>
-					</div></center>
+			</div>
 			<!-- fin: LOGIN BOX -->
 			<!-- inicio: FORGOT BOX -->
 			
@@ -345,6 +336,8 @@
 		<script src="../../plugins/jquery-validation/dist/jquery.validate.min.js"></script>
 		<script src="../../plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 		<script src="../../js/form-wizard.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
+		<script src="../../plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script>
 			jQuery(document).ready(function() {

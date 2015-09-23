@@ -33,31 +33,6 @@
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -69,50 +44,50 @@
 							<ol class="breadcrumb">
 								<li>
 									<i class="clip-home-3"></i>
-									<a href="#">
-										Inicio
-									</a>
+									<a href="#">Inicio</a>
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1><center> Bienvenido </center></h1>
+								<h1><center><b>Sistema de Control de Censo Poblacional</b></center></h1>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
-
-					<div class="row">
-					<div class="col-sm-12">
-						<div class="core-box">
-								<div class="heading">
-									<center><h2>Reseña Historica Consejo Comunal "Santa Inés"</h2></center>
-								</div>
-								<div class="content">
-									El Consejo Comunal “Santa Inés” es una comunidad perteneciente a la Parroquia Sucre, Municipio Libertador del Distrito Capital. Deriva su nombre por medio de una asamblea de ciudadanos,  donde  a través de la participación popular lograron expresar sus ideas y opiniones, siendo aceptada en este caso por la mayoría la opinión de una de una de las participantes de la comunidad, el emplear como nombre del Consejo Comunal a “Santa Inés”, representado por los ciudadanos tanto a nivel religioso como la virgen de los jóvenes, como a nivel político por el nombre de la campaña política de reelección realizada por el presidente Hugo Chávez Frías en el año 2004. El Consejo Comunal “Santa Inés” posee como linderos la segunda calle de los Frailes, desde la entrada de Macayapa hasta el callejón San Luis, callejón San Antonio, parte del callejón las palmas y parte alta del muro de la segunda calle.
-								</div>
-						</div>
-					</div>
-						<div class="col-sm-6">
-							<div class="core-box">
-								<div class="heading">
-									<i class="clip-user-4 circle-icon circle-green"></i>
-									<h2>Misión del Consejo Comunal</h2>
-								</div>
-								<div class="content">
-									Promover y consolidar la democracia participativa y protagónica, mediante la promoción y el fortalecimiento de todas aquellas expresiones organizativas y comunitarias que propicien el ejercicio de la corresponsabilidad social en la gestión pública. Es decir que con solo ser miembro de alguna comunidad puedes y tienes el deber y derecho a la participación protagónica en cada uno de los ámbitos de tu comunidad puesto que tú tienes la última opinión. Los consejos comunales son la forma de participación más abierta al público o comunidad.
+					<div style="background:url(../../upload/logo1.1.jpg); background-repeat:no-repeat; backgroung-align:center;">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="core-box">
+									<div class="heading">
+										<center><h2><b>Reseña Historica Consejo Comunal "Santa Inés"</b></h2></center>
+									</div>
+									<div class="content">
+										El Consejo Comunal “Santa Inés” es una comunidad perteneciente a la Parroquia Sucre, Municipio Libertador del Distrito Capital. Deriva su nombre por medio de una asamblea de ciudadanos,  donde  a través de la participación popular lograron expresar sus ideas y opiniones, siendo aceptada en este caso por la mayoría la opinión de una de una de las participantes de la comunidad, el emplear como nombre del Consejo Comunal a “Santa Inés”, representado por los ciudadanos tanto a nivel religioso como la virgen de los jóvenes, como a nivel político por el nombre de la campaña política de reelección realizada por el presidente Hugo Chávez Frías en el año 2004. El Consejo Comunal “Santa Inés” posee como linderos la segunda calle de los Frailes, desde la entrada de Macayapa hasta el callejón San Luis, callejón San Antonio, parte del callejón las palmas y parte alta del muro de la segunda calle.
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="core-box">
-								<div class="heading">
-									<i class=" clip-world circle-icon circle-teal"></i>
-									<h2>Visión del Consejo Comunal</h2>
+							<div class="col-sm-6">
+								<div class="core-box">
+									<div class="heading">
+										<i class="clip-user-4 circle-icon circle-bricky"></i>
+										<h2><b>Misión del Consejo Comunal</b></h2>
+									</div>
+									<div class="content">
+										Promover y consolidar la democracia participativa y protagónica, mediante la promoción y el fortalecimiento de todas aquellas expresiones organizativas y comunitarias que propicien el ejercicio de la corresponsabilidad social en la gestión pública. Es decir que con solo ser miembro de alguna comunidad puedes y tienes el deber y derecho a la participación protagónica en cada uno de los ámbitos de tu comunidad puesto que tú tienes la última opinión. Los consejos comunales son la forma de participación más abierta al público o comunidad.
+									</div>
 								</div>
-								<div class="content">
-									Generar un cambio revolucionario en la comunidad que propicie un desarrollo armónico local, logrando elevar el espíritu y nivel de nuestros pobladores, garantizan do seguridad, solidez, dinamismo, sustentabilidad, permanencia y equidad, en el crecimiento de la economía comunal, para garantizar una justa distribución de la riqueza mediante una plantificación estratégica, democrática, participativa y de consulta abierta de las y los habitantes de la comunidad en ambiente de sana paz y ética como las refleja, en el artículo 2 de la ley de los consejos comunales.
+							</div>
+							<div class="col-sm-6">
+								<div class="core-box">
+									<div class="heading">
+										<i class=" clip-world circle-icon circle-teal"></i>
+										<h2><b>Visión del Consejo Comunal</b></h2>
+									</div>
+									<div class="content">
+										Generar un cambio revolucionario en la comunidad que propicie un desarrollo armónico local, logrando elevar el espíritu y nivel de nuestros pobladores, garantizan do seguridad, solidez, dinamismo, sustentabilidad, permanencia y equidad, en el crecimiento de la economía comunal, para garantizar una justa distribución de la riqueza mediante una plantificación estratégica, democrática, participativa y de consulta abierta de las y los habitantes de la comunidad en ambiente de sana paz y ética como las refleja, en el artículo 2 de la ley de los consejos comunales.
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -125,34 +100,6 @@
 		<!-- inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
 		<!-- fin: FOOTER -->
-		<div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal-title">Event Management</h4>
-					</div>
-					<div class="modal-body"></div>
-					<div class="modal-footer">
-						<button type="button" data-dismiss="modal" class="btn btn-light-grey">
-							Close
-						</button>
-						<button type="button" class="btn btn-danger remove-event no-display">
-							<i class='fa fa-trash-o'></i> Delete Event
-						</button>
-						<button type='submit' class='btn btn-success save-event'>
-							<i class='fa fa-check'></i> Save
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end: MAIN CONTAINER -->
-		<!-- start: FOOTER -->
-		<?php require_once('footer.php'); ?>
-		<!-- end: FOOTER -->
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="../../plugins/respond.min.js"></script>

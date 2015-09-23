@@ -103,7 +103,7 @@ $User = $MSJ->ConsultaUser();
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Mensajes</h1>
+								<h2>Mensajes</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -185,8 +185,8 @@ $User = $MSJ->ConsultaUser();
 								</div>
 							</div>
 							<div class="modal-footer">
-								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-								<input type="button" value="Enviar" class="btn btn-primary" onclick="validar()"></input>
+								<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-danger"></input>
+								<input type="button" value="Enviar" class="btn btn-success" onclick="validar()"></input>
 							</div>
 						</form>
 					</div>

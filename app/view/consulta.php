@@ -70,12 +70,12 @@
 								<li>
 									<i class="clip-pencil"></i>
 									<a href="consultaperfil">
-										Consulta / Censo
+										Reporte
 									</a>
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Consulta</h1>
+								<h2>Reporte</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>

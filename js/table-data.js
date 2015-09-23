@@ -9,7 +9,7 @@ var TableData = function () {
                 "aTargets": [0]
             }],
             "oLanguage": {
-                "sLengthMenu": "Show _MENU_ Rows",
+                "sLengthMenu": "Mostrar _MENU_ Filas",
                 "sSearch": "",
                 "oPaginate": {
                     "sPrevious": "",
@@ -26,7 +26,7 @@ var TableData = function () {
             // set the initial value
             "iDisplayLength": 10,
         });
-        $('#sample_1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Buscar..");
+        $('#sample_1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Buscar...");
         // modify table search input
         $('#sample_1_wrapper .dataTables_length select').addClass("m-wrap small");
         // modify table per page dropdown

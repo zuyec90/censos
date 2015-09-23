@@ -78,7 +78,7 @@
 								
 							</ol>
 							<div class="page-header">
-								<h1> Sistema <small>Control de censo</small></h1>
+								<h2> Sistema <small>Control de censo</small></h2>
 								
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->

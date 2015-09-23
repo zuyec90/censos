@@ -695,7 +695,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	color: #ffffff;
 }
 .btn-light-grey {
-	background-color: #999;
+	background-color: #FFBF00;
 	border-color: #8c8c8c;
 	color: #ffffff;
 }
@@ -740,7 +740,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	color: #ffffff;
 }
 .btn-blue {
-	background-color: #364F6A;
+	background-color: #0101DF;
 	border-color: #2d4259;
 	color: #ffffff;
 }
@@ -916,7 +916,7 @@ li.dropdown.current-user .dropdown-menu li a {
 /* ---------------------------------------------------------------------- */
 .panel-heading {
 	background-color: #F5F4F9;
-	background-image: linear-gradient(to bottom, #F5F4F9 0%, #ECEAF3 100%);
+	background-image: linear-gradient(to bottom, #F5F4F9 0%, #9A9A9A 100%);
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #CDCDCD;
 	border-radius: 6px 6px 0 0;
@@ -1486,7 +1486,7 @@ ul.main-navigation-menu > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu
 	margin: 0 -15px;
 	border-radius: 0;
 	padding: 15px 45px 15px 15px;;
-	border-bottom: 1px solid #C8C7CC;
+	border-bottom: 1px solid #FFFFFF;
 	position: relative;
 	height: 51px;
 }
@@ -1600,7 +1600,7 @@ span.star:before {
 /* ---------------------------------------------------------------------- */
 
 .modal-footer {
-	background: #ECF0F1;
+	background-image: linear-gradient(to bottom, #F5F4F9 0%, #9A9A9A 100%);
 	border-radius: 0 0 6px 6px;
 }
 /* ---------------------------------------------------------------------- */
@@ -2105,7 +2105,7 @@ span.star:before {
 }
 .tab-padding.tab-blue {
 	border-bottom-color: #364F6A;
-	background-color: #F3F5F6;
+	background-image: linear-gradient(to bottom, #F5F4F9 0%, #9A9A9A 100%);
 }
 .tabs-below .nav-tabs.tab-blue {
 	padding-bottom: 6px;
@@ -2187,7 +2187,7 @@ span.star:before {
 	letter-spacing: -1px;
 	margin: 0 0 15px;
 	padding: 0;
-	color: #666666;
+	color: #FF0000;
 }
 
 .page-header h1 small {
@@ -2823,7 +2823,7 @@ td.center .dropdown-menu {
 	width: 50%;
 }
 .swMain > ul li > a.selected:before, .swMain li > a.done:before {
-	border-color: #5293C4;
+	border-color: #FF0000;
 }
 .swMain > ul .stepNumber {
 	background-color: #FFFFFF;
@@ -2840,7 +2840,7 @@ td.center .dropdown-menu {
 	z-index: 2;
 }
 .swMain > ul li > a.selected .stepNumber {
-	border-color: #5293C4;
+	border-color: #FF0000;
 }
 .swMain ul li > a.done .stepNumber {
 	border-color: #5293C4;
@@ -2906,14 +2906,15 @@ td.center .dropdown-menu {
 /*	Login
 /* ---------------------------------------------------------------------- */
 body.login {
-	color: #7F7F7F;
+	color: #000000;
 }
 body.login.example1 {
 	background-image: url("../images/bg.png");
 	background-color: rgba(0, 0, 0, 0);
 }
 body.login.example2 {
-	background-image: url("../images/bg_2.png");
+	background-image: url("../images/bandera.jpg");
+	background-size: 1500px 700px;
 	background-color: rgba(255, 255, 255, 0);
 }
 body.login .main-login {
@@ -4236,7 +4237,7 @@ body.header-default .daterangepicker {
 	color: #FFFFFF;
 }
 .circle-icon.circle-teal {
-	background-color: #569099;
+	background-color: #0101DF;
 	border-color: #4D8189;
 	color: #FFFFFF;
 }
@@ -4267,7 +4268,7 @@ body.header-default .daterangepicker {
 	font-size: 18px;
 }
 .core-box .content {
-	color: #747474 !important;
+	color: #000000 !important;
 	line-height: 20px;
 	margin-bottom: 15px;
 }

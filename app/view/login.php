@@ -11,7 +11,8 @@
 	<!-- inicio: BODY -->
 	<body class="login example2">
 		<div class="main-login col-sm-4 col-sm-offset-4">
-			<div class="logo"><h4><b>Consejo Comunal</b></h4></h4><center><img src="../../upload/logo1.png" width="70" height="70" class="img-rounded"></center></i><h4><b>"Santa Inés"</b></h4>
+			<h1 style= "text-align: center;"><b>Sistema de Control de Censo Poblacional</b></h1>
+			<div class="logo"><h3>Consejo Comunal</h3><center><img src="../../upload/logo1.png" width="70" height="70" class="img-rounded"></center></i><h3>"Santa Inés"</h3>
 			</div>
 			<!-- inicio: LOGIN BOX -->
 			<div class="box-login">
@@ -31,9 +32,8 @@
 							<span class="input-icon">
 								<input type="password" class="form-control password" name="contrasenia" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
-								<a class="forgot" href="recuperar_contrasenia.php">
-									Olvide mi contraseña
-								</a> </span>
+								<a class="forgot" href="recuperar_contrasenia.php">Olvide mi contraseña</a>
+							</span>
 						</div>
 						<div class="form-actions">
 							<label for="remember" class="checkbox-inline">
@@ -88,5 +88,8 @@
 			});
 		</script>
 	</body>
+	</td>
+	</tr>
+	</table>
 	<!-- fin: BODY -->
 </html>

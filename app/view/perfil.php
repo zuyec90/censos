@@ -88,19 +88,10 @@ $resultado = $user->Seleccionar($id_user);
 								<li class="active">
 									Perfil
 								</li>
-								<li class="search-box">
-									<form class="sidebar-search">
-										<div class="form-group">
-											<input type="text" placeholder="Busqueda...">
-											<button class="submit">
-												<i class="clip-search-3"></i>
-											</button>
-										</div>
-									</form>
-								</li>
+									
 							</ol>
 							<div class="page-header">
-								<h1><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h1>
+								<h2><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>

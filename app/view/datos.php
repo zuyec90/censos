@@ -78,7 +78,7 @@
 
 							</ol>
 							<div class="page-header">
-								<h1>Datos <small>Jefe de Familia</small></h1>
+								<h2>Datos Jefe de Familia</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -497,7 +497,7 @@
 														</button>
 													</div>
 													<div class="col-sm-2 col-sm-offset-3">
-														<button class="btn btn-success next-step btn-block">
+														<button class="btn btn-blue next-step btn-block">
 															Continuar <i class="fa fa-arrow-circle-right"></i>
 														</button>
 													</div>
