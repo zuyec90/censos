@@ -224,10 +224,11 @@ $Jefe = new Censo;
 							</label>
 									<input type="text" class="form-control" id="parentesco" name="parentesco" title="Favor Seleccione" placeholder="Parentesco con el Jefe de Familia" required/>
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
-									Grado Instrucción
+									Nivel Instrucción
 							</label>
-
-								<select class="form-control" id="nivel_instruccion" name="nivel_instruccion" required>
+							<div class="form-group">
+								<div class="col-sm-3">
+									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion" requiered>
 										<option value="">Grado de instrucción</option>
 										<option value="Sin Instrucción">Sin Instrucción</option>
 										<option value="Básica">Básica</option>
@@ -237,6 +238,8 @@ $Jefe = new Censo;
 										<option value="Universitario">Universitario</option>
 										<option value="Postgrado">Postgrado</option>
 									</select>
+								</div>
+							</div>
 							<div class="form-group">
 								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								CNE

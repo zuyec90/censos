@@ -214,7 +214,7 @@
 																<select class="form-control" id="fecha_a" name="fecha_a">
 																	<option value="">AAAA</option>
 																	<?php
-																		for ($i=1910; $i < 2016 ; $i++) {
+																		for ($i=1930; $i < 2500 ; $i++) {
 																			echo "<option value=".$i.">".$i."</option>";
 																		}
 
