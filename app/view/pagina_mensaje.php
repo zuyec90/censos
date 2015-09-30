@@ -69,8 +69,7 @@ $User = $MSJ->ConsultaUser();
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
+
 					</div>
 					<!-- final: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
@@ -199,7 +198,7 @@ $User = $MSJ->ConsultaUser();
 						<div class="panel-heading">
 							<i class="fa fa-envelope-o"></i>Bandeja de entrada
 						</div>
-						<div class="panel-body messages ">
+						<div class="panel-body messages">
 							<div>
 								<ul class="messages-list">
 									<li class="messages-search">

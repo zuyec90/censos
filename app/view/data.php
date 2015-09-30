@@ -27,8 +27,6 @@ $resultado = $user->Seleccionar();
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- start: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
 					</div>
 					<!-- end: MAIN MENU TOGGLER BUTTON -->
 					<!-- start: MAIN NAVIGATION MENU -->
@@ -86,7 +84,9 @@ $resultado = $user->Seleccionar();
 							</ol>
 							<div class="page-header">
 								<h2> Lista de Usuarios</h2>
-								<a href="form_registro.php"><button type="button" class="btn btn-info"><i class="clip-data">&nbsp;Crear Usuarios</i></button></a>
+								<div>
+									<a href="form_registro.php"><button type="button" class="btn btn-info"><i class="clip-data">&nbsp;Crear Usuarios</i></button></a>
+								</div>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>

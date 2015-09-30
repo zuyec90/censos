@@ -26,8 +26,7 @@ $respuesta = $censo->Selectjefe();
 				<div class="main-navigation navbar-collapse collapse">
 					<!--inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
+
 					</div>
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!--inicio: MAIN NAVIGATION MENU -->
@@ -74,7 +73,7 @@ $respuesta = $censo->Selectjefe();
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!--inicio: PAGE CONTENT -->
-					<div class="row">
+					<div class="row" >
 						<div class="col-md-12">
 							<!--inicio: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">

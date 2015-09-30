@@ -20,8 +20,7 @@
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
+
 					</div>
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
@@ -428,7 +427,7 @@
 													</label>
 													<div class="col-sm-7">
 														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
-															<option value="">Instrucción</option>
+															<option value="">Grado de Instrucción</option>
 															<option value="Sin Instrucción">Sin Instrucción</option>
 															<option value="Basica">Básica</option>
 															<option value="Bachiller">Bachiller</option>
