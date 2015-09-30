@@ -9,7 +9,7 @@
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body style= "text-align: justify;">
+	<body id="pg_home" style= "text-align: justify;">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->

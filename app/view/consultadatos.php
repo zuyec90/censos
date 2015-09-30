@@ -142,13 +142,13 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
 									Nombres
 							</label>
-									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el nombre" required/>
+									<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese los Nombres" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el nombre" required/>
 									<input type="hidden" class="form-control" id="idjefe_familia" name="idjefe_familia" value="<?php echo $idjefe_familia;?>">
 
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 8px;">
 									Apellidos
 							</label>
-									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el Apellido" required/>
+									<input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese los Apellidos" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el Apellido" required/>
 							<div>
 							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								Sexo
@@ -177,16 +177,16 @@ $Jefe = new Censo;
 									E
 								</label>
 							</div>
-							<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8" pattern="[0-9]*">
+							<input type="text" class="form-control" name="cedula" id="cedula" placeholder="Nro de cedula" maxlength="8" pattern="[0-9]*">
 
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">
 									Fecha Nacimiento
 							</label>
-								<input type="date" class="form-control" name="fecha_nacimiento" min="2000-01-02" title="Ingrese la fecha de nacimiento" required/><br>
+								<input type="date" class="form-control" name="fecha_nacimiento" min="1920-01-02" title="Ingrese la fecha de nacimiento" required/><br>
 							<label class="col-sm-3 control-label">
 									Edad
 							</label>
-							<input type="text" class="form-control" id="edad" name="edad" placeholder="" pattern="[0-9]*" maxlength="3" title="Ingrese la edad" required/>
+							<input type="text" class="form-control" id="edad" name="edad" placeholder="Ingrese la edad" pattern="[0-9]*" maxlength="3" title="Ingrese la edad" required/>
 							<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 								Discapacidad
 							</label>
@@ -201,7 +201,7 @@ $Jefe = new Censo;
 									</label>
 
 								</div>
-									<input type="text" name="incapacitado"  id="incapacitado" class="form-control">
+									<input type="text" name="incapacitado"  id="incapacitado" class="form-control" placeholder="Tipo de Discapacidad ">
 
 						</div>
 					</div>
@@ -223,13 +223,13 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label">
 									Parentesco
 							</label>
-									<input type="text" class="form-control" id="parentesco" name="parentesco" title="Favor Seleccione" required/>
+									<input type="text" class="form-control" id="parentesco" name="parentesco" title="Favor Seleccione" placeholder="Parentesco con el Jefe de Familia" required/>
 							<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 15px;">
 									Grado Instrucción
 							</label>
 
 									<select class="form-control" id="nivel_instruccion" name="nivel_instruccion" required>
-										<option value="">&nbsp;</option>
+										<option value="">Grado de instrucción</option>
 										<option value="nivel_instruccion">Sin Instrucción</option>
 										<option value="nivel_instruccion">Básica</option>
 										<option value="nivel_instruccion">Bachiller</option>
@@ -256,7 +256,7 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label">
 									Profesión
 							</label>
-							<input type="text" class="form-control" id="profesion" name="profesion" placeholder="" pattern="[a-z, A-Z]*" maxlength="30" title="Ingrese el nombre" required/>
+							<input type="text" class="form-control" id="profesion" name="profesion" placeholder="Tipo de Profesion" pattern="[a-z, A-Z]*" maxlength="30"/>
 							<div class="form-group">
 								<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">
 										Pensionado
@@ -275,11 +275,12 @@ $Jefe = new Censo;
 							<label class="col-sm-3 control-label">
 								Ing. Mensual
 							</label>
-								<input type="text" class="form-control" id="ingreso_mensual" name="ingreso_mensual" placeholder="">
+								<input type="text" class="form-control" id="ingreso_mensual" name="ingreso_mensual" placeholder="Ingreso Mensual">
 							<label class="col-sm-3 control-label">
-								Observacion
+									
+									<br>Observacion</br>
 							</label>
-								<input type="text" class="form-control" id="observacion" name="observacion" placeholder="">
+								<input type="text" class="form-control" id="observacion" name="observacion" placeholder="Observaciones">
 						</div>
 				</div>
 			</div>
@@ -313,7 +314,7 @@ $Jefe = new Censo;
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1>Consulta</h1>
+								<h2>Consulta</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -348,7 +349,7 @@ $Jefe = new Censo;
 											Jefe de Familia
 										</a>
 									</li>
-									<?PHP
+									<?php
 										$familiares = $Jefe->SelectFamiliar($idjefe_familia);
 
 									while ($familiar = mysql_fetch_assoc($familiares)) { ?>
@@ -680,7 +681,7 @@ $Jefe = new Censo;
 
 													$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
 													
-													   if ($tiempo == 1) { ?>
+													   if ($tiempo == 0) { ?>
 														<div class="col-sm-4 ">
 															<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
 														</div>

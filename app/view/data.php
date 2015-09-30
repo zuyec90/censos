@@ -3,7 +3,6 @@
 require_once ('../controller/UserController.php');
 $user = new User;
 $resultado = $user->Seleccionar();
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@ $resultado = $user->Seleccionar();
 	<?php require_once('head.php'); ?>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
-	<body>
+	<body id="pg_data">
 		<!-- start: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- end: HEADER -->
@@ -86,7 +85,7 @@ $resultado = $user->Seleccionar();
 
 							</ol>
 							<div class="page-header">
-								<h2> Lista <small>de Usuarios</small></h2>
+								<h2> Lista de Usuarios</h2>
 								<a href="form_registro.php"><button type="button" class="btn btn-info"><i class="clip-data">&nbsp;Crear Usuarios</i></button></a>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
@@ -99,7 +98,8 @@ $resultado = $user->Seleccionar();
 							<!-- start: DYNAMIC TABLE PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-								<strong>Usuarios</strong>
+									<i class="clip-user"></i>
+									Usuarios
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">

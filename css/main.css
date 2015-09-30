@@ -4768,3 +4768,12 @@ td.column-right{
     font-size: 14px;
     margin-top: 20px;
 }
+#pg_home #home,
+#pg_data #data,
+#pg_datos #datos,
+#pg_consultaperfil #consultaperfil,
+#pg_consulta #consulta,
+#pg_paginamensaje #paginamensaje {
+    color: #FFF;
+    background: url(menu_bg-active.jpg) repeat center;
+}

@@ -1,12 +1,12 @@
 				<ul class="main-navigation-menu">
-						<li class="active open">
-							<a href="home.php"><i class="clip-home-3"></i>
+						<li>
+							<a id="home" href="home.php"><i class="clip-home-3"></i>
 								<span class="title"> Inicio </span>
 								<span class="selected"></span>
 							</a>
 						</li>
 						<li>
-							<a href="data.php"><i class="clip-user-2"></i>
+							<a id="data" href="data.php"><i class="clip-user-2"></i>
 								<span class="title"> Usuario </span>
 								<span class="selected"></span>
 							</a>
@@ -19,19 +19,19 @@
 							<ul class="sub-menu">
 
 								<li>
-									<a href="datos.php">
-										<span class="title"> Datos Jefe de Familia </span>
+									<a id="datos" href="datos.php">
+										<span class="title"> Registro Jefe de Familia </span>
 										<span class="selected"></span>
 									</a>
 								</li>
 
 								<li>
-									<a href="consultaperfil.php">
+									<a id="consultaperfil" href="consultaperfil.php">
 										<span class="title"> Lista de Censados </span>
 									</a>
 								</li>
 								<li>
-									<a href="consulta.php">
+									<a id="consulta" href="consulta.php">
 										<span class="title">Reportes</span>
 									</a>
 								</li>
@@ -39,7 +39,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="pagina_mensaje.php"><i class="clip-bubble-2"></i>
+							<a id="paginamensaje" href="pagina_mensaje.php"><i class="clip-bubble-2"></i>
 								<span class="title"> Mensajes </span>
 								<span class="selected"></span>
 							</a>

@@ -9,7 +9,7 @@
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body>
+	<body id="pg_consulta">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->

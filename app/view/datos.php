@@ -9,7 +9,7 @@
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body>
+	<body id="pg_datos">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->
@@ -78,7 +78,7 @@
 
 							</ol>
 							<div class="page-header">
-								<h2>Datos Jefe de Familia</h2>
+								<h2>Registro Jefe de Familia</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -151,7 +151,7 @@
 														Nombres <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="nombre" name="nombres" placeholder="">
+														<input type="text" class="form-control" id="nombre" name="nombres" placeholder="Ingrese los Nombres" pattern="[a-z, A-Z]*" maxlength="30">
 													</div>
 												</div>
 												<div class="form-group">
@@ -159,7 +159,7 @@
 														Apellidos <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="form-control" id="apellido" name="apellidos" placeholder="">
+														<input type="text" class="form-control" id="apellido" name="apellidos" placeholder="Ingrese los Apellidos" pattern="[a-z, A-Z]*" maxlength="30">
 													</div>
 												</div>
 
@@ -169,7 +169,7 @@
 													</label>
 													<div class="col-sm-7">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad" >
+															<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad" placeholder="Nro de cedula">
 															V
 														</label>
 														<label class="radio-inline">
@@ -177,7 +177,7 @@
 															E
 														</label>
 														<div class="col-sm-4">
-																<input type="text" class="form-control" name="cedula" id="cedula" placeholder="" maxlength="8">
+																<input type="text" class="form-control" name="cedula" id="cedula" placeholder="Nro de cedula" maxlength="8">
 														</div>
 													</div>
 												</div>
@@ -230,7 +230,7 @@
 														Edad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="edad" id="edad" placeholder="" maxlength="3">
+																<input type="text" class="float-left margin-select" name="edad" id="edad" placeholder="Ingrese la edad" maxlength="3">
 													</div>
 												</div>
 
@@ -282,7 +282,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="" maxlength="6">
+														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="6">
 													</div>
 												</div>
 												<div class="form-group">
@@ -305,7 +305,7 @@
 														Tipo
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="">
+																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="Tipo de discapacidad">
 													</div>
 												</div>
 
@@ -329,7 +329,7 @@
 														Institución<span class=""></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="institucion" id="institucion" placeholder="">
+																<input type="text" class="float-left margin-select" name="institucion" id="institucion" placeholder="Institución a la que pertenece">
 													</div>
 												</div>
 
@@ -339,7 +339,7 @@
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_cel" name="codigo_cel">
-															<option value="">&nbsp;</option>
+															<option value="">Código</option>
 															<option value="416">0416</option>
 															<option value="426">0426</option>
 															<option value="412">0412</option>
@@ -359,7 +359,7 @@
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_hab" name="codigo_hab">
-															<option value="">&nbsp;</option>
+															<option value="">Código</option>
 															<option value="0212">0212</option>
 														</select>
 													</div>
@@ -374,7 +374,7 @@
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_ofic" name="codigo_ofic">
-															<option value="">&nbsp;</option>
+															<option value="">Código</option>
 															<option value="0212">0212</option>
 														</select>
 													</div>
@@ -413,7 +413,7 @@
 													</label>
 													<div class="col-sm-7">
 														<select class="form-control" id="estado_civil" name="estado_civil">
-															<option value="">&nbsp;</option>
+															<option value="">Estado</option>
 															<option value="soltero (a)">soltero (a)</option>
 															<option value="Casado (a)">Casado (a)</option>
 															<option value="Divorciado (a)">Divorciado (a)</option>
@@ -428,7 +428,7 @@
 													</label>
 													<div class="col-sm-7">
 														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
-															<option value="">&nbsp;</option>
+															<option value="">Instrucción</option>
 															<option value="Sin Instrucción">Sin Instrucción</option>
 															<option value="Basica">Básica</option>
 															<option value="Bachiller">Bachiller</option>

@@ -45,11 +45,11 @@ var FormWizard = function () {
             },
             ignore: ':hidden',
             rules: {
-                nombre: {
+                nombres: {
                     minlength: 3,
                     required: true,
                 },
-                 apellido: {
+                 apellidos: {
                     minlength: 3,
                     required: true,
                 },
@@ -114,8 +114,8 @@ var FormWizard = function () {
 
             },
             messages: {
-                nombre: "Por favor ingrese los nombres",
-                apellido: "Por favor ingrese los apellidos",
+                nombres: "Por favor ingrese los nombres",
+                apellidos: "Por favor ingrese los apellidos",
                 cedula: "Por favor ingrese el numero de cedúla",
                 fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
                 edad: "Por favor ingrese la edad",

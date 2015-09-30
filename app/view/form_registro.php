@@ -32,31 +32,6 @@
 			<!-- start: PAGE -->
 			<div class="main-content">
 				<!-- start: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel para Ayuda</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-primary">
-									Aceptar
-								</button>
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Cancelar
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
 				<!-- /.modal -->
 				<!-- end: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -76,10 +51,7 @@
 								</li>
 							</ol>
 							<div class="page-header">
-								<h1><i class="fa fa-pencil-square teal"></i> Registro <small>de Usuarios</small></h1>
-									<p>
-										Crea una cuenta para gestionar todo lo que haces.
-									</p>
+								<h2>Registro de Usuarios</h2>
 							</div>
 							<!-- end: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -91,15 +63,8 @@
 							<!-- start: FORM VALIDATION 2 PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<strong>Usuario</strong>
-									<div class="panel-tools">
-										<a  class="btn btn-xs btn-link panel-config tooltips" href="#panel-config" data-toggle="modal"  data-original-title="Ayuda">
-											<i class="fa fa-question"></i>
-										</a>
-										<a class="btn btn-xs btn-link panel-expand" href="#">
-											<i class="fa fa-resize-full"></i>
-										</a>
-									</div>
+									<i class="clip-user"></i>
+									Crea un usuario para gestiones
 								</div>
 								<div class="panel-body">
 									<?php
@@ -139,30 +104,6 @@
 												</div>
 											</div>
 											<div class="col-md-6">
-												<div class="form-group">
-
-													<div class="fileupload fileupload-new" data-provides="fileupload">
-
-														<div class="user-image">
-															<div class="fileupload-new thumbnail"><img src="upload/765-default-avatar.png" alt="" style="max-width: 100px; max-height: 150px; line-height: 20px;">
-															</div>
-
-															<div class="user-image-buttons">
-																<span class="btn btn-teal btn-file btn-sm">
-																<span class="fileupload-new">
-																<i class="fa fa-pencil"></i>
-																</span>
-																<span class="fileupload-exists"><i class="fa fa-pencil"></i>
-																</span>
-																		<input type="file">
-																	</span>
-																	<a href="#" class="btn fileupload-exists btn-bricky btn-sm" data-dismiss="fileupload">
-																		<i class="fa fa-times"></i>
-																	</a>
-															</div>
-													</div>
-												</div>
-											</div>
 
 												<div class="form-group">
 													<label class="control-label">
@@ -287,7 +228,7 @@
 
 											</div>
 											<div class="col-md-4">
-												<input type="submit" value="enviar" name="enviar">
+												<input type="button" value="Enviar" name="enviar" class="btn btn-success" onclick=""></input>
 											</div>
 										</div>
 									</form>

@@ -18,9 +18,10 @@ $User = $MSJ->ConsultaUser();
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
-	<body>
+	<body id="pg_paginamensaje">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
+		
 		<script type="text/javascript">
 
 		function validar(){
@@ -43,6 +44,7 @@ $User = $MSJ->ConsultaUser();
         document.getElementById("form").submit();
 }
 		</script>
+		
 		<style type="text/css">
 			.cortar{
 

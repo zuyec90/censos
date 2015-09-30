@@ -15,7 +15,7 @@ $respuesta = $censo->Selectjefe();
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!--inicio: BODY -->
-	<body>
+	<body id="pg_consultaperfil">
 		<!--inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		<!-- fin: HEADER -->
@@ -97,7 +97,7 @@ $respuesta = $censo->Selectjefe();
 											<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
 											<tr>
 												<td><?php echo $censo['idjefe_familia'];?></td>
-												<td><a href="consultadatos.php"> <?php echo $censo['nombres']; ?> </a></td> 
+												<td><a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>"> <?php echo $censo['nombres']; ?> </a></td> 
 												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
 												<td><?php echo $censo['cedula'];?></td>
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
