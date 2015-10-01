@@ -12,7 +12,7 @@ class DataModel
 	{
 		//error_reporting(0);
 		$user = 'root';
-		$pass ='';
+		$pass ='123456';
 		$bd = 'censo';
 		$servidor = 'localhost';
 		$Conexion =  mysql_connect($servidor, $user, $pass ) or die("Error 101 conexion bd ");
