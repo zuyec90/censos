@@ -3,7 +3,7 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- inicio: HEAD -->
 	<?php require_once('head.php'); ?>
@@ -281,7 +281,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="6">
+														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="10">
 													</div>
 												</div>
 												<div class="form-group">
@@ -304,7 +304,7 @@
 														Tipo
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="Tipo de discapacidad">
+														<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="Tipo de discapacidad">
 													</div>
 												</div>
 
