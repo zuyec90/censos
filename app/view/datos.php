@@ -49,7 +49,7 @@
 									Close
 								</button>
 								<button type="button" class="btn btn-primary">
-									Save changes
+									
 								</button>
 							</div>
 						</div>
@@ -281,7 +281,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="10">
+														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="18">
 													</div>
 												</div>
 												<div class="form-group">
@@ -334,7 +334,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Cel. <span class=""></span>
+														Tel. Cel.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_cel" name="codigo_cel">
@@ -354,7 +354,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Hab. <span class=""></span>
+														Tel. Hab.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_hab" name="codigo_hab">
@@ -369,7 +369,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Ofic. <span class=""></span>
+														Tel. Ofic.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_ofic" name="codigo_ofic">
@@ -413,7 +413,7 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="estado_civil" name="estado_civil">
 															<option value="">Estado</option>
-															<option value="soltero (a)">soltero (a)</option>
+															<option value="soltero (a)">Soltero (a)</option>
 															<option value="Casado (a)">Casado (a)</option>
 															<option value="Divorciado (a)">Divorciado (a)</option>
 															<option value="Viudo (a)">Viudo (a)</option>
@@ -428,7 +428,7 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
 															<option value="">Grado de Instrucción</option>
-															<option value="Sin Instrucción">Sin Instrucción</option>
+															<option value="Sin Instruccion">Sin Instrucción</option>
 															<option value="Basica">Básica</option>
 															<option value="Bachiller">Bachiller</option>
 															<option value="Tecnico Medio">Técnico Medio</option>
