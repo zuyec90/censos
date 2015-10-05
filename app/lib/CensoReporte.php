@@ -1,3 +1,16 @@
+<?php
+
+
+require_once ('../controller/CensosController.php');
+$censo = new censo;
+$resultado = $censo->Reporte($_POST);
+
+var_dump($resultado);
+
+
+
+
+?>
 <div class="col-md-12">
 	<!-- start: LABEL FORMATTER PANEL -->
 	<div class="panel panel-default">
@@ -47,4 +60,4 @@
 			function labelFormatter(label, series) {
 			return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 			}
-</script>>
+</script>

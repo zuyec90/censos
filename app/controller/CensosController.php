@@ -276,6 +276,70 @@ class censo extends DataModel
 			return $respuesta;
 		}
 
+	public function Reporte ($Consulta= Null)
+		{
+			$this->Conect();
+			var_dump($Consulta);
+			if ($Consulta) {
+
+				$sql = "SELECT COUNT(*)  FROM  `jefeflia`	WHERE (	(`edad` >= ".$Consulta['edadIn']." AND  `edad` <=".$Consulta['edadF']."	)AND (`sexo` =  '".$Consulta['sexo']."'	AND  `pensionado` =  '".$Consulta['pensionado']."')	)AND (`incapacitado` =  '".$Consulta['incapacitado']."'	AND  `trabaja` =  '".$Consulta['trabaja']."')";
+				echo $sql;				
+				$Reporte = mysql_query($sql) or die ("Error 212 no se logró consultar");
+				$respuesta = mysql_fetch_assoc($Reporte);
+			}
+			
+			return $respuesta;
+		}
+
+	public function GeneralReporte ()
+		{
+			$this->Conect();
+
+			/* primer resultado */
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'f' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'm' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'no' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'si' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'si' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no' ";
+				
+				
+			/*segudno resultado */
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'm' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` > 0 or `ingreso_mensual` <> NULL) and `pensionado` = 'no' )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` = 0 or `ingreso_mensual` = NULL) and `pensionado` = 'si' )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'si' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' ";
+
+				foreach ($sql as $key => $respuesta) {
+										
+					$row[$key] = mysql_query($respuesta);
+					$resultados[$key] = mysql_fetch_assoc($row[$key]);
+
+				}
+
+				foreach ($sql2 as $i => $res) {
+
+					$row2[$i] = mysql_query($res);
+					$resul[$i] = mysql_fetch_assoc($row2[$i]);
+					
+					$conteo[]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+				}
+
+
+				return $conteo;
+				
+
+				
+			
+		}
+
+
 }
 
 
