@@ -96,6 +96,12 @@ class censo extends DataModel
 			mysql_query($sql) or die ('Error 201 no se pudo crear el usuario');
 
 				return "0";
+
+			/*ejemplo de bitacora*/
+		/*	$variabledesession = 5; // esto no lo tienen porque aun no tiene nada de session
+			$id_lastInster =  mysql_insert_id();
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', '"$id_lastInster"', NOW(), 'Creacion del primer registro')";
+			mysql_query($sqlBitacora);*/
 		}
 
 	}
@@ -274,6 +280,78 @@ class censo extends DataModel
 			}
 			return $respuesta;
 		}
+
+	public function Reporte ($Consulta= Null)
+		{
+			$this->Conect();
+			var_dump($Consulta);
+			if ($Consulta) {
+
+				$sql = "SELECT COUNT(*)  FROM  `jefeflia`	WHERE (	(`edad` >= ".$Consulta['edadIn']." AND  `edad` <=".$Consulta['edadF']."	)AND (`sexo` =  '".$Consulta['sexo']."'	AND  `pensionado` =  '".$Consulta['pensionado']."')	)AND (`incapacitado` =  '".$Consulta['incapacitado']."'	AND  `trabaja` =  '".$Consulta['trabaja']."')";
+				echo $sql;				
+				$Reporte = mysql_query($sql) or die ("Error 212 no se logró consultar");
+				$respuesta = mysql_fetch_assoc($Reporte);
+			}
+			
+			if($Consulta == 2){
+
+				$query = "SELECT COUNT(*) FROM jefeflia WHERE status = 1";
+				$final = mysql_query($query);
+
+
+			}
+			
+			return $respuesta;
+		}
+
+	public function GeneralReporte ()
+		{
+			$this->Conect();
+
+			/* primer resultado */
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'f'  and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'm'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'no'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'si'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'si' and  status =1";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no'and  status =1 ";
+				
+				
+			/*segudno resultado */
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'm'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` > 0 or `ingreso_mensual` <> NULL) and `pensionado` = 'no' )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` = 0 or `ingreso_mensual` = NULL) and `pensionado` = 'si' )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'si'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' and  status =1";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' and  status =1";
+
+				foreach ($sql as $key => $respuesta) {
+										
+					$row[$key] = mysql_query($respuesta);
+					$resultados[$key] = mysql_fetch_assoc($row[$key]);
+
+				}
+
+				foreach ($sql2 as $i => $res) {
+
+					$row2[$i] = mysql_query($res);
+					$resul[$i] = mysql_fetch_assoc($row2[$i]);
+					
+					$conteo[]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+				}
+
+
+				return $conteo;
+				
+
+				
+			
+		}
+
 
 }
 

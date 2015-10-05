@@ -84,6 +84,23 @@
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
+					<?php
+						if(!empty($_POST)){
+						if ($_POST['valor'] == '1' ) { ?>
+							<div class="alert alert-success">
+								<button data-dismiss="alert" class="close" type="button">&times;</button>
+								<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+								<p>Registro realizado satisfatoriamente.</p>
+							</div>
+						<?php}
+						else{ ?>
+							<div class="alert alert-block alert-danger fade in">
+								<button data-dismiss="alert" class="close" type="button">&times;</button>
+									<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
+									<p>No se logro Registrar</p>
+								</div>
+						<?php	}
+					} ?>
 					<div class="row">
 						<div class="col-sm-12">
 							<!-- inicio: FORM WIZARD PANEL -->
@@ -651,25 +668,6 @@
 														<button class="btn btn-success finish-step btn-block">
 															Registrar <i class="fa fa-arrow-circle-right"></i>
 														</button>
-														<?php
-															if(!empty($_POST)){
-															if ($_POST['valor'] == '1' ) { ?>
-
-																<div class="alert alert-success">
-																	<button data-dismiss="alert" class="close" type="button">&times;</button>
-																	<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
-																	<p>Registro realizado satisfatoriamente.</p>
-																</div>
-															<?php}
-															else{ ?>
-																<div class="alert alert-block alert-danger fade in">
-																	<button data-dismiss="alert" class="close" type="button">&times;</button>
-																	<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
-																	<p>No se logro Registrar</p>
-																</div>
-															<?php	}
-															} ?>
-
 													</div>
 												</div>
 											</div>

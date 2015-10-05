@@ -1,3 +1,12 @@
+
+<?php 
+
+require_once ('../controller/CensosController.php');
+$censo = new censo;
+$General = $censo->GeneralReporte();
+
+?>
+
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
@@ -84,21 +93,40 @@
 					<!-- inicio: PAGE CONTENT -->
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="panel-body">
+							<div id="PanelTitulo" style=" color: red;  font-size: 17px;  text-transform: uppercase;"></div>
+							<div class="panel-body" >
 									<table class="table sliders table-striped">
 										<tbody>
 											<tr>
-												<td style="width:5%">Edad</td>
-												<td style="width:10%">
-													<div class="example">
-														<div id="slider_example_1" class="slider-teal"></div>
-													</div>
+												<td style="width:2%">Edad: </td>
+												<td style="width:5%">
+													
+														
+													<select id="de"  name="de" class="form-control" >
+														<option> - </option>
+														<?php for ($i=0; $i < 180 ; $i++) { ?>
+														<option value="<?php echo $i; ?>" ><?php echo $i; ?></option>
+																																	
+														<?php } ?>
+													</select>
+													
 												</td>
+												<td style="width:5%">
+													<select  id="hast" name="hasta" class="form-control" >
+														<option> - </option>
+														<?php for ($i=0; $i < 180 ; $i++) { ?>
+														<option value="<?php echo $i; ?>" ><?php echo $i; ?></option>
+																																	
+														<?php } ?>
+													</select>
+												</td>
+
+
 												<td style="width:5%">Sexo</td>
 												<td style="width:10%">
 													<div class="example">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="sexo" id="sexo" >
+															<input type="radio" class="grey" value="f" name="sexo" id="sexo" checked="checked">
 															F
 														</label>
 														<label class="radio-inline">
@@ -111,7 +139,7 @@
 												<td style="width:10%">
 													<div class="example">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado" >
+															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado" checked="checked">
 															Si
 														</label>
 														<label class="radio-inline">
@@ -125,7 +153,7 @@
 												<td style="width:10%">
 													<div class="example">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado" >
+															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado"checked="checked">
 															Si
 														</label>
 														<label class="radio-inline">
@@ -138,7 +166,7 @@
 												<td style="width:10%">
 													<div class="example">
 														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja" >
+															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja" checked="checked">
 															Si
 														</label>
 														<label class="radio-inline">
@@ -156,12 +184,12 @@
 						</div>
 					</div>
 					<div class="row" id="respuesta">
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<!-- start: LABEL FORMATTER PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									Label Formatter
+									Grafica General
 								</div>
 								<div class="panel-body">
 									<div class="flot-small-container">
@@ -171,7 +199,67 @@
 							</div>
 							<!-- end: LABEL FORMATTER PANEL -->
 						</div>
+						<div class="col-md-6">
+							<!-- start: LABEL FORMATTER PANEL -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-external-link-square"></i>
+									Contadores generales
+								</div>
+								<div class="panel-body">								
+											
+											<table class="table">
+												<tr>
+													<td> campo</td>
+													<td> cantidad</td>
 
+												</tr>
+												<tr>
+													<td> sexo F</td>
+													<td> <?php echo $General[0]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Sexo M</td>
+													<td> <?php echo $General[1]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Trabaja Si</td>
+													<td> <?php echo $General[2]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Trabaja No</td>
+													<td> <?php echo $General[3]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Discapacitado Si</td>
+													<td> <?php echo $General[4]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Discapacitado No</td>
+													<td> <?php echo $General[5]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Pensionado Si</td>
+													<td> <?php echo $General[6]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Pensionado No</td>
+													<td> <?php echo $General[6]; ?></td>
+
+												</tr>
+											</table>
+										
+								</div>
+							</div>
+							<!-- end: LABEL FORMATTER PANEL -->
+						</div>
 					</div>
 
 					<!-- fin: PAGE CONTENT-->
@@ -225,17 +313,29 @@
 
 			$('#Reporte').click(function() {
 
-			var sexo = $('#sexo').val();
-			var pensionado = $('#pensionado').val();
-			var incapacitado = $('#incapacitado').val();
-			var trabaja = $('#trabaja').val();
+			var edadIn = $('#de').val();
+			var edadF = $('#hast').val();
+			var sexo = $('input:radio[name=sexo]:checked').val();
+			var pensionado = $('input:radio[name=pensionado]:checked').val();
+			var incapacitado = $('input:radio[name=incapacitado]:checked').val();
+			var trabaja = $('input:radio[name=trabaja]:checked').val();
 			var url = '../lib/CensoReporte.php';
+			
+			if (edadIn > edadF ) {
 
-			$.post(url,{'id_notificacion':id_notificacion},function(respondText){
+				$("#PanelTitulo").html("<center> la edad final no puede ser mayor a la edad inicial</center>");
+				$("#hast").focus();
+
+			}else{
+
+			$.post(url,{'edadIn':edadIn,'edadF':edadF,'sexo':sexo,'pensionado':pensionado,'incapacitado':incapacitado,'trabaja':trabaja},function(respondText){	
+
+				$("#placeholder82").html(respondText);
+				});
+			};
 
 			});
 
-			});
 		});
 		</script>
 	</body>

@@ -1,3 +1,12 @@
+<?php
+
+
+
+
+
+
+
+?>
 <div class="col-md-12">
 	<!-- start: LABEL FORMATTER PANEL -->
 	<div class="panel panel-default">
@@ -16,12 +25,11 @@
 
 <script type="text/javascript">
 	var data = [
-					{ label: "sexo",  data: [[1,10]]},
-					{ label: "Edad",  data: [[1,30]]},
-					{ label: "Discapacidad",  data: [[1,90]]},
-					{ label: "Trabajo",  data: [[1,70]]},
-					{ label: "Pensionado",  data: [[1,80]]},
-					];
+					{ label: "sexo",  data: [[1,2]]},
+					{ label: "Edad",  data: [[1,3]]},
+					{ label: "Discapacidad",  data: [[1,7]]},
+					{ label: "Trabajo",  data: [[1,6]]},
+					{ label: "Pensionado",  data: [[1,8]]},	];
 
 				$.plot('#placeholder82', data, {
 				    series: {
@@ -47,4 +55,4 @@
 			function labelFormatter(label, series) {
 			return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 			}
-</script>>
+</script>
