@@ -110,7 +110,7 @@ $User = $MSJ->ConsultaUser();
 						</div>
 					</div>
 					<!-- fin: PAGE HEADER -->
-					<!-- inicio: PAGE CONTENT -->
+					<!--  NTENT -->
 					<?php
 					if(!empty($_POST['valor'])){
 					if ($_POST['valor'] == '1' ) { ?>
