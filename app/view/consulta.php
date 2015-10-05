@@ -204,22 +204,58 @@ $General = $censo->GeneralReporte();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									Contadores
+									Contadores generales
 								</div>
-								<div class="panel-body">
-									<div class="flot-small-container">
-										<div id="placeholder82" class="flot-placeholder">
+								<div class="panel-body">								
 											
-											<table>
+											<table class="table">
 												<tr>
-													<td></td>
+													<td> campo</td>
+													<td> cantidad</td>
+
+												</tr>
+												<tr>
+													<td> sexo F</td>
+													<td> <?php echo $General[0]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Sexo M</td>
+													<td> <?php echo $General[1]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Trabaja Si</td>
+													<td> <?php echo $General[2]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Trabaja No</td>
+													<td> <?php echo $General[3]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Discapacitado Si</td>
+													<td> <?php echo $General[4]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Discapacitado No</td>
+													<td> <?php echo $General[5]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Pensionado Si</td>
+													<td> <?php echo $General[6]; ?></td>
+
+												</tr>
+												<tr>
+													<td> Pensionado No</td>
+													<td> <?php echo $General[6]; ?></td>
+
 												</tr>
 											</table>
-											<?php 
-											echo var_dump($General);
-											?>
-										</div>
-									</div>
+										
 								</div>
 							</div>
 							<!-- end: LABEL FORMATTER PANEL -->

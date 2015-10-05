@@ -5,7 +5,7 @@ include ('../Controller/CensosController.php');
 
 $Jefe = new Censo;
 
-
+echo $Jefe->Registrar($_POST);
 if ($Jefe->Registrar($_POST) == 1) {
 
 

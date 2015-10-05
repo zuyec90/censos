@@ -1,11 +1,7 @@
 <?php
 
 
-require_once ('../controller/CensosController.php');
-$censo = new censo;
-$resultado = $censo->Reporte($_POST);
 
-var_dump($resultado);
 
 
 
@@ -29,11 +25,11 @@ var_dump($resultado);
 
 <script type="text/javascript">
 	var data = [
-					{ label: "sexo",  data: [[1,10]]},
-					{ label: "Edad",  data: [[1,30]]},
-					{ label: "Discapacidad",  data: [[1,90]]},
-					{ label: "Trabajo",  data: [[1,70]]},
-					{ label: "Pensionado",  data: [[1,80]]},
+					{ label: "sexo",  data: [[1,2]]},
+					{ label: "Edad",  data: [[1,3]]},
+					{ label: "Discapacidad",  data: [[1,7]]},
+					{ label: "Trabajo",  data: [[1,6]]},
+					{ label: "Pensionado",  data: [[1,8]]},
 					];
 
 				$.plot('#placeholder82', data, {
