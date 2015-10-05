@@ -186,42 +186,9 @@
 														Fecha de Nacimiento <span class="symbol required"></span>
 													</label>
 
-													<div class="col-sm-4">
-														<div class="row">
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_d" name="fecha_d">
-																	<option value="">DD</option>
-																	<?php
-																		for ($i=1; $i < 32 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
+													<div class="col-sm-2">
+														<input type="date" class="form-control" name="fecha_nacimiento" min="1920-01-02" title="Ingrese la fecha de nacimiento" required/><br>
 
-																	?>
-																</select>
-															</div>
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_m" name="fecha_m">
-																	<option value="">MM</option>
-																	<?php
-																		for ($i=1; $i < 13 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
-
-																	?>
-																</select>
-															</div>
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_a" name="fecha_a">
-																	<option value="">AAAA</option>
-																	<?php
-																		for ($i=1930; $i < 2500 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
-
-																	?>
-																</select>
-															</div>
-														</div>
 													</div>
 												</div>
 												<div class="form-group">

@@ -201,7 +201,7 @@
 												</div>
 												<div class="form-group connected-group">
 													<label class="control-label">
-														Contraseña<span class="symbol required"></span>
+														Confirmar Contraseña<span class="symbol required"></span>
 													</label>
 														<span class="input-icon">
 								<input type="password" class="form-control password" id="contrasenia_doble" name="contrasenia_doble" placeholder="Contraseña">
