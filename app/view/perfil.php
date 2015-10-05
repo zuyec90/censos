@@ -228,10 +228,7 @@ $resultado = $user->Seleccionar($id_user);
 																<label class="control-label">Correo Electronico</label>
 																<input type="email" placeholder="" class="form-control" id="email" name="email" value="<?php echo $resultado['email'] ;?>">
 															</div>
-															<div class="form-group">
-																<label class="control-label">Dirección</label>
-																<input type="text" placeholder="" class="form-control" id="direccion" name="direccion" value="<?php echo $resultado['direccion'] ;?>">
-															</div>
+															
 															<div class="form-group">
 																<label class="control-label">Unidad de Trabajo al que pertenece</label>
 																<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
@@ -246,7 +243,7 @@ $resultado = $user->Seleccionar($id_user);
 																</span>
 															</div>
 															<div class="form-group connected-group">
-																<label class="control-label">Contraseña<span class="symbol required"></span></label>
+																<label class="control-label">Contraseña</label>
 																<span class="input-icon">
 																	<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>"><i class=""></i>
 																</span>

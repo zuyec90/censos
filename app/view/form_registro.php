@@ -151,7 +151,7 @@
 													</label>
 													<div class="input-group">
 														<a class="input-group-addon"> <i class="fa fa-phone"></i> </a>
-														<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular">
+														<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" maxlength="11">
 													</div>
 												</div>
 												<div class="form-group">
