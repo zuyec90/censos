@@ -32,7 +32,6 @@
 							<span class="input-icon">
 								<input type="password" class="form-control password" name="contrasenia" placeholder="Contraseña">
 								<i class="fa fa-lock"></i>
-								<a class="forgot" href="recuperar_contrasenia.php">Olvide mi contraseña</a>
 							</span>
 						</div>
 						<div class="form-actions">

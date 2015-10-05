@@ -87,7 +87,7 @@ var FormWizard = function () {
                     required: true,
                 },
                 institucion: {
-                    minlength: 20,
+                    minlength: 3,
                 },
 
                 estado_civil: {

@@ -3,7 +3,7 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- inicio: HEAD -->
 	<?php require_once('head.php'); ?>
@@ -49,7 +49,7 @@
 									Close
 								</button>
 								<button type="button" class="btn btn-primary">
-									Save changes
+									
 								</button>
 							</div>
 						</div>
@@ -186,42 +186,9 @@
 														Fecha de Nacimiento <span class="symbol required"></span>
 													</label>
 
-													<div class="col-sm-4">
-														<div class="row">
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_d" name="fecha_d">
-																	<option value="">DD</option>
-																	<?php
-																		for ($i=1; $i < 32 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
+													<div class="col-sm-2">
+														<input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" min="1910-01-01"><br>
 
-																	?>
-																</select>
-															</div>
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_m" name="fecha_m">
-																	<option value="">MM</option>
-																	<?php
-																		for ($i=1; $i < 13 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
-
-																	?>
-																</select>
-															</div>
-															<div class="col-sm-4">
-																<select class="form-control" id="fecha_a" name="fecha_a">
-																	<option value="">AAAA</option>
-																	<?php
-																		for ($i=1930; $i < 2500 ; $i++) {
-																			echo "<option value=".$i.">".$i."</option>";
-																		}
-
-																	?>
-																</select>
-															</div>
-														</div>
 													</div>
 												</div>
 												<div class="form-group">
@@ -281,7 +248,7 @@
 														Tiempo en la Comunidad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-7">
-														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="6">
+														<input type="text" class="float-left margin-select" name="tiempo_comunidad" id="tiempo_comunidad" placeholder="Tiempo en la comunidad" maxlength="18">
 													</div>
 												</div>
 												<div class="form-group">
@@ -304,7 +271,7 @@
 														Tipo
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="Tipo de discapacidad">
+														<input type="text" class="float-left margin-select" name="tipo_incapacitado" id="tipo_incapacitado" placeholder="Tipo de discapacidad">
 													</div>
 												</div>
 
@@ -334,7 +301,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Cel. <span class=""></span>
+														Tel. Cel.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_cel" name="codigo_cel">
@@ -354,7 +321,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Hab. <span class=""></span>
+														Tel. Hab.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_hab" name="codigo_hab">
@@ -369,7 +336,7 @@
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
-														Tel. Ofic. <span class=""></span>
+														Tel. Ofic.
 													</label>
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_ofic" name="codigo_ofic">
@@ -413,7 +380,7 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="estado_civil" name="estado_civil">
 															<option value="">Estado</option>
-															<option value="soltero (a)">soltero (a)</option>
+															<option value="soltero (a)">Soltero (a)</option>
 															<option value="Casado (a)">Casado (a)</option>
 															<option value="Divorciado (a)">Divorciado (a)</option>
 															<option value="Viudo (a)">Viudo (a)</option>
@@ -428,7 +395,7 @@
 													<div class="col-sm-7">
 														<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
 															<option value="">Grado de Instrucción</option>
-															<option value="Sin Instrucción">Sin Instrucción</option>
+															<option value="Sin Instruccion">Sin Instrucción</option>
 															<option value="Basica">Básica</option>
 															<option value="Bachiller">Bachiller</option>
 															<option value="Tecnico Medio">Técnico Medio</option>
@@ -535,7 +502,7 @@
 														Fecha de Nacimiento:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="fecha_d"></p> <p class="form-control-static display-value" data-display="fecha_m"></p> <p class="form-control-static display-value" data-display="fecha_a"></p>
+														<p class="form-control-static display-value" data-display="fecha_nacimiento"></p>
 													</div>
 												</div>
 												<div class="form-group">

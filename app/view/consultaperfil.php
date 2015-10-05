@@ -26,7 +26,6 @@ $respuesta = $censo->Selectjefe();
 				<div class="main-navigation navbar-collapse collapse">
 					<!--inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-
 					</div>
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!--inicio: MAIN NAVIGATION MENU -->
@@ -59,8 +58,7 @@ $respuesta = $censo->Selectjefe();
 							<!--inicio: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
-									<i class="clip-pencil"></i>
-									<a href="consultaperfil.php">Consulta</a>
+									<i class="clip-pencil"></i><a href="consultaperfil.php">Consulta</a>
 								</li>
 								<li class="active">Censo
 								</li>
@@ -108,7 +106,7 @@ $respuesta = $censo->Selectjefe();
 															<div class="modal-content">
 																<div class="modal-header">
 																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																		<h4 class="modal-title">Eliminar Perfil</h4>
+																	<h4 class="modal-title">Eliminar Perfil</h4>
 																</div>
 																<div class="modal-body">
 																		Desea eliminar este perfil?
@@ -122,7 +120,7 @@ $respuesta = $censo->Selectjefe();
 													</div>
 												</td>
 											</tr>
-										<?php }?>
+											<?php }?>
 										</tbody>
 									</table>
 								</div>

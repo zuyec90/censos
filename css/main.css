@@ -588,8 +588,8 @@ li.dropdown.current-user .dropdown-menu li a {
 	font-family: 'Open Sans';
 }
 .btn-teal {
-	background-color: #569099;
-	border-color: #4d8189;
+	background-color: #FFB848;
+	border-color: #FFB848;
 	color: #ffffff;
 }
 .btn-teal:hover, .btn-teal:focus, .btn-teal:active, .btn-teal.active {
@@ -4775,5 +4775,11 @@ td.column-right{
 #pg_consulta #consulta,
 #pg_paginamensaje #paginamensaje {
     color: #FFF;
-    background: url(menu_bg-active.jpg) repeat center;
+   
 }
+a{ 
+color:#000000; 
+} 
+a:hover{ 
+color:#336699; 
+} 

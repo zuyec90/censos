@@ -20,8 +20,8 @@ $resultado = $user->Seleccionar($id_user);
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
 <html lang="es" class="no-js">
-	<!--<![endif]-->
-	<!-- inicio: HEAD -->
+<!--<![endif]-->
+<!-- inicio: HEAD -->
 	<?php require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
@@ -36,8 +36,6 @@ $resultado = $user->Seleccionar($id_user);
 				<div class="main-navigation navbar-collapse collapse">
 					<!-- inicio: MAIN MENU TOGGLER BUTTON -->
 					<div class="navigation-toggler">
-						<i class="clip-chevron-left"></i>
-						<i class="clip-chevron-right"></i>
 					</div>
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!-- inicio: MAIN NAVIGATION MENU -->
@@ -48,26 +46,20 @@ $resultado = $user->Seleccionar($id_user);
 			</div>
 			<!-- inicio: PAGE -->
 			<div class="main-content">
-				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
+			<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
 				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Panel Configuration</h4>
 							</div>
 							<div class="modal-body">
-								Here will be a configuration form
+									Here will be a configuration form
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
 							</div>
 						</div>
 						<!-- /.modal-content -->
@@ -77,286 +69,221 @@ $resultado = $user->Seleccionar($id_user);
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
-					<!-- inicio: PAGE HEADER -->
+				<!-- inicio: PAGE HEADER -->
 					<div class="row">
 						<div class="container">
-					<!-- inicio: PAGE HEADER -->
-					<div class="row">
-						<div class="col-sm-12">
-							<!-- inicio: PAGE TITLE & BREADCRUMB -->
-							<ol class="breadcrumb">
-								<li class="active">
-									Perfil
-								</li>
-									
-							</ol>
-							<div class="page-header">
-								<h2><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h2>
+						<!-- inicio: PAGE HEADER -->
+							<div class="row">
+								<div class="col-sm-12">
+								<!-- inicio: PAGE TITLE & BREADCRUMB -->
+									<ol class="breadcrumb">
+										<li class="active">Perfil</li>
+									</ol>
+									<div class="page-header">
+										<h2><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h2>
+									</div>
+									<!-- fin: PAGE TITLE & BREADCRUMB -->
+								</div>
 							</div>
-							<!-- fin: PAGE TITLE & BREADCRUMB -->
-						</div>
-					</div>
-					<!-- fin: PAGE HEADER -->
-					<!-- inicio: PAGE CONTENT -->
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="tabbable">
-								<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
-									<li class="active">
-										<a data-toggle="tab" href="#panel_overview">
-											Datos
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div id="panel_overview" class="tab-pane in active">
-										<div class="row">
-											<div class="col-sm-5 col-md-4">
-												<div class="user-left">
-													<div class="center">
-														<h4>Ulises Robles</h4>
-														<div class="fileupload fileupload-new" data-provides="fileupload">
-															<div class="user-image">
-																<div class="fileupload-new thumbnail"><img src="../../upload/765-default-avatar.png" alt="" style="max-width: 200px; max-height: 150px; line-height: 20px;">
-																</div>
-
-																<div class="user-image-buttons">
-																	<span class="btn btn-teal btn-file btn-sm"><span class="fileupload-new"><i class="fa fa-pencil"></i></span><span class="fileupload-exists"><i class="fa fa-pencil"></i></span>
-																		<input type="file">
-																	</span>
-																	<a href="#" class="btn fileupload-exists btn-bricky btn-sm" data-dismiss="fileupload">
-																		<i class="fa fa-times"></i>
-																	</a>
-																</div>
-															</div>
-														</div>
-														<hr>
-
-														<hr>
-													</div>
-													<table class="table table-condensed table-hover">
-														<thead>
-															<tr>
-																<th colspan="3">Información de Contacto</th>
-															</tr>
-														</thead>
-														<tbody>
-																<td>Correo Electronico:</td>
-																<td>
-																<a href="">
-																	<?php echo $resultado['email'] ;?>
-																</a></td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-															<tr>
-																<td>Telefono:</td>
-																<td><?php echo $resultado['celular'] ;?></td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-														</tbody>
-													</table>
-													<table class="table table-condensed table-hover">
-														<thead>
-															<tr>
-																<th colspan="3">Información General</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td>Ultima Entrada</td>
-																<td>15 min</td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-															<tr>
-																<td>Voceria</td>
-																<td><?php echo $resultado['voceria'] ;?></td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-															<tr>
-																<td>Usuario</td>
-																<td><span class="label label-sm label-info">
-																<?php
-
-																 switch ($resultado['perfil']) {
-																 	case 1:
-																 		echo " Operador ";
-																 		break;
-																 	case 2:
-																 		echo " Administrador ";
-																 		break;
-
-																 	default:
-																 		echo " Usuario ";
-																 		break;
-																 }
-
-																?>
-
-
-																</span></td>
-																<td><a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a></td>
-															</tr>
-															<table class="table table-condensed table-hover">
-														<thead>
-															<tr>
-																<th colspan="3">Información Adicional</th>
-															</tr>
-														</thead>
-
-													</table>
-														</tbody>
-													</table>
-													<table class="table table-condensed table-hover">
-														<thead>
-															<tr>
-														</tbody>
-													</table>
-												</div>
-											</div>
-											<div class="col-sm-7 col-md-8">
-									<div id="panel_edit_account" class="tab-pane">
-										<form action="../lib/UserUpdate.php" method="POST" role="form" id="form">
-											<div class="row">
-												<div class="col-md-12">
-													<h4>Información de Cuenta</h4>
-													<hr>
-												</div>
-												<div class="col-md-6">
-
-													<div class="form-group">
-														<label class="control-label">
-															Nombre
-														</label>
-														<input type="text" placeholder="" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombre'] ;?>">
-														<input type="hidden" placeholder="" class="form-control" id="id_user" name="id_user" value="<?php echo $resultado['id_user']; ?>">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Apellido
-														</label>
-														<input type="text" placeholder="" class="form-control" id="apellido" name="apellido" value="<?php echo $resultado['apellido'] ;?>">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Cédula
-														</label>
-														<input type="text" placeholder="" class="form-control" id="cedula" name="cedula" value="<?php echo $resultado['cedula'] ;?>">
-													</div>
-													<div class="form-group">
-												<label for="form-field-mask-2">
-													Teléfono
-												</label>
-												<div class="input-group">
-													<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" value="<?php echo $resultado['email'] ;?>">
-												</div>
-												<div class="form-group">
-														<label class="control-label">
-															Sexo
-														</label>
-														<div>
-															<label class="radio-inline">
-																<input type="radio" class="grey" value="f" name="sexo" id="femenino">
-																Femenino
-															</label>
-															<label class="radio-inline">
-																<input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">
-																Masculino
-															</label>
-															</div>
-														</div>
-													</div>
-
-											</div>
+							<!-- fin: PAGE HEADER -->
+							<!-- inicio: PAGE CONTENT -->
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="tabbable">
+										<ul class="nav nav-tabs tab-padding tab-space-3 tab-blue" id="myTab4">
+											<li class="active">
+												<a data-toggle="tab" href="#panel_overview">Datos</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div id="panel_overview" class="tab-pane in active">
 												<div class="row">
-												<div class="col-md-5">
-													<div class="form-group">
-														<label class="control-label">
-															Correo Electronico
-														</label>
-														<input type="email" placeholder="" class="form-control" id="email" name="email" value="<?php echo $resultado['email'] ;?>">
+													<div class="col-sm-5 col-md-4">
+														<div class="user-left">
+															<table class="table table-condensed table-hover">
+																<thead>
+																	<tr>
+																		<th colspan="3"><h4>Información de Contacto</h4></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Correo Electronico:</td>
+																		<td>
+																			<a href=""><?php echo $resultado['email'] ;?></a>
+																		</td>
+																		<td>
+																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Telefono:</td>
+																		<td><?php echo $resultado['celular'] ;?></td>
+																		<td>
+																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															<br><br>
+															<table class="table table-condensed table-hover">
+																<thead>
+																	<tr>
+																		<th colspan="3"><h4>Información General</h4></th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Ultima Entrada</td>
+																		<td>15 min</td>
+																		<td>
+																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Voceria</td>
+																		<td><?php echo $resultado['voceria'] ;?></td>
+																		<td>
+																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Usuario</td>
+																		<td>
+																			<span class="label label-sm label-info">
+																			<?php
+																		 	switch ($resultado['perfil']) {
+																		 	
+																		 		case 1:
+																		 			echo " Operador ";
+																		 			break;
+																		 		case 2:
+																		 			echo " Administrador ";
+																		 		break;
+																		 		
+																		 		default:
+																		 			echo " Usuario ";
+																		 		break;
+																		 	}	
+																			?>
+																			</span>
+																		</td>
+																		<td>
+																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
 													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Dirección
-														</label>
-														<input type="text" placeholder="" class="form-control" id="direccion" name="direccion" value="<?php echo $resultado['direccion'] ;?>">
-													</div>
-													<div class="form-group">
-														<label class="control-label">
-															Unidad de Trabajo al que pertenece
-														</label>
-														<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
-													</div>
-														<div class="form-group">
-														<label class="control-label">
-															Tipo de Usuario
-														</label>
-														<input type="text"  placeholder="" class="form-control" id="perfil" name="perfil" value="<?php echo $resultado['perfil'] ;?>">
-													</div>
-													<div class="form-group">
-													<span class="input-icon">
-														<input type="text" class="form-control" name="usuario" value="<?php echo $resultado['usuario'] ;?>">
-														<i class="fa fa-user"></i> </span>
-												</div>
-												<div class="form-group connected-group">
-													<label class="control-label">
-														Contraseña<span class="symbol required"></span>
-													</label>
-														<span class="input-icon">
-													<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>">
-													<i class="fa fa-lock"></i>
+													<div class="col-sm-7 col-md-8">
+											<div id="panel_edit_account" class="tab-pane">
+												<form action="../lib/UserUpdate.php" method="POST" role="form" id="form">
+													<div class="row">
+														<div class="col-md-12">
+															<h4>Información de Cuenta</h4>
+															<hr>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="control-label">Nombre</label>
+																<input type="text" placeholder="" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombre'] ;?>">
+																<input type="hidden" placeholder="" class="form-control" id="id_user" name="id_user" value="<?php echo $resultado['id_user']; ?>">
+															</div>
+															<div class="form-group">
+																<label class="control-label">Apellido</label>
+																<input type="text" placeholder="" class="form-control" id="apellido" name="apellido" value="<?php echo $resultado['apellido'] ;?>">
+															</div>
 
-												</div>
+															<div class="form-group">
+																<label class="control-label">Nacionalidad</label>
+																	<div>
+																		<label class="radio-inline"><input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad_v">V</label>
+																		<label class="radio-inline"><input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e" checked="checked">E</label>
+																	</div>
+															</div>
+
+															<div class="form-group">
+																<label class="control-label">Cédula</label>
+																<input type="text" placeholder="" class="form-control" id="cedula" name="cedula" value="<?php echo $resultado['cedula'] ;?>">
+															</div>
+															<div class="form-group">
+																<label for="form-field-mask-2">Teléfono</label>
+																	<div class="input-group">
+																		<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+																		<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" value="<?php echo $resultado['email'] ;?>">
+																	</div>
+															</div>
+															<div class="form-group">
+																<label class="control-label">Sexo</label>
+																	<div>
+																		<label class="radio-inline"><input type="radio" class="grey" value="f" name="sexo" id="femenino">Femenino</label>
+																		<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">Masculino</label>
+																	</div>
+															</div>
+														</div>
+														<div class="row">
+														<div class="col-md-5">
+															<div class="form-group">
+																<label class="control-label">Correo Electronico</label>
+																<input type="email" placeholder="" class="form-control" id="email" name="email" value="<?php echo $resultado['email'] ;?>">
+															</div>
+															<div class="form-group">
+																<label class="control-label">Dirección</label>
+																<input type="text" placeholder="" class="form-control" id="direccion" name="direccion" value="<?php echo $resultado['direccion'] ;?>">
+															</div>
+															<div class="form-group">
+																<label class="control-label">Unidad de Trabajo al que pertenece</label>
+																<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
+															</div>
+															<div class="form-group">
+																<label class="control-label">Tipo de Usuario</label>
+																<input type="text"  placeholder="" class="form-control" id="perfil" name="perfil" value="<?php echo $resultado['perfil'] ;?>">
+															</div>
+															<div class="form-group">
+																<span class="input-icon">
+																	<input type="text" class="form-control" name="usuario" value="<?php echo $resultado['usuario'] ;?>"><i class="fa fa-user"></i>
+																</span>
+															</div>
+															<div class="form-group connected-group">
+																<label class="control-label">Contraseña<span class="symbol required"></span></label>
+																<span class="input-icon">
+																	<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>"><i class=""></i>
+																</span>
+															</div>
+														</div>
+													</div>
+												</form>
 											</div>
-										</div>
-										</div>
-
 											<div class="row">
-
 												<div class="col-md-4">
 													<br>
-													<button class="btn btn-teal btn-block" type="submit">
-														Modificar <i class="fa fa-arrow-circle-right"></i>
-													</button>
+													<button class="btn btn-teal btn-block" type="submit">Modificar <i class="fa fa-arrow-circle-right"></i></button>
 												</div>
-											</div>
-
-										</form>
-									</div>
 											</div>
 										</div>
 									</div>
-
-
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- fin: PAGE CONTENT-->
-				</div>
-						<div class="col-sm-12">
-							<!-- fin: STYLE SELECTOR BOX -->
-							<!-- inicio: PAGE TITLE & BREADCRUMB -->
-
-							<!-- fin: PAGE TITLE & BREADCRUMB -->
-						</div>
-					</div>
-					<!-- fin: PAGE HEADER -->
-					<!-- inicio: PAGE CONTENT -->
-					<div class="row">
-
-					</div>
-					<!-- fin: PAGE CONTENT-->
 				</div>
 			</div>
-			<!-- fin: PAGE -->
 		</div>
+		<!-- fin: PAGE CONTENT-->
+		<div class="col-sm-12">
+			<!-- fin: STYLE SELECTOR BOX -->
+			<!-- inicio: PAGE TITLE & BREADCRUMB -->
+			<!-- fin: PAGE TITLE & BREADCRUMB -->
+		</div>
+		<!-- fin: PAGE HEADER -->
+		<!-- inicio: PAGE CONTENT -->
+		<!-- fin: PAGE CONTENT-->
+		<!-- fin: PAGE -->
 		<!-- fin: MAIN CONTAINER -->
 		<!-- inicio: FOOTER -->
 		<?php require_once('footer.php'); ?>
 		<!-- fin: FOOTER -->
-
 		<!-- inicio: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="plugins/respond.min.js"></script>

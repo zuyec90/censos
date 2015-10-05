@@ -11,6 +11,42 @@
 	<body>
 		<!-- start: HEADER -->
 		<?php require_once('header.php'); ?>
+
+		<script type="javascript">
+
+			function validarcontrasenia(){
+
+				var p1 = document.getElementById("contrasenia").value;
+				var p2 = document.getElementById("contrasenia2").value;
+				var espacios = false;
+				var cont = 0;
+
+				while (!espacios && (cont < p1.length)) {
+					if (p1.charAt(cont) == " "){
+						espacios = true;
+						cont++;
+					} 
+					if (espacios) {
+					  alert ("La contraseña no puede contener espacios en blanco");
+					  return false;
+					}
+				}
+
+				if (p1.length == 0 || p2.length == 0) {
+  					alert("Los campos de la password no pueden quedar vacios");
+  					return false;
+  				}
+
+				if (p1 != p2) {
+					alert("Las contraseñas deben de coincidir");
+					return false;
+					} else {
+					alert("La contraseña es valida");
+					return true; 
+				}
+
+			}
+		</script>
 		<!-- end: HEADER -->
 		<!-- start: MAIN CONTAINER -->
 		<div class="main-container">
@@ -41,13 +77,9 @@
 							<!-- start: PAGE TITLE & BREADCRUMB -->
 							<ol class="breadcrumb">
 								<li>
-									<i class="clip-user-2"></i>
-									<a href="#">
-										Usuario
-									</a>
+									<i class="clip-user-2"></i><a href="#">Usuario</a>
 								</li>
-								<li class="active">
-									Registro de Usuarios
+								<li class="active">Registro de Usuarios
 								</li>
 							</ol>
 							<div class="page-header">
@@ -63,37 +95,10 @@
 							<!-- start: FORM VALIDATION 2 PANEL -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<i class="clip-user"></i>
-									Crea un usuario para gestiones
+									<i class="clip-user"></i>Crea un usuario para gestiones
 								</div>
 								<div class="panel-body">
-									<?php
-
-							if(!empty($_POST)){
-								if ($_POST['valor'] == '1' ) { ?>
-
-									<div class="alert alert-success">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Well done!</strong> You successfully read this important alert message.
-									</div>
-
-									<?php
-									}else{ ?>
-									<div class="alert alert-success">
-										<button data-dismiss="alert" class="close">
-											&times;
-										</button>
-										<i class="fa fa-check-circle"></i>
-										<strong>Well done!</strong> You successfully read this important alert message.
-									</div>
-							<?php	}
-							} ?>
-
-									<hr>
-									<form action="../lib/UserCreate.php" method="POST" role="form" id="form">
+									<form action="../lib/UserCreate.php" method="post" role="form" id="form" onsubmit="validarcontrasenia()">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
@@ -104,7 +109,6 @@
 												</div>
 											</div>
 											<div class="col-md-6">
-
 												<div class="form-group">
 													<label class="control-label">
 														Nombre <span class="symbol required"></span>
@@ -121,7 +125,19 @@
 													<label class="control-label">
 														Cédula<span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="cedula">
+													<div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad_v">
+															V
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e">
+															E
+														</label>
+														<div class="col-sm-">
+																<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="cedula" maxlength="8">
+														</div>
+													</div>			
 												</div>
 												<div class="form-group">
 													<label class="control-label">
@@ -129,16 +145,16 @@
 													</label>
 													<input type="email" placeholder="Ingresa el Correo Electrónico" class="form-control" id="email2" name="email">
 												</div>
-											<div class="form-group">
-												<label for="form-field-mask-2">
-													Teléfono
-												</label>
-												<div class="input-group">
-													<a class="input-group-addon"> <i class="fa fa-phone"></i> </a>
-													<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular">
+												<div class="form-group">
+													<label for="form-field-mask-2">
+														Teléfono
+													</label>
+													<div class="input-group">
+														<a class="input-group-addon"> <i class="fa fa-phone"></i> </a>
+														<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular">
+													</div>
 												</div>
-											</div>
-											<div class="form-group">
+												<div class="form-group">
 													<label class="control-label">
 														Sexo <span class="symbol required"></span>
 													</label>
@@ -153,13 +169,6 @@
 														</label>
 													</div>
 												</div>
-											<div class="form-group">
-															<label class="control-label">
-																Dirección <span class="symbol required"></span>
-															</label>
-															<input class="form-control tooltips" type="text" data-original-title="puedes escribir aqui la dirreccion de referencia" data-rel="tooltip"  title="" data-placement="top" name="direccion" id="city">
-														</div>
-
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
@@ -194,23 +203,20 @@
 													<label class="control-label">
 														Contraseña<span class="symbol required"></span>
 													</label>
-														<span class="input-icon">
-								<input type="password" class="form-control password" id="contrasenia" name="contrasenia" placeholder="Contraseña">
-								<i class="fa fa-lock"></i>
-
+													<span class="input-icon">
+														<input type="password" class="form-control password" id="contrasenia" name="contrasenia" placeholder="Contraseña">
+														<i class="fa fa-lock"></i></span>
 												</div>
 												<div class="form-group connected-group">
 													<label class="control-label">
-														Contraseña<span class="symbol required"></span>
+														Confirmar Contraseña<span class="symbol required"></span>
 													</label>
 														<span class="input-icon">
-								<input type="password" class="form-control password" id="contrasenia_doble" name="contrasenia_doble" placeholder="Contraseña">
-								<i class="fa fa-lock"></i>
-
+														<input type="password" class="form-control password" id="contrasenia2" name="contrasenia2" placeholder="Contraseña">
+														<i class="fa fa-lock"></i></span>
 												</div>
 												<div class="row">
 													<div class="col-md-8">
-
 													</div>
 												</div>
 											</div>
@@ -228,7 +234,26 @@
 
 											</div>
 											<div class="col-md-4">
-												<input type="button" value="Enviar" name="enviar" class="btn btn-success" onclick=""></input>
+												<button class="btn btn-success finish-step btn-block">
+													Registrar <i class="fa fa-arrow-circle-right"></i>
+												</button>
+											<?php
+												if(!empty($_POST)){
+												if ($_POST['valor'] == '1' ) { ?>
+													<div class="alert alert-success">
+														<button data-dismiss="alert" class="close" type="button">&times;</button>
+														<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
+														<p>Registro realizado satisfatoriamente.</p>
+													</div>
+												<?php
+												}else{ ?>
+													<div class="alert alert-block alert-danger fade in">
+														<button data-dismiss="alert" class="close" type="button">&times;</button>
+														<h4 class="alert-heading"><i class="fa fa-times-circle"></i> Error!</h4>
+														<p>No se logro Registrar</p>
+													</div>
+												<?php	}
+											} ?>
 											</div>
 										</div>
 									</form>
