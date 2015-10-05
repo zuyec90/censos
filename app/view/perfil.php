@@ -194,6 +194,15 @@ $resultado = $user->Seleccionar($id_user);
 																<label class="control-label">Apellido</label>
 																<input type="text" placeholder="" class="form-control" id="apellido" name="apellido" value="<?php echo $resultado['apellido'] ;?>">
 															</div>
+
+															<div class="form-group">
+																<label class="control-label">Nacionalidad</label>
+																	<div>
+																		<label class="radio-inline"><input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad_v">V</label>
+																		<label class="radio-inline"><input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e" checked="checked">E</label>
+																	</div>
+															</div>
+
 															<div class="form-group">
 																<label class="control-label">Cédula</label>
 																<input type="text" placeholder="" class="form-control" id="cedula" name="cedula" value="<?php echo $resultado['cedula'] ;?>">
@@ -204,12 +213,12 @@ $resultado = $user->Seleccionar($id_user);
 																		<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
 																		<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" value="<?php echo $resultado['email'] ;?>">
 																	</div>
-																	<div class="form-group">
-																		<label class="control-label">Sexo</label>
-																			<div>
-																				<label class="radio-inline"><input type="radio" class="grey" value="f" name="sexo" id="femenino">Femenino</label>
-																				<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">Masculino</label>
-																			</div>
+															</div>
+															<div class="form-group">
+																<label class="control-label">Sexo</label>
+																	<div>
+																		<label class="radio-inline"><input type="radio" class="grey" value="f" name="sexo" id="femenino">Femenino</label>
+																		<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">Masculino</label>
 																	</div>
 															</div>
 														</div>

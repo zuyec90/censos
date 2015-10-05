@@ -118,11 +118,26 @@
 													<input type="text" placeholder="Ingresa tu Primer Apellido" class="form-control" id="lastname" name="apellido">
 												</div>
 												<div class="form-group">
+
 													<label class="control-label">
 														Cédula<span class="symbol required"></span>
 													</label>
-													<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="cedula">
+
+													<div>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad_v">
+															V
+														</label>
+														<label class="radio-inline">
+															<input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e">
+															E
+														</label>
+														<div class="col-sm-">
+																<input type="text" placeholder="Ingresa tu N° de Cédula" class="form-control" id="ci" name="cedula" maxlength="8">
+														</div>
+													</div>			
 												</div>
+
 												<div class="form-group">
 													<label class="control-label">
 														Correo Electrónico<span class="symbol required"></span>

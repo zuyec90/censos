@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2015 a las 10:44:39
+-- Tiempo de generación: 05-10-2015 a las 04:44:17
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `bitacora` (
   `idjefe_familia` int(255) NOT NULL,
   `fecha_accion` date NOT NULL,
   `accion` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `bitacora`
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `bitacora` (
 INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES
 (1, 0, 0, '2015-08-03', 'Eliminar'),
 (2, 0, 0, '0000-00-00', ''),
-(3, 0, 0, '0000-00-00', '');
+(3, 0, 0, '0000-00-00', ''),
+(4, 0, 0, '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -200,6 +201,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id_user` int(255) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
+  `nacionalidad` varchar(2) NOT NULL COMMENT 'nacionalidad usuarios',
   `cedula` int(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `celular` int(50) NOT NULL,
@@ -217,13 +219,13 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`, `fecha_creado`) VALUES
-(1, 'usuario', '1', 0, 'nnn@csd.com', 12, 'm', 'fd', 'df', 2, 'prueba', '123456', 1, '2015-05-13'),
-(2, 'zuye', 'zxczx', 0, '2147483647', 2147483647, '', '', '', 0, '0', 'vocero1', 2, '2015-05-29'),
-(3, 'ddq', 'dded1sdasd', 231231231, 'zuyecci@gmail.com1', 2147483647, 'm', 'asdfghjkl1', 'usuario11', 1, 'fcg1sd', 'fgf1', 1, '2015-05-29'),
-(4, 'sadasd', 'sadasd', 125216, 'saul_cfa@hotmail.com', 1165161, 'f', 'asdasdasdasdasd', 'usuario1', 1, 'gvghv', 'asdasd', 1, '2015-05-30'),
-(5, 'sdasd', 'dasdasd', 45616514, 'sdasdasdasdas@sadasd.asda', 1561616, 'm', 'dasdasd', 'usuario1', 1, 'asdasd', 'asdasd', 3, '2015-05-30'),
-(6, 'sdasd', 'dasd', 23123, 'sadas@sdas.asd', 123123, 'm', 'dasda', 'usuario2', 2, 'SAUL', '123456', 1, '2015-06-24');
+INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`, `fecha_creado`) VALUES
+(1, 'usuario', '1', '', 0, 'nnn@csd.com', 12, 'm', 'fd', 'df', 2, 'prueba', '123456', 1, '2015-05-13'),
+(2, 'zuye', 'zxczx', '', 0, '2147483647', 2147483647, '', '', '', 0, '0', 'vocero1', 2, '2015-05-29'),
+(3, 'ddq', 'dded1sdasd', '', 231231231, 'zuyecci@gmail.com1', 2147483647, 'm', 'asdfghjkl1', 'usuario11', 1, 'fcg1sd', 'fgf1', 2, '2015-05-29'),
+(4, 'sadasd', 'sadasd', '', 125216, 'saul_cfa@hotmail.com', 1165161, 'f', 'asdasdasdasdasd', 'usuario1', 1, 'gvghv', 'asdasd', 1, '2015-05-30'),
+(5, 'sdasd', 'dasdasd', '', 45616514, 'sdasdasdasdas@sadasd.asda', 1561616, 'm', 'dasdasd', 'usuario1', 1, 'asdasd', 'asdasd', 3, '2015-05-30'),
+(6, 'sdasd', 'dasd', '', 23123, 'sadas@sdas.asd', 123123, 'm', 'dasda', 'usuario2', 2, 'SAUL', '123456', 1, '2015-06-24');
 
 --
 -- Índices para tablas volcadas
@@ -279,7 +281,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `grupo_fliar`
 --
