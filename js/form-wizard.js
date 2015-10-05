@@ -160,7 +160,7 @@ var FormWizard = function () {
     var displayConfirm = function () {
         $('.display-value', form).each(function () {
             var input = $('[name="' + $(this).attr("data-display") + '"]', form);
-            if (input.attr("type") == "text" || input.attr("type") == "email" || input.is("textarea")) {
+            if (input.attr("type") == "text" || input.attr("type") == "email" || input.attr("type") == "date" ||input.is("textarea")) {
                 $(this).html(input.val());
             } else if (input.is("select")) {
                 $(this).html(input.find('option:selected').text());

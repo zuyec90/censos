@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-10-2015 a las 07:49:32
--- Versión del servidor: 5.6.24
--- Versión de PHP: 5.5.24
+-- Tiempo de generación: 05-10-2015 a las 08:57:47
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `bitacora` (
-  `id_bitacora` int(255) NOT NULL,
+`id_bitacora` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `idjefe_familia` int(255) NOT NULL,
   `fecha_accion` date NOT NULL,
@@ -51,7 +51,7 @@ INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accio
 --
 
 CREATE TABLE IF NOT EXISTS `grupo_fliar` (
-  `id_familiar` int(255) NOT NULL,
+`id_familiar` int(255) NOT NULL,
   `idjefe_familia` int(255) NOT NULL,
   `nacionalidad` varchar(2) NOT NULL,
   `cedula` int(8) NOT NULL COMMENT 'cedula',
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `grupo_fliar` (
   `ingreso_mensual` varchar(6) NOT NULL COMMENT 'Ingreso mensual de la persona del grupo familiar',
   `observacion` varchar(50) NOT NULL COMMENT 'Si se le desea agregar alguna otra observacion',
   `status` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
 
 --
 -- Volcado de datos para la tabla `grupo_fliar`
@@ -79,7 +79,8 @@ CREATE TABLE IF NOT EXISTS `grupo_fliar` (
 
 INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `nacionalidad`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES
 (32, 13, 'E', 82179830, 'Luis', 'Mendez', 'm', '1990-02-12', 25, 'si', 'Mocho', 'no', 'Hijo', 'nivel_instruccion', 'si', 'Estudiante', 'no', '20000', 'buen hijo', 1),
-(33, 13, 'V', 18670132, 'Pedro', 'Mendez', 'm', '1998-02-12', 15, 'si', 'Tuerto', 'no', 'hermano ti', 'TÃ©cnico Medio', 'si', 'Obrero', 'no', '20000', 'panita', 1);
+(33, 13, 'V', 18670132, 'Pedro', 'Mendez', 'm', '1998-02-12', 15, 'si', 'Tuerto', 'no', 'hermano ti', 'TÃ©cnico Medio', 'si', 'Obrero', 'no', '20000', 'panita', 1),
+(34, 0, 'V', 21342123, 'ivan', 'gil', 'm', '1990-01-01', 25, 'no', '', 'no', 'Hijo', 'Bachiller', 'si', 'Estudiante', 'no', '7000', 'shsahasj', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,7 @@ INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `nacionalidad`, `ced
 --
 
 CREATE TABLE IF NOT EXISTS `jefeflia` (
-  `idjefe_familia` int(255) NOT NULL COMMENT 'Llave primaria',
+`idjefe_familia` int(255) NOT NULL COMMENT 'Llave primaria',
   `nombres` varchar(30) NOT NULL COMMENT 'nombre jefe flia',
   `apellidos` varchar(30) NOT NULL COMMENT 'apellido jefe flia',
   `nacionalidad` varchar(1) NOT NULL,
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `jefeflia` (
   `clasificacion_ingreso_familiar` varchar(22) NOT NULL COMMENT 'clasificacion ingreso familiar',
   `ingreso_mensual` int(6) NOT NULL COMMENT 'ingreso mensual jefe flia',
   `fecha_creacion` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo';
 
 --
 -- Volcado de datos para la tabla `jefeflia`
@@ -142,7 +143,7 @@ INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`
 --
 
 CREATE TABLE IF NOT EXISTS `notificacion` (
-  `id_notificacion` int(255) NOT NULL,
+`id_notificacion` int(255) NOT NULL,
   `id_respuesta` int(255) NOT NULL,
   `id_user_rece` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
@@ -170,7 +171,7 @@ INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `
 --
 
 CREATE TABLE IF NOT EXISTS `perfil` (
-  `id_perfil` int(255) NOT NULL,
+`id_perfil` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `tipo_perfil` int(20) NOT NULL
@@ -183,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `perfil` (
 --
 
 CREATE TABLE IF NOT EXISTS `respuesta` (
-  `id_respuesta` int(255) NOT NULL,
+`id_respuesta` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `respuesta_1` varchar(200) NOT NULL,
   `respuesta_2` varchar(200) NOT NULL,
@@ -198,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_user` int(255) NOT NULL,
+`id_user` int(255) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `nacionalidad` varchar(2) NOT NULL COMMENT 'nacionalidad usuarios',
@@ -212,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `contrasenia` varchar(50) NOT NULL,
   `status` int(1) NOT NULL,
   `fecha_creado` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -224,7 +225,8 @@ INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`
 (3, 'ddq', 'dded1sdasd', '', 231231231, 'zuyecci@gmail.com1', 2147483647, 'm', 'usuario11', 1, 'fcg1sd', 'fgf1', 2, '2015-05-29'),
 (4, 'sadasd', 'sadasd', '', 125216, 'saul_cfa@hotmail.com', 1165161, 'f', 'usuario1', 1, 'gvghv', 'asdasd', 1, '2015-05-30'),
 (5, 'sdasd', 'dasdasd', '', 45616514, 'sdasdasdasdas@sadasd.asda', 1561616, 'm', 'usuario1', 1, 'asdasd', 'asdasd', 3, '2015-05-30'),
-(6, 'sdasd', 'dasd', '', 23123, 'sadas@sdas.asd', 123123, 'm', 'usuario2', 2, 'SAUL', '123456', 1, '2015-06-24');
+(6, 'sdasd', 'dasd', '', 23123, 'sadas@sdas.asd', 123123, 'm', 'usuario2', 2, 'SAUL', '123456', 1, '2015-06-24'),
+(7, 'jos', 'sassa', 'v', 1234567, 'saassa@dsdas.com', 1234567, 'm', 'Unidad de ContralorÃ­a Social', 2, 'asa', '12345', 3, '2015-10-05');
 
 --
 -- Índices para tablas volcadas
@@ -234,43 +236,43 @@ INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`
 -- Indices de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  ADD PRIMARY KEY (`id_bitacora`);
+ ADD PRIMARY KEY (`id_bitacora`);
 
 --
 -- Indices de la tabla `grupo_fliar`
 --
 ALTER TABLE `grupo_fliar`
-  ADD PRIMARY KEY (`id_familiar`);
+ ADD PRIMARY KEY (`id_familiar`);
 
 --
 -- Indices de la tabla `jefeflia`
 --
 ALTER TABLE `jefeflia`
-  ADD PRIMARY KEY (`idjefe_familia`);
+ ADD PRIMARY KEY (`idjefe_familia`);
 
 --
 -- Indices de la tabla `notificacion`
 --
 ALTER TABLE `notificacion`
-  ADD PRIMARY KEY (`id_notificacion`);
+ ADD PRIMARY KEY (`id_notificacion`);
 
 --
 -- Indices de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  ADD PRIMARY KEY (`id_perfil`);
+ ADD PRIMARY KEY (`id_perfil`);
 
 --
 -- Indices de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  ADD PRIMARY KEY (`id_respuesta`);
+ ADD PRIMARY KEY (`id_respuesta`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_user`);
+ ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -280,37 +282,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `grupo_fliar`
 --
 ALTER TABLE `grupo_fliar`
-  MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `jefeflia`
 --
 ALTER TABLE `jefeflia`
-  MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',AUTO_INCREMENT=32;
+MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de la tabla `notificacion`
 --
 ALTER TABLE `notificacion`
-  MODIFY `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
+MODIFY `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `id_perfil` int(255) NOT NULL AUTO_INCREMENT;
+MODIFY `id_perfil` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `id_respuesta` int(255) NOT NULL AUTO_INCREMENT;
+MODIFY `id_respuesta` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

@@ -142,11 +142,11 @@ if (isset($_POST['idjefe_familia'])) {
 												<label class="radio-inline"><input type="radio" class="grey" value="V" name="nacionalidad" id="nacionalidad_V">V</label>
 												<label class="radio-inline"><input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad_E">E</label>
 											</div>
-											<input type="text" class="form-control" name="cedula" id="cedula" placeholder="Nro de cedula" maxlength="8" pattern="[0-9]*">
-											<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">Fecha Nacimiento</label>
-											<input type="date" class="form-control" name="fecha_nacimiento" min="1920-01-02" title="Ingrese la fecha de nacimiento" required/><br>
-											<label class="col-sm-3 control-label">Edad</label>
-											<input type="text" class="form-control" id="edad" name="edad" placeholder="Ingrese la edad" pattern="[0-9]*" maxlength="3" title="Ingrese la edad" required/>
+													<input type="text" class="form-control" name="cedula" id="cedula" placeholder="Nro de cedula" maxlength="8" pattern="[0-9]*">
+												<label class="col-sm-3 control-label" style=" margin-top: 12px; margin-left: 5px;">Fecha Nacimiento</label>
+													<input type="date" class="form-control" name="fecha_nacimiento" min="1920-01-02" title="Ingrese la fecha de nacimiento" required/><br>
+												<label class="col-sm-3 control-label">Edad</label>
+													<input type="text" class="form-control" id="edad" name="edad" placeholder="Ingrese la edad" pattern="[0-9]*" maxlength="3" title="Ingrese la edad" required/>
 											<label class="control-label" style=" margin-top: 12px; margin-left: 15px;">Discapacidad</label>
 											<div>
 												<label class="radio-inline">
@@ -685,7 +685,7 @@ if (isset($_POST['idjefe_familia'])) {
 																	<tr>
 																		<td>Fecha Nacimiento:</td>
 																		<td>
-																			<input type="date"class="form-control" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="2000-01-02" tabindex="5">
+																			<input type="date"class="form-control" value="<?php echo $datofamiliar['fecha_nacimiento']; ?>" name="fecha_nacimiento" min="1920-01-02" tabindex="5">
 																		</td>
 																	</tr>
 																	<tr>
