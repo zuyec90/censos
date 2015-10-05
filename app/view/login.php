@@ -35,10 +35,6 @@
 							</span>
 						</div>
 						<div class="form-actions">
-							<label for="remember" class="checkbox-inline">
-								<input type="checkbox" class="grey remember" id="remember" name="remember">
-								No cerrar sesión
-							</label>
 							<button type="submit" class="btn btn-primary btn-sm pull-right">
 								Acceder <i class="fa fa-arrow-circle-right"></i>
 							</button>
