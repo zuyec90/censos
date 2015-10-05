@@ -52,7 +52,7 @@ class User extends DataModel
 		}else{
 
 
-			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`,`fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['direccion'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."', '".$data['status'] ."',NOW() );";
+			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`, `email`, `celular`, `sexo`, `direccion`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`,`fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['nacionalidad'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['direccion'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."', '".$data['status'] ."',NOW() );";
 			mysql_query($sql) or die ('error 104 no se pudo crear el usuario');
 
 			return "1";
@@ -77,7 +77,7 @@ class User extends DataModel
 	{
 		$this->Conect();
 		if (!empty($data['id_user'])) {
-			$sql = "UPDATE `usuario` SET `nombre` = '".$data['nombre'] ."', `apellido` = '".$data['apellido'] ."', `cedula` = '".$data['cedula'] ."', `email` = '".$data['email'] ."', `celular` = '".$data['celular'] ."', `sexo` = '".$data['sexo'] ."', `direccion` = '".$data['direccion'] ."', `voceria` = '".$data['voceria'] ."', `perfil` = '".$data['perfil'] ."', `usuario` = '".$data['usuario'] ."', `contrasenia` = '".$data['contrasenia'] ."' WHERE `id_user` = '".$data['id_user'] ."' ";
+			$sql = "UPDATE `usuario` SET `nombre` = '".$data['nombre'] ."', `apellido` = '".$data['apellido'] ."', `nacionalidad` = '".$data['nacionalidad'] ."', `cedula` = '".$data['cedula'] ."', `email` = '".$data['email'] ."', `celular` = '".$data['celular'] ."', `sexo` = '".$data['sexo'] ."', `direccion` = '".$data['direccion'] ."', `voceria` = '".$data['voceria'] ."', `perfil` = '".$data['perfil'] ."', `usuario` = '".$data['usuario'] ."', `contrasenia` = '".$data['contrasenia'] ."' WHERE `id_user` = '".$data['id_user'] ."' ";
 			mysql_query($sql) or die ('error 106 no se pudo eliminar el usuario');
 
 			return "1";

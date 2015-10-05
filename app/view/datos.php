@@ -187,7 +187,7 @@
 													</label>
 
 													<div class="col-sm-2">
-														<input type="date" class="form-control" name="fecha_nacimiento" min="1920-01-02" title="Ingrese la fecha de nacimiento" required/><br>
+														<input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" min="1910-01-01"><br>
 
 													</div>
 												</div>
@@ -502,7 +502,7 @@
 														Fecha de Nacimiento:
 													</label>
 													<div class="col-sm-7">
-														<p class="form-control-static display-value" data-display="fecha_d"></p> <p class="form-control-static display-value" data-display="fecha_m"></p> <p class="form-control-static display-value" data-display="fecha_a"></p>
+														<p class="form-control-static display-value" data-display="fecha_nacimiento"></p>
 													</div>
 												</div>
 												<div class="form-group">
