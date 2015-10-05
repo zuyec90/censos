@@ -293,6 +293,14 @@ class censo extends DataModel
 				$respuesta = mysql_fetch_assoc($Reporte);
 			}
 			
+			if($Consulta == 2){
+
+				$query = "SELECT COUNT(*) FROM jefeflia WHERE status = 1";
+				$final = mysql_query($query);
+
+
+			}
+			
 			return $respuesta;
 		}
 
@@ -301,25 +309,25 @@ class censo extends DataModel
 			$this->Conect();
 
 			/* primer resultado */
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'f' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'm' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'no' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'si' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'si' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si' ";
-				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no' ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'f'  and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'm'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'no'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'si'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'si' and  status =1";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no'and  status =1 ";
 				
 				
 			/*segudno resultado */
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f' ";
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'm' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'm'and  status =1 ";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` > 0 or `ingreso_mensual` <> NULL) and `pensionado` = 'no' )";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` = 0 or `ingreso_mensual` = NULL) and `pensionado` = 'si' )";
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'si' ";
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no' ";
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' ";
-				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'si'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' and  status =1";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' and  status =1";
 
 				foreach ($sql as $key => $respuesta) {
 										

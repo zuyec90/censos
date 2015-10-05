@@ -29,8 +29,7 @@
 					{ label: "Edad",  data: [[1,3]]},
 					{ label: "Discapacidad",  data: [[1,7]]},
 					{ label: "Trabajo",  data: [[1,6]]},
-					{ label: "Pensionado",  data: [[1,8]]},
-					];
+					{ label: "Pensionado",  data: [[1,8]]},	];
 
 				$.plot('#placeholder82', data, {
 				    series: {
