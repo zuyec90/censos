@@ -202,9 +202,8 @@
 													<label class="col-sm-3 control-label">
 														Fecha de Nacimiento <span class="symbol required"></span>
 													</label>
-
 													<div class="col-sm-2">
-														<input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" min="1910-01-01"><br>
+														<input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" min="1910-01-01">
 
 													</div>
 												</div>
