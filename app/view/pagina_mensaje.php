@@ -42,7 +42,7 @@ $User = $MSJ->ConsultaUser();
             return;
         }
         document.getElementById("form").submit();
-}
+		}
 		</script>
 		
 		<style type="text/css">

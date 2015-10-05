@@ -248,7 +248,7 @@ $resultado = $user->Seleccionar($id_user);
 															<div class="form-group connected-group">
 																<label class="control-label">Contraseña<span class="symbol required"></span></label>
 																<span class="input-icon">
-																	<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>"><i class="fa fa-lock"></i>
+																	<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>"><i class=""></i>
 																</span>
 															</div>
 														</div>
