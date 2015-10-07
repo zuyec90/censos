@@ -211,7 +211,7 @@ $resultado = $user->Seleccionar($id_user);
 																<label for="form-field-mask-2">Teléfono</label>
 																	<div class="input-group">
 																		<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-																		<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" value="<?php echo $resultado['email'] ;?>">
+																		<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" maxlength="11" value="<?php echo $resultado['celular'] ;?>">
 																	</div>
 															</div>
 															<div class="form-group">
@@ -250,14 +250,15 @@ $resultado = $user->Seleccionar($id_user);
 															</div>
 														</div>
 													</div>
+													<div class="row">
+														<div class="col-md-4">
+															<br>
+															<button class="btn btn-teal btn-block" type="submit">Modificar <i class="fa fa-arrow-circle-right"></i></button>
+														</div>
+													</div>
 												</form>
 											</div>
-											<div class="row">
-												<div class="col-md-4">
-													<br>
-													<button class="btn btn-teal btn-block" type="submit">Modificar <i class="fa fa-arrow-circle-right"></i></button>
-												</div>
-											</div>
+
 										</div>
 									</div>
 								</div>

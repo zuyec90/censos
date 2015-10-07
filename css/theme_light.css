@@ -40,7 +40,7 @@ body, .main-container, .footer, .main-navigation, ul.main-navigation-menu > li >
 	background: #F5F5F5;
 }
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
-	background: #D9D9D9;
+	background: #ffffff;
 	color: #555555;
 }
 

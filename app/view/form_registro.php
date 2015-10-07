@@ -189,8 +189,8 @@
 													</label>
 													<select class="form-control" id="dropdown" name="perfil">
 														<option value="">Selecciona el tipo de Usuario</option>
-														<option value="1">Administrador</option>
-														<option value="2">Operador</option>
+														<option value="Administrador">Administrador</option>
+														<option value="Operador">Operador</option>
 
 													</select>
 												</div>

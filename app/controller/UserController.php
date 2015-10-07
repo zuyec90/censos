@@ -77,7 +77,7 @@ class User extends DataModel
 	{
 		$this->Conect();
 		if (!empty($data['id_user'])) {
-			$sql = "UPDATE `usuario` SET `nombre` = '".$data['nombre'] ."', `apellido` = '".$data['apellido'] ."', `nacionalidad` = '".$data['nacionalidad'] ."', `cedula` = '".$data['cedula'] ."', `email` = '".$data['email'] ."', `celular` = '".$data['celular'] ."', `sexo` = '".$data['sexo'] ."', `direccion` = '".$data['direccion'] ."', `voceria` = '".$data['voceria'] ."', `perfil` = '".$data['perfil'] ."', `usuario` = '".$data['usuario'] ."', `contrasenia` = '".$data['contrasenia'] ."' WHERE `id_user` = '".$data['id_user'] ."' ";
+			$sql = "UPDATE `usuario` SET `nombre` = '".$data['nombre'] ."', `apellido` = '".$data['apellido'] ."', `nacionalidad` = '".$data['nacionalidad'] ."', `cedula` = '".$data['cedula'] ."', `email` = '".$data['email'] ."', `celular` = '".$data['celular'] ."', `sexo` = '".$data['sexo'] ."', `voceria` = '".$data['voceria'] ."', `perfil` = '".$data['perfil'] ."', `usuario` = '".$data['usuario'] ."', `contrasenia` = '".$data['contrasenia'] ."' WHERE `id_user` = '".$data['id_user'] ."' ";
 			mysql_query($sql) or die ('error 303 no se pudo eliminar el usuario');
 
 			return "1";
