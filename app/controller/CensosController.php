@@ -129,6 +129,15 @@ class censo extends DataModel
 			$sql = "UPDATE `jefeflia` SET `nombres` = '".$datos['nombres']."', `apellidos` = '".$datos['apellidos']."', `nacionalidad` = '".$datos['nacionalidad']."',`cedula` = '".$datos['cedula']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."' , `edad` = '".$datos['edad']."', `sexo` = '".$datos['sexo']."', `cne` = '".$datos['cne']."', `tiempo_comunidad` = '".$datos['tiempo_comunidad']."', `incapacitado` = '".$datos['incapacitado']."', `tipo_incapacitado` = '".$datos['tipo_incapacitado']."', `pensionado` ='".$datos['pensionado']."', `institucion` = '".$datos['institucion']."', `telfcel` = '".$datos['telfcel']."', `telfhab` = '".$datos['telfhab']."', `telfofic` = '".$datos['telfofic']."', `email` = '".$datos['email']."', `estado_civil` = '".$datos['estado_civil']."', `nivel_instruccion` = '".$datos['nivel_instruccion']."', `profesion` ='".$datos['profesion']."', `trabaja` = '".$datos['trabaja']."', `clasificacion_ingreso_familiar` = '".$datos['clasificacion_ingreso_familiar']."', `ingreso_mensual` = '".$datos['ingreso_mensual'] ."' WHERE `idjefe_familia` = '".$datos['idjefe_familia'] ."'";
 			mysql_query($sql) or die ('Error 203 no se pueden modificar los datos');
 
+			/*** Ejemplo de bitacora ***/
+
+			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session		
+			$id=$datos['idjefe_familia']; 
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Modifico el registro')";
+			mysql_query($sqlBitacora);
+			
+			/*** Ejemplo de bitacora **/
+
 			return "1";
 		}
 		else{
@@ -248,6 +257,16 @@ class censo extends DataModel
 			$sql = "UPDATE `jefeflia` SET `status` = '0' WHERE `idjefe_familia`  = '".$id."' ";
 			mysql_query($sql) or die ('Error 210 no se pudo eliminar');
 
+			/*** Ejemplo de bitacora ***/
+
+			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session					
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Elimino el registro ')";
+			mysql_query($sqlBitacora);
+			
+			/*** Ejemplo de bitacora **/
+
+
+
 			return "1";
 		}
 		else{
@@ -350,12 +369,41 @@ class censo extends DataModel
 				}
 
 
-				return $conteo;
-				
-
-				
-			
+				return $conteo;	
 		}
+
+		/* metodo para consultar las bitacora segun censo */
+
+	public function ConsultasBitacora($id = Null)
+	{
+		$this->Conect();
+		$sql = "SELECT * FROM `bitacora` WHERE `idjefe_familia`= '".$id."' ";
+
+		$respuesta = mysql_query($sql) or die ("503 No existen consultas");
+	
+
+		return $respuesta; //imprimirlo en la vista
+
+
+	}
+
+
+		/* metodo para consultar las bitacora segun censo */
+
+	public function ConsultaUserBitacora($id = Null)
+	{
+		$this->Conect();
+
+		$sql = "SELECT * FROM `usuario` WHERE `id_user`= '".$id."' ";
+
+		$respuesta = mysql_query($sql) or die ("503 No existen consultas");
+	
+		$respuesta = mysql_fetch_assoc($respuesta);
+		return $respuesta; //imprimirlo en la vista
+
+
+	}
+
 
 
 }

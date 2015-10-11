@@ -1,7 +1,10 @@
 <?php
 require_once ('../controller/CensosController.php');
-$censo = new censo;
-$respuesta = $censo->Selectjefe();
+$OBJ = new censo;
+$respuesta = $OBJ->ConsultasBitacora($_GET['idjefe_familia']);
+
+$jefe = $OBJ->Consulta($_GET['idjefe_familia']);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,18 +40,7 @@ $respuesta = $censo->Selectjefe();
 			<!--inicio: PAGE -->
 			<div class="main-content">
 				<!--inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="false" style="display: block; margin-top: -102.5px;">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">× &times;</button>
-							<h4 class="modal-title">Desea eliminar este Jefe de Familia?</h4>
-						</div>					
-						<div class="modal-footer">
-							<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-							<input type="button" value="Eliminar" class="btn btn-danger"></input>
-						</div>
-					</div>
-				</div>	
+				
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -64,7 +56,7 @@ $respuesta = $censo->Selectjefe();
 								</li>
 							</ol>
 							<div class="page-header">
-								<h2>Lista de Censados</h2>
+								<h2>Bitacora</h2>
 							</div>
 							<!-- fin: PAGE TITLE & BREADCRUMB -->
 						</div>
@@ -82,46 +74,24 @@ $respuesta = $censo->Selectjefe();
 									<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 										<thead>
 											<tr>
-												<th> N°&nbsp; &nbsp;</th>
-												<th>Nombres</th>
-												<th class="hidden-xs">Apellidos</th>
-												<th>Cédula</th>
-												<th class="hidden-xs">Edad</th>
-												<th>Opciones</th>
+												<th> N° &nbsp; &nbsp; &nbsp;&nbsp;</th>
+												<th>Fecha &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+												<th class="hidden-xs">Nombre del Jefe de familia</th>
+												<th>Accion realizada</th>
+												<th class="hidden-xs">Responsable</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  ?>
+											<?php 	while ($censo = mysql_fetch_assoc($respuesta)) {  
+												$NombreUsuario = $OBJ->ConsultaUserBitacora($censo['id_user']);
+												?>
 											<tr>
-												<td><?php echo $censo['idjefe_familia'];?></td>
-												<td><a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>"> <?php echo $censo['nombres']; ?> </a></td> 
-												<td class="hidden-xs"><?php echo $censo['apellidos'];?></td>
-												<td><?php echo $censo['cedula'];?></td>
-												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
-												<td>
-													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
-													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
-													<a href="consultabitacora.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-info tooltips"  data-placement="top" data-original-title="Bitacora" style= "margin-left: 7px;"><i class="fa fa-clock-o"></i></a>
-													
-
-													<div class="message-actions">
-														<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-															<div class="modal-content">
-																<div class="modal-header">
-																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-																	<h4 class="modal-title">Eliminar Perfil</h4>
-																</div>
-																<div class="modal-body">
-																		Desea eliminar este perfil?
-																</div>
-																<div class="modal-footer">
-																	<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-																	<a href="../lib/CensosEliminar.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" name="idjefe_familia" type="button"class="btn btn-danger" >Eliminar</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
+												<td><?php echo $censo['id_bitacora'];?></td>
+												<td><?php echo $censo['fecha_accion'];?></td>
+												<td><?php echo $jefe['nombres'];?></td> 
+												<td class="hidden-xs"><?php echo $censo['accion'];?></td>
+												<td> <?php echo $NombreUsuario['nombre'];  ?></td> 
+																									
 											</tr>
 											<?php }?>
 										</tbody>
@@ -174,7 +144,6 @@ $respuesta = $censo->Selectjefe();
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				UIModals.init();
 				TableData.init();
 			});
 		</script>
