@@ -95,13 +95,18 @@ class censo extends DataModel
 
 			mysql_query($sql) or die ('Error 201 no se pudo crear el usuario');
 
-				return "0";
+				
 
-			/*ejemplo de bitacora*/
-			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session
-			$id_lastInster =  mysql_insert_id();
-			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', '"$id_lastInster"', NOW(), 'Creacion del primer registro')";
+			/*** Ejemplo de bitacora ***/
+
+			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session		
+			$id=mysql_insert_id(); 
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Creacion del primer registro')";
 			mysql_query($sqlBitacora);
+			
+			/*** Ejemplo de bitacora **/
+
+			return "0";
 		}
 
 	}

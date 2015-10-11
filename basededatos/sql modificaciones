@@ -1,0 +1,4 @@
+
+//* este es para el campo de accion en la bitacora tenia como maximo 10 y varchar se cambio a text para que guarde mas 
+ALTER TABLE  `bitacora` CHANGE  `accion`  `accion` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL ;
+
