@@ -1,9 +1,9 @@
 <?php
 
 
-include ('../Controller/CensosController.php');
+include ('../controller/CensosController.php');
 
-$Jefe = new Censo;
+$Jefe = new censo;
 
 echo $Jefe->Registrar($_POST);
 if ($Jefe->Registrar($_POST) == 1) {

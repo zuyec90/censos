@@ -98,10 +98,10 @@ class censo extends DataModel
 				return "0";
 
 			/*ejemplo de bitacora*/
-		/*	$variabledesession = 5; // esto no lo tienen porque aun no tiene nada de session
+			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session
 			$id_lastInster =  mysql_insert_id();
 			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', '"$id_lastInster"', NOW(), 'Creacion del primer registro')";
-			mysql_query($sqlBitacora);*/
+			mysql_query($sqlBitacora);
 		}
 
 	}
