@@ -64,23 +64,23 @@ var FormWizard = function () {
                 nacionalidad:{
                      required: true,
                 },
-                 edad: {
+                edad: {
                     minlength: 1,
                     required: true
                 },
                 sexo: {
                     required: true
                 },
-                CNE: {
+                cne: {
                     required: true,
                 },
-                tiempo: {
+                tiempo_comunidad: {
                     required: true,
                 },
                 incapacitado: {
                     required: true,
                 },
-                tipo: {
+                tipo_incapacitado: {
                     minlength: 20,
                 },
                 pensionado: {
@@ -89,20 +89,19 @@ var FormWizard = function () {
                 institucion: {
                     minlength: 3,
                 },
-
                 estado_civil: {
                     required: true,
                 },
                 nivel_instruccion: {
                     required: true,
                 },
-                 profesion: {
+                profesion: {
                     required: true,
                 },
                 trabaja: {
                     required: true,
                 },
-                ingreso: {
+                clasificacion_ingreso_familiar: {
                     required: true,
                 },
                 ingreso_mensual: {
@@ -135,7 +134,7 @@ var FormWizard = function () {
                 nivel_de_instruccion: "Por favor seleccione el nivel de instrucción",
                 profesion: "Por favor ingrese la profesión",
                 trabaja: "Por favor ingrese el campo",
-                ingreso: "Por favor seleccione el campo",
+                clasificacion_ingreso_familiar: "Por favor seleccione el campo",
                 ingreso_mensual: "Por favor ingrese el campo",
 
 
