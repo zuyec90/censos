@@ -125,9 +125,9 @@ $resultado = $user->Seleccionar();
 												<td class="hidden-xs"><?php echo $users['email'];?></td>
 												<td>
 													<a href="perfil.php?id_user=<?php echo $users['id_user'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
-													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje<?php echo $users['id_user'];?>" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
 													<div class="message-actions">
-															<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+															<div class="modal fade" id="eliminar-mensaje<?php echo $users['id_user'];?>" tabindex="-1" role="dialog" aria-hidden="true">
 																<div class="modal-content">
 																	<div class="modal-header">
 																		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

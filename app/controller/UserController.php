@@ -52,7 +52,7 @@ class User extends DataModel
 		}else{
 
 
-			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`, `email`, `celular`, `sexo`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`,`fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['nacionalidad'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."', '".$data['status'] ."',NOW() );";
+			$sql = "INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`, `email`, `celular`, `sexo`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`,`fecha_creado`) VALUES (NULL,'".$data['nombre'] ."','".$data['apellido'] ."','".$data['nacionalidad'] ."','".$data['cedula'] ."','".$data['email'] ."','".$data['celular'] ."','".$data['sexo'] ."','".$data['voceria'] ."','".$data['perfil'] ."','".$data['usuario'] ."','".$data['contrasenia'] ."', 1,NOW() );";
 			mysql_query($sql) or die ('error 301 no se pudo crear el usuario');
 
 			return "1";
@@ -88,12 +88,12 @@ class User extends DataModel
 	}
 	public function Seleccionar($id = Null)
 	{
-		if(!isset($_SESSION))
+		/*if(!isset($_SESSION))
 		{
 		        session_start();
 		}
 		$this->Seguridad();
-		$this->ValidaPerfil(2);
+		$this->ValidaPerfil(2);*/
 		$this->Conect();
 		if (!empty($id)) {
 			$sql = "SELECT * FROM `usuario` WHERE `id_user`= '".$id."' ";

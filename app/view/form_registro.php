@@ -13,7 +13,7 @@
 		<?php require_once('header.php'); ?>
 
 		<script type="javascript">
-
+/* no se esta usando esto 
 			function validarcontrasenia(){
 
 				var p1 = document.getElementById("contrasenia").value;
@@ -45,7 +45,7 @@
 					return true; 
 				}
 
-			}
+			}*/
 		</script>
 		<!-- end: HEADER -->
 		<!-- start: MAIN CONTAINER -->
@@ -98,7 +98,7 @@
 									<i class="clip-user"></i>Crea un usuario para gestiones
 								</div>
 								<div class="panel-body">
-									<form action="../lib/UserCreate.php" method="post" role="form" id="form" onsubmit="validarcontrasenia()">
+									<form action="../lib/UserCreate.php" method="post" role="form" id="form" >
 										<div class="row">
 											<div class="col-md-12">
 												<div class="errorHandler alert alert-danger no-display">
@@ -189,8 +189,8 @@
 													</label>
 													<select class="form-control" id="dropdown" name="perfil">
 														<option value="">Selecciona el tipo de Usuario</option>
-														<option value="Administrador">Administrador</option>
-														<option value="Operador">Operador</option>
+														<option value="1">Administrador</option>
+														<option value="2">Operador</option>
 
 													</select>
 												</div>
@@ -256,6 +256,7 @@
 											} ?>
 											</div>
 										</div>
+										<input type="submit" value="enviar" id="boton">
 									</form>
 								</div>
 							</div>
@@ -307,7 +308,7 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				//FormValidator.init();
+				FormValidator.init();
 				//UIElements.init();
 			});
 

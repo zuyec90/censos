@@ -58,7 +58,7 @@ var FormValidator = function () {
                     minlength: 6,
                     required: true
                 },
-                contrasenia_doble: {
+                contrasenia2: {
                     required: true,
                     minlength: 6,
                     equalTo: "#contrasenia"
@@ -93,15 +93,16 @@ var FormValidator = function () {
                 $(element).closest('.form-group').removeClass('has-error').addClass('has-success').find('.symbol').removeClass('required').addClass('ok');
             },
             submitHandler: function (form) {
+                    
                 successHandler1.show();
-                errorHandler1.hide();
+               errorHandler1.hide();
                 // submit form
-                $('#form').submit();
+            $('#form').submit();
             }
         });
     };
     // function to initiate Validation Sample 2
-    var runValidator2 = function () {
+    /*var runValidator2 = function () {
         var form2 = $('#form2');
         var errorHandler2 = $('.errorHandler', form2);
         var successHandler2 = $('.successHandler', form2);
@@ -207,7 +208,7 @@ var FormValidator = function () {
                 successHandler2.show();
                 errorHandler2.hide();
                 // submit form
-                //$('#form2').submit();
+                //
             }
         });
         $('.summernote').summernote({
@@ -216,12 +217,12 @@ var FormValidator = function () {
         });
         CKEDITOR.disableAutoInline = true;
         $('textarea.ckeditor').ckeditor();
-    };
+    };*/
     return {
         //main function to initiate template pages
         init: function () {
             runValidator1();
-            runValidator2();
+          //  runValidator2();
         }
     };
 }();
