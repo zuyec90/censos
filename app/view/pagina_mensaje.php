@@ -212,9 +212,9 @@ $User = $MSJ->ConsultaUser();
 									</form>
 									</li>
 								<div class="panel-body messages panel-scroll ps-container" style="height: 88%;">
-								<li id="respuesta" style="display:none;">
+								<div id="respuesta" style="display:none;">
 									
-								</li>
+								</div>
 									<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
 										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
@@ -313,6 +313,7 @@ $User = $MSJ->ConsultaUser();
 			$(idselector).removeClass("active starred");
 
 		}
+		/* js para el bsucador */
 		$("#busca").keypress(function () {
 
 			var text = $("#busca").val();
@@ -322,7 +323,9 @@ $User = $MSJ->ConsultaUser();
 				$('#respuesta').html(respondText);
 
 			});
-
+		 $('#busca').keyup(function(e){if(e.keyCode == 8)
+		 	$('#respuesta').hide();
+		 })  
 
 		});
 		</script>
