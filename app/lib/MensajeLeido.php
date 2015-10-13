@@ -1,5 +1,5 @@
 <?php
-include ('../Controller/MensajeController.php');
+include ('../controller/MensajeController.php');
 
 $mensaje = new Mensaje;
 

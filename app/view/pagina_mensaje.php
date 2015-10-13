@@ -204,7 +204,7 @@ $User = $MSJ->ConsultaUser();
 									<li class="messages-search">
 									<form action="#" class="form-inline">
 										<div class="input-group">
-											<input type="text" class="form-control" placeholder="Busqueda de mensaje...">
+											<input id="busca" type="text" class="form-control" placeholder="Busqueda de mensaje...">
 											<div class="input-group-btn">
 												<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
 											</div>
@@ -212,6 +212,9 @@ $User = $MSJ->ConsultaUser();
 									</form>
 									</li>
 								<div class="panel-body messages panel-scroll ps-container" style="height: 88%;">
+								<li id="respuesta" style="display:none;">
+									
+								</li>
 									<?php while($MSJS = mysql_fetch_assoc($resultado)) {
 										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
 										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
@@ -228,7 +231,7 @@ $User = $MSJ->ConsultaUser();
 
 											<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 
-												<span class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
+												<span id = "dato" class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
 												<div class="messages-item-time">
 													<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 													<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>
@@ -310,7 +313,18 @@ $User = $MSJ->ConsultaUser();
 			$(idselector).removeClass("active starred");
 
 		}
+		$("#busca").keypress(function () {
 
+			var text = $("#busca").val();
+			var url = '../lib/search.php';
+			$.post(url,{'usuario':text},function(respondText){
+				$('#respuesta').show();
+				$('#respuesta').html(respondText);
+
+			});
+
+
+		});
 		</script>
 
 	</body>

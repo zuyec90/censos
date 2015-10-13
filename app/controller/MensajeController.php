@@ -135,5 +135,25 @@ class Mensaje extends DataModel
 			return $respuesta;
 		}
 
+	public function Search($msj = Null)
+	{
+		$this->Conect();
+		if (!empty($msj)) {
+			echo $sql = "SELECT * FROM `notificacion` WHERE id_user = (SELECT id_user FROM `usuario` WHERE  `nombre` LIKE  '%".$msj."%') ";
+
+			$SelectionMsj = mysql_query($sql) or die ("Error 402 no se logró consultar");
+			$respuesta = mysql_fetch_assoc($SelectionMsj);
+
+			//$respuesta['id_user']
+
+		}else{
+		/*	$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' ORDER BY  `id_notificacion` DESC";
+			$respuesta = mysql_query($sql) or die ("Error 402 no se logró consultar");*/
+		}
+		return $respuesta;
+	}
+
+
+
 }
 ?>
