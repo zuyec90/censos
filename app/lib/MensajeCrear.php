@@ -14,7 +14,7 @@ caso solo esta la conexion
 */
 
 
-include ('../Controller/MensajeController.php');
+include ('../controller/MensajeController.php');
 
 $Mensaje = new Mensaje;
 if (isset($_POST['ajax'])) {

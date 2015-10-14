@@ -1,5 +1,5 @@
 <?php
-include ('../Controller/UserController.php');
+include ('../controller/UserController.php');
 
 $User = new User;
 

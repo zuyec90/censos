@@ -1,6 +1,6 @@
 <?php
 
-include ('../Controller/CensosController.php');
+include ('../controller/CensosController.php');
 
 $Jefe = new Censo;
 

@@ -1,5 +1,5 @@
 <?php
-include ('../Controller/CensosController.php');
+include ('../controller/CensosController.php');
 
 $Censo = new Censo;
 

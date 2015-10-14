@@ -1,7 +1,7 @@
 <?php
 
 
-include ('../Controller/UserController.php');
+include ('../controller/UserController.php');
 
 $User = new User;
 echo $User->login($_POST);
