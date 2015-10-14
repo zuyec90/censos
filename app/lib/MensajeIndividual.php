@@ -6,7 +6,7 @@ $leidos = $MSJ->Leido($_POST['id_notificacion']);
 $receptor = $MSJ->ConsultaReceptor($resultado['id_user_rece']);
 $emisor = $MSJ->ConsultaReceptor($resultado['id_user']);
 $cadena = $MSJ->Selecthijos($_POST['id_notificacion']);
-
+session_start();
 ?>
 		<div class="message-header">
 			<div class="message-time">
@@ -120,7 +120,7 @@ $cadena = $MSJ->Selecthijos($_POST['id_notificacion']);
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-md-6">
-							<input name="id_user" type="hidden"   value="<?php echo $receptor['id_user']; ?> " />
+							<input name="id_user" type="hidden"   value="<?php echo $_SESSION['id_user']; ?> " />
 							<input name="id_user_rece" type="hidden"   value="<?php echo $emisor['id_user']; ?> " />
 							<input type="hidden" name="id_notificacion" value="<?php echo $_POST['id_notificacion']; ?>" />
 							<input type="hidden" name="id_respuesta" value="<?php echo $_POST['id_notificacion']; ?>" />

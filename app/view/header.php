@@ -1,3 +1,8 @@
+<?PHP 
+session_start();
+
+
+?>
 <div class="navbar navbar-inverse navbar-fixed-top">
 <!-- inicio: TOP NAVIGATION CONTAINER -->
 	<div class="container">
@@ -19,7 +24,7 @@
 			<!-- inicio: USER DROPDOWN -->
 				<li class="dropdown current-user">
 					<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-						<img src="../../images/2.jpg"><span class="username">Ulises Robles</span><i class="clip-chevron-down"></i>
+						<img src="../../images/2.jpg"><span class="username"><?php echo $_SESSION['nombre']; ?></span><i class="clip-chevron-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li>

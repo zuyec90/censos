@@ -1,8 +1,4 @@
-<?php
-require_once ('../controller/CensosController.php');
-$censo = new censo;
-$respuesta = $censo->Selectjefe();
-?>
+
 
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -30,6 +26,11 @@ $respuesta = $censo->Selectjefe();
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!--inicio: MAIN NAVIGATION MENU -->
 					<?php require_once('menu.php'); ?>
+					<?php
+					require_once ('../controller/CensosController.php');
+					$censo = new censo;
+					$respuesta = $censo->Selectjefe();
+					?>
 					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- fin: SIDEBAR -->
@@ -100,9 +101,10 @@ $respuesta = $censo->Selectjefe();
 												<td class="hidden-xs"><?php echo $censo['edad'];?></td>
 												<td>
 													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
-													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+													<?php if ($_SESSION['perfil'] == 1 ){ ?>
+													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>													
 													<a href="consultabitacora.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-info tooltips"  data-placement="top" data-original-title="Bitacora" style= "margin-left: 7px;"><i class="fa fa-clock-o"></i></a>
-													
+													<?php } ?>
 
 													<div class="message-actions">
 														<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">

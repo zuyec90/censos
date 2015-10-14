@@ -23,6 +23,18 @@ class Mensaje extends DataModel
 
 	}
 
+	public function SelectById($id_user = Null)
+	{
+		$this->Conect();
+		$this->Seguridad(); //para verificar que este logueado alguien 
+		if (!empty($id_user)) {
+			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' and `id_user_rece` = '".$id_user."' ORDER BY  `id_notificacion` DESC";
+			$respuesta = mysql_query($sql) or die ("Error 402 no se logró consultar");
+		}
+		return $respuesta;
+	}
+
+
 	public function Select($msj = Null)
 	{
 		$this->Conect();
@@ -30,7 +42,7 @@ class Mensaje extends DataModel
 			$sql = "SELECT * FROM `notificacion` WHERE `id_notificacion` = '".$msj."' ";
 
 			$SelectionMsj = mysql_query($sql) or die ("Error 402 no se logró consultar");
-			$respuesta = mysql_fetch_assoc($SelectionMsj);
+			$respuesta = mysql_fetch_assoc($SelectionMsj);		
 
 		}else{
 			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' ORDER BY  `id_notificacion` DESC";
@@ -138,8 +150,9 @@ class Mensaje extends DataModel
 	public function Search($msj = Null)
 	{
 		$this->Conect();
+		session_start();
 		if (!empty($msj)) {
-			$sql = "SELECT * FROM `notificacion` WHERE id_user in (SELECT id_user FROM `usuario` WHERE  `nombre` LIKE  '%".$msj."%') ";
+			$sql = "SELECT * FROM `notificacion` WHERE id_user in (SELECT id_user FROM `usuario` WHERE  `nombre` LIKE  '%".$msj."%') and  `id_user_rece` = '".$_SESSION['id_user']."' and `status` <> '2' ";
 
 			$respuesta = mysql_query($sql) or die ("Error 402 no se logró consultar");
 			//$respuesta = mysql_fetch_assoc($SelectionMsj);

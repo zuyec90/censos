@@ -1,11 +1,4 @@
-<?php
-//error_reporting();
-require_once ('../controller/MensajeController.php');
-$MSJ = new Mensaje;
-$resultado = $MSJ->Select();
-$User = $MSJ->ConsultaUser();
 
-?>
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![finalif]-->
@@ -22,6 +15,17 @@ $User = $MSJ->ConsultaUser();
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); ?>
 		
+
+		<?php
+		//error_reporting();
+		
+		require_once ('../controller/MensajeController.php');
+		$MSJ = new Mensaje;
+		$resultado = $MSJ->SelectById($_SESSION['id_user']);
+		$User = $MSJ->ConsultaUser();
+
+		?>
+
 		<script type="text/javascript">
 
 		function validar(){
@@ -154,10 +158,11 @@ $User = $MSJ->ConsultaUser();
 						</div>
 					<?php	}
 					} ?>
-
+					<?php if ($_SESSION['perfil'] == 1 ){ ?>
 					<div class="panel-body">
 						<a href="#responsive" data-toggle="modal" class="demo btn btn-primary"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Crear Mensaje</a>
 					</div>
+					<?php } ?>
 					<!-- final: BOOTSTRAP EXTED MODALS PANEL -->
 					<!-- inicio: BOOTSTRAP EXTED MODALS -->
 					<div id="responsive" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
@@ -170,7 +175,7 @@ $User = $MSJ->ConsultaUser();
 								<div class="row">
 									<div class="col-md-4">
 										<label for="name">Nombre: Usuario</label>
-										<input name="id_user" type="hidden" id="nombre"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+										<input name="id_user" type="hidden" id="nombre"  value="<?PHP echo $_SESSION['id_user'];?>" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 										<br>
 										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">

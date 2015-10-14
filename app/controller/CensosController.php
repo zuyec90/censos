@@ -203,6 +203,7 @@ class censo extends DataModel
 	public function Consulta($id = Null)
 	{
 		$this->Conect();
+		$this->Seguridad();
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
 		$respuesta = mysql_query($sql) or die ("Error 207 no se logro consultar");
@@ -216,6 +217,7 @@ class censo extends DataModel
 	public function Selectjefe($id = Null)
 	{
 		$this->Conect();
+		$this->Seguridad();// esto es  para si no esta logeado lo bote de la session 
 		if (!empty($id)) {
 			$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 			$Selection = mysql_query($sql) or die ("Error 208 no se logró consultar");

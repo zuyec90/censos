@@ -242,20 +242,24 @@ $resultado = $user->Seleccionar($id_user);
 																	<input type="text" class="form-control" name="usuario" value="<?php echo $resultado['usuario'] ;?>"><i class="fa fa-user"></i>
 																</span>
 															</div>
+															
 															<div class="form-group connected-group">
 																<label class="control-label">Contraseña</label>
 																<span class="input-icon">
 																	<input type="password" class="form-control password" id="contrasenia" name="contrasenia" value="<?php echo $resultado['contrasenia'] ;?>"><i class=""></i>
 																</span>
 															</div>
+														
 														</div>
 													</div>
+													<?php if ($_SESSION['perfil'] == 1 ){ ?>
 													<div class="row">
 														<div class="col-md-4">
 															<br>
 															<button class="btn btn-teal btn-block" type="submit">Modificar <i class="fa fa-arrow-circle-right"></i></button>
 														</div>
 													</div>
+														<?php } ?>
 												</form>
 											</div>
 

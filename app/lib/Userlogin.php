@@ -4,7 +4,7 @@
 include ('../controller/UserController.php');
 
 $User = new User;
-echo $User->login($_POST);
+
  if($User->login($_POST) == 1){
 
 	header("Location: ../view/home.php");

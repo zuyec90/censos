@@ -1,22 +1,4 @@
-<?php
 
-include ('../controller/CensosController.php');
-
-$Jefe = new Censo;
-
-if (isset($_POST['idjefe_familia'])) {
-	@$idjefe_familia = $_POST['idjefe_familia']; //@ para que no aparezca el error 'notice' variables indefinidas
-	}elseif(isset($_GET['idjefe_familia'])) {
-		@$idjefe_familia = $_GET['idjefe_familia']; //se hacen dos if. Si la variable viene por post o si viene por get
-	}else{
-		$idjefe_familia = null;
-	} //No es necesario hacer dos procesos de if debido a que solo se necesita buscar el jefe para vincularlo con el familiar
-	//echo "<br><br><br><br>".$idjefe_familia."<br><br><br><br>";
-	$resultado = $Jefe->Selectjefe($idjefe_familia);
-	//var_dump($resultado);
-	$familiares = $Jefe->SelectFamiliar($idjefe_familia);
-	$User = $Jefe->ConsultaUser();
-?>
 
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -37,7 +19,28 @@ if (isset($_POST['idjefe_familia'])) {
 	<!-- inicio: BODY -->
 	<body>
 		<!-- inicio: HEADER -->
-		<?php require_once('header.php'); ?>
+		<?php require_once('header.php'); 
+
+		?>
+		<?php
+
+		include ('../controller/CensosController.php');
+
+		$Jefe = new Censo;
+
+		if (isset($_POST['idjefe_familia'])) {
+			@$idjefe_familia = $_POST['idjefe_familia']; //@ para que no aparezca el error 'notice' variables indefinidas
+			}elseif(isset($_GET['idjefe_familia'])) {
+				@$idjefe_familia = $_GET['idjefe_familia']; //se hacen dos if. Si la variable viene por post o si viene por get
+			}else{
+				$idjefe_familia = null;
+			} //No es necesario hacer dos procesos de if debido a que solo se necesita buscar el jefe para vincularlo con el familiar
+			//echo "<br><br><br><br>".$idjefe_familia."<br><br><br><br>";
+			$resultado = $Jefe->Selectjefe($idjefe_familia);
+			//var_dump($resultado);
+			$familiares = $Jefe->SelectFamiliar($idjefe_familia);
+			$User = $Jefe->ConsultaUser();
+		?>
 		<script type="text/javascript"> 
 			function revisar() {
 				var nombre = document.getElementById("nombre").value;
@@ -86,8 +89,9 @@ if (isset($_POST['idjefe_familia'])) {
 						<div class="modal-body">
 							<div class="row">
 								<div class="col-md-6">
-									<label  for="name">Nombre: Usuario</label>
-									<input name="id_user" type="hidden" id="id_user" class="form-controlR"  value="5" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
+									<label  for="name">Nombre: <?PHP echo $_SESSION['nombre']; ?></label>
+									
+									<input name="id_user" type="hidden" id="id_user" class="form-controlR"  value="<?PHP echo $_SESSION['id_user'];?>" placeholder="Nombre del emisor" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;"/>
 									<br>
 									<label for="destinatario">Destinatario:</label>
 									<select id="id_user_rece" name="id_user_rece" class="form-controlR" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
@@ -108,7 +112,7 @@ if (isset($_POST['idjefe_familia'])) {
 					</form>
 					<div class="modal-footer">
 						<input type="button" value="Cancelar" data-dismiss="modal" class="btn btn-light-grey"></input>
-						<input type="button" value="Enviar" class="btn btn-primary"></input>
+						<a href="#" onclick="enviar()" class="btn btn-primary">Enviar</a>
 					</div>
 				</div>
 				<div id="ajax-modal" class="modal fade" tabindex="-1" style="display: none;"></div>
@@ -570,7 +574,7 @@ if (isset($_POST['idjefe_familia'])) {
 
 																$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
 														
-														   		if ($tiempo == 0) { ?>
+														   		if ($tiempo == 0 or $_SESSION["perfil"] == 1) { ?>
 																<div class="col-sm-4 ">
 																	<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
 																</div>

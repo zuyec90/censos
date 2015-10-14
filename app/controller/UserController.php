@@ -28,12 +28,12 @@ class User extends DataModel
 				$_SESSION['login'] = 'si';
 				return 1;
 			}else{
-				return 0;
+				return $valida;
 			}
 
 		}else{
 
-			return 0;
+			return $valida;
 		}
 
 	}
