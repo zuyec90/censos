@@ -2,6 +2,7 @@
 session_start();
 
 if ($_SESSION['login'] == null) {
+//* no hya session y se va a login
 header("Location: login.php");
 }
 

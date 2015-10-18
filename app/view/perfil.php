@@ -1,14 +1,15 @@
 
 <?php
 session_start();
-echo $_SESSION['id_user'] ;
+
 
 require_once ('../controller/UserController.php');
 $user = new User;
-if (!empty($_SESSION['id_user'])) {
+ //echo "string".$_GET["id_user"]; die();
+if (!empty($_SESSION['id_user']) and  $_GET["id_user"] == "" ) {
 	$id_user = $_SESSION['id_user'];
 }else{
-	$id_user = Null;
+	$id_user = $_GET["id_user"];
 }
 $resultado = $user->Seleccionar($id_user);
 

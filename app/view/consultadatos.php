@@ -573,7 +573,7 @@
 																<?php
 
 																$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
-														
+															
 														   		if ($tiempo == 0 or $_SESSION["perfil"] == 1) { ?>
 																<div class="col-sm-4 ">
 																	<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">
