@@ -6,15 +6,15 @@
 <html lang="es" class="no-js">
 	<!--<![fin if]-->
 	<!-- inicio: HEAD -->
-	<?php require_once('head.php'); ?>
+	<?php 
+	 require_once('head.php'); ?>
 	<!-- fin: HEAD -->
 	<!-- inicio: BODY -->
 	<body id="pg_home" style= "text-align: justify;">
 		<!-- inicio: HEADER -->
 		<?php require_once('header.php'); 
-		if (empty($_SESSION['login'])) {
-			header("Location: login.php");
-		}
+
+		
 		?>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->

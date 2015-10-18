@@ -1,6 +1,10 @@
 <?PHP 
 session_start();
 
+if ($_SESSION['login'] == null) {
+header("Location: login.php");
+}
+
 
 ?>
 <div class="navbar navbar-inverse navbar-fixed-top">
