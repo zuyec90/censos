@@ -5,13 +5,14 @@ include ('../controller/CensosController.php');
 
 $Jefe = new censo;
 
-echo $Jefe->Registrar($_POST);
-if ($Jefe->Registrar($_POST) == 1) {
+$res = $Jefe->Registrar($_POST);
+
+if ($res != 0) {
 
 
 
-echo "<form name='form' action='../view/datos.php' method='post'>";
-echo "<input type='hidden' name='idjefe_familia' value='".$_POST['idjefe_familia']."'>";
+echo "<form name='form' action='../view/consultadatos.php?idjefe_familia=".$res."' method='post'>";
+echo "<input type='hidden' name='idjefe_familia' value='".$res."'>";
 echo "</form>";
 echo "<script language=javascript>document.form.submit();</script>";
 

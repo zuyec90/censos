@@ -250,9 +250,9 @@
 						</div>
 						<!-- fin: PAGE HEADER -->
 						<!-- inicio: PAGE CONTENT -->
-						<?php
+						<?php /*  lo comente xq siento que fallaba 
 						@$_POST['valor'];
-						if(!empty($_POST)){
+						if(!empty($_POST) and $_POST['valor'] < 2){
 						if ($_POST['valor'] == '1' ) { ?>
 							<div class="alert alert-block alert-danger fade in">
 								<button data-dismiss="alert" class="close" type="button">&times;</button>
@@ -267,7 +267,7 @@
 										<p>Se realizo la acción satisfatoriamente.</p>
 								</div>									
 							<?php	}
-						} ?>
+						} */ ?>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="tabbable">
@@ -593,12 +593,12 @@
 										</div>
 										<?php
 										@$_POST['valor'];
-										if(!empty($_POST)){
+										if(!empty($_POST) and $_POST['valor'] < 2 ){
 											if ($_POST['valor'] == '1' ) { ?>
 											<div class="alert alert-success">
 												<button data-dismiss="alert" class="close" type="button">&times;</button>
 												<h4 class="alert-heading"><i class="fa fa-check-circle"></i></h4>
-												<p>Modificación realizada satisfatoriamente.</p>
+												<p>Se ejecuto la accion satisfatoriamente.a</p>
 											</div>
 										<?php
 										}else{ ?>
@@ -635,12 +635,20 @@
 																		<td>
 																			<input type="text" value="<?php echo $datofamiliar['nombre']; ?>" name="nombre">
 																			<input type="hidden" value="<?php echo $datofamiliar['id_familiar']; ?>" name="id_familiar" >
+																			<input type="hidden" value="<?php echo $idjefe_familia; ?>" name="idjefe_familia" >
+																			
 																		</td>
 																	</tr>
 																	<tr>
 																		<td>Apellidos:</td>
 																		<td>
 																			<input type="text" value="<?php echo $datofamiliar['apellido']; ?>" name="apellido">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>Edad:</td>
+																		<td>
+																			<input type="text" value="<?php echo $datofamiliar['edad']; ?>" name="edad">
 																		</td>
 																	</tr>
 																	<tr>
@@ -746,13 +754,13 @@
 																		<td>
 																			<select class="form-control" id="nivel_instruccion" name="nivel_instruccion">
 																				<option value="<?php $datofamiliar['nivel_instruccion'] ?>"><?php echo $datofamiliar['nivel_instruccion'];?></option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Sin Instrucción</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Básica</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Bachiller</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Medio</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Técnico Superior</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Universitario</option>
-																				<option value="<?php echo $datofamiliar['nivel_instruccion']; ?>">Postgrado</option>
+																				<option value=" Sin Instrucción">Sin Instrucción</option>
+																				<option value=" Básica">Básica</option>
+																				<option value=" Bachiller">Bachiller</option>
+																				<option value=" Técnico Medio">Técnico Medio</option>
+																				<option value=" Técnico Superior">Técnico Superior</option>
+																				<option value=" Universitario">Universitario</option>
+																				<option value=" Postgrado">Postgrado</option>
 																			</select>
 																		</td>
 																	</tr>
@@ -820,7 +828,7 @@
 															</table>
 															<?php
 															$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
-															if ($tiempo != 1) { ?>
+															if ($tiempo != 1 or $_SESSION["perfil"] == 1) { ?>
 															<div class="col-sm-4 col-sm-offset-4">
 																<input type="submit" value="Modificar" class="btn btn-yellow btn-block "  style ="margin-top: 25px; ">
 															</div>
