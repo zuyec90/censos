@@ -318,6 +318,8 @@ $resultado = $user->Seleccionar($id_user);
 				Main.init();
 				PagesUserProfile.init();
 			});
+
+			
 		</script>
 	</body>
 	<!-- fin: BODY -->

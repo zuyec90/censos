@@ -108,6 +108,8 @@
 													<i class="fa fa-ok"></i> Campos correctamente ingresados
 												</div>
 											</div>
+											<center id="loading" style="display:none;"><img src="../../images/loading.gif"></center>
+											<div id="ajaxform">
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="control-label">
@@ -187,7 +189,7 @@
 													<label class="control-label">
 														Tipo de Usuario <span class="symbol required"></span>
 													</label>
-													<select class="form-control" id="dropdown" name="perfil">
+													<select class="form-control" id="dropdown2" name="perfil">
 														<option value="">Selecciona el tipo de Usuario</option>
 														<option value="1">Administrador</option>
 														<option value="2">Operador</option>
@@ -196,7 +198,7 @@
 												</div>
 												<div class="form-group">
 													<span class="input-icon">
-														<input type="text" class="form-control" name="usuario" placeholder="Usuario">
+														<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
 														<i class="fa fa-user"></i> </span>
 												</div>
 												<div class="form-group connected-group">
@@ -256,7 +258,7 @@
 											} ?>
 											</div>
 										</div>
-										<input type="submit" value="enviar" id="boton">
+										</div>
 									</form>
 								</div>
 							</div>
@@ -311,6 +313,32 @@
 				FormValidator.init();
 				//UIElements.init();
 			});
+
+			function Usersubmit () {
+				var nombre = $("#firstname").val();
+				var apellido = $("#lastname").val();
+				var nacionalidad = $('input:radio[name=nacionalidad]:checked').val();
+				var cedula = $("#ci").val();
+				var email = $("#email2").val();
+				var celular = $("#form-field-mask-2").val();
+				var sexo = $('input:radio[name=sexo]:checked').val();
+				var voceria = $("#dropdown").val();
+				var perfil = $("#dropdown2").val();
+				var usuario = $("#usuario").val();
+				var contrasenia = $("#contrasenia").val();
+				
+
+				
+				var url = '../lib/UserCreate.php';
+				$.post(url,{'usuario':usuario,'nombre':nombre,'apellido':apellido,'nacionalidad':nacionalidad,'cedula':cedula,'email':email,'celular':celular,'sexo':sexo,'voceria':voceria,'perfil':perfil,'contrasenia':contrasenia},function(respondText){
+					
+					 setTimeout("location.reload();", 3000);
+
+						$("#ajaxform").hide();
+						$("#loading").show();
+
+				});
+			}
 
 		</script>
 

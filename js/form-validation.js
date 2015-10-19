@@ -97,7 +97,7 @@ var FormValidator = function () {
                 successHandler1.show();
                errorHandler1.hide();
                 // submit form
-            $('#form').submit();
+                Usersubmit();
             }
         });
     };
