@@ -81,7 +81,26 @@ $resultado = $user->Seleccionar($id_user);
 										<li class="active">Perfil</li>
 									</ol>
 									<div class="page-header">
-										<h2><?php echo $resultado['nombre'] ;?> / <small>Administrador</small></h2>
+										<h2><?php echo $resultado['nombre'] ;?> / <small>
+											<?php
+
+																		 	switch ($resultado['perfil']) {
+																		 	
+																		 		case 1:
+																		 			echo " Operador ";
+																		 			break;
+																		 		case 2:
+																		 			echo " Administrador ";
+																		 		break;
+																		 		
+																		 		default:
+																		 			echo " Usuario ";
+																		 		break;
+																		 	}	
+																			?>
+
+
+										</small></h2>
 									</div>
 									<!-- fin: PAGE TITLE & BREADCRUMB -->
 								</div>
@@ -134,13 +153,7 @@ $resultado = $user->Seleccionar($id_user);
 																	</tr>
 																</thead>
 																<tbody>
-																	<tr>
-																		<td>Ultima Entrada</td>
-																		<td>15 min</td>
-																		<td>
-																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
-																		</td>
-																	</tr>
+																	
 																	<tr>
 																		<td>Voceria</td>
 																		<td><?php echo $resultado['voceria'] ;?></td>
@@ -153,6 +166,7 @@ $resultado = $user->Seleccionar($id_user);
 																		<td>
 																			<span class="label label-sm label-info">
 																			<?php
+
 																		 	switch ($resultado['perfil']) {
 																		 	
 																		 		case 1:
@@ -199,8 +213,23 @@ $resultado = $user->Seleccionar($id_user);
 															<div class="form-group">
 																<label class="control-label">Nacionalidad</label>
 																	<div>
-																		<label class="radio-inline"><input type="radio" class="grey" value="v" name="nacionalidad" id="nacionalidad_v">V</label>
-																		<label class="radio-inline"><input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e" checked="checked">E</label>
+
+																		<?php if ($resultado['nacionalidad'] == "v"){ ?>
+																		<label class="radio-inline"><input type="radio" class="grey" checked="checked" value="v" name="nacionalidad" id="nacionalidad_v">V</label>
+
+																		<?php	}else{ ?>
+																		<label class="radio-inline"><input type="radio" class="grey"  value="v" name="nacionalidad" id="nacionalidad_v">V</label>
+
+																		<?php	} ?>
+
+																		<?php 	if ($resultado['nacionalidad'] ==  "e"){ ?>
+																			<label class="radio-inline"><input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e" checked="checked">E</label>
+																			
+																		<?php	}else{ ?>
+																			<label class="radio-inline"><input type="radio" class="grey" value="e" name="nacionalidad"  id="nacionalidad_e" >E</label>
+																			
+																		<?php	} ?>
+
 																	</div>
 															</div>
 
@@ -218,8 +247,24 @@ $resultado = $user->Seleccionar($id_user);
 															<div class="form-group">
 																<label class="control-label">Sexo</label>
 																	<div>
+
+																		<?php if ($resultado['sexo'] == "f"){ ?>
+																			<label class="radio-inline"><input type="radio" class="grey" value="f" name="sexo" id="femenino" checked="checked" >Femenino</label>
+																		<?php	}else{ ?>
 																		<label class="radio-inline"><input type="radio" class="grey" value="f" name="sexo" id="femenino">Femenino</label>
-																		<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">Masculino</label>
+																		<?php	} ?>
+
+																		<?php 	if ($resultado['sexo'] ==  "m"){ ?>
+																			<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" checked="checked">Masculino</label>
+																				
+																		<?php	}else{ ?>
+																			<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="masculino" >Masculino</label>
+																			
+																		<?php	} ?>
+
+
+
+																		
 																	</div>
 															</div>
 														</div>
