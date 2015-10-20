@@ -142,7 +142,7 @@
 												</div>
 											</div>
 											<label class="control-label"  style=" margin-top: 12px; margin-left: 15px;">Cedula</label>
-											<div>
+											<div>Cedúla:
 												<label class="radio-inline"><input type="radio" class="grey" value="V" name="nacionalidad" id="nacionalidad_V">V</label>
 												<label class="radio-inline"><input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad_E">E</label>
 											</div>
@@ -553,11 +553,11 @@
 																		<td>
 																			<select class="form-control" id="clasificacion_ingreso_familiar" name="clasificacion_ingreso_familiar">
 																				<option value="<?php $resultado['clasificacion_ingreso_familiar']?>"><?php echo $resultado['clasificacion_ingreso_familiar'];?></option>
-																				<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Diario</option>
-																				<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Semanal</option>
-																				<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Quincenal</option>
-																				<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Mensual</option>
-																				<option value="<?php echo $resultado['clasificacion_ingreso_familiar']; ?>" >Por Trabajo Realizado</option>
+																				<option value="Diario" >Diario</option>
+																				<option value="Semanal" >Semanal</option>
+																				<option value="Quincenal" >Quincenal</option>
+																				<option value="Mensual" >Mensual</option>
+																				<option value="Por Trabajo Realizado" >Por Trabajo Realizado</option>
 																			</select>
 																		</td>
 																	</tr>
@@ -676,19 +676,19 @@
 																		<td>Cedúla:</td>
 																		<td>
 																			<?php 
-																			if ($datofamiliar['nacionalidad'] == 'v') { ?>
-																				<input type="radio" value="v"  checked="checked" name="nacionalidad">
+																			if ($datofamiliar['nacionalidad'] == 'V') { ?>
+																				<input type="radio" value="V"  checked="checked" name="nacionalidad">
 																				V
 																			<?php }else{ ?>
-																				<input type="radio" value="v" name="nacionalidad">
+																				<input type="radio" value="V" name="nacionalidad">
 																				V
 																			<?php } ?>
 																			<?php 
-																			if ($datofamiliar['nacionalidad'] == 'e') { ?>
-																				<input type="radio" value="e"  checked="checked" name="nacionalidad">
+																			if ($datofamiliar['nacionalidad'] == 'E') { ?>
+																				<input type="radio" value="E"  checked="checked" name="nacionalidad">
 																				E
 																			<?php }else{ ?>
-																				<input type="radio" value="e" name="nacionalidad">
+																				<input type="radio" value="E" name="nacionalidad">
 																				E
 																			<?php } ?>
 																				<input type="text" value="<?php echo $datofamiliar['cedula']; ?>" name="cedula">
