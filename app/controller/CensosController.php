@@ -36,7 +36,7 @@ class censo extends DataModel
 		}else{
 
 			$resultado= $dias.' '.$horas2.':'.$minutos2.':'.$segundos_2;
-
+			$resultado=$horas2;
 		}
 			return $resultado;
 		}
@@ -60,17 +60,17 @@ class censo extends DataModel
 	{
 		$this->Conect();
 		if (!empty($fecha)) {
-			$sql = "SELECT * FROM `jefeflia` WHERE  `idjefe_familia` = '".$fecha."'";
+			/*$sql = "SELECT * FROM `jefeflia` WHERE  `idjefe_familia` = '".$fecha."'";
 			$validacion = mysql_query($sql) or die ('Error ');
 			$row = mysql_fetch_assoc($validacion);
 
-			$fecha = $row['fecha_creacion']; //fecha que tengo en formato UNIX en mi tabla
+			$fecha = $row['fecha_creacion']; //fecha que tengo en formato UNIX en mi tabla*/
 
 			$fecha1 = date("Y-m-d H:i:s",time()); //tomo fecha y hora actual
 
 		$resultado= $this->calcula_hora($fecha, $fecha1);
 
-		if ($resultado<=4) {
+		if ($resultado > 4) {
 			return "1";
 		}else{
 			return "0";
@@ -302,11 +302,12 @@ class censo extends DataModel
 				$SelectionMsj = mysql_query($sql) or die ("Error 212 no se logró consultar");
 				$respuesta = mysql_fetch_assoc($SelectionMsj);
 			}else{
-				$sql = "SELECT * FROM `usuario` WHERE  `status` <> 2 and `perfil` = 0";
+				$sql = "SELECT * FROM `usuario` WHERE  `status` <> 2 and `perfil` = 1";
 				$respuesta = mysql_query($sql) or die ("Error 212 no se logró consultar");
 			}
 			return $respuesta;
 		}
+
 
 	public function Reporte ($Consulta= Null)
 		{
@@ -331,6 +332,19 @@ class censo extends DataModel
 			return $respuesta;
 		}
 
+public function totalcenso(){
+	$this->Conect();
+	$sql = "SELECT COUNT(*) FROM `jefeflia` WHERE  status =1 ";
+	$sql2 = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  status =1 ";
+	$var = mysql_query($sql);
+	$var2 = mysql_query($sql2);
+
+	 $respuest = mysql_fetch_assoc($var);
+	 $respuest2 = mysql_fetch_assoc($var2);
+
+	 $final = $respuest2["COUNT(*)"] + $respuest["COUNT(*)"];
+	 return  $final	;
+}
 	public function GeneralReporte ()
 		{
 			$this->Conect();
@@ -374,6 +388,53 @@ class censo extends DataModel
 
 				return $conteo;	
 		}
+
+
+
+	public function GeneralReportefecha ($edadIn = NULL, $edadF=NULL)
+		{
+			$this->Conect();
+
+			/* primer resultado */
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'f'  and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `sexo` = 'm'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `trabaja` = 'si'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'si' and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				
+				
+			/*segudno resultado */
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'm'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` > 0 or `ingreso_mensual` <> NULL) and `pensionado` = 'no' )  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE ((`ingreso_mensual` = 0 or `ingreso_mensual` = NULL) and `pensionado` = 'si' )  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'si'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+
+				foreach ($sql as $key => $respuesta) {
+										
+					$row[$key] = mysql_query($respuesta);
+					$resultados[$key] = mysql_fetch_assoc($row[$key]);
+
+				}
+
+				foreach ($sql2 as $i => $res) {
+
+					$row2[$i] = mysql_query($res);
+					$resul[$i] = mysql_fetch_assoc($row2[$i]);
+					
+					$conteo[]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+				}
+
+
+				return $conteo;	
+		}
+
 
 		/* metodo para consultar las bitacora segun censo */
 

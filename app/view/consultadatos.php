@@ -358,19 +358,19 @@
 																		<td>Sexo:</td>
 																		<td>
 																			<?php 
-																				if ($resultado['sexo'] == 'v') { ?>
-																				<input type="radio" value="v"  checked="checked" name="sexo">
+																				if ($resultado['sexo'] == 'f') { ?>
+																				<input type="radio" value="f"  checked="checked" name="sexo">
 																					F
 																			<?php }else{ ?>
-																				<input type="radio" value="v" name="sexo">
+																				<input type="radio" value="f" name="sexo">
 																					F
 																			<?php } ?>
 																			<?php 
-																				if ($resultado['sexo'] == 'e') { ?>
-																				<input type="radio" value="e"  checked="checked" name="sexo">
+																				if ($resultado['sexo'] == 'm') { ?>
+																				<input type="radio" value="m"  checked="checked" name="sexo">
 																					M
 																			<?php }else{ ?>
-																					<input type="radio" value="e" name="sexo">
+																					<input type="radio" value="m" name="sexo">
 																					M
 																			<?php } ?>
 																		</td>
@@ -571,9 +571,9 @@
 															</table>
 															<div class="form-group">
 																<?php
-
-																$tiempo = $Jefe->ValidacionTiempo($idjefe_familia);
-															
+																//echo $resultado['fecha_creacion'];
+																$tiempo = $Jefe->ValidacionTiempo($resultado['fecha_creacion']);
+																
 														   		if ($tiempo == 0 or $_SESSION["perfil"] == 1) { ?>
 																<div class="col-sm-4 ">
 																	<input type="submit" value="Modificar" class="btn btn-yellow btn-block"  style ="margin-top: 25px; ">

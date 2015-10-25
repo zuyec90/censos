@@ -18,7 +18,7 @@
 
 		<?php
 		//error_reporting();
-		
+		//echo $_SESSION['id_user'];
 		require_once ('../controller/MensajeController.php');
 		$MSJ = new Mensaje;
 		$resultado = $MSJ->SelectById($_SESSION['id_user']);

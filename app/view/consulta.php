@@ -4,7 +4,7 @@
 require_once ('../controller/CensosController.php');
 $censo = new censo;
 $General = $censo->GeneralReporte();
-
+$ver =  $censo->totalcenso();
 ?>
 
 <!DOCTYPE html>
@@ -121,61 +121,6 @@ $General = $censo->GeneralReporte();
 													</select>
 												</td>
 
-
-												<td style="width:5%">Sexo</td>
-												<td style="width:10%">
-													<div class="example">
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="f" name="sexo" id="sexo" checked="checked">
-															F
-														</label>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="m" name="sexo"  id="sexo">
-															M
-														</label>
-													</div>
-												</td>
-												<td style="width:5%">Pensionado</td>
-												<td style="width:10%">
-													<div class="example">
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="pensionado" id="pensionado" checked="checked">
-															Si
-														</label>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="pensionado"  id="pensionado">
-															No
-														</label>
-
-													</div>
-												</td>
-												<td style="width:5%">Discapacidad</td>
-												<td style="width:10%">
-													<div class="example">
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="incapacitado" id="incapacitado"checked="checked">
-															Si
-														</label>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="incapacitado"  id="incapacitado">
-															No
-														</label>
-													</div>
-												</td>
-												<td style="width:5%">Trabajo</td>
-												<td style="width:10%">
-													<div class="example">
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="si" name="trabaja" id="trabaja" checked="checked">
-															Si
-														</label>
-														<label class="radio-inline">
-															<input type="radio" class="grey" value="no" name="trabaja"  id="trabaja">
-															No
-														</label>
-													</div>
-												</td>
-
 											</tr>
 										</tbody>
 									</table>
@@ -254,6 +199,12 @@ $General = $censo->GeneralReporte();
 													<td> <?php echo $General[6]; ?></td>
 
 												</tr>
+												<tr>
+													<td> total de censos </td>
+													<td>
+														<?php echo $ver; ?>
+													</td>
+												</tr>
 											</table>
 										
 								</div>
@@ -315,20 +266,22 @@ $General = $censo->GeneralReporte();
 
 			var edadIn = $('#de').val();
 			var edadF = $('#hast').val();
-			var sexo = $('input:radio[name=sexo]:checked').val();
+			/*var sexo = $('input:radio[name=sexo]:checked').val();
 			var pensionado = $('input:radio[name=pensionado]:checked').val();
 			var incapacitado = $('input:radio[name=incapacitado]:checked').val();
-			var trabaja = $('input:radio[name=trabaja]:checked').val();
+			var trabaja = $('input:radio[name=trabaja]:checked').val();*/
 			var url = '../lib/CensoReporte.php';
+			alert(edadIn);alert(edadF);
+			alert(edadIn > edadF);
 			
-			if (edadIn > edadF ) {
+			if (edadF > edadIn ) {
 
-				$("#PanelTitulo").html("<center> la edad final no puede ser mayor a la edad inicial</center>");
+				$("#PanelTitulo").html("<center> la edad final no puede ser menor a la edad inicial</center>");
 				$("#hast").focus();
 
 			}else{
 
-			$.post(url,{'edadIn':edadIn,'edadF':edadF,'sexo':sexo,'pensionado':pensionado,'incapacitado':incapacitado,'trabaja':trabaja},function(respondText){	
+			$.post(url,{'edadIn':edadIn,'edadF':edadF},function(respondText){	
 
 				$("#placeholder82").html(respondText);
 				});

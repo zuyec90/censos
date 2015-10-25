@@ -28,7 +28,7 @@ class Mensaje extends DataModel
 		$this->Conect();
 		$this->Seguridad(); //para verificar que este logueado alguien 
 		if (!empty($id_user)) {
-			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and `id_respuesta` = '0' and `id_user_rece` = '".$id_user."' ORDER BY  `id_notificacion` DESC";
+			$sql = "SELECT * FROM `notificacion` WHERE  `status` <> '2' and  `id_user_rece` = '".$id_user."' ORDER BY  `id_notificacion` DESC";
 			$respuesta = mysql_query($sql) or die ("Error 402 no se logró consultar");
 		}
 		return $respuesta;

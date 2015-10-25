@@ -102,12 +102,12 @@
 												<td>
 													<a href="consultadatos.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-teal tooltips" data-placement="top" data-original-title="Editar" style= "margin-left: 10px;"><i class="fa fa-edit"></i></a>&nbsp;
 													<?php if ($_SESSION['perfil'] == 1 ){ ?>
-													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>													
+													<a title="Eliminar" class="btn btn-xs btn-bricky tooltips" href="#eliminar-mensaje<?php echo $censo['idjefe_familia'];?>" data-toggle="modal"><i class="fa fa-trash-o"></i></a>													
 													<a href="consultabitacora.php?idjefe_familia=<?php echo $censo['idjefe_familia'];?>" class="btn btn-xs btn-info tooltips"  data-placement="top" data-original-title="Bitacora" style= "margin-left: 7px;"><i class="fa fa-clock-o"></i></a>
 													<?php } ?>
 
 													<div class="message-actions">
-														<div class="modal fade" id="eliminar-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
+														<div class="modal fade" id="eliminar-mensaje<?php echo $censo['idjefe_familia'];?>" tabindex="-1" role="dialog" aria-hidden="true">
 															<div class="modal-content">
 																<div class="modal-header">
 																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
