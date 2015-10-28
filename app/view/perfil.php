@@ -86,15 +86,15 @@ $resultado = $user->Seleccionar($id_user);
 
 																		 	switch ($resultado['perfil']) {
 																		 	
-																		 		case 1:
-																		 			echo " Operador ";
-																		 			break;
 																		 		case 2:
-																		 			echo " Administrador ";
+																		 			echo $perfil = " Operador ";
+																		 			break;
+																		 		case 1:
+																		 			echo $perfil = " Administrador ";
 																		 		break;
 																		 		
 																		 		default:
-																		 			echo " Usuario ";
+																		 			echo $perfil = " Usuario ";
 																		 		break;
 																		 	}	
 																			?>
@@ -169,15 +169,15 @@ $resultado = $user->Seleccionar($id_user);
 
 																		 	switch ($resultado['perfil']) {
 																		 	
-																		 		case 1:
+																		 		case 2:
 																		 			echo " Operador ";
 																		 			break;
-																		 		case 2:
+																		 		case 1:
 																		 			echo " Administrador ";
 																		 		break;
 																		 		
 																		 		default:
-																		 			echo " Usuario ";
+																		 			echo " Usuario4 ";
 																		 		break;
 																		 	}	
 																			?>
@@ -277,11 +277,23 @@ $resultado = $user->Seleccionar($id_user);
 															
 															<div class="form-group">
 																<label class="control-label">Unidad de Trabajo al que pertenece</label>
-																<input type="text"  placeholder="" class="form-control" id="voceria" name="voceria" value="<?php echo $resultado['voceria'] ;?>">
+																<select class="form-control" id="dropdown" name="voceria">
+																	<option value="<?php echo $resultado['voceria'] ;?>"><?php echo $resultado['voceria'] ;?></option>
+																	<option value="Unidad Ejecutiva">Unidad Ejecutiva</option>
+																	<option value="Unidad de Contraloría Social">Unidad de Contraloría Social</option>
+																	<option value="Unidad Electoral Permanente">Unidad Electoral Permanente</option>
+																	<option value="Unidad Administrativa y Financiera Comunitaria">Unidad Administrativa y Financiera Comunitaria</option>
+																</select>
+																
 															</div>
 															<div class="form-group">
 																<label class="control-label">Tipo de Usuario</label>
-																<input type="text"  placeholder="" class="form-control" id="perfil" name="perfil" value="<?php echo $resultado['perfil'] ;?>">
+																<select class="form-control" id="dropdown2" name="perfil">
+																	<option value="<?php echo $resultado['perfil'] ;?>"><?php echo $perfil ;?></option>
+																	<option value="1">Administrador</option>
+																	<option value="2">Operador</option>
+
+																</select>
 															</div>
 															<div class="form-group">
 																<span class="input-icon">

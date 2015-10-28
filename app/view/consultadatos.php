@@ -1,4 +1,4 @@
-
+	
 
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -141,8 +141,8 @@
 													<label class="radio-inline"><input type="radio" class="grey" value="m" name="sexo"  id="sexo" title="Seleccione el sexo" required/>Masculino</label>
 												</div>
 											</div>
-											<label class="control-label"  style=" margin-top: 12px; margin-left: 15px;">Cedula</label>
-											<div>Cedúla:
+									
+											<div>&nbsp;&nbsp; Cedúla:<br>
 												<label class="radio-inline"><input type="radio" class="grey" value="V" name="nacionalidad" id="nacionalidad_V">V</label>
 												<label class="radio-inline"><input type="radio" class="grey" value="E" name="nacionalidad"  id="nacionalidad_E">E</label>
 											</div>
@@ -250,7 +250,7 @@
 						</div>
 						<!-- fin: PAGE HEADER -->
 						<!-- inicio: PAGE CONTENT -->
-						<?php /*  lo comente xq siento que fallaba 
+						<?php /*
 						@$_POST['valor'];
 						if(!empty($_POST) and $_POST['valor'] < 2){
 						if ($_POST['valor'] == '1' ) { ?>
@@ -267,7 +267,7 @@
 										<p>Se realizo la acción satisfatoriamente.</p>
 								</div>									
 							<?php	}
-						} */ ?>
+						}  */?>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="tabbable">
@@ -592,7 +592,7 @@
 											</form>
 										</div>
 										<?php
-										@$_POST['valor'];
+										
 										if(!empty($_POST) and $_POST['valor'] < 2 ){
 											if ($_POST['valor'] == '1' ) { ?>
 											<div class="alert alert-success">

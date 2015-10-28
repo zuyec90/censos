@@ -165,6 +165,10 @@ class censo extends DataModel
 			mysql_query($sql) or die ('Error 204 no se pudo registrar el usuario');
 			$id=mysql_insert_id(); 
 
+			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session					
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'se registro un familiar')";
+			mysql_query($sqlBitacora);
+
 				return $id;
 		}
 
@@ -204,7 +208,6 @@ class censo extends DataModel
 	public function Consulta($id = Null)
 	{
 		$this->Conect();
-		$this->Seguridad();
 		$sql = "SELECT * FROM `jefeflia` WHERE `idjefe_familia`= '".$id."' ";
 
 		$respuesta = mysql_query($sql) or die ("Error 207 no se logro consultar");

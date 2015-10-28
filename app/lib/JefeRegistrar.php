@@ -12,7 +12,7 @@ if ($res != 0) {
 
 
 echo "<form name='form' action='../view/consultadatos.php?idjefe_familia=".$res."' method='post'>";
-echo "<input type='hidden' name='idjefe_familia' value='".$res."'>";
+echo "<input type='hidden' name='valor' value='1'>";
 echo "</form>";
 echo "<script language=javascript>document.form.submit();</script>";
 

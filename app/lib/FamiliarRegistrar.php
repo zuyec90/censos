@@ -3,10 +3,10 @@
 include ('../controller/CensosController.php');
 
 $Familiar = new censo;
-var_dump($_POST);
+
 
 $res = $Familiar->RegistrarFamiliar($_POST);
-echo "<br>".$res;
+
 if ( $res != 0) {
 
 

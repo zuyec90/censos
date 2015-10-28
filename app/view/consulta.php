@@ -271,8 +271,7 @@ $ver =  $censo->totalcenso();
 			var incapacitado = $('input:radio[name=incapacitado]:checked').val();
 			var trabaja = $('input:radio[name=trabaja]:checked').val();*/
 			var url = '../lib/CensoReporte.php';
-			alert(edadIn);alert(edadF);
-			alert(edadIn > edadF);
+			
 			
 			if (edadF > edadIn ) {
 

@@ -28,7 +28,7 @@ var FormValidator = function () {
                     required: true
                 },
                 cedula: {
-                    minlength: 7,
+                    minlength: 5,
                     number: true,
                     required: true
                 },

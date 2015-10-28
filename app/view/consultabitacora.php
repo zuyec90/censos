@@ -1,11 +1,4 @@
-<?php
-require_once ('../controller/CensosController.php');
-$OBJ = new censo;
-$respuesta = $OBJ->ConsultasBitacora($_GET['idjefe_familia']);
 
-$jefe = $OBJ->Consulta($_GET['idjefe_familia']);
-
-?>
 
 <!DOCTYPE html>
 <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -33,6 +26,14 @@ $jefe = $OBJ->Consulta($_GET['idjefe_familia']);
 					<!-- fin: MAIN MENU TOGGLER BUTTON -->
 					<!--inicio: MAIN NAVIGATION MENU -->
 					<?php require_once('menu.php'); ?>
+					<?php
+					require_once ('../controller/CensosController.php');
+					$OBJ = new censo;
+					$respuesta = $OBJ->ConsultasBitacora($_GET['idjefe_familia']);
+
+					$jefe = $OBJ->Consulta($_GET['idjefe_familia']);
+
+					?>
 					<!-- fin: MAIN NAVIGATION MENU -->
 				</div>
 				<!-- fin: SIDEBAR -->
