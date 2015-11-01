@@ -41,9 +41,6 @@ var FormValidator = function () {
                     number: true,
                     required: true
                 },
-                direccion: {
-                    required: true
-                },
                 voceria: {
                     required: true
                 },
@@ -65,13 +62,13 @@ var FormValidator = function () {
                 },
             },
             messages: {
-                nombre: "por favor ingrese el nombre ",
-                apellido: "por favor ingrese el nombre ",
+                nombre: "Por favor ingrese el nombre ",
+                apellido: "Por favor ingrese el apellido ",
                 email: {
-                    required: "necesitamos un mail de contacto ",
-                    email: "su correo debe tener este formato name@domain.com"
+                    required: "Necesitamos un mail de contacto ",
+                    email: "Su correo debe tener este formato name@domain.com"
                 },
-                sexo: "por favor select su sexo!"
+                sexo: "Por favor seleccione su sexo!"
             },
             invalidHandler: function (event, validator) { //display error alert on form submit
                 successHandler1.hide();

@@ -45,6 +45,27 @@ var FormWizard = function () {
             },
             ignore: ':hidden',
             rules: {
+                estado: {
+                    required: true,
+                },
+                municipio: {                    
+                    required: true,
+                },
+                parroquia: {                    
+                    required: true,
+                },
+                sector: {
+                    minlength: 3,
+                    required: true,
+                },
+                nombre_comunidad: {
+                    minlength: 3,
+                    required: true,
+                },
+                direccion: {
+                    minlength: 3,
+                    required: true,
+                },
                 nombres: {
                     minlength: 3,
                     required: true,
@@ -113,7 +134,13 @@ var FormWizard = function () {
 
             },
             messages: {
-                nombres: "Por favor ingrese los nombres",
+                estado: "Por favor ingrese el Estado",
+                municipio: "PPor favor ingrese el nombre de su Municipio",
+                parroquia: "Por favor ingrese el nombre de su Parroquia",
+                sector: "Por favor ingrese el nombre del Sector donde vive",
+                nombre_comunidad: "Por favor ingrese el nombre de su comunidad",
+                direccion: "Por favor ingrese su direccion",
+                nombres: "Por favor ingrese su nombre",
                 apellidos: "Por favor ingrese los apellidos",
                 cedula: "Por favor ingrese el numero de cedúla",
                 fecha_nacimiento: "Por favor ingrese la fecha de nacimiento",
@@ -126,19 +153,19 @@ var FormWizard = function () {
                 telfcel: "Por favor ingrese el telefono",
                 telfhab: "Por favor ingrese el telefono",
                 telfofic: "Por favor ingrese el telefono",
-                email: {
-                    required: "Se necesita un email de contacto",
-                    email: "Debe tener un formato name@dominio.com"
-                },
-                estado_civil: "Por favor seleccione el estado",
+
+                estado_civil: "Por favor seleccione su estado civil",
                 nivel_de_instruccion: "Por favor seleccione el nivel de instrucción",
                 profesion: "Por favor ingrese la profesión",
                 trabaja: "Por favor ingrese el campo",
                 clasificacion_ingreso_familiar: "Por favor seleccione el campo",
                 ingreso_mensual: "Por favor ingrese el campo",
-
-
+                email: {
+                    required: "Se necesita un email de contacto",
+                    email: "Debe tener un formato name@dominio.com"
+                },
             },
+
             highlight: function (element) {
                 $(element).closest('.help-block').removeClass('valid');
                 // display OK icon
