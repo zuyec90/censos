@@ -276,7 +276,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![finalif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
 		<!--<![finalif]-->
 		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
