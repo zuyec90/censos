@@ -303,6 +303,11 @@
 												</div>
 
 												<div class="form-group">
+													<div class="col-sm-2 col-sm-offset-3">
+														<button class="btn btn-light-grey back-step btn-block">
+															<i class="fa fa-circle-arrow-left"></i> Atrás
+														</button>
+													</div>
 													<div class="col-sm-2 col-sm-offset-8">
 														<button class="btn btn-blue next-step btn-block">
 															Siguiente <i class="fa fa-arrow-circle-right"></i>
