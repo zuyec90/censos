@@ -303,6 +303,13 @@
 																</thead>
 																<tbody>
 																	<tr>
+																		<td>Dirección:</td>
+																		<td>
+																			<input type="text" value="<?php echo $resultado['direccion']; ?>" name="direccion" >
+																			<input type="hidden" value="<?php echo $resultado['idjefe_familia']; ?>" name="idjefe_familia" >
+																		</td>
+																	</tr>
+																	<tr>
 																		<td>Nombres:</td>
 																		<td>
 																			<input type="text" value="<?php echo $resultado['nombres']; ?>" name="nombres" >

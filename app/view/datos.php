@@ -137,6 +137,16 @@
 															<small>4</small> </span>
 													</a>
 												</li>
+												<li>
+													<a href="#step-5">
+														<div class="stepNumber">
+															5
+														</div>
+														<span class="stepDesc"> Paso 5
+															<br />
+															<small>5</small> </span>
+													</a>
+												</li>
 											</ul>
 											<div class="progress progress-striped active progress-sm">
 												<div aria-valuemax="100" aria-valuemin="0" role="progressbar" class="progress-bar progress-bar-success step-bar">
@@ -145,6 +155,80 @@
 											</div>
 											<div id="step-1">
 												<h2 class="StepTitle">Paso 1 </h2>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Estado<span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<select class="form-control" id="estado" name="estado">
+															<option value="">Estado</option>
+															<option value="Distrito Capital">Distrito Capital</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Municipio<span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<select class="form-control" id="municipio" name="municipio">
+															<option value="">Municipio</option>
+															<option value="Libertador">Libertador</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Parroquia<span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<select class="form-control" id="parroquia" name="parroquia">
+															<option value="">Parroquia</option>
+															<option value="Sucre">Sucre</option>
+														</select>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Sector <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="text" class="form-control" id="sector" name="sector" placeholder="Ingrese el Sector" pattern="[a-z, A-Z]*" maxlength="20">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Nombre de la comunidad <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="text" class="form-control" id="nombre_comunidad" name="nombre_comunidad" placeholder="Ingrese el nombre de la comunidad" pattern="[a-z, A-Z]*" maxlength="20">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Dirección <span class="symbol required"></span>
+													</label>
+													<div class="col-sm-7">
+														<input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese la Dirección" pattern="[a-z, A-Z]*" maxlength="50">
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="col-sm-2 col-sm-offset-8">
+														<button class="btn btn-blue next-step btn-block">
+															Siguiente <i class="fa fa-arrow-circle-right"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div id="step-2">
+												<h2 class="StepTitle">Paso 2 </h2>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														Nombres <span class="symbol required"></span>
@@ -223,8 +307,8 @@
 													</div>
 												</div>
 											</div>
-											<div id="step-2">
-												<h2 class="StepTitle">Paso 2</h2>
+											<div id="step-3">
+												<h2 class="StepTitle">Paso 3</h2>
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
@@ -369,8 +453,8 @@
 													</div>
 												</div>
 											</div>
-											<div id="step-3">
-												<h2 class="StepTitle">Paso 3</h2>
+											<div id="step-4">
+												<h2 class="StepTitle">Paso 4</h2>
 
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
@@ -468,9 +552,64 @@
 													</div>
 												</div>
 											</div>
-											<div id="step-4">
-												<h2 class="StepTitle">Paso 4</h2>
+											<div id="step-5">
+												<h2 class="StepTitle">Paso 5</h2>
+									<div class="col-sm-6">
+										<div class="user-left">
+											<table class="table table-condensed table-hover">
+												<thead>
+												<tr>
 												<h3>Datos</h3>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Estado:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="estado"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Municipio:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="municipio"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Parroquia:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="parroquia"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Sector:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="sector"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Nombre de la Comunidad:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="nombre_comunidad"></p>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label">
+														Dirección:
+													</label>
+													<div class="col-sm-7">
+														<p class="form-control-static display-value" data-display="direccion"></p>
+													</div>
+												</div>
+												
+												<h3>Perfil</h3>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														Nombre:
@@ -487,7 +626,6 @@
 														<p class="form-control-static display-value" data-display="apellidos"></p>
 													</div>
 												</div>
-												<h3>Perfil</h3>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
 														Cedúla:
@@ -536,6 +674,17 @@
 														<p class="form-control-static display-value" data-display="tiempo_comunidad"></p>
 													</div>
 												</div>
+												</tr>
+												</thead>
+											</table>
+										</div>
+									</div>
+
+									<div class="col-sm-6">
+										<div class="user-left">
+											<table class="table table-condensed table-hover">
+												<thead>
+												<tr>
 												<h3>Características</h3>
 												<div class="form-group">
 													<label class="col-sm-3 control-label">
@@ -646,6 +795,11 @@
 														<p class="form-control-static display-value" data-display="ingreso_mensual"></p>
 													</div>
 												</div>
+												</tr>
+												</thead>
+											</table>
+										</div>
+									</div>
 												<div class="form-group">
 													<div class="col-sm-2 col-sm-offset-8">
 														<button class="btn btn-success finish-step btn-block">
