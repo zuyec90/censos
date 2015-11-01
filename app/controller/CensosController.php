@@ -99,7 +99,8 @@ class censo extends DataModel
 
 			/*** Ejemplo de bitacora ***/
 
-			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session		
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session		
 			$id=mysql_insert_id(); 
 			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Creacion del primer registro')";
 			mysql_query($sqlBitacora);
@@ -131,7 +132,8 @@ class censo extends DataModel
 
 			/*** Ejemplo de bitacora ***/
 
-			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session		
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session		
 			$id=$datos['idjefe_familia']; 
 			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Modifico el registro')";
 			mysql_query($sqlBitacora);
@@ -165,7 +167,8 @@ class censo extends DataModel
 			mysql_query($sql) or die ('Error 204 no se pudo registrar el usuario');
 			$id=mysql_insert_id(); 
 
-			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session					
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session					
 			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'se registro un familiar')";
 			mysql_query($sqlBitacora);
 
@@ -196,6 +199,14 @@ class censo extends DataModel
 			$sql = "UPDATE `grupo_fliar` SET `cedula` = '".$datos['cedula']."', `nombre` = '".$datos['nombre']."', `apellido` = '".$datos['apellido']."', `sexo` = '".$datos['sexo']."', `fecha_nacimiento` = '".$datos['fecha_nacimiento']."', `edad` = '".$datos['edad']."', `incapacitado` = '".$datos['incapacitado']."', `Tipo_incapacitado` = '".$datos['Tipo_incapacitado']."', `Embarazo_tempr` = '".$datos['Embarazo_tempr']."', `parentesco` = '".$datos['parentesco']."', `nivel_instruccion` = '".$datos['nivel_instruccion']."', `cne` = '".$datos['cne']."', `profesion` = '".$datos['profesion']."', `pensionado` = '".$datos['pensionado']."', `ingreso_mensual` = '".$datos['ingreso_mensual']."', `observacion` = '".$datos['observacion'] ."' WHERE `id_familiar` = '".$datos['id_familiar'] ."' ";
 			
 			mysql_query($sql) or die ('Error 206 no se pueden modificar los datos');
+			/*** Ejemplo de bitacora ***/
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session	
+			$id = $datos['id_familiar'];				
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Elimino el registro ')";
+			mysql_query($sqlBitacora);
+			
+			/*** Ejemplo de bitacora **/
 
 			return "1";
 		}
@@ -264,8 +275,8 @@ class censo extends DataModel
 			mysql_query($sql) or die ('Error 210 no se pudo eliminar');
 
 			/*** Ejemplo de bitacora ***/
-
-			$variabledesession = 5; // esto no se tiene porque aun no se tiene nada de session					
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session					
 			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Elimino el registro ')";
 			mysql_query($sqlBitacora);
 			
@@ -288,6 +299,13 @@ class censo extends DataModel
 
 			$sql = "UPDATE `grupo_fliar` SET `status` = '0' WHERE `id_familiar`  = '".$id."' ";
 			mysql_query($sql) or die ('Error 211 no se pudo eliminar');
+			/*** Ejemplo de bitacora ***/
+			session_start();
+			$variabledesession = $_SESSION['id_user']; // esto no se tiene porque aun no se tiene nada de session					
+			$sqlBitacora = "INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accion`, `accion`) VALUES (NULL, '".$variabledesession."', $id, NOW(), 'Elimino el registro ')";
+			mysql_query($sqlBitacora);
+			
+			/*** Ejemplo de bitacora **/
 
 			return "1";
 		}
@@ -348,6 +366,17 @@ public function totalcenso(){
 	 $final = $respuest2["COUNT(*)"] + $respuest["COUNT(*)"];
 	 return  $final	;
 }
+
+public function totalfamilia(){
+	$this->Conect();
+	$sql = "SELECT COUNT(*) FROM `jefeflia` WHERE  status =1 ";
+	$var = mysql_query($sql);
+
+	 $respuest = mysql_fetch_assoc($var);
+
+	 $final = $respuest["COUNT(*)"];
+	 return  $final	;
+}
 	public function GeneralReporte ()
 		{
 			$this->Conect();
@@ -361,7 +390,20 @@ public function totalcenso(){
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no'and  status =1 ";
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si'and  status =1 ";
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no'and  status =1 ";
-				
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `cne` = 'si'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `cne` = 'no'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `estado_civil` = 'soltero (a)'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `estado_civil` = 'Casado (a)'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `estado_civil` = 'Divorciado'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `estado_civil` = 'Viudo (a)'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `estado_civil` = 'Concubinato (a)'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Sin Instruccion'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Basica'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Bachiller'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Tecnico Medio'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Tecnico Superior'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Universitario'and  status =1 ";
+				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `nivel_instruccion` = 'Postgrado'and  status =1 ";
 				
 			/*segudno resultado */
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f'and  status =1 ";
@@ -372,6 +414,13 @@ public function totalcenso(){
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no'and  status =1 ";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' and  status =1";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' and  status =1";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Sin Instruccion'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Basica'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Bachiller'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Medio'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Superior'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Universitario'and  status =1 ";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Postgrado'and  status =1 ";
 
 				foreach ($sql as $key => $respuesta) {
 										
@@ -385,9 +434,14 @@ public function totalcenso(){
 					$row2[$i] = mysql_query($res);
 					$resul[$i] = mysql_fetch_assoc($row2[$i]);
 					
-					$conteo[]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+					$conteo["union"][]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
 				}
 
+				foreach ($resultados as $key => $value) {
+				//	var_dump($value);
+
+				$conteo["mas"][]	= $value["COUNT(*)"];
+				}
 
 				return $conteo;	
 		}
@@ -407,7 +461,20 @@ public function totalcenso(){
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `incapacitado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'si'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 				$sql[] = "SELECT COUNT(*) FROM `jefeflia` WHERE  `pensionado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
-				
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `cne` = 'si' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `cne` = 'no' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `estado_civil` = 'soltero (a)' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `estado_civil` = 'Casado (a)' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `estado_civil` = 'Divorciado' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `estado_civil` = 'Viudo (a)' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `estado_civil` = 'Concubinato (a)' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Sin Instruccion' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Basica' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Bachiller' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Medio' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Superior' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";		
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Universitario' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Postgrado' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 				
 			/*segudno resultado */
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `sexo` = 'f'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
@@ -418,7 +485,17 @@ public function totalcenso(){
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `incapacitado` = 'no'and  status =1   and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'si' and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `pensionado` = 'no' and  status =1  and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `cne` = 'si' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `cne` = 'no' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Sin Instruccion' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Basica' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Bachiller' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Medio' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Tecnico Superior' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";		
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Universitario' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
+				$sql2[] = "SELECT COUNT(*) FROM `grupo_fliar` WHERE  `nivel_instruccion` = 'Postgrado' and  status =1 and (`edad` >= ".$edadIn." and `edad` <= ".$edadF."  )";
 
+				
 				foreach ($sql as $key => $respuesta) {
 										
 					$row[$key] = mysql_query($respuesta);

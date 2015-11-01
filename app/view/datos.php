@@ -3,6 +3,7 @@
 <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
 <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
 <!--[if !IE]><!-->
+
 <html lang="es" class="no-js">
 	<!--<![endif]-->
 	<!-- inicio: HEAD -->
@@ -187,6 +188,8 @@
 													</label>
 													<div class="col-sm-2">
 														<input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" min="1910-01-01">
+														
+														<input type="hidden" name="fecha_actual" id="fecha_actual" value="<?php  echo $hoy = date("Y-m-d");	?>">
 
 													</div>
 												</div>
@@ -195,7 +198,7 @@
 														Edad <span class="symbol required"></span>
 													</label>
 													<div class="col-sm-4">
-																<input type="text" class="float-left margin-select" name="edad" id="edad" placeholder="Ingrese la edad" maxlength="3">
+																<input  type="text" class="float-left margin-select" name="edad" id="edad" placeholder="Ingrese la edad" maxlength="3" readonly>
 													</div>
 												</div>
 
@@ -697,12 +700,36 @@
 		<script src="../../js/form-wizard.js"></script>
 
 		<!-- fin: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
 				FormWizard.init();
 				//form-validation.init();
 			});
+
+		$("#fecha_nacimiento").change(function(){
+		var fecha = $("#fecha_nacimiento").val();
+		var hoy = new Date(); //$("#fecha_actual").val();
+		var mes = hoy.getMonth()+1;
+		var ano = hoy.getFullYear();
+		var dia = hoy.getDate();
+		var arr = fecha.split('-');
+		var mes2 = arr[2];
+		var ano2 = arr[0];
+		var dia2 = 	arr[1];	
+
+		if (ano <= ano2 ) {
+			alert("la fecha de nacimeinto debe ser menor a la actual");
+
+		}else{
+			edad = ano - ano2;
+			$("#edad").val(edad);
+		};
+		
+		
+		});
+
 		</script>
 	</body>
 	<!-- fin: BODY -->

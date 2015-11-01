@@ -16,49 +16,133 @@ $General = $censo->GeneralReportefecha($_POST["edadIn"],$_POST["edadF"]);
 												</tr>
 												<tr>
 													<td> sexo F</td>
-													<td> <?php echo $General[0]; ?></td>
+													<td> <?php echo $General['union'][0]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Sexo M</td>
-													<td> <?php echo $General[1]; ?></td>
+													<td> <?php echo $General['union'][1]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Trabaja Si</td>
-													<td> <?php echo $General[2]; ?></td>
+													<td> <?php echo $General['union'][2]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Trabaja No</td>
-													<td> <?php echo $General[3]; ?></td>
+													<td> <?php echo $General['union'][3]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Discapacitado Si</td>
-													<td> <?php echo $General[4]; ?></td>
+													<td> <?php echo $General['union'][4]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Discapacitado No</td>
-													<td> <?php echo $General[5]; ?></td>
+													<td> <?php echo $General['union'][5]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Pensionado Si</td>
-													<td> <?php echo $General[6]; ?></td>
+													<td> <?php echo $General['union'][6]; ?></td>
 
 												</tr>
 												<tr>
 													<td> Pensionado No</td>
-													<td> <?php echo $General[6]; ?></td>
+													<td> <?php echo $General['union'][7]; ?></td>
 
 												</tr>
-											
+												<tr>
+													<td> Inscritos en el CNE </td>
+													<td>
+														<?php echo $General['union'][8]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> No inscritos en el CNE </td>
+													<td>
+														<?php echo $General['union'][9]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Solteros </td>
+													<td>
+														<?php echo $General['union'][10]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Casados </td>
+													<td>
+														<?php echo $General['union'][11]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Divorciados </td>
+													<td>
+														<?php echo $General['union'][12]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Viudos </td>
+													<td>
+														<?php echo $General['union'][13]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> En concubinato </td>
+													<td>
+														<?php echo $General['union'][14]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Sin instruccion </td>
+													<td>
+														<?php echo $General[15]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Basica </td>
+													<td>
+														<?php echo $General[16]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Bachiller </td>
+													<td>
+														<?php echo $General[17]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Tecnico Medio </td>
+													<td>
+														<?php echo $General[18]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Tecnico Superior </td>
+													<td>
+														<?php echo $General[19]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Universitarios </td>
+													<td>
+														<?php echo $General[20]; ?>
+													</td>
+												</tr>
+												<tr>
+													<td> Postgrado </td>
+													<td>
+														<?php echo $General[21]; ?>
+													</td>
+												</tr>
+																					
 											</table>
 
 
-<?PHP /*
+<?php /*
 <div class="col-md-12">
 	<!-- start: LABEL FORMATTER PANEL -->
 	<div class="panel panel-default">
@@ -77,12 +161,12 @@ $General = $censo->GeneralReportefecha($_POST["edadIn"],$_POST["edadF"]);
 
 <script type="text/javascript">
 	var data = [
-					{ label: "sexo M",  data: [[<?php echo $General[0]; ?>]]},
-					{ label: "sexo F",  data: [[<?php echo $General[1]; ?>]]},
-					{ label: "Edad",  data: [[1,3]]},
-					{ label: "Discapacidad",  data: [[1,7]]},
-					{ label: "Trabajo",  data: [[1,6]]},
-					{ label: "Pensionado",  data: [[1,8]]},	];
+					{ label: "sexo M",  data: [[5,3]]},
+					{ label: "sexo F",  data: [[5,2]]},
+					{ label: "Edad",  data: [[5,1]]},
+					{ label: "Discapacidad",  data: [[5,3]]},
+					{ label: "Trabajo",  data: [[5,1]]},
+					{ label: "Pensionado",  data: [[5,4	]]},	];
 
 				$.plot('#placeholder82', data, {
 				    series: {
@@ -109,4 +193,4 @@ $General = $censo->GeneralReportefecha($_POST["edadIn"],$_POST["edadF"]);
 			return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 			}
 </script>
-*/ ?>
+/* ?>

@@ -5,6 +5,7 @@ require_once ('../controller/CensosController.php');
 $censo = new censo;
 $General = $censo->GeneralReporte();
 $ver =  $censo->totalcenso();
+$total = $censo->totalfamilia();
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +125,8 @@ $ver =  $censo->totalcenso();
 											</tr>
 										</tbody>
 									</table>
-									<a href="#" id="Reporte" class="btn btn-green btn-lg btn-block"> Generar Reporte</a>
+									<center><a href="#" id="Reporte" class="btn btn-green btn-lg btn-block"> Generar Reporte</a>
+									<a href="#" class="btn btn-primary btn-lg btn-block"> Imprimir</a></center>
 							</div>
 						</div>
 					</div>
@@ -134,7 +136,7 @@ $ver =  $censo->totalcenso();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									Grafica General
+									<center><strong>Grafica General</strong></center>
 								</div>
 								<div class="panel-body">
 									<div class="flot-small-container">
@@ -149,62 +151,156 @@ $ver =  $censo->totalcenso();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									Contadores generales
+									<center><strong>Informe General</strong></center>
 								</div>
-								<div class="panel-body">								
-											
-											<table class="table">
-												<tr>
-													<td> campo</td>
-													<td> cantidad</td>
+								<div class="panel-body">						
+											<table class="table table-bordered table-hover">
+												<thead>
+													<th><h4><strong>Campo</strong></h4></th>
+													<th><h4><strong>Cantidad</strong></h4></th>
+												</thead>
 
-												</tr>
+												<thead>
+													<th>Sexo:</th>
+												</thead>
 												<tr>
-													<td> sexo F</td>
-													<td> <?php echo $General[0]; ?></td>
+													<td> &nbsp;&nbsp;Sexo Femenino </td>
+													<td><?php echo $General["union"][0]; ?></td>
+												</tr>
 
-												</tr>
 												<tr>
-													<td> Sexo M</td>
-													<td> <?php echo $General[1]; ?></td>
+													<td> &nbsp;&nbsp;Sexo Masculino </td>
+													<td><?php echo $General["union"][1]; ?></td>
+												</tr>
 
+												<thead>
+													<th>Trabaja:</th>
+												</thead>
+												<tr> 
+													<td> &nbsp;&nbsp;Trabaja Si </td>
+													<td><?php echo $General["union"][2]; ?></td>
 												</tr>
-												<tr>
-													<td> Trabaja Si</td>
-													<td> <?php echo $General[2]; ?></td>
 
-												</tr>
 												<tr>
-													<td> Trabaja No</td>
-													<td> <?php echo $General[3]; ?></td>
+													<td> &nbsp;&nbsp;Trabaja No </td>
+													<td><?php echo $General["union"][3]; ?></td>
+												</tr>
 
-												</tr>
+												<thead>
+													<th>Discapacitados:</th>
+												</thead>
 												<tr>
-													<td> Discapacitado Si</td>
-													<td> <?php echo $General[4]; ?></td>
+													<td> &nbsp;&nbsp;Discapacitado Si </td>
+													<td><?php echo $General["union"][4]; ?></td>
+												</tr>
 
-												</tr>
 												<tr>
-													<td> Discapacitado No</td>
-													<td> <?php echo $General[5]; ?></td>
+													<td> &nbsp;&nbsp;Discapacitado No </td>
+													<td><?php echo $General["union"][5]; ?></td>
+												</tr>
 
-												</tr>
+												<thead>
+													<th>Pensionados:</th>
+												</thead>
 												<tr>
-													<td> Pensionado Si</td>
-													<td> <?php echo $General[6]; ?></td>
+													<td> &nbsp;&nbsp;Pensionado Si </td>
+													<td><?php echo $General["union"][6]; ?></td>
+												</tr>
 
-												</tr>
 												<tr>
-													<td> Pensionado No</td>
-													<td> <?php echo $General[6]; ?></td>
+													<td> &nbsp;&nbsp;Pensionado No </td>
+													<td><?php echo $General["union"][7]; ?></td>
+												</tr>
 
-												</tr>
+												<thead>
+													<th>CNE:</th>
+												</thead>
 												<tr>
-													<td> total de censos </td>
-													<td>
-														<?php echo $ver; ?>
-													</td>
+													<td> &nbsp;&nbsp;Inscritos en el CNE </td>
+													<td><?php echo $General["union"][8]; ?></td>
 												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;No inscritos en el CNE </td>
+													<td><?php echo $General["union"][9]; ?></td>
+												</tr>
+
+												<thead>
+													<th>Estado Civil:</th>
+												</thead>
+												<tr>
+													<td> &nbsp;&nbsp;Solteros </td>
+													<td><?php echo $General["union"][10]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Casados </td>
+													<td><?php echo $General["union"][11]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Divorciados </td>
+													<td><?php echo $General["union"][12]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Viudos </td>
+													<td><?php echo $General["union"][13]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;En concubinato </td>
+													<td><?php echo $General["union"][14]; ?></td>
+												</tr>
+
+												<thead>
+													<th>Nivel de Instruccion:</th>
+												</thead>
+												<tr>
+													<td> &nbsp;&nbsp;Sin instruccion </td>
+													<td><?php echo $General["mas"][15]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Basica </td>
+													<td><?php echo $General["mas"][16]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Bachiller </td>
+													<td><?php echo $General["mas"][17]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Tecnico Medio </td>
+													<td><?php echo $General["mas"][18]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Tecnico Superior </td>
+													<td><?php echo $General["mas"][19]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Universitarios </td>
+													<td><?php echo $General["mas"][20]; ?></td>
+												</tr>
+
+												<tr>
+													<td> &nbsp;&nbsp;Postgrado </td>
+													<td><?php echo $General["mas"][21]; ?></td>
+												</tr>
+
+												<tr>
+													<td><strong>Total de Habitantes </strong></td>
+													<td><?php echo $ver; ?></td>
+												</tr>
+
+												<tr>
+													<td><strong>Total de Familias </strong></td>
+													<td><?php echo $total; ?></td>
+												</tr>
+
 											</table>
 										
 								</div>
