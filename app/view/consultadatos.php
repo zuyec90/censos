@@ -303,6 +303,13 @@
 																</thead>
 																<tbody>
 																	<tr>
+																		<td>Dirección:</td>
+																		<td>
+																			<input type="text" value="<?php echo $resultado['direccion']; ?>" name="direccion" >
+																			<input type="hidden" value="<?php echo $resultado['idjefe_familia']; ?>" name="idjefe_familia" >
+																		</td>
+																	</tr>
+																	<tr>
 																		<td>Nombres:</td>
 																		<td>
 																			<input type="text" value="<?php echo $resultado['nombres']; ?>" name="nombres" >
@@ -472,19 +479,19 @@
 																	<tr>
 																		<td>Tel. Cel.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_cel']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
 																		<td>Tel. Hab.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_hab']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
 																		<td>Tel. Ofic.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_ofic']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
@@ -871,7 +878,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="../../js/jquery.min.js"></script>
 		<!--<![endif]-->
 		<script src="../../plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
 		<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
