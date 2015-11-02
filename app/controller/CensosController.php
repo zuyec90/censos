@@ -3,6 +3,7 @@
 errores
 Esperanza*/
 include ('../config/config.php');
+error_reporting(0);
 
 class censo extends DataModel
 {
@@ -508,7 +509,13 @@ public function totalfamilia(){
 					$row2[$i] = mysql_query($res);
 					$resul[$i] = mysql_fetch_assoc($row2[$i]);
 					
-					$conteo[]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+					$conteo['union'][]	= $resultados[$i]["COUNT(*)"] + $resul[$i]["COUNT(*)"];
+				}
+
+				foreach ($resultados as $key => $value) {
+				//	var_dump($value);
+
+				$conteo["mas"][] = $value["COUNT(*)"];
 				}
 
 

@@ -369,7 +369,7 @@ $total = $censo->totalfamilia();
 			var url = '../lib/CensoReporte.php';
 			
 			
-			if (edadF > edadIn ) {
+			if (edadIn  >= edadF ) {
 
 				$("#PanelTitulo").html("<center> la edad final no puede ser menor a la edad inicial</center>");
 				$("#hast").focus();

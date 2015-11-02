@@ -99,43 +99,43 @@ $General = $censo->GeneralReportefecha($_POST["edadIn"],$_POST["edadF"]);
 												<tr>
 													<td> Sin instruccion </td>
 													<td>
-														<?php echo $General[15]; ?>
+														<?php echo $General["mas"][15]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Basica </td>
 													<td>
-														<?php echo $General[16]; ?>
+														<?php echo $General["mas"][16]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Bachiller </td>
 													<td>
-														<?php echo $General[17]; ?>
+														<?php echo $General["mas"][17]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Tecnico Medio </td>
 													<td>
-														<?php echo $General[18]; ?>
+														<?php echo $General["mas"][18]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Tecnico Superior </td>
 													<td>
-														<?php echo $General[19]; ?>
+														<?php echo $General["mas"][19]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Universitarios </td>
 													<td>
-														<?php echo $General[20]; ?>
+														<?php echo $General["mas"][20]; ?>
 													</td>
 												</tr>
 												<tr>
 													<td> Postgrado </td>
 													<td>
-														<?php echo $General[21]; ?>
+														<?php echo $General["mas"][21]; ?>
 													</td>
 												</tr>
 																					
