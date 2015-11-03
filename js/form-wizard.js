@@ -101,9 +101,6 @@ var FormWizard = function () {
                 incapacitado: {
                     required: true,
                 },
-                tipo_incapacitado: {
-                    minlength: 20,
-                },
                 pensionado: {
                     required: true,
                 },

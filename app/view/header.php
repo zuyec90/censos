@@ -18,7 +18,7 @@ header("Location: login.php");
 			</button>
 			<!-- fin: RESPONSIVE MENU TOGGLER -->
 			<!-- inicio: LOGO -->
-			<a class="nvbar-brand" href="home.php" style="font-size: 22px;text-decoration: none; font-style: italic;">
+			<a style="font-family: 'Lucida Grande'; font-size: xx-large;" class="nvbar-brand" href="home.php" style="font-size: 22px;text-decoration: none; font-style: italic;">
 				<img src="../../images/1.jpg">Consejo Comunal "Santa Inés <!--<img src="img src="../../upload/logo1.png" class="rounded-img" width="55" height="50"">-->
 			</a>
 			<!-- fin: LOGO -->

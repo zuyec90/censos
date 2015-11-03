@@ -12,10 +12,7 @@
 	<!-- inicio: BODY -->
 	<body id="pg_home" style= "text-align: justify;">
 		<!-- inicio: HEADER -->
-		<?php require_once('header.php'); 
-
-		
-		?>
+		<?php require_once('header.php');?>
 		<!-- fin: HEADER -->
 		<!-- inicio: MAIN CONTAINER -->
 		<div class="main-container">
@@ -58,7 +55,8 @@
 					</div>
 					<!-- fin: PAGE HEADER -->
 					<!-- inicio: PAGE CONTENT -->
-					<div style="background:url(../../upload/logo1.1.jpg); background-repeat:no-repeat; backgroung-align:center;">
+					<div>
+						<div style="background-repeat:no-repeat; text-align:center"><img src="../../upload/logo1.png" alt="descripción de imagen"/></div>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="core-box">
