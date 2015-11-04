@@ -236,7 +236,7 @@
 
 											<img src="../../upload/765-default-avatar.png" class="messages-item-avatar">
 
-												<span id = "dato" class="messages-item-from"><?php echo $receptor['nombre']." ".$receptor['apellido'];?></span>
+												<span id = "dato" class="messages-item-from"><?php echo $emisor['nombre']." ".$emisor['apellido'];?></span>
 												<div class="messages-item-time">
 													<input type="hidden" id="id_notificacion" name="id_notificacion" value="<?php echo $MSJS['id_notificacion'];?>">
 													<span class="text"><?php echo $MSJS['fecha_creacion'];?></span>

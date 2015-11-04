@@ -131,17 +131,11 @@ $resultado = $user->Seleccionar($id_user);
 																		<td>Correo Electronico:</td>
 																		<td>
 																			<a href=""><?php echo $resultado['email'] ;?></a>
-																		</td>
-																		<td>
-																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
-																		</td>
+																		</td>																		
 																	</tr>
 																	<tr>
 																		<td>Telefono:</td>
-																		<td><?php echo $resultado['celular'] ;?></td>
-																		<td>
-																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
-																		</td>
+																		<td><?php echo $resultado['celular'] ;?></td>																		
 																	</tr>
 																</tbody>
 															</table>
@@ -156,10 +150,7 @@ $resultado = $user->Seleccionar($id_user);
 																	
 																	<tr>
 																		<td>Voceria</td>
-																		<td><?php echo $resultado['voceria'] ;?></td>
-																		<td>
-																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
-																		</td>
+																		<td><?php echo $resultado['voceria'] ;?></td>																		
 																	</tr>
 																	<tr>
 																		<td>Usuario</td>
@@ -182,10 +173,7 @@ $resultado = $user->Seleccionar($id_user);
 																		 	}	
 																			?>
 																			</span>
-																		</td>
-																		<td>
-																			<a href="#panel_edit_account" class="show-tab"><i class="fa fa-pencil edit-user-info"></i></a>
-																		</td>
+																		</td>																		
 																	</tr>
 																</tbody>
 															</table>

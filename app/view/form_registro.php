@@ -153,7 +153,7 @@
 													</label>
 													<div class="input-group">
 														<a class="input-group-addon"> <i class="fa fa-phone"></i> </a>
-														<input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="celular" maxlength="11">
+														<input type="text" id="celular" class="form-control input-mask-phone" name="celular" maxlength="11">
 													</div>
 												</div>
 												<div class="form-group">
@@ -320,7 +320,7 @@
 				var nacionalidad = $('input:radio[name=nacionalidad]:checked').val();
 				var cedula = $("#ci").val();
 				var email = $("#email2").val();
-				var celular = $("#form-field-mask-2").val();
+				var celular = $("#celular").val();
 				var sexo = $('input:radio[name=sexo]:checked').val();
 				var voceria = $("#dropdown").val();
 				var perfil = $("#dropdown2").val();

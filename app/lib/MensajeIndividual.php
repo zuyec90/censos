@@ -13,13 +13,10 @@ session_start();
 			<?PHP echo $resultado['fecha_creacion']; ?>
 			</div>
 			<div class="message-from">
-				<?PHP echo $receptor['nombre']." ".$receptor['apellido'];  ?>
+				Para: <?PHP echo $receptor['nombre']." ".$receptor['apellido'];  ?>
 			</div>
 			<div class="message-to">
-				<?PHP echo $emisor['nombre']." ".$emisor['apellido'];  ?>
-			</div>
-			<div class="message-subject">
-				Modificación de datos
+				De: <?PHP echo $emisor['nombre']." ".$emisor['apellido'];  ?>
 			</div>
 			<div class="message-actions">
 				<a title="Mover a la papelera" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
@@ -62,13 +59,10 @@ session_start();
 			<?PHP echo $mensjaCadena['fecha_creacion']; ?>
 			</div>
 			<div class="message-from">
-				<?PHP echo $receptor['nombre']." ".$receptor['apellido'];  ?>
+				Para: <?PHP echo $receptor['nombre']." ".$receptor['apellido'];  ?>
 			</div>
 			<div class="message-to">
-				<?PHP echo $emisor['nombre']." ".$emisor['apellido'];  ?>
-			</div>
-			<div class="message-subject">
-				Modificación de datos
+				De: <?PHP echo $emisor['nombre']." ".$emisor['apellido'];  ?>
 			</div>
 			<div class="message-actions">
 				<a title="Mover a la papelera" class="btn btn-xs btn-link eliminar-mensaje" href="#eliminar-mensaje" data-toggle="modal"><i class="fa fa-trash-o"></i></a>

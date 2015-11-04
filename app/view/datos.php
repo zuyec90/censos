@@ -397,11 +397,11 @@
 													<div class="col-sm-2">
 														<select class="form-control" id="codigo_cel" name="codigo_cel">
 															<option value="">Código</option>
-															<option value="416">0416</option>
-															<option value="426">0426</option>
-															<option value="412">0412</option>
-															<option value="414">0414</option>
-															<option value="424">0424</option>
+															<option value="0416">0416</option>
+															<option value="0426">0426</option>
+															<option value="0412">0412</option>
+															<option value="0414">0414</option>
+															<option value="0424">0424</option>
 														</select>
 													</div>
 													<div class="col-sm-4">

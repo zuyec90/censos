@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 28-10-2015 a las 06:32:47
--- Versión del servidor: 5.5.44-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.13
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 03-11-2015 a las 04:29:42
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,13 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `bitacora` (
-  `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,
+`id_bitacora` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `idjefe_familia` int(255) NOT NULL,
   `fecha_accion` date NOT NULL,
-  `accion` text NOT NULL,
-  PRIMARY KEY (`id_bitacora`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=52 ;
+  `accion` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `bitacora`
@@ -90,7 +89,16 @@ INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accio
 (48, 5, 43, '2015-10-25', 'Creacion del primer registro'),
 (49, 5, 44, '2015-10-25', 'Creacion del primer registro'),
 (50, 5, 45, '2015-10-25', 'Creacion del primer registro'),
-(51, 5, 46, '2015-10-25', 'Creacion del primer registro');
+(51, 5, 46, '2015-10-25', 'Creacion del primer registro'),
+(52, 11, 56, '2015-10-29', 'se registro un familiar'),
+(53, 11, 57, '2015-10-31', 'se registro un familiar'),
+(54, 11, 47, '2015-11-01', 'Creacion del primer registro'),
+(55, 11, 47, '2015-11-01', 'Modifico el registro'),
+(56, 11, 47, '2015-11-01', 'Modifico el registro'),
+(57, 11, 47, '2015-11-01', 'Modifico el registro'),
+(58, 11, 44, '2015-11-01', 'Modifico el registro'),
+(59, 11, 48, '2015-11-01', 'Creacion del primer registro'),
+(60, 11, 58, '2015-11-01', 'se registro un familiar');
 
 -- --------------------------------------------------------
 
@@ -99,7 +107,7 @@ INSERT INTO `bitacora` (`id_bitacora`, `id_user`, `idjefe_familia`, `fecha_accio
 --
 
 CREATE TABLE IF NOT EXISTS `grupo_fliar` (
-  `id_familiar` int(255) NOT NULL AUTO_INCREMENT,
+`id_familiar` int(255) NOT NULL,
   `idjefe_familia` int(255) NOT NULL,
   `nacionalidad` varchar(2) NOT NULL,
   `cedula` int(8) NOT NULL COMMENT 'cedula',
@@ -118,25 +126,16 @@ CREATE TABLE IF NOT EXISTS `grupo_fliar` (
   `pensionado` varchar(2) NOT NULL COMMENT 'Si la persopna es pensionada',
   `ingreso_mensual` varchar(6) NOT NULL COMMENT 'Ingreso mensual de la persona del grupo familiar',
   `observacion` varchar(50) NOT NULL COMMENT 'Si se le desea agregar alguna otra observacion',
-  `status` int(10) NOT NULL,
-  PRIMARY KEY (`id_familiar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia' AUTO_INCREMENT=56 ;
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COMMENT='Caracteristicas del grupo familiar con el jefe de familia';
 
 --
 -- Volcado de datos para la tabla `grupo_fliar`
 --
 
 INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `nacionalidad`, `cedula`, `nombre`, `apellido`, `sexo`, `fecha_nacimiento`, `edad`, `incapacitado`, `Tipo_incapacitado`, `Embarazo_tempr`, `parentesco`, `nivel_instruccion`, `cne`, `profesion`, `pensionado`, `ingreso_mensual`, `observacion`, `status`) VALUES
-(46, 37, 'V', 16516516, 'SDsad', 'dsadasd', 'f', '2015-10-13', 132, 'si', 'sdaa', 'si', 'asdsdasd', 'Bachiller', 'si', 'sdasdas', 'si', '31231', 'sdasdasd', 1),
-(47, 37, 'V', 12312312, 'sdasd', 'asdasd', 'f', '2015-10-20', 123, 'si', 'cxsadasd', 'si', 'dasdasd', 'Bachiller', 'si', 'wqeqwe', 'si', 'eqweqw', 'qweqweqw', 1),
-(48, 37, 'V', 12312312, 'sdasd', 'asdasd', 'f', '2015-10-20', 123, 'si', 'cxsadasd', 'si', 'dasdasd', 'Bachiller', 'si', 'wqeqwe', 'si', 'eqweqw', 'qweqweqw', 1),
-(49, 37, 'V', 23112312, 'sadad', 'asdsdas', 'f', '2015-10-21', 231, 'si', 'saasw', 'si', 'dadasd', 'BÃ¡sica', 'no', 'asdasdas', 'no', '213123', 'adasd', 1),
-(50, 37, 'V', 2312312, 'zuyewcci', 'sadasd2', 'f', '2015-10-14', 123, 'si', 'asdasdasd', 'si', 'dasdas', ' TÃ©cnico Superior', 'si', 'asdasd', 'si', '213123', 'dsadads', 1),
-(51, 38, 'V', 321321, 'dasdasd', 'ASDASDa', 'f', '2015-10-19', 32, 'si', 'sdsdasd', 'si', 'asdasdas', 'dasd', 'si', 'asdasd', 'si', '123123', '23213213', 1),
-(52, 36, 'V', 12312323, 'aqdasdasd', 'sadasdasdasd', 'm', '2015-10-19', 12, 'no', '', 'no', 'sadasdasd', ' Sin InstrucciÃ³n', 'no', 'dasdsadasd', 'no', '213123', 'asdasdasd', 1),
-(53, 39, 'V', 2147483647, 'csadcsdczzz', 'sadasda adasszz', 'm', '2015-10-23', 12322, 'no', '22', 'no', '2ssss', '', 'no', 'sdasdasd', 'no', '22', '222', 1),
-(54, 37, 'V', 11111111, 'prueba de registro', 'sadasdas', 'f', '2015-10-24', 11, 'si', '111111111111111', 'si', 'asdasdasd', 'Bachiller', 'si', 'eqweqw', 'si', '131231', 'asdasdasdasd', 1),
-(55, 46, 'V', 21312123, 'aaaaaa', 'dasdasd', 'f', '2015-10-25', 123, 'si', 'sdasdasdasdasd', 'si', 'dasdasd', ' Sin InstrucciÃ³n', 'si', 'asdasd', 'si', '132123', 'ewqweqwe', 1);
+(57, 44, 'V', 31231321, 'dgfgdf', 'fgdfhdfh', 'm', '2015-10-09', 25, 'no', '', 'no', 'ghghdgh', 'BÃ¡sica', 'si', 'ghdfhdfhdfh', 'no', 'hdghh', 'ghdhdh', 1),
+(58, 48, 'V', 8453223, 'zullys', 'marcano', 'f', '1968-03-24', 50, 'no', '', 'no', 'esposa', 'TÃ©cnico Medio', 'si', 'dfsfgsg', 'no', 'quince', '', 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +144,13 @@ INSERT INTO `grupo_fliar` (`id_familiar`, `idjefe_familia`, `nacionalidad`, `ced
 --
 
 CREATE TABLE IF NOT EXISTS `jefeflia` (
-  `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',
+`idjefe_familia` int(255) NOT NULL COMMENT 'Llave primaria',
+  `estado` varchar(20) NOT NULL,
+  `municipio` varchar(20) NOT NULL,
+  `parroquia` varchar(20) NOT NULL,
+  `sector` varchar(20) NOT NULL,
+  `nombre_comunidad` varchar(20) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `nombres` varchar(30) NOT NULL COMMENT 'nombre jefe flia',
   `apellidos` varchar(30) NOT NULL COMMENT 'apellido jefe flia',
   `nacionalidad` varchar(1) NOT NULL,
@@ -166,33 +171,34 @@ CREATE TABLE IF NOT EXISTS `jefeflia` (
   `codigo_ofic` int(4) NOT NULL COMMENT 'codigo oficina',
   `telfofic` int(11) NOT NULL COMMENT 'telefono ofic jefe flia',
   `email` varchar(30) NOT NULL COMMENT 'email jefe flia',
-  `estado_civil` varchar(10) NOT NULL COMMENT 'estado civil jefe flia',
-  `nivel_instruccion` varchar(20) NOT NULL COMMENT 'nivel de instruccion jefe flia',
+  `estado_civil` varchar(15) NOT NULL COMMENT 'estado civil jefe flia',
+  `nivel_instruccion` varchar(25) NOT NULL COMMENT 'nivel de instruccion jefe flia',
   `status` int(10) NOT NULL,
   `profesion` varchar(20) NOT NULL COMMENT 'profesion jefe flia',
   `trabaja` varchar(2) NOT NULL COMMENT 'trabaja jefe flia',
   `clasificacion_ingreso_familiar` varchar(22) NOT NULL COMMENT 'clasificacion ingreso familiar',
   `ingreso_mensual` int(6) NOT NULL COMMENT 'ingreso mensual jefe flia',
-  `fecha_creacion` datetime NOT NULL,
-  PRIMARY KEY (`idjefe_familia`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo' AUTO_INCREMENT=47 ;
+  `fecha_creacion` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COMMENT='registro de datos de censo';
 
 --
 -- Volcado de datos para la tabla `jefeflia`
 --
 
-INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `codigo_cel`, `telfcel`, `codigo_hab`, `telfhab`, `codigo_ofic`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`, `fecha_creacion`) VALUES
-(36, 'asda', 'assadasa', 'v', 255555, '2015-10-11', 21, 'e', 'si', 'sdas', 'si', '1asdasdasdasdasdasda', 'si', 'asdadasd', 426, 1231231, 0, 0, 0, 0, 'sauwwwwwwwwwwwl_cfa@hotmail.co', 'soltero (a', 'Basica', 0, 'qweqweqweqwe', 'si', 'Semanal', 123123, '2015-10-19 04:16:01'),
-(37, 'sdsa', 'sdas3', 'v', 13212312, '2015-10-19', 12, '', 'si', '12312', 'si', 'asasdasdasdasdasdxas', 'si', 'qweqw', 416, 2131233, 0, 0, 0, 0, 'saulqweqweqwe_cfa@hotmail.com', 'soltero (a', 'Sin Instruccion', 1, 'qweqwe', 'si', '', 123123, '2015-10-19 04:20:38'),
-(38, 'dasasdas', 'dasdas', 'v', 213123, '2015-10-08', 0, 'f', 'si', 'qweqw', 'si', 'asdasdaqwesqweqadasd', 'si', 'sdasd', 426, 2131231, 0, 0, 0, 0, '', 'soltero (a', 'Basica', 0, 'asdasdas', 'si', 'Semanal', 123123, '2015-10-19 04:27:56'),
-(39, 'asdas', 'asdasd11133322=', 'e', 1231231, '2015-10-20', 12, 'v', 'no', '12123=', 'no', '21312sdasdadasdasda', 'no', 'qweqweq', 416, 12312312, 0, 5444, 0, 21231211, 'saul_wcfa@hotmail.com', 'Divorciado', 'Bachiller', 0, 'qwqweqwe2', 'no', '', 12312, '2015-10-19 04:30:53'),
-(40, 'zullys', 'marcano', 'v', 8453223, '1964-03-24', 51, 'f', 'si', '1 anio', 'no', '', 'no', '', 426, 2890251, 212, 3266565, 0, 0, '', '', '', 0, '', '', '', 0, '2015-10-14 06:12:36'),
-(41, 'dfdsf', 'asdasd', 'v', 23123123, '2015-10-24', 123, 'f', 'si', '231212', 'si', 'dasdasdaasdasasdsasw', 'si', 'dsads', 416, 2312312, 0, 0, 0, 0, '', 'Casado (a)', 'Bachiller', 0, 'dasas', 'si', 'Diario', 312312, '2015-10-24 21:48:28'),
-(42, 'dfdsf', 'asdasd', 'v', 11111555, '2015-10-24', 123, 'f', 'si', '231212', 'si', 'dasdasdaasdasasdsasw', 'si', 'dsads', 416, 2312312, 212, 1111111, 212, 2222222, '2222222@22222222222.com', 'Casado (a)', 'Bachiller', 0, 'dasas', 'si', 'Diario', 312312, '2015-10-24 21:57:29'),
-(43, 'hola', 'valera', 'v', 18820856, '1992-02-06', 23, 'f', 'si', '2', 'no', '', 'no', '', 426, 8110256, 0, 0, 0, 0, '', 'soltero (a', 'Tecnico Superior', 1, '', 'si', '', 165465, '2015-10-25 06:43:01'),
-(44, 'asdafg', 'dhthdhgh', 'v', 36889898, '2015-10-16', 42, 'f', 'si', 'df', 'no', '', 'no', '', 0, 0, 0, 0, 0, 0, '', '', '', 1, '', '', '', 0, '2015-10-25 07:00:27'),
-(45, 'dasdas', 'sdad', 'v', 12312312, '2015-10-25', 123, 'f', 'si', 'sdasda', 'si', 'qweqweqweqweqweqweqw', 'si', 'qwqwdqwdqw', 416, 2131231, 212, 3123123, 212, 23123, 'asd@sadasd.com', 'Divorciado', 'Tecnico Medio', 1, 'qweqwe', 'si', 'Semanal', 0, '2015-10-25 09:34:27'),
-(46, 'dasdas', 'sdad', 'v', 78954623, '2015-10-25', 123, 'f', 'si', 'sdasda', 'si', 'qweqweqweqweqweqweqw', 'si', 'qwqwdqwdqw', 416, 2131231, 212, 3123123, 212, 23123, 'asd@sadasd.com', 'Divorciado', 'Tecnico Medio', 1, 'qweqwe', 'si', 'Semanal', 0, '2015-10-25 09:39:25');
+INSERT INTO `jefeflia` (`idjefe_familia`, `estado`, `municipio`, `parroquia`, `sector`, `nombre_comunidad`, `direccion`, `nombres`, `apellidos`, `nacionalidad`, `cedula`, `fecha_nacimiento`, `edad`, `sexo`, `cne`, `tiempo_comunidad`, `incapacitado`, `tipo_incapacitado`, `pensionado`, `institucion`, `codigo_cel`, `telfcel`, `codigo_hab`, `telfhab`, `codigo_ofic`, `telfofic`, `email`, `estado_civil`, `nivel_instruccion`, `status`, `profesion`, `trabaja`, `clasificacion_ingreso_familiar`, `ingreso_mensual`, `fecha_creacion`) VALUES
+(36, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'asda', 'assadasa', 'v', 255555, '2015-10-11', 21, 'e', 'si', 'sdas', 'si', '1asdasdasdasdasdasda', 'si', 'asdadasd', 426, 1231231, 0, 0, 0, 0, 'sauwwwwwwwwwwwl_cfa@hotmail.co', 'soltero (a)', 'Basica', 0, 'qweqweqweqwe', 'si', 'Semanal', 123123, '2015-10-19 04:16:01'),
+(37, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'sdsa', 'sdas3', 'v', 13212312, '2015-10-19', 12, '', 'si', '12312', 'si', 'asasdasdasdasdasdxas', 'si', 'qweqw', 416, 2131233, 0, 0, 0, 0, 'saulqweqweqwe_cfa@hotmail.com', 'soltero (a)', 'Sin Instruccion', 1, 'qweqwe', 'si', '', 123123, '2015-10-19 04:20:38'),
+(38, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'dasasdas', 'dasdas', 'v', 213123, '2015-10-08', 0, 'f', 'si', 'qweqw', 'si', 'asdasdaqwesqweqadasd', 'si', 'sdasd', 426, 2131231, 0, 0, 0, 0, '', 'soltero (a)', 'Basica', 1, 'asdasdas', 'si', 'Semanal', 123123, '2015-10-19 04:27:56'),
+(39, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'asdas', 'asdasd11133322=', 'e', 1231231, '2015-10-20', 12, 'v', 'no', '12123=', 'no', '21312sdasdadasdasda', 'no', 'qweqweq', 416, 12312312, 0, 5444, 0, 21231211, 'saul_wcfa@hotmail.com', 'Divorciado', 'Bachiller', 0, 'qwqweqwe2', 'no', '', 12312, '2015-10-19 04:30:53'),
+(40, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'zullys', 'marcano', 'v', 8453223, '1964-03-24', 51, 'f', 'si', '1 anio', 'no', '', 'no', '', 426, 2890251, 212, 3266565, 0, 0, '', '', '', 0, '', '', '', 0, '2015-10-14 06:12:36'),
+(41, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'dfdsf', 'asdasd', 'v', 23123123, '2015-10-24', 123, 'f', 'si', '231212', 'si', 'dasdasdaasdasasdsasw', 'si', 'dsads', 416, 2312312, 0, 0, 0, 0, '', 'Casado (a)', 'Bachiller', 0, 'dasas', 'si', 'Diario', 312312, '2015-10-24 21:48:28'),
+(42, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'dfdsf', 'asdasd', 'v', 11111555, '2015-10-24', 123, 'f', 'si', '231212', 'si', 'dasdasdaasdasasdsasw', 'si', 'dsads', 416, 2312312, 212, 1111111, 212, 2222222, '2222222@22222222222.com', 'Casado (a)', 'Bachiller', 1, 'dasas', 'si', 'Diario', 312312, '2015-10-24 21:57:29'),
+(43, 'Distrito Capital', 'Libertador', 'Sucre', '', '', 'fgdfhfhgfgh', 'hola', 'valera', 'v', 18820856, '1992-02-06', 23, 'f', 'si', '2', 'no', '', 'no', '', 426, 8110256, 0, 0, 0, 0, '', 'soltero (a)', 'Tecnico Superior', 1, '', 'si', '', 165465, '2015-10-25 06:43:01'),
+(44, 'Distrito Capital', 'Libertador', 'Sucre', '', '', 'gsgfsgffg', 'asdafg', 'dhthdhgh', 'v', 36889898, '2015-10-16', 42, 'f', 'si', 'df', 'no', '', 'no', '0', 0, 0, 0, 0, 0, 0, '', '', '', 1, '', '', '', 0, '2015-10-25 07:00:27'),
+(45, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'dasdas', 'sdad', 'v', 12312312, '2015-10-25', 123, 'f', 'no', 'sdasda', 'si', 'qweqweqweqweqweqweqw', 'si', 'qwqwdqwdqw', 416, 2131231, 212, 3123123, 212, 23123, 'asd@sadasd.com', 'Divorciado', 'Tecnico Medio', 1, 'qweqwe', 'si', 'Semanal', 0, '2015-10-25 09:34:27'),
+(46, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'dasdas', 'sdad', 'v', 78954623, '2015-10-25', 123, 'f', 'si', 'sdasda', 'si', 'qweqweqweqweqweqweqw', 'si', 'qwqwdqwdqw', 416, 2131231, 212, 3123123, 212, 23123, 'asd@sadasd.com', 'Divorciado', 'Tecnico Medio', 1, 'qweqwe', 'si', 'Semanal', 0, '2015-10-25 09:39:25'),
+(47, 'Distrito Capital', 'Libertador', 'Sucre', '', '', '', 'ureyjfyjstjngjdkfg', 'gkjdsngjksdnfg', 'v', 12345678, '2014-12-01', 1, 'm', 'no', '5', 'no', '', 'no', '', 0, 0, 0, 0, 0, 0, '', 'Concubinato (a)', 'Tecnico Superior', 1, 'nfhnhn', 'no', '', 545452, '2015-11-01 07:40:48'),
+(48, 'Distrito Capital', 'Libertador', 'Sucre', 'aefefef', 'ewfwefwef', 'wefwefwef', 'jesus', 'centyeno', 'v', 8453226, '1965-10-15', 50, 'm', 'si', '10', 'no', '', 'no', '', 416, 5656565, 0, 0, 0, 0, '', 'Casado (a)', 'Bachiller', 1, 'effedf', 'si', 'Quincenal', 566665, '2015-11-01 15:26:53');
 
 -- --------------------------------------------------------
 
@@ -201,15 +207,14 @@ INSERT INTO `jefeflia` (`idjefe_familia`, `nombres`, `apellidos`, `nacionalidad`
 --
 
 CREATE TABLE IF NOT EXISTS `notificacion` (
-  `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,
+`id_notificacion` int(255) NOT NULL,
   `id_respuesta` int(255) NOT NULL,
   `id_user_rece` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `mensaje` text NOT NULL,
   `fecha_creacion` date NOT NULL,
-  `status` int(1) NOT NULL,
-  PRIMARY KEY (`id_notificacion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=84 ;
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `notificacion`
@@ -251,12 +256,11 @@ INSERT INTO `notificacion` (`id_notificacion`, `id_respuesta`, `id_user_rece`, `
 --
 
 CREATE TABLE IF NOT EXISTS `perfil` (
-  `id_perfil` int(255) NOT NULL AUTO_INCREMENT,
+`id_perfil` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
-  `tipo_perfil` int(20) NOT NULL,
-  PRIMARY KEY (`id_perfil`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
+  `tipo_perfil` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -265,14 +269,13 @@ CREATE TABLE IF NOT EXISTS `perfil` (
 --
 
 CREATE TABLE IF NOT EXISTS `respuesta` (
-  `id_respuesta` int(255) NOT NULL AUTO_INCREMENT,
+`id_respuesta` int(255) NOT NULL,
   `id_user` int(255) NOT NULL,
   `respuesta_1` varchar(200) NOT NULL,
   `respuesta_2` varchar(200) NOT NULL,
   `respuesta_3` varchar(200) NOT NULL,
-  `cant_intentos` int(2) NOT NULL,
-  PRIMARY KEY (`id_respuesta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=1 ;
+  `cant_intentos` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -281,50 +284,115 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_user` int(255) NOT NULL AUTO_INCREMENT,
+`id_user` int(255) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `nacionalidad` varchar(2) NOT NULL COMMENT 'nacionalidad usuarios',
   `cedula` int(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `celular` int(50) NOT NULL,
+  `celular` varchar(11) NOT NULL,
   `sexo` varchar(1) NOT NULL,
   `voceria` varchar(60) NOT NULL,
   `perfil` int(1) NOT NULL,
   `usuario` varchar(50) NOT NULL,
   `contrasenia` varchar(50) NOT NULL,
   `status` int(1) NOT NULL,
-  `fecha_creado` date NOT NULL,
-  PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=24 ;
+  `fecha_creado` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`, `email`, `celular`, `sexo`, `voceria`, `perfil`, `usuario`, `contrasenia`, `status`, `fecha_creado`) VALUES
-(1, 'usuario', '1', '', 0, 'nnn@csd.com', 12, 'm', 'df', 2, 'prueba', '123456', 1, '2015-05-13'),
-(3, 'ddq', 'dded1sdasd', '', 231231231, 'zuyecci@gmail.com1', 2147483647, 'm', 'usuario11', 1, 'fcg1sd', 'fgf1', 2, '2015-05-29'),
-(4, 'sadasd', 'sadasd', '', 125216, 'saul_cfa@hotmail.com', 1165161, 'f', 'usuario1', 1, 'gvghv', 'asdasd', 1, '2015-05-30'),
-(5, 'saul1', 'dasdasd', 'e', 45616514, 'sdasdasdasdas@sadasd.asdajnkjnjk12', 156161652, 'm', 'usuario1', 1, 'usuario', '123456', 3, '2015-05-30'),
-(6, 'saul de prueba', 'dasd', '', 23123, 'sadas@sdas.asd', 123123, 'm', 'usuario2', 2, 'SAUL', '2', 2, '2015-06-24'),
-(7, 'jos', 'sassa', 'v', 1234567, 'saassa@dsdas.com', 1234567, 'm', 'Unidad de ContralorÃ­a Social', 2, 'asa', '12345', 3, '2015-10-05'),
-(9, 'SDADAS2', 'ASDASD2', 'v', 12312334, 'DA2SDA@ASDASDASD2321.COM', 44444, 'm', 'Unidad Ejecutiva2', 1, 'saulsadas213123', '2', 1, '2015-10-11'),
-(10, 'QWEQWEQWEQW545', 'QQWE', 'v', 15156165, 'DQWzuyecciv@hotmail.com', 2147483647, 'f', 'Unidad Ejecutiva', 2, '556465DASDAS', '1651651', 2, '2015-10-11'),
-(11, 'root', 'sdas', 'e', 123456, '454zuyecciv@hotmail.com', 123213123, 'f', 'Unidad de ContralorÃ­a Social', 0, 'root', '123456', 2, '2015-10-11'),
-(12, 'dasdas', 'sdadsdas', 'v', 15616516, 'sauasal_cfa@hotmail.com', 2147483647, 'f', 'Unidad Ejecutiva', 1, 'root211', '123456', 1, '2015-10-18'),
-(13, 'ejemplo', 'de ', 'v', 12315646, 'asdassaul_cfa@hotmail.com', 2147483647, 'f', 'Unidad Ejecutiva', 1, 'dasd2', '123456', 1, '2015-10-18'),
-(14, 'dasd', 'sadas', 'v', 14654654, 's565465465aul_cfa@hotmail.com', 2147483647, 'f', 'Unidad Ejecutiva', 2, 'asdasd4', '123456', 1, '2015-10-18'),
-(15, 'ASdd', 'asdasd', 'v', 56465665, 'asdas454545d@asda.asda', 2147483647, 'f', 'Unidad de ContralorÃ­a Social', 1, 'root545454', '123456', 1, '2015-10-18'),
-(16, 'sdasd', 'asdasd', 'v', 51516165, '454545saul_cfa@hotmail.com', 2147483647, 'f', 'Unidad Ejecutiva', 1, 'root54545454', '123456', 1, '2015-10-18'),
-(17, 'Sdasd', 'sdasd', 'e', 12316516, 's151515aul_cfa@hotmail.com', 1516516515, 'f', 'Unidad de ContralorÃ­a Social', 1, 'asda', '123456', 1, '2015-10-18'),
-(18, 'sdasd', 'asdasd', 'v', 56565656, 'sasdasdasaul_cfa@hotmail.com', 1234567, 'f', 'Unidad Ejecutiva', 1, 'asdas454', '123456', 1, '2015-10-18'),
-(19, 'Sdasd', 'asdasdas', 'v', 13212313, 'sasasasd44aul_cfa@hotmail.com', 123456444, 'm', 'Unidad Ejecutiva', 2, 'dasdasdasd', '123456789', 1, '2015-10-18'),
-(20, 'Asdasd', 'ASDASD', 'v', 45455465, 'Gdsadasdgomez@smartappsla.com', 2147483647, 'f', 'Unidad Ejecutiva', 1, 'asdasd', '123456', 1, '2015-10-18'),
-(21, 'dasdasd', 'dasdas', 'v', 12312312, 'sdasdas23123dasdas@sadasd.asdajnkjnj', 2147483647, 'f', 'Unidad de ContralorÃ­a Social', 1, '123123', '123456', 2, '2015-10-18'),
-(22, 'MAtthew', 'valeram', 'v', 25205809, 'matthew@gmail.com', 2147483647, 'm', 'Unidad de ContralorÃ­a Social', 1, 'mat', '123456', 1, '2015-10-25'),
-(23, 'nuvo', 'catagu', 'v', 12345678, 'ctagagua@catagua.com', 2147483647, 'f', 'Unidad Ejecutiva', 1, 'catagua23123', '123456789', 1, '2015-10-28');
+(24, 'Edelis', 'Simons', 'v', 20603430, 'girl@gmail.com', '04122161518', 'f', 'Unidad de ContralorÃ­a Social', 1, 'prueba', '123456', 1, '2015-11-02'),
+(25, 'Gleiver', 'Gil', 'v', 18761800, 'giegm_0507@hotmail.com', '04123154389', 'm', 'Unidad Ejecutiva', 2, 'prueba2', '123456', 1, '2015-11-02');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `bitacora`
+--
+ALTER TABLE `bitacora`
+ ADD PRIMARY KEY (`id_bitacora`);
+
+--
+-- Indices de la tabla `grupo_fliar`
+--
+ALTER TABLE `grupo_fliar`
+ ADD PRIMARY KEY (`id_familiar`);
+
+--
+-- Indices de la tabla `jefeflia`
+--
+ALTER TABLE `jefeflia`
+ ADD PRIMARY KEY (`idjefe_familia`);
+
+--
+-- Indices de la tabla `notificacion`
+--
+ALTER TABLE `notificacion`
+ ADD PRIMARY KEY (`id_notificacion`);
+
+--
+-- Indices de la tabla `perfil`
+--
+ALTER TABLE `perfil`
+ ADD PRIMARY KEY (`id_perfil`);
+
+--
+-- Indices de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+ ADD PRIMARY KEY (`id_respuesta`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+ ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `bitacora`
+--
+ALTER TABLE `bitacora`
+MODIFY `id_bitacora` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+--
+-- AUTO_INCREMENT de la tabla `grupo_fliar`
+--
+ALTER TABLE `grupo_fliar`
+MODIFY `id_familiar` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+--
+-- AUTO_INCREMENT de la tabla `jefeflia`
+--
+ALTER TABLE `jefeflia`
+MODIFY `idjefe_familia` int(255) NOT NULL AUTO_INCREMENT COMMENT 'Llave primaria',AUTO_INCREMENT=49;
+--
+-- AUTO_INCREMENT de la tabla `notificacion`
+--
+ALTER TABLE `notificacion`
+MODIFY `id_notificacion` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
+--
+-- AUTO_INCREMENT de la tabla `perfil`
+--
+ALTER TABLE `perfil`
+MODIFY `id_perfil` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+MODIFY `id_respuesta` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+MODIFY `id_user` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- Restricciones para tablas volcadas
 --
@@ -333,13 +401,13 @@ INSERT INTO `usuario` (`id_user`, `nombre`, `apellido`, `nacionalidad`, `cedula`
 -- Filtros para la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`id_perfil`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`id_perfil`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`id_respuesta`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`id_respuesta`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

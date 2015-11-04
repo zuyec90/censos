@@ -479,19 +479,19 @@
 																	<tr>
 																		<td>Tel. Cel.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['codigo_cel']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_cel']; ?>" name="codigo_cel"> <input type="text" value="<?php echo $resultado['telfcel']; ?>" name="telfcel" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
 																		<td>Tel. Hab.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['codigo_hab']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_hab']; ?>" name="codigo_hab"> <input type="text" value="<?php echo $resultado['telfhab']; ?>" name="telfhab" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
 																		<td>Tel. Ofic.:</td>
 																		<td>
-																			<input type="text" value="<?php echo $resultado['codigo_ofic']; ?>" name="institucion"> <input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
+																			<input type="text" value="<?php echo $resultado['codigo_ofic']; ?>" name="codigo_ofic"> <input type="text" value="<?php echo $resultado['telfofic']; ?>" name="telfofic" maxlength="10">
 																		</td>
 																	</tr>
 																	<tr>
