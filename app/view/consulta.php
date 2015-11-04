@@ -43,31 +43,7 @@ $total = $censo->totalfamilia();
 			<!-- inicio: PAGE -->
 			<div class="main-content">
 				<!-- inicio: PANEL CONFIGURATION MODAL FORM -->
-				<div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-									&times;
-								</button>
-								<h4 class="modal-title">Panel Configuration</h4>
-							</div>
-							<div class="modal-body">
-								Here will be a configuration form
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-									Close
-								</button>
-								<button type="button" class="btn btn-primary">
-									Save changes
-								</button>
-							</div>
-						</div>
-						<!-- /.modal-content -->
-					</div>
-					<!-- /.modal-dialog -->
-				</div>
+				
 				<!-- /.modal -->
 				<!-- fin: SPANEL CONFIGURATION MODAL FORM -->
 				<div class="container">
@@ -105,7 +81,7 @@ $total = $censo->totalfamilia();
 														
 													<select id="de"  name="de" class="form-control" >
 														<option> - </option>
-														<?php for ($i=0; $i < 180 ; $i++) { ?>
+														<?php for ($i=0; $i < 151 ; $i++) { ?>
 														<option value="<?php echo $i; ?>" ><?php echo $i; ?></option>
 																																	
 														<?php } ?>
@@ -115,7 +91,7 @@ $total = $censo->totalfamilia();
 												<td style="width:5%">
 													<select  id="hast" name="hasta" class="form-control" >
 														<option> - </option>
-														<?php for ($i=0; $i < 180 ; $i++) { ?>
+														<?php for ($i=0; $i < 151 ; $i++) { ?>
 														<option value="<?php echo $i; ?>" ><?php echo $i; ?></option>
 																																	
 														<?php } ?>
@@ -126,7 +102,7 @@ $total = $censo->totalfamilia();
 										</tbody>
 									</table>
 									<center><a href="#" id="Reporte" class="btn btn-green btn-lg btn-block"> Generar Reporte</a>
-									<a href="#" class="btn btn-primary btn-lg btn-block"> Imprimir</a></center>
+									<a href="reportepdf.php" class="btn btn-primary btn-lg btn-block"> Imprimir</a></center>
 							</div>
 						</div>
 					</div>
@@ -136,10 +112,10 @@ $total = $censo->totalfamilia();
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									<center><strong>Grafica General</strong></center>
+									<center><strong>Consulta por edad</strong></center>
 								</div>
 								<div class="panel-body">
-									<div class="flot-small-container">
+									<div>
 										<div id="placeholder82" class="flot-placeholder"></div>
 									</div>
 								</div>

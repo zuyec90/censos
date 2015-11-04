@@ -555,6 +555,21 @@ public function totalfamilia(){
 
 	}
 
+	public function ConsultaUsertipo($campo,$valor)
+	{
+		$this->Conect();
+
+		$sql1 = "SELECT * FROM `jefeflia` WHERE $campo = $valor and `status`= 1 ";
+		$sql2 = "SELECT * FROM `grupo_fliar` WHERE $campo = $valor and `status`= 1";
+	
+		$respuesta = mysql_query($sql) or die ("503 No existen consultas");
+	
+		$respuesta = mysql_fetch_assoc($respuesta);
+		return $respuesta; //imprimirlo en la vista
+
+
+	}
+
 
 
 }

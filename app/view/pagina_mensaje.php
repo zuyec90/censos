@@ -180,7 +180,7 @@
 										<label for="destinatario">Destinatario:</label>
 											<select id="destino" name="id_user_rece" class="form-control" style="margin: 0px -0.5px 0px 0px; width: 300px; height: 30px;">
 
-												<option value="">Seleccione un opción</option>
+												<option value="">Seleccione una opción</option>
 												<?php while($users = mysql_fetch_assoc($User)) {?>
 												<option value="<?php echo $users['id_user'];?>"><?php echo $users['nombre']. " ".$users['apellido'];?></option>
 												<?php } ?>
@@ -221,8 +221,8 @@
 									
 								</div>
 									<?php while($MSJS = mysql_fetch_assoc($resultado)) {
-										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
-										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user']);
+										$receptor = $MSJ->ConsultaReceptor($MSJS['id_user']);
+										$emisor = $MSJ->ConsultaReceptor($MSJS['id_user_rece']);
 										$num =  $MSJ->Contar($MSJS['id_notificacion']);
 										if ($num['COUNT(*)']!= 0) { ?>
 											<span class="badge badge-danger contador" > <?php echo $num['COUNT(*)'];?> </span>
